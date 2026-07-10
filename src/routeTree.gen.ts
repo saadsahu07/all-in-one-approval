@@ -25,10 +25,13 @@ import { Route as TextToolsGrammarCheckerRouteImport } from './routes/text-tools
 import { Route as TextToolsCharacterCounterRouteImport } from './routes/text-tools.character-counter'
 import { Route as TextToolsCaseConverterRouteImport } from './routes/text-tools.case-converter'
 import { Route as TextToolsAiSummarizerRouteImport } from './routes/text-tools.ai-summarizer'
+import { Route as ImageToolsWatermarkRouteImport } from './routes/image-tools.watermark'
 import { Route as ImageToolsRotateRouteImport } from './routes/image-tools.rotate'
 import { Route as ImageToolsResizeRouteImport } from './routes/image-tools.resize'
+import { Route as ImageToolsQrCodeRouteImport } from './routes/image-tools.qr-code'
 import { Route as ImageToolsPngToJpgRouteImport } from './routes/image-tools.png-to-jpg'
 import { Route as ImageToolsJpgToPngRouteImport } from './routes/image-tools.jpg-to-png'
+import { Route as ImageToolsImageToPdfRouteImport } from './routes/image-tools.image-to-pdf'
 import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
 import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
@@ -115,6 +118,11 @@ const TextToolsAiSummarizerRoute = TextToolsAiSummarizerRouteImport.update({
   path: '/text-tools/ai-summarizer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageToolsWatermarkRoute = ImageToolsWatermarkRouteImport.update({
+  id: '/image-tools/watermark',
+  path: '/image-tools/watermark',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageToolsRotateRoute = ImageToolsRotateRouteImport.update({
   id: '/image-tools/rotate',
   path: '/image-tools/rotate',
@@ -125,6 +133,11 @@ const ImageToolsResizeRoute = ImageToolsResizeRouteImport.update({
   path: '/image-tools/resize',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageToolsQrCodeRoute = ImageToolsQrCodeRouteImport.update({
+  id: '/image-tools/qr-code',
+  path: '/image-tools/qr-code',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageToolsPngToJpgRoute = ImageToolsPngToJpgRouteImport.update({
   id: '/image-tools/png-to-jpg',
   path: '/image-tools/png-to-jpg',
@@ -133,6 +146,11 @@ const ImageToolsPngToJpgRoute = ImageToolsPngToJpgRouteImport.update({
 const ImageToolsJpgToPngRoute = ImageToolsJpgToPngRouteImport.update({
   id: '/image-tools/jpg-to-png',
   path: '/image-tools/jpg-to-png',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsImageToPdfRoute = ImageToolsImageToPdfRouteImport.update({
+  id: '/image-tools/image-to-pdf',
+  path: '/image-tools/image-to-pdf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageToolsCropRoute = ImageToolsCropRouteImport.update({
@@ -157,10 +175,13 @@ export interface FileRoutesByFullPath {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -182,10 +203,13 @@ export interface FileRoutesByTo {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -208,10 +232,13 @@ export interface FileRoutesById {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -235,10 +262,13 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
+    | '/image-tools/image-to-pdf'
     | '/image-tools/jpg-to-png'
     | '/image-tools/png-to-jpg'
+    | '/image-tools/qr-code'
     | '/image-tools/resize'
     | '/image-tools/rotate'
+    | '/image-tools/watermark'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -260,10 +290,13 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
+    | '/image-tools/image-to-pdf'
     | '/image-tools/jpg-to-png'
     | '/image-tools/png-to-jpg'
+    | '/image-tools/qr-code'
     | '/image-tools/resize'
     | '/image-tools/rotate'
+    | '/image-tools/watermark'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -285,10 +318,13 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
+    | '/image-tools/image-to-pdf'
     | '/image-tools/jpg-to-png'
     | '/image-tools/png-to-jpg'
+    | '/image-tools/qr-code'
     | '/image-tools/resize'
     | '/image-tools/rotate'
+    | '/image-tools/watermark'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -311,10 +347,13 @@ export interface RootRouteChildren {
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
   ImageToolsCompressRoute: typeof ImageToolsCompressRoute
   ImageToolsCropRoute: typeof ImageToolsCropRoute
+  ImageToolsImageToPdfRoute: typeof ImageToolsImageToPdfRoute
   ImageToolsJpgToPngRoute: typeof ImageToolsJpgToPngRoute
   ImageToolsPngToJpgRoute: typeof ImageToolsPngToJpgRoute
+  ImageToolsQrCodeRoute: typeof ImageToolsQrCodeRoute
   ImageToolsResizeRoute: typeof ImageToolsResizeRoute
   ImageToolsRotateRoute: typeof ImageToolsRotateRoute
+  ImageToolsWatermarkRoute: typeof ImageToolsWatermarkRoute
   TextToolsAiSummarizerRoute: typeof TextToolsAiSummarizerRoute
   TextToolsCaseConverterRoute: typeof TextToolsCaseConverterRoute
   TextToolsCharacterCounterRoute: typeof TextToolsCharacterCounterRoute
@@ -446,6 +485,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TextToolsAiSummarizerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-tools/watermark': {
+      id: '/image-tools/watermark'
+      path: '/image-tools/watermark'
+      fullPath: '/image-tools/watermark'
+      preLoaderRoute: typeof ImageToolsWatermarkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-tools/rotate': {
       id: '/image-tools/rotate'
       path: '/image-tools/rotate'
@@ -460,6 +506,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsResizeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-tools/qr-code': {
+      id: '/image-tools/qr-code'
+      path: '/image-tools/qr-code'
+      fullPath: '/image-tools/qr-code'
+      preLoaderRoute: typeof ImageToolsQrCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-tools/png-to-jpg': {
       id: '/image-tools/png-to-jpg'
       path: '/image-tools/png-to-jpg'
@@ -472,6 +525,13 @@ declare module '@tanstack/react-router' {
       path: '/image-tools/jpg-to-png'
       fullPath: '/image-tools/jpg-to-png'
       preLoaderRoute: typeof ImageToolsJpgToPngRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/image-to-pdf': {
+      id: '/image-tools/image-to-pdf'
+      path: '/image-tools/image-to-pdf'
+      fullPath: '/image-tools/image-to-pdf'
+      preLoaderRoute: typeof ImageToolsImageToPdfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-tools/crop': {
@@ -503,10 +563,13 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
   ImageToolsCompressRoute: ImageToolsCompressRoute,
   ImageToolsCropRoute: ImageToolsCropRoute,
+  ImageToolsImageToPdfRoute: ImageToolsImageToPdfRoute,
   ImageToolsJpgToPngRoute: ImageToolsJpgToPngRoute,
   ImageToolsPngToJpgRoute: ImageToolsPngToJpgRoute,
+  ImageToolsQrCodeRoute: ImageToolsQrCodeRoute,
   ImageToolsResizeRoute: ImageToolsResizeRoute,
   ImageToolsRotateRoute: ImageToolsRotateRoute,
+  ImageToolsWatermarkRoute: ImageToolsWatermarkRoute,
   TextToolsAiSummarizerRoute: TextToolsAiSummarizerRoute,
   TextToolsCaseConverterRoute: TextToolsCaseConverterRoute,
   TextToolsCharacterCounterRoute: TextToolsCharacterCounterRoute,
