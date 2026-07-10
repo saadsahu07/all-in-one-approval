@@ -1,0 +1,14 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { CategoryPage } from "@/components/category-page";
+
+export const Route = createFileRoute("/calculators/")({
+  head: () => ({
+    meta: [
+      { title: "Free Calculators & Converters — Age, BMI, EMI | ToolHarbor" },
+      { name: "description", content: "10 free calculators and converters: age, BMI, percentage, GST/VAT, EMI, currency, length, weight, temperature, and binary." },
+      { property: "og:title", content: "Free Calculators & Converters | ToolHarbor" },
+      { property: "og:description", content: "Everyday calculators and unit converters, free and instant." },
+    ],
+  }),
+  component: () => <CategoryPage slug="calculators" />,
+});

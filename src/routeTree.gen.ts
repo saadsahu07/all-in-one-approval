@@ -10,33 +10,326 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TextToolsIndexRouteImport } from './routes/text-tools.index'
+import { Route as PdfToolsIndexRouteImport } from './routes/pdf-tools.index'
+import { Route as ImageToolsIndexRouteImport } from './routes/image-tools.index'
+import { Route as DeveloperToolsIndexRouteImport } from './routes/developer-tools.index'
+import { Route as CalculatorsIndexRouteImport } from './routes/calculators.index'
+import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
+import { Route as TextToolsTextSorterRouteImport } from './routes/text-tools.text-sorter'
+import { Route as TextToolsTextReverserRouteImport } from './routes/text-tools.text-reverser'
+import { Route as TextToolsRemoveDuplicateLinesRouteImport } from './routes/text-tools.remove-duplicate-lines'
+import { Route as TextToolsParaphraserRouteImport } from './routes/text-tools.paraphraser'
+import { Route as TextToolsLoremIpsumRouteImport } from './routes/text-tools.lorem-ipsum'
+import { Route as TextToolsGrammarCheckerRouteImport } from './routes/text-tools.grammar-checker'
+import { Route as TextToolsCharacterCounterRouteImport } from './routes/text-tools.character-counter'
+import { Route as TextToolsCaseConverterRouteImport } from './routes/text-tools.case-converter'
+import { Route as TextToolsAiSummarizerRouteImport } from './routes/text-tools.ai-summarizer'
+import { Route as ImageToolsRotateRouteImport } from './routes/image-tools.rotate'
+import { Route as ImageToolsResizeRouteImport } from './routes/image-tools.resize'
+import { Route as ImageToolsPngToJpgRouteImport } from './routes/image-tools.png-to-jpg'
+import { Route as ImageToolsJpgToPngRouteImport } from './routes/image-tools.jpg-to-png'
+import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
+import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
+import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsIndexRoute = TextToolsIndexRouteImport.update({
+  id: '/text-tools/',
+  path: '/text-tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsIndexRoute = PdfToolsIndexRouteImport.update({
+  id: '/pdf-tools/',
+  path: '/pdf-tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsIndexRoute = ImageToolsIndexRouteImport.update({
+  id: '/image-tools/',
+  path: '/image-tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeveloperToolsIndexRoute = DeveloperToolsIndexRouteImport.update({
+  id: '/developer-tools/',
+  path: '/developer-tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsIndexRoute = CalculatorsIndexRouteImport.update({
+  id: '/calculators/',
+  path: '/calculators/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsWordCounterRoute = TextToolsWordCounterRouteImport.update({
+  id: '/text-tools/word-counter',
+  path: '/text-tools/word-counter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsTextSorterRoute = TextToolsTextSorterRouteImport.update({
+  id: '/text-tools/text-sorter',
+  path: '/text-tools/text-sorter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsTextReverserRoute = TextToolsTextReverserRouteImport.update({
+  id: '/text-tools/text-reverser',
+  path: '/text-tools/text-reverser',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsRemoveDuplicateLinesRoute =
+  TextToolsRemoveDuplicateLinesRouteImport.update({
+    id: '/text-tools/remove-duplicate-lines',
+    path: '/text-tools/remove-duplicate-lines',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TextToolsParaphraserRoute = TextToolsParaphraserRouteImport.update({
+  id: '/text-tools/paraphraser',
+  path: '/text-tools/paraphraser',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsLoremIpsumRoute = TextToolsLoremIpsumRouteImport.update({
+  id: '/text-tools/lorem-ipsum',
+  path: '/text-tools/lorem-ipsum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsGrammarCheckerRoute = TextToolsGrammarCheckerRouteImport.update({
+  id: '/text-tools/grammar-checker',
+  path: '/text-tools/grammar-checker',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsCharacterCounterRoute =
+  TextToolsCharacterCounterRouteImport.update({
+    id: '/text-tools/character-counter',
+    path: '/text-tools/character-counter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TextToolsCaseConverterRoute = TextToolsCaseConverterRouteImport.update({
+  id: '/text-tools/case-converter',
+  path: '/text-tools/case-converter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsAiSummarizerRoute = TextToolsAiSummarizerRouteImport.update({
+  id: '/text-tools/ai-summarizer',
+  path: '/text-tools/ai-summarizer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsRotateRoute = ImageToolsRotateRouteImport.update({
+  id: '/image-tools/rotate',
+  path: '/image-tools/rotate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsResizeRoute = ImageToolsResizeRouteImport.update({
+  id: '/image-tools/resize',
+  path: '/image-tools/resize',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsPngToJpgRoute = ImageToolsPngToJpgRouteImport.update({
+  id: '/image-tools/png-to-jpg',
+  path: '/image-tools/png-to-jpg',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsJpgToPngRoute = ImageToolsJpgToPngRouteImport.update({
+  id: '/image-tools/jpg-to-png',
+  path: '/image-tools/jpg-to-png',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsCropRoute = ImageToolsCropRouteImport.update({
+  id: '/image-tools/crop',
+  path: '/image-tools/crop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsCompressRoute = ImageToolsCompressRouteImport.update({
+  id: '/image-tools/compress',
+  path: '/image-tools/compress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsBackgroundRemoverRoute =
+  ImageToolsBackgroundRemoverRouteImport.update({
+    id: '/image-tools/background-remover',
+    path: '/image-tools/background-remover',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
+  '/image-tools/compress': typeof ImageToolsCompressRoute
+  '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
+  '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/resize': typeof ImageToolsResizeRoute
+  '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
+  '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
+  '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
+  '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
+  '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
+  '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
+  '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
+  '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/calculators/': typeof CalculatorsIndexRoute
+  '/developer-tools/': typeof DeveloperToolsIndexRoute
+  '/image-tools/': typeof ImageToolsIndexRoute
+  '/pdf-tools/': typeof PdfToolsIndexRoute
+  '/text-tools/': typeof TextToolsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
+  '/image-tools/compress': typeof ImageToolsCompressRoute
+  '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
+  '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/resize': typeof ImageToolsResizeRoute
+  '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
+  '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
+  '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
+  '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
+  '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
+  '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
+  '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
+  '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/calculators': typeof CalculatorsIndexRoute
+  '/developer-tools': typeof DeveloperToolsIndexRoute
+  '/image-tools': typeof ImageToolsIndexRoute
+  '/pdf-tools': typeof PdfToolsIndexRoute
+  '/text-tools': typeof TextToolsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
+  '/image-tools/compress': typeof ImageToolsCompressRoute
+  '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
+  '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/resize': typeof ImageToolsResizeRoute
+  '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
+  '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
+  '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
+  '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
+  '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
+  '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
+  '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
+  '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/calculators/': typeof CalculatorsIndexRoute
+  '/developer-tools/': typeof DeveloperToolsIndexRoute
+  '/image-tools/': typeof ImageToolsIndexRoute
+  '/pdf-tools/': typeof PdfToolsIndexRoute
+  '/text-tools/': typeof TextToolsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/image-tools/background-remover'
+    | '/image-tools/compress'
+    | '/image-tools/crop'
+    | '/image-tools/jpg-to-png'
+    | '/image-tools/png-to-jpg'
+    | '/image-tools/resize'
+    | '/image-tools/rotate'
+    | '/text-tools/ai-summarizer'
+    | '/text-tools/case-converter'
+    | '/text-tools/character-counter'
+    | '/text-tools/grammar-checker'
+    | '/text-tools/lorem-ipsum'
+    | '/text-tools/paraphraser'
+    | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/text-reverser'
+    | '/text-tools/text-sorter'
+    | '/text-tools/word-counter'
+    | '/calculators/'
+    | '/developer-tools/'
+    | '/image-tools/'
+    | '/pdf-tools/'
+    | '/text-tools/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/image-tools/background-remover'
+    | '/image-tools/compress'
+    | '/image-tools/crop'
+    | '/image-tools/jpg-to-png'
+    | '/image-tools/png-to-jpg'
+    | '/image-tools/resize'
+    | '/image-tools/rotate'
+    | '/text-tools/ai-summarizer'
+    | '/text-tools/case-converter'
+    | '/text-tools/character-counter'
+    | '/text-tools/grammar-checker'
+    | '/text-tools/lorem-ipsum'
+    | '/text-tools/paraphraser'
+    | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/text-reverser'
+    | '/text-tools/text-sorter'
+    | '/text-tools/word-counter'
+    | '/calculators'
+    | '/developer-tools'
+    | '/image-tools'
+    | '/pdf-tools'
+    | '/text-tools'
+  id:
+    | '__root__'
+    | '/'
+    | '/image-tools/background-remover'
+    | '/image-tools/compress'
+    | '/image-tools/crop'
+    | '/image-tools/jpg-to-png'
+    | '/image-tools/png-to-jpg'
+    | '/image-tools/resize'
+    | '/image-tools/rotate'
+    | '/text-tools/ai-summarizer'
+    | '/text-tools/case-converter'
+    | '/text-tools/character-counter'
+    | '/text-tools/grammar-checker'
+    | '/text-tools/lorem-ipsum'
+    | '/text-tools/paraphraser'
+    | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/text-reverser'
+    | '/text-tools/text-sorter'
+    | '/text-tools/word-counter'
+    | '/calculators/'
+    | '/developer-tools/'
+    | '/image-tools/'
+    | '/pdf-tools/'
+    | '/text-tools/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
+  ImageToolsCompressRoute: typeof ImageToolsCompressRoute
+  ImageToolsCropRoute: typeof ImageToolsCropRoute
+  ImageToolsJpgToPngRoute: typeof ImageToolsJpgToPngRoute
+  ImageToolsPngToJpgRoute: typeof ImageToolsPngToJpgRoute
+  ImageToolsResizeRoute: typeof ImageToolsResizeRoute
+  ImageToolsRotateRoute: typeof ImageToolsRotateRoute
+  TextToolsAiSummarizerRoute: typeof TextToolsAiSummarizerRoute
+  TextToolsCaseConverterRoute: typeof TextToolsCaseConverterRoute
+  TextToolsCharacterCounterRoute: typeof TextToolsCharacterCounterRoute
+  TextToolsGrammarCheckerRoute: typeof TextToolsGrammarCheckerRoute
+  TextToolsLoremIpsumRoute: typeof TextToolsLoremIpsumRoute
+  TextToolsParaphraserRoute: typeof TextToolsParaphraserRoute
+  TextToolsRemoveDuplicateLinesRoute: typeof TextToolsRemoveDuplicateLinesRoute
+  TextToolsTextReverserRoute: typeof TextToolsTextReverserRoute
+  TextToolsTextSorterRoute: typeof TextToolsTextSorterRoute
+  TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
+  CalculatorsIndexRoute: typeof CalculatorsIndexRoute
+  DeveloperToolsIndexRoute: typeof DeveloperToolsIndexRoute
+  ImageToolsIndexRoute: typeof ImageToolsIndexRoute
+  PdfToolsIndexRoute: typeof PdfToolsIndexRoute
+  TextToolsIndexRoute: typeof TextToolsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +341,188 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/text-tools/': {
+      id: '/text-tools/'
+      path: '/text-tools'
+      fullPath: '/text-tools/'
+      preLoaderRoute: typeof TextToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/': {
+      id: '/pdf-tools/'
+      path: '/pdf-tools'
+      fullPath: '/pdf-tools/'
+      preLoaderRoute: typeof PdfToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/': {
+      id: '/image-tools/'
+      path: '/image-tools'
+      fullPath: '/image-tools/'
+      preLoaderRoute: typeof ImageToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/': {
+      id: '/developer-tools/'
+      path: '/developer-tools'
+      fullPath: '/developer-tools/'
+      preLoaderRoute: typeof DeveloperToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/': {
+      id: '/calculators/'
+      path: '/calculators'
+      fullPath: '/calculators/'
+      preLoaderRoute: typeof CalculatorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/word-counter': {
+      id: '/text-tools/word-counter'
+      path: '/text-tools/word-counter'
+      fullPath: '/text-tools/word-counter'
+      preLoaderRoute: typeof TextToolsWordCounterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/text-sorter': {
+      id: '/text-tools/text-sorter'
+      path: '/text-tools/text-sorter'
+      fullPath: '/text-tools/text-sorter'
+      preLoaderRoute: typeof TextToolsTextSorterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/text-reverser': {
+      id: '/text-tools/text-reverser'
+      path: '/text-tools/text-reverser'
+      fullPath: '/text-tools/text-reverser'
+      preLoaderRoute: typeof TextToolsTextReverserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/remove-duplicate-lines': {
+      id: '/text-tools/remove-duplicate-lines'
+      path: '/text-tools/remove-duplicate-lines'
+      fullPath: '/text-tools/remove-duplicate-lines'
+      preLoaderRoute: typeof TextToolsRemoveDuplicateLinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/paraphraser': {
+      id: '/text-tools/paraphraser'
+      path: '/text-tools/paraphraser'
+      fullPath: '/text-tools/paraphraser'
+      preLoaderRoute: typeof TextToolsParaphraserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/lorem-ipsum': {
+      id: '/text-tools/lorem-ipsum'
+      path: '/text-tools/lorem-ipsum'
+      fullPath: '/text-tools/lorem-ipsum'
+      preLoaderRoute: typeof TextToolsLoremIpsumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/grammar-checker': {
+      id: '/text-tools/grammar-checker'
+      path: '/text-tools/grammar-checker'
+      fullPath: '/text-tools/grammar-checker'
+      preLoaderRoute: typeof TextToolsGrammarCheckerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/character-counter': {
+      id: '/text-tools/character-counter'
+      path: '/text-tools/character-counter'
+      fullPath: '/text-tools/character-counter'
+      preLoaderRoute: typeof TextToolsCharacterCounterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/case-converter': {
+      id: '/text-tools/case-converter'
+      path: '/text-tools/case-converter'
+      fullPath: '/text-tools/case-converter'
+      preLoaderRoute: typeof TextToolsCaseConverterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/ai-summarizer': {
+      id: '/text-tools/ai-summarizer'
+      path: '/text-tools/ai-summarizer'
+      fullPath: '/text-tools/ai-summarizer'
+      preLoaderRoute: typeof TextToolsAiSummarizerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/rotate': {
+      id: '/image-tools/rotate'
+      path: '/image-tools/rotate'
+      fullPath: '/image-tools/rotate'
+      preLoaderRoute: typeof ImageToolsRotateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/resize': {
+      id: '/image-tools/resize'
+      path: '/image-tools/resize'
+      fullPath: '/image-tools/resize'
+      preLoaderRoute: typeof ImageToolsResizeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/png-to-jpg': {
+      id: '/image-tools/png-to-jpg'
+      path: '/image-tools/png-to-jpg'
+      fullPath: '/image-tools/png-to-jpg'
+      preLoaderRoute: typeof ImageToolsPngToJpgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/jpg-to-png': {
+      id: '/image-tools/jpg-to-png'
+      path: '/image-tools/jpg-to-png'
+      fullPath: '/image-tools/jpg-to-png'
+      preLoaderRoute: typeof ImageToolsJpgToPngRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/crop': {
+      id: '/image-tools/crop'
+      path: '/image-tools/crop'
+      fullPath: '/image-tools/crop'
+      preLoaderRoute: typeof ImageToolsCropRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/compress': {
+      id: '/image-tools/compress'
+      path: '/image-tools/compress'
+      fullPath: '/image-tools/compress'
+      preLoaderRoute: typeof ImageToolsCompressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/background-remover': {
+      id: '/image-tools/background-remover'
+      path: '/image-tools/background-remover'
+      fullPath: '/image-tools/background-remover'
+      preLoaderRoute: typeof ImageToolsBackgroundRemoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
+  ImageToolsCompressRoute: ImageToolsCompressRoute,
+  ImageToolsCropRoute: ImageToolsCropRoute,
+  ImageToolsJpgToPngRoute: ImageToolsJpgToPngRoute,
+  ImageToolsPngToJpgRoute: ImageToolsPngToJpgRoute,
+  ImageToolsResizeRoute: ImageToolsResizeRoute,
+  ImageToolsRotateRoute: ImageToolsRotateRoute,
+  TextToolsAiSummarizerRoute: TextToolsAiSummarizerRoute,
+  TextToolsCaseConverterRoute: TextToolsCaseConverterRoute,
+  TextToolsCharacterCounterRoute: TextToolsCharacterCounterRoute,
+  TextToolsGrammarCheckerRoute: TextToolsGrammarCheckerRoute,
+  TextToolsLoremIpsumRoute: TextToolsLoremIpsumRoute,
+  TextToolsParaphraserRoute: TextToolsParaphraserRoute,
+  TextToolsRemoveDuplicateLinesRoute: TextToolsRemoveDuplicateLinesRoute,
+  TextToolsTextReverserRoute: TextToolsTextReverserRoute,
+  TextToolsTextSorterRoute: TextToolsTextSorterRoute,
+  TextToolsWordCounterRoute: TextToolsWordCounterRoute,
+  CalculatorsIndexRoute: CalculatorsIndexRoute,
+  DeveloperToolsIndexRoute: DeveloperToolsIndexRoute,
+  ImageToolsIndexRoute: ImageToolsIndexRoute,
+  PdfToolsIndexRoute: PdfToolsIndexRoute,
+  TextToolsIndexRoute: TextToolsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
