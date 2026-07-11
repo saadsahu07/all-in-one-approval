@@ -64,7 +64,9 @@ import { Route as DeveloperToolsHtmlMinifierRouteImport } from './routes/develop
 import { Route as DeveloperToolsCssMinifierRouteImport } from './routes/developer-tools.css-minifier'
 import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
 import { Route as DeveloperToolsBase64DecodeRouteImport } from './routes/developer-tools.base64-decode'
+import { Route as ContentCreationYoutubeTitleGeneratorRouteImport } from './routes/content-creation.youtube-title-generator'
 import { Route as ContentCreationYoutubeTagGeneratorRouteImport } from './routes/content-creation.youtube-tag-generator'
+import { Route as ContentCreationYoutubeDescriptionGeneratorRouteImport } from './routes/content-creation.youtube-description-generator'
 import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
 import { Route as CalculatorsPercentageRouteImport } from './routes/calculators.percentage'
@@ -363,10 +365,22 @@ const DeveloperToolsBase64DecodeRoute =
     path: '/developer-tools/base64-decode',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ContentCreationYoutubeTitleGeneratorRoute =
+  ContentCreationYoutubeTitleGeneratorRouteImport.update({
+    id: '/content-creation/youtube-title-generator',
+    path: '/content-creation/youtube-title-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContentCreationYoutubeTagGeneratorRoute =
   ContentCreationYoutubeTagGeneratorRouteImport.update({
     id: '/content-creation/youtube-tag-generator',
     path: '/content-creation/youtube-tag-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationYoutubeDescriptionGeneratorRoute =
+  ContentCreationYoutubeDescriptionGeneratorRouteImport.update({
+    id: '/content-creation/youtube-description-generator',
+    path: '/content-creation/youtube-description-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CalculatorsWeightRoute = CalculatorsWeightRouteImport.update({
@@ -447,7 +461,9 @@ export interface FileRoutesByFullPath {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
+  '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -516,7 +532,9 @@ export interface FileRoutesByTo {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
+  '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -586,7 +604,9 @@ export interface FileRoutesById {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
+  '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -657,7 +677,9 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/weight'
+    | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
+    | '/content-creation/youtube-title-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -726,7 +748,9 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/weight'
+    | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
+    | '/content-creation/youtube-title-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -795,7 +819,9 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/weight'
+    | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
+    | '/content-creation/youtube-title-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -865,7 +891,9 @@ export interface RootRouteChildren {
   CalculatorsPercentageRoute: typeof CalculatorsPercentageRoute
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
   CalculatorsWeightRoute: typeof CalculatorsWeightRoute
+  ContentCreationYoutubeDescriptionGeneratorRoute: typeof ContentCreationYoutubeDescriptionGeneratorRoute
   ContentCreationYoutubeTagGeneratorRoute: typeof ContentCreationYoutubeTagGeneratorRoute
+  ContentCreationYoutubeTitleGeneratorRoute: typeof ContentCreationYoutubeTitleGeneratorRoute
   DeveloperToolsBase64DecodeRoute: typeof DeveloperToolsBase64DecodeRoute
   DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
   DeveloperToolsCssMinifierRoute: typeof DeveloperToolsCssMinifierRoute
@@ -1302,11 +1330,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsBase64DecodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/content-creation/youtube-title-generator': {
+      id: '/content-creation/youtube-title-generator'
+      path: '/content-creation/youtube-title-generator'
+      fullPath: '/content-creation/youtube-title-generator'
+      preLoaderRoute: typeof ContentCreationYoutubeTitleGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/content-creation/youtube-tag-generator': {
       id: '/content-creation/youtube-tag-generator'
       path: '/content-creation/youtube-tag-generator'
       fullPath: '/content-creation/youtube-tag-generator'
       preLoaderRoute: typeof ContentCreationYoutubeTagGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/youtube-description-generator': {
+      id: '/content-creation/youtube-description-generator'
+      path: '/content-creation/youtube-description-generator'
+      fullPath: '/content-creation/youtube-description-generator'
+      preLoaderRoute: typeof ContentCreationYoutubeDescriptionGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators/weight': {
@@ -1409,8 +1451,12 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsPercentageRoute: CalculatorsPercentageRoute,
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
   CalculatorsWeightRoute: CalculatorsWeightRoute,
+  ContentCreationYoutubeDescriptionGeneratorRoute:
+    ContentCreationYoutubeDescriptionGeneratorRoute,
   ContentCreationYoutubeTagGeneratorRoute:
     ContentCreationYoutubeTagGeneratorRoute,
+  ContentCreationYoutubeTitleGeneratorRoute:
+    ContentCreationYoutubeTitleGeneratorRoute,
   DeveloperToolsBase64DecodeRoute: DeveloperToolsBase64DecodeRoute,
   DeveloperToolsBase64EncodeRoute: DeveloperToolsBase64EncodeRoute,
   DeveloperToolsCssMinifierRoute: DeveloperToolsCssMinifierRoute,
