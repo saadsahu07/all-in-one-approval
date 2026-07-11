@@ -86,6 +86,91 @@ export const generateYouTubeDescription = createServerFn({ method: "POST" })
     ),
   );
 
+export const generateYouTubeVideoIdeas = createServerFn({ method: "POST" })
+  .inputValidator((input: { niche: string; audience?: string }) => {
+    if (!input.niche?.trim()) throw new Error("Niche or keyword is required");
+    return {
+      niche: input.niche.slice(0, 300),
+      audience: (input.audience ?? "").slice(0, 200),
+    };
+  })
+  .handler(async ({ data }) =>
+    runTextTask(
+      "You are a YouTube channel strategist. Generate 10 fresh, high-potential video ideas for the given niche. Each idea must be an original video title (under 70 characters) followed on the next line by a one-sentence hook explaining the angle. Separate ideas with a blank line. Mix formats: tutorials, listicles, comparisons, myth-busting, behind-the-scenes, and reaction/opinion. No numbering, no preamble.",
+      `Niche/keyword: ${data.niche}${data.audience ? `\nAudience: ${data.audience}` : ""}`,
+    ),
+  );
+
+function extractVideoId(input: string): string | null {
+  const s = input.trim();
+  if (/^[a-zA-Z0-9_-]{11}$/.test(s)) return s;
+  const patterns = [
+    /[?&]v=([a-zA-Z0-9_-]{11})/,
+    /youtu\.be\/([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/(?:embed|shorts|live|v)\/([a-zA-Z0-9_-]{11})/,
+  ];
+  for (const re of patterns) {
+    const m = s.match(re);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+function decodeEntities(str: string): string {
+  return str
+    .replace(/&amp;/g, "&")
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
+}
+
+export const fetchYouTubeTranscript = createServerFn({ method: "POST" })
+  .inputValidator((input: { url: string }) => {
+    if (!input.url?.trim()) throw new Error("Video URL is required");
+    return { url: input.url.slice(0, 500) };
+  })
+  .handler(async ({ data }): Promise<{ videoId: string; title: string; transcript: string; error?: string }> => {
+    const videoId = extractVideoId(data.url);
+    if (!videoId) return { videoId: "", title: "", transcript: "", error: "Could not find a YouTube video ID in that URL." };
+    try {
+      const watchRes = await fetch(`https://www.youtube.com/watch?v=${videoId}&hl=en`, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+          "Accept-Language": "en-US,en;q=0.9",
+        },
+      });
+      if (!watchRes.ok) return { videoId, title: "", transcript: "", error: "Could not reach YouTube. Please try again." };
+      const html = await watchRes.text();
+      const titleMatch = html.match(/<title>([^<]*)<\/title>/);
+      const title = titleMatch ? decodeEntities(titleMatch[1].replace(/ - YouTube$/, "")).trim() : "";
+      const tracksMatch = html.match(/"captionTracks":(\[[^\]]+\])/);
+      if (!tracksMatch) {
+        return { videoId, title, transcript: "", error: "This video has no captions available." };
+      }
+      const tracks = JSON.parse(tracksMatch[1]) as { baseUrl: string; languageCode?: string; kind?: string }[];
+      const preferred =
+        tracks.find((t) => t.languageCode === "en" && !t.kind) ??
+        tracks.find((t) => t.languageCode === "en") ??
+        tracks[0];
+      if (!preferred?.baseUrl) return { videoId, title, transcript: "", error: "This video has no captions available." };
+      const capUrl = preferred.baseUrl.replace(/\\u0026/g, "&");
+      const capRes = await fetch(capUrl);
+      if (!capRes.ok) return { videoId, title, transcript: "", error: "Could not fetch captions." };
+      const xml = await capRes.text();
+      const lines = Array.from(xml.matchAll(/<text[^>]*>([\s\S]*?)<\/text>/g))
+        .map((m) => decodeEntities(m[1].replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim())
+        .filter(Boolean);
+      const transcript = lines.join(" ");
+      if (!transcript) return { videoId, title, transcript: "", error: "No text found in captions." };
+      return { videoId, title, transcript };
+    } catch (err) {
+      console.error("Transcript fetch failed:", err);
+      return { videoId, title: "", transcript: "", error: "Could not extract the transcript. Try another video." };
+    }
+  });
+
 export const removeBackground = createServerFn({ method: "POST" })
   .inputValidator((input: { dataUrl: string }) => {
     if (!input.dataUrl?.startsWith("data:image/")) throw new Error("A valid image is required");
