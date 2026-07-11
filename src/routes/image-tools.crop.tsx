@@ -71,7 +71,7 @@ function ImageCropper() {
         {error && <p className="text-sm text-destructive">{error}</p>}
         {file && orig && (
           <div className="space-y-4">
-            <img src={preview} alt="Original" className="max-h-64 rounded border border-border" />
+            <img src={preview} alt="Original image preview" className="max-h-64 rounded border border-border" />
             <p className="text-sm text-muted-foreground">Original: {orig.w} × {orig.h}px</p>
             <div className="grid max-w-md grid-cols-2 gap-3 sm:grid-cols-4">
               <div><Label>X</Label><Input type="number" min={0} max={orig.w - 1} value={x} onChange={(e) => setX(Number(e.target.value))} /></div>
