@@ -2,6 +2,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Wrench, Search } from "lucide-react";
 import { navCategories as categories } from "@/lib/nav";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -48,6 +49,9 @@ export function Header() {
             className="h-9 w-56 rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
           />
         </form>
+        <div className="ml-2 hidden md:block">
+          <ThemeToggle />
+        </div>
         <button
           className="ml-auto rounded-md p-2 text-foreground md:hidden"
           onClick={() => setOpen((v) => !v)}
