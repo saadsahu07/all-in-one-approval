@@ -21,6 +21,7 @@ import { Route as PdfToolsIndexRouteImport } from './routes/pdf-tools.index'
 import { Route as ImageToolsIndexRouteImport } from './routes/image-tools.index'
 import { Route as DeveloperToolsIndexRouteImport } from './routes/developer-tools.index'
 import { Route as CalculatorsIndexRouteImport } from './routes/calculators.index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
 import { Route as TextToolsTextSorterRouteImport } from './routes/text-tools.text-sorter'
 import { Route as TextToolsTextReverserRouteImport } from './routes/text-tools.text-reverser'
@@ -130,6 +131,11 @@ const DeveloperToolsIndexRoute = DeveloperToolsIndexRouteImport.update({
 const CalculatorsIndexRoute = CalculatorsIndexRouteImport.update({
   id: '/calculators/',
   path: '/calculators/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TextToolsWordCounterRoute = TextToolsWordCounterRouteImport.update({
@@ -454,6 +460,7 @@ export interface FileRoutesByFullPath {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
   '/image-tools/': typeof ImageToolsIndexRoute
@@ -518,6 +525,7 @@ export interface FileRoutesByTo {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/blog': typeof BlogIndexRoute
   '/calculators': typeof CalculatorsIndexRoute
   '/developer-tools': typeof DeveloperToolsIndexRoute
   '/image-tools': typeof ImageToolsIndexRoute
@@ -583,6 +591,7 @@ export interface FileRoutesById {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
   '/image-tools/': typeof ImageToolsIndexRoute
@@ -649,6 +658,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/blog/'
     | '/calculators/'
     | '/developer-tools/'
     | '/image-tools/'
@@ -713,6 +723,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/blog'
     | '/calculators'
     | '/developer-tools'
     | '/image-tools'
@@ -777,6 +788,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/blog/'
     | '/calculators/'
     | '/developer-tools/'
     | '/image-tools/'
@@ -842,6 +854,7 @@ export interface RootRouteChildren {
   TextToolsTextReverserRoute: typeof TextToolsTextReverserRoute
   TextToolsTextSorterRoute: typeof TextToolsTextSorterRoute
   TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   CalculatorsIndexRoute: typeof CalculatorsIndexRoute
   DeveloperToolsIndexRoute: typeof DeveloperToolsIndexRoute
   ImageToolsIndexRoute: typeof ImageToolsIndexRoute
@@ -933,6 +946,13 @@ declare module '@tanstack/react-router' {
       path: '/calculators'
       fullPath: '/calculators/'
       preLoaderRoute: typeof CalculatorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/word-counter': {
@@ -1346,6 +1366,7 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsTextReverserRoute: TextToolsTextReverserRoute,
   TextToolsTextSorterRoute: TextToolsTextSorterRoute,
   TextToolsWordCounterRoute: TextToolsWordCounterRoute,
+  BlogIndexRoute: BlogIndexRoute,
   CalculatorsIndexRoute: CalculatorsIndexRoute,
   DeveloperToolsIndexRoute: DeveloperToolsIndexRoute,
   ImageToolsIndexRoute: ImageToolsIndexRoute,
