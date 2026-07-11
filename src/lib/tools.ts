@@ -8,6 +8,7 @@ import {
   FileCode, KeyRound, CalendarDays, HeartPulse, Percent, Receipt, Landmark,
   Coins, Ruler, Weight, Thermometer, Calculator,
   PenLine, Image as ImageIcon, FileStack, TerminalSquare,
+  Youtube,
 } from "lucide-react";
 
 export interface ToolDef {
@@ -51,6 +52,7 @@ export const categories: CategoryDef[] = [
       ["text-sorter", "Text Sorter", "Sort lines alphabetically, reversed, or by length.", ArrowDownAZ],
       ["text-reverser", "Text Reverser", "Reverse text, words, or lines in one click.", FlipHorizontal2],
       ["lorem-ipsum", "Lorem Ipsum Generator", "Generate placeholder text for designs and mockups.", FileText],
+      ["youtube-tag-generator", "YouTube Tag Generator", "Generate SEO-optimized YouTube tags from a video title with AI.", Youtube],
     ]),
   },
   {
