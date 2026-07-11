@@ -35,6 +35,7 @@ import { Route as ImageToolsImageToPdfRouteImport } from './routes/image-tools.i
 import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
 import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
+import { Route as DeveloperToolsJsonValidatorRouteImport } from './routes/developer-tools.json-validator'
 import { Route as DeveloperToolsJsonFormatterRouteImport } from './routes/developer-tools.json-formatter'
 
 const IndexRoute = IndexRouteImport.update({
@@ -170,6 +171,12 @@ const ImageToolsBackgroundRemoverRoute =
     path: '/image-tools/background-remover',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsJsonValidatorRoute =
+  DeveloperToolsJsonValidatorRouteImport.update({
+    id: '/developer-tools/json-validator',
+    path: '/developer-tools/json-validator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsJsonFormatterRoute =
   DeveloperToolsJsonFormatterRouteImport.update({
     id: '/developer-tools/json-formatter',
@@ -180,6 +187,7 @@ const DeveloperToolsJsonFormatterRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
+  '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -209,6 +217,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
+  '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -239,6 +248,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
+  '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -270,6 +280,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/developer-tools/json-formatter'
+    | '/developer-tools/json-validator'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -299,6 +310,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/developer-tools/json-formatter'
+    | '/developer-tools/json-validator'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -328,6 +340,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/developer-tools/json-formatter'
+    | '/developer-tools/json-validator'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -358,6 +371,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DeveloperToolsJsonFormatterRoute: typeof DeveloperToolsJsonFormatterRoute
+  DeveloperToolsJsonValidatorRoute: typeof DeveloperToolsJsonValidatorRoute
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
   ImageToolsCompressRoute: typeof ImageToolsCompressRoute
   ImageToolsCropRoute: typeof ImageToolsCropRoute
@@ -569,6 +583,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsBackgroundRemoverRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/json-validator': {
+      id: '/developer-tools/json-validator'
+      path: '/developer-tools/json-validator'
+      fullPath: '/developer-tools/json-validator'
+      preLoaderRoute: typeof DeveloperToolsJsonValidatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/json-formatter': {
       id: '/developer-tools/json-formatter'
       path: '/developer-tools/json-formatter'
@@ -582,6 +603,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DeveloperToolsJsonFormatterRoute: DeveloperToolsJsonFormatterRoute,
+  DeveloperToolsJsonValidatorRoute: DeveloperToolsJsonValidatorRoute,
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
   ImageToolsCompressRoute: ImageToolsCompressRoute,
   ImageToolsCropRoute: ImageToolsCropRoute,
