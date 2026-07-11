@@ -65,7 +65,6 @@ import { Route as DeveloperToolsCssMinifierRouteImport } from './routes/develope
 import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
 import { Route as DeveloperToolsBase64DecodeRouteImport } from './routes/developer-tools.base64-decode'
 import { Route as ContentCreationYoutubeVideoIdeaGeneratorRouteImport } from './routes/content-creation.youtube-video-idea-generator'
-import { Route as ContentCreationYoutubeTranscriptExtractorRouteImport } from './routes/content-creation.youtube-transcript-extractor'
 import { Route as ContentCreationYoutubeTitleGeneratorRouteImport } from './routes/content-creation.youtube-title-generator'
 import { Route as ContentCreationYoutubeThumbnailDownloaderRouteImport } from './routes/content-creation.youtube-thumbnail-downloader'
 import { Route as ContentCreationYoutubeTagGeneratorRouteImport } from './routes/content-creation.youtube-tag-generator'
@@ -374,12 +373,6 @@ const ContentCreationYoutubeVideoIdeaGeneratorRoute =
     path: '/content-creation/youtube-video-idea-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ContentCreationYoutubeTranscriptExtractorRoute =
-  ContentCreationYoutubeTranscriptExtractorRouteImport.update({
-    id: '/content-creation/youtube-transcript-extractor',
-    path: '/content-creation/youtube-transcript-extractor',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ContentCreationYoutubeTitleGeneratorRoute =
   ContentCreationYoutubeTitleGeneratorRouteImport.update({
     id: '/content-creation/youtube-title-generator',
@@ -486,7 +479,6 @@ export interface FileRoutesByFullPath {
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
-  '/content-creation/youtube-transcript-extractor': typeof ContentCreationYoutubeTranscriptExtractorRoute
   '/content-creation/youtube-video-idea-generator': typeof ContentCreationYoutubeVideoIdeaGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
@@ -560,7 +552,6 @@ export interface FileRoutesByTo {
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
-  '/content-creation/youtube-transcript-extractor': typeof ContentCreationYoutubeTranscriptExtractorRoute
   '/content-creation/youtube-video-idea-generator': typeof ContentCreationYoutubeVideoIdeaGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
@@ -635,7 +626,6 @@ export interface FileRoutesById {
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
-  '/content-creation/youtube-transcript-extractor': typeof ContentCreationYoutubeTranscriptExtractorRoute
   '/content-creation/youtube-video-idea-generator': typeof ContentCreationYoutubeVideoIdeaGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
@@ -711,7 +701,6 @@ export interface FileRouteTypes {
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
-    | '/content-creation/youtube-transcript-extractor'
     | '/content-creation/youtube-video-idea-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
@@ -785,7 +774,6 @@ export interface FileRouteTypes {
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
-    | '/content-creation/youtube-transcript-extractor'
     | '/content-creation/youtube-video-idea-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
@@ -859,7 +847,6 @@ export interface FileRouteTypes {
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
-    | '/content-creation/youtube-transcript-extractor'
     | '/content-creation/youtube-video-idea-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
@@ -934,7 +921,6 @@ export interface RootRouteChildren {
   ContentCreationYoutubeTagGeneratorRoute: typeof ContentCreationYoutubeTagGeneratorRoute
   ContentCreationYoutubeThumbnailDownloaderRoute: typeof ContentCreationYoutubeThumbnailDownloaderRoute
   ContentCreationYoutubeTitleGeneratorRoute: typeof ContentCreationYoutubeTitleGeneratorRoute
-  ContentCreationYoutubeTranscriptExtractorRoute: typeof ContentCreationYoutubeTranscriptExtractorRoute
   ContentCreationYoutubeVideoIdeaGeneratorRoute: typeof ContentCreationYoutubeVideoIdeaGeneratorRoute
   DeveloperToolsBase64DecodeRoute: typeof DeveloperToolsBase64DecodeRoute
   DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
@@ -1379,13 +1365,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContentCreationYoutubeVideoIdeaGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/content-creation/youtube-transcript-extractor': {
-      id: '/content-creation/youtube-transcript-extractor'
-      path: '/content-creation/youtube-transcript-extractor'
-      fullPath: '/content-creation/youtube-transcript-extractor'
-      preLoaderRoute: typeof ContentCreationYoutubeTranscriptExtractorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/content-creation/youtube-title-generator': {
       id: '/content-creation/youtube-title-generator'
       path: '/content-creation/youtube-title-generator'
@@ -1522,8 +1501,6 @@ const rootRouteChildren: RootRouteChildren = {
     ContentCreationYoutubeThumbnailDownloaderRoute,
   ContentCreationYoutubeTitleGeneratorRoute:
     ContentCreationYoutubeTitleGeneratorRoute,
-  ContentCreationYoutubeTranscriptExtractorRoute:
-    ContentCreationYoutubeTranscriptExtractorRoute,
   ContentCreationYoutubeVideoIdeaGeneratorRoute:
     ContentCreationYoutubeVideoIdeaGeneratorRoute,
   DeveloperToolsBase64DecodeRoute: DeveloperToolsBase64DecodeRoute,
