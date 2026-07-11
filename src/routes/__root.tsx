@@ -127,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "ToolsHive",
           url: "https://all-in-one-approval.lovable.app",
-          logo: "https://all-in-one-approval.lovable.app/toolhive-logo.png",
+          logo: "https://all-in-one-approval.lovable.app/toolshive-logo.png",
         }),
       },
     ],

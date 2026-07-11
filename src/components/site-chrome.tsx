@@ -16,7 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src="/toolhive-logo.png" alt="ToolsHive" className="h-8 w-8 object-contain" />
+          <img src="/toolshive-logo.png" alt="ToolsHive" className="h-8 w-8 object-contain" />
           <span className="text-base font-semibold tracking-tight">ToolsHive</span>
         </Link>
         <nav className="ml-4 hidden items-center gap-1 lg:flex">
