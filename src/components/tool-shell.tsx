@@ -5,6 +5,7 @@ import { allTools, getCategory } from "@/lib/tools";
 import { postsMeta } from "@/lib/blog-meta";
 import { Button } from "@/components/ui-primitives";
 import { getToolSeo } from "@/lib/tool-seo";
+import { useAuth } from "@/hooks/use-auth";
 
 interface ToolShellProps {
   categorySlug: string;
@@ -18,6 +19,7 @@ interface ToolShellProps {
 export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note }: ToolShellProps) {
   const category = getCategory(categorySlug);
   const tool = category?.tools.find((t) => t.slug === toolSlug);
+  const { user, loading: authLoading } = useAuth();
   const related = (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4);
   const blogPost = tool ? postsMeta.find((p) => p.toolPath === tool.path) : undefined;
   const SITE = "https://all-in-one-approval.lovable.app";
@@ -120,6 +122,14 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
       )}
 
       <div className="mt-8">{children}</div>
+
+      {!authLoading && !user && (
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-dashed border-border bg-secondary/50 px-4 py-3 text-sm">
+          <span className="text-muted-foreground">
+            Optional: <Link to="/auth" className="font-medium text-foreground underline underline-offset-2 hover:text-accent">sign in</Link> to save your work across devices. Every tool works without an account.
+          </span>
+        </div>
+      )}
 
       {note && (
         <p className="mt-6 rounded-md border border-border bg-secondary px-4 py-3 text-sm text-secondary-foreground">

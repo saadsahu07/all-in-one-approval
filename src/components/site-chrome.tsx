@@ -1,17 +1,32 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Wrench, Search } from "lucide-react";
+import { Menu, X, Search, LogOut, UserCircle2 } from "lucide-react";
 import { navCategories as categories } from "@/lib/nav";
+import { useAuth } from "@/hooks/use-auth";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     navigate({ to: "/search", search: { q } });
     setOpen(false);
   };
+  const signOut = async () => {
+    setMenuOpen(false);
+    await supabase.auth.signOut();
+    toast.success("Signed out");
+    navigate({ to: "/" });
+  };
+  const displayName =
+    (user?.user_metadata?.display_name as string | undefined) ||
+    user?.email?.split("@")[0] ||
+    "";
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
@@ -48,6 +63,44 @@ export function Header() {
             className="h-9 w-56 rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
           />
         </form>
+        <div className="ml-2 hidden md:block">
+          {loading ? null : user ? (
+            <div className="relative">
+              <button
+                onClick={() => setMenuOpen((v) => !v)}
+                className="flex items-center gap-2 rounded-md border border-input bg-card px-3 py-1.5 text-sm font-medium text-foreground hover:bg-secondary"
+              >
+                <UserCircle2 className="h-4 w-4" />
+                <span className="max-w-[10rem] truncate">{displayName}</span>
+              </button>
+              {menuOpen && (
+                <div
+                  className="absolute right-0 mt-2 w-48 overflow-hidden rounded-md border border-border bg-card shadow-lg"
+                  onMouseLeave={() => setMenuOpen(false)}
+                >
+                  <div className="border-b border-border px-3 py-2 text-xs text-muted-foreground">
+                    Signed in as<br />
+                    <span className="truncate text-foreground">{user.email}</span>
+                  </div>
+                  <button
+                    onClick={signOut}
+                    className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-foreground hover:bg-secondary"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    Sign out
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link
+              to="/auth"
+              className="rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            >
+              Sign in
+            </Link>
+          )}
+        </div>
         <button
           className="ml-auto rounded-md p-2 text-foreground md:hidden"
           onClick={() => setOpen((v) => !v)}
@@ -78,6 +131,28 @@ export function Header() {
               {c.name}
             </Link>
           ))}
+          <div className="mt-2 border-t border-border pt-2">
+            {user ? (
+              <>
+                <p className="px-3 py-2 text-xs text-muted-foreground">Signed in as {user.email}</p>
+                <button
+                  onClick={() => { setOpen(false); void signOut(); }}
+                  className="flex w-full items-center gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium text-foreground hover:bg-secondary"
+                >
+                  <LogOut className="h-4 w-4" />
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/auth"
+                onClick={() => setOpen(false)}
+                className="block rounded-md bg-primary px-3 py-2.5 text-center text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              >
+                Sign in
+              </Link>
+            )}
+          </div>
         </nav>
       )}
     </header>
