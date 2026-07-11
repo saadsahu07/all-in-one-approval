@@ -91,7 +91,7 @@ export function Footer() {
         <div>
           <p className="font-serif text-lg font-bold">ToolHive</p>
           <p className="mt-2 text-sm opacity-80">
-            53 free online tools. Files are processed in your browser and never uploaded to our servers.
+            56 free online tools. Files are processed in your browser and never uploaded to our servers.
           </p>
         </div>
         <div>
