@@ -2,7 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
 import { z } from "zod";
 import { Search, X } from "lucide-react";
-import { posts } from "@/lib/blog";
+import { postsMeta as posts } from "@/lib/blog-meta";
 
 const searchSchema = z.object({
   q: fallback(z.string(), "").default(""),
