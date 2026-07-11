@@ -6,9 +6,10 @@
 @custom-variant light (&:is(.light *));
 
 @theme {
-  --font-serif: "Archivo Black", "Archivo", system-ui, sans-serif;
-  --font-sans: "Hind", system-ui, sans-serif;
-  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-serif: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --animate-page-in: page-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-rise-in: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-blur-in: blur-in 0.5s ease-out both;
@@ -90,31 +91,33 @@
 
 :root {
   --radius: 0.625rem;
-  /* Meca-inspired: deep teal surfaces, violet/purple accents, near-black canvas */
-  --background: oklch(0.16 0.02 220);
-  --foreground: oklch(0.97 0.005 250);
-  --card: oklch(0.22 0.03 220);
-  --card-foreground: oklch(0.97 0.005 250);
-  --popover: oklch(0.22 0.03 220);
-  --popover-foreground: oklch(0.97 0.005 250);
-  --primary: oklch(0.66 0.24 300);
-  --primary-foreground: oklch(0.99 0.005 300);
-  --secondary: oklch(0.28 0.03 220);
-  --secondary-foreground: oklch(0.97 0.005 250);
-  --muted: oklch(0.26 0.02 220);
-  --muted-foreground: oklch(0.75 0.02 240);
-  --accent: oklch(0.72 0.22 305);
-  --accent-foreground: oklch(0.15 0.02 260);
+  /* Midnight Indigo — professional AI product palette */
+  --background: oklch(0.14 0.03 265);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.19 0.035 265);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.19 0.035 265);
+  --popover-foreground: oklch(0.98 0.005 250);
+  --primary: oklch(0.62 0.22 275);
+  --primary-foreground: oklch(0.99 0.005 250);
+  --secondary: oklch(0.24 0.035 265);
+  --secondary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.22 0.03 265);
+  --muted-foreground: oklch(0.72 0.02 260);
+  --accent: oklch(0.7 0.19 265);
+  --accent-foreground: oklch(0.14 0.03 265);
   --destructive: oklch(0.62 0.24 25);
   --destructive-foreground: oklch(0.99 0.005 250);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.66 0.24 300);
-  --navy-deep: oklch(0.16 0.02 220);
-  --navy-mid: oklch(0.24 0.03 220);
-  --teal-bright: oklch(0.66 0.24 300);
-  --hero-gradient: linear-gradient(135deg, oklch(0.20 0.03 220), oklch(0.35 0.18 300));
-  --shadow-card: 0 1px 3px oklch(0 0 0 / 0.35), 0 12px 30px -12px oklch(0.35 0.18 300 / 0.35);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.62 0.22 275);
+  --navy-deep: oklch(0.11 0.03 265);
+  --navy-mid: oklch(0.19 0.035 265);
+  --teal-bright: oklch(0.62 0.22 275);
+  --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.32 0.18 275 / 0.55), transparent 70%), linear-gradient(180deg, oklch(0.16 0.03 265), oklch(0.12 0.03 265));
+  --grid-fade: radial-gradient(ellipse 60% 50% at 50% 40%, black 30%, transparent 75%);
+  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.4), 0 8px 24px -8px oklch(0.4 0.2 275 / 0.25);
+  --shadow-glow: 0 0 0 1px oklch(0.62 0.22 275 / 0.3), 0 8px 32px -8px oklch(0.62 0.22 275 / 0.45);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
