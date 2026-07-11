@@ -4,7 +4,12 @@ export const Route = createFileRoute("/disclaimer")({
   head: () => ({ meta: [
     { title: "Disclaimer — ToolHive" },
     { name: "description", content: "General disclaimer about the accuracy and use of ToolHive tools and content." },
-  ]}),
+    { property: "og:title", content: "Disclaimer — ToolHive" },
+    { property: "og:description", content: "General disclaimer about the accuracy and use of ToolHive tools and content." },
+    { property: "og:url", content: "https://all-in-one-approval.lovable.app/disclaimer" },
+  ],
+  links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/disclaimer" }],
+  }),
   component: DisclaimerPage,
 });
 

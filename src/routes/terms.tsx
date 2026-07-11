@@ -4,7 +4,12 @@ export const Route = createFileRoute("/terms")({
   head: () => ({ meta: [
     { title: "Terms of Service — ToolHive" },
     { name: "description", content: "Terms governing your use of the ToolHive website and tools." },
-  ]}),
+    { property: "og:title", content: "Terms of Service — ToolHive" },
+    { property: "og:description", content: "Terms governing your use of the ToolHive website and tools." },
+    { property: "og:url", content: "https://all-in-one-approval.lovable.app/terms" },
+  ],
+  links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/terms" }],
+  }),
   component: TermsPage,
 });
 
