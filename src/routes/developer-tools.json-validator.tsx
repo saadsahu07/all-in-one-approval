@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Button, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/json-validator")({
-  head: () => ({ meta: [{ title: "JSON Validator — ToolHarbor" }, { name: "description", content: "Check JSON syntax and see the exact error location." }] }),
+  head: () => ({ meta: [{ title: "JSON Validator — ToolHive" }, { name: "description", content: "Check JSON syntax and see the exact error location." }] }),
   component: Page,
 });
 

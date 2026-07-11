@@ -6,9 +6,9 @@ import { Textarea, Card } from "@/components/ui-primitives";
 export const Route = createFileRoute("/text-tools/word-counter")({
   head: () => ({
     meta: [
-      { title: "Word Counter — Count Words & Sentences Online | ToolHarbor" },
+      { title: "Word Counter — Count Words & Sentences Online | ToolHive" },
       { name: "description", content: "Count words, characters, sentences, paragraphs, and reading time instantly as you type. Free online word counter." },
-      { property: "og:title", content: "Word Counter | ToolHarbor" },
+      { property: "og:title", content: "Word Counter | ToolHive" },
       { property: "og:description", content: "Count words, sentences, and reading time instantly." },
     ],
   }),

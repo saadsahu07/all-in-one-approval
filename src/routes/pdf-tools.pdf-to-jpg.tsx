@@ -5,7 +5,7 @@ import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/pdf-to-jpg")({
-  head: () => ({ meta: [{ title: "PDF to JPG — ToolHarbor" }, { name: "description", content: "Render each page of a PDF as a JPG image." }] }),
+  head: () => ({ meta: [{ title: "PDF to JPG — ToolHive" }, { name: "description", content: "Render each page of a PDF as a JPG image." }] }),
   component: Page,
 });
 

@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/temperature")({
-  head: () => ({ meta: [{ title: "Temperature Converter — ToolHarbor" }, { name: "description", content: "Convert between Celsius, Fahrenheit, and Kelvin." }] }),
+  head: () => ({ meta: [{ title: "Temperature Converter — ToolHive" }, { name: "description", content: "Convert between Celsius, Fahrenheit, and Kelvin." }] }),
   component: Page,
 });
 

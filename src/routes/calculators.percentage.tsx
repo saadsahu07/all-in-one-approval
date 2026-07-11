@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Input, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/percentage")({
-  head: () => ({ meta: [{ title: "Percentage Calculator — ToolHarbor" }, { name: "description", content: "Solve common percentage problems fast." }] }),
+  head: () => ({ meta: [{ title: "Percentage Calculator — ToolHive" }, { name: "description", content: "Solve common percentage problems fast." }] }),
   component: Page,
 });
 

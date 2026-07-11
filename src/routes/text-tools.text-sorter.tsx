@@ -6,9 +6,9 @@ import { Button, Textarea } from "@/components/ui-primitives";
 export const Route = createFileRoute("/text-tools/text-sorter")({
   head: () => ({
     meta: [
-      { title: "Text Sorter — Sort Lines A-Z, Z-A, by Length | ToolHarbor" },
+      { title: "Text Sorter — Sort Lines A-Z, Z-A, by Length | ToolHive" },
       { name: "description", content: "Sort lines of text alphabetically, in reverse, by length, or shuffle them randomly. Free online line sorter." },
-      { property: "og:title", content: "Text Sorter | ToolHarbor" },
+      { property: "og:title", content: "Text Sorter | ToolHive" },
       { property: "og:description", content: "Sort lines alphabetically, reversed, by length, or randomly." },
     ],
   }),

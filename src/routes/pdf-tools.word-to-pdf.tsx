@@ -5,7 +5,7 @@ import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/word-to-pdf")({
-  head: () => ({ meta: [{ title: "Word to PDF — ToolHarbor" }, { name: "description", content: "Convert Word (.docx) documents to PDF in your browser." }] }),
+  head: () => ({ meta: [{ title: "Word to PDF — ToolHive" }, { name: "description", content: "Convert Word (.docx) documents to PDF in your browser." }] }),
   component: Page,
 });
 

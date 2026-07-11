@@ -6,7 +6,7 @@ import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/unlock")({
-  head: () => ({ meta: [{ title: "Unlock PDF — ToolHarbor" }, { name: "description", content: "Remove restrictions from PDFs you own." }] }),
+  head: () => ({ meta: [{ title: "Unlock PDF — ToolHive" }, { name: "description", content: "Remove restrictions from PDFs you own." }] }),
   component: Page,
 });
 

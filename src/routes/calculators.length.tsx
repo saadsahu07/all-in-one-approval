@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/length")({
-  head: () => ({ meta: [{ title: "Length Converter — ToolHarbor" }, { name: "description", content: "Convert lengths between metric and imperial units." }] }),
+  head: () => ({ meta: [{ title: "Length Converter — ToolHive" }, { name: "description", content: "Convert lengths between metric and imperial units." }] }),
   component: Page,
 });
 

@@ -8,9 +8,9 @@ import { loadImageFromFile, canvasToBlob } from "@/lib/image-utils";
 export const Route = createFileRoute("/image-tools/rotate")({
   head: () => ({
     meta: [
-      { title: "Image Rotator — Rotate & Flip Images Online | ToolHarbor" },
+      { title: "Image Rotator — Rotate & Flip Images Online | ToolHive" },
       { name: "description", content: "Rotate images by 90° steps or flip them horizontally and vertically. Free, in-browser, and private." },
-      { property: "og:title", content: "Image Rotator | ToolHarbor" },
+      { property: "og:title", content: "Image Rotator | ToolHive" },
       { property: "og:description", content: "Rotate or flip images in 90° steps, free and private." },
     ],
   }),

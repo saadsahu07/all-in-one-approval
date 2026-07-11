@@ -8,9 +8,9 @@ import { loadImageFromFile, drawToCanvas, canvasToBlob } from "@/lib/image-utils
 export const Route = createFileRoute("/image-tools/watermark")({
   head: () => ({
     meta: [
-      { title: "Watermark Adder — Add Text Watermarks | ToolHarbor" },
+      { title: "Watermark Adder — Add Text Watermarks | ToolHive" },
       { name: "description", content: "Add a text watermark to your images with custom position, size, and opacity. Free, in-browser, and private." },
-      { property: "og:title", content: "Watermark Adder | ToolHarbor" },
+      { property: "og:title", content: "Watermark Adder | ToolHive" },
       { property: "og:description", content: "Add a text watermark to protect your images." },
     ],
   }),

@@ -6,9 +6,9 @@ import { Textarea, Card } from "@/components/ui-primitives";
 export const Route = createFileRoute("/text-tools/character-counter")({
   head: () => ({
     meta: [
-      { title: "Character Counter — With & Without Spaces | ToolHarbor" },
+      { title: "Character Counter — With & Without Spaces | ToolHive" },
       { name: "description", content: "Count characters with and without spaces, plus lines and words. Perfect for tweets, meta descriptions, and SMS. Free online." },
-      { property: "og:title", content: "Character Counter | ToolHarbor" },
+      { property: "og:title", content: "Character Counter | ToolHive" },
       { property: "og:description", content: "Count characters with and without spaces instantly." },
     ],
   }),

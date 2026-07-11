@@ -6,9 +6,9 @@ import { Button, Input, Label, Select, Textarea } from "@/components/ui-primitiv
 export const Route = createFileRoute("/text-tools/lorem-ipsum")({
   head: () => ({
     meta: [
-      { title: "Lorem Ipsum Generator — Placeholder Text | ToolHarbor" },
+      { title: "Lorem Ipsum Generator — Placeholder Text | ToolHive" },
       { name: "description", content: "Generate lorem ipsum placeholder paragraphs, sentences, or words for designs and mockups. Free online generator." },
-      { property: "og:title", content: "Lorem Ipsum Generator | ToolHarbor" },
+      { property: "og:title", content: "Lorem Ipsum Generator | ToolHive" },
       { property: "og:description", content: "Generate placeholder text for designs and mockups." },
     ],
   }),

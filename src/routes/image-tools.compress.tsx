@@ -8,9 +8,9 @@ import { loadImageFromFile, drawToCanvas, canvasToBlob, formatBytes } from "@/li
 export const Route = createFileRoute("/image-tools/compress")({
   head: () => ({
     meta: [
-      { title: "Image Compressor — Reduce Image Size Online | ToolHarbor" },
+      { title: "Image Compressor — Reduce Image Size Online | ToolHive" },
       { name: "description", content: "Compress JPG, PNG, and WebP images in your browser. Adjust quality and download smaller files — nothing is uploaded." },
-      { property: "og:title", content: "Image Compressor | ToolHarbor" },
+      { property: "og:title", content: "Image Compressor | ToolHive" },
       { property: "og:description", content: "Shrink image file size while keeping quality, free and private." },
     ],
   }),

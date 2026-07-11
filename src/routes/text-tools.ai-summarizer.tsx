@@ -9,9 +9,9 @@ import { Button, Textarea, Select, Label } from "@/components/ui-primitives";
 export const Route = createFileRoute("/text-tools/ai-summarizer")({
   head: () => ({
     meta: [
-      { title: "AI Text Summarizer — Free Online | ToolHarbor" },
+      { title: "AI Text Summarizer — Free Online | ToolHive" },
       { name: "description", content: "Summarize long articles, essays, and documents into short, clear summaries with AI. Free and instant." },
-      { property: "og:title", content: "AI Text Summarizer | ToolHarbor" },
+      { property: "og:title", content: "AI Text Summarizer | ToolHive" },
       { property: "og:description", content: "Summarize long text into clear summaries with AI, free." },
     ],
   }),

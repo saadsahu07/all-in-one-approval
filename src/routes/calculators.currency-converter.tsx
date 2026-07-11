@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select, Button } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/currency-converter")({
-  head: () => ({ meta: [{ title: "Currency Converter — ToolHarbor" }, { name: "description", content: "Convert world currencies using live exchange rates." }] }),
+  head: () => ({ meta: [{ title: "Currency Converter — ToolHive" }, { name: "description", content: "Convert world currencies using live exchange rates." }] }),
   component: Page,
 });
 

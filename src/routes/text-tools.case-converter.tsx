@@ -6,9 +6,9 @@ import { Button, Textarea } from "@/components/ui-primitives";
 export const Route = createFileRoute("/text-tools/case-converter")({
   head: () => ({
     meta: [
-      { title: "Case Converter — UPPER, lower, Title Case | ToolHarbor" },
+      { title: "Case Converter — UPPER, lower, Title Case | ToolHive" },
       { name: "description", content: "Convert text between uppercase, lowercase, title case, sentence case, and alternating case. Free online case converter." },
-      { property: "og:title", content: "Case Converter | ToolHarbor" },
+      { property: "og:title", content: "Case Converter | ToolHive" },
       { property: "og:description", content: "Switch text between upper, lower, title, and sentence case." },
     ],
   }),

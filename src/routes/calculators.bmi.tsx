@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/bmi")({
-  head: () => ({ meta: [{ title: "BMI Calculator — ToolHarbor" }, { name: "description", content: "Calculate body mass index from height and weight." }] }),
+  head: () => ({ meta: [{ title: "BMI Calculator — ToolHive" }, { name: "description", content: "Calculate body mass index from height and weight." }] }),
   component: Page,
 });
 

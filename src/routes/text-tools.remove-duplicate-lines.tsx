@@ -6,9 +6,9 @@ import { Button, Textarea } from "@/components/ui-primitives";
 export const Route = createFileRoute("/text-tools/remove-duplicate-lines")({
   head: () => ({
     meta: [
-      { title: "Remove Duplicate Lines Online — Free Tool | ToolHarbor" },
+      { title: "Remove Duplicate Lines Online — Free Tool | ToolHive" },
       { name: "description", content: "Paste a list and remove duplicate lines instantly, with options for case sensitivity and trimming. Free online deduplication tool." },
-      { property: "og:title", content: "Remove Duplicate Lines | ToolHarbor" },
+      { property: "og:title", content: "Remove Duplicate Lines | ToolHive" },
       { property: "og:description", content: "Delete repeated lines from any list or text instantly." },
     ],
   }),

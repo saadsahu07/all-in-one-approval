@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Input, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/age")({
-  head: () => ({ meta: [{ title: "Age Calculator — ToolHarbor" }, { name: "description", content: "Calculate your exact age in years, months, and days." }] }),
+  head: () => ({ meta: [{ title: "Age Calculator — ToolHive" }, { name: "description", content: "Calculate your exact age in years, months, and days." }] }),
   component: Page,
 });
 

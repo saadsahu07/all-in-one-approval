@@ -8,9 +8,9 @@ import { loadImageFromFile, drawToCanvas, canvasToBlob } from "@/lib/image-utils
 export const Route = createFileRoute("/image-tools/resize")({
   head: () => ({
     meta: [
-      { title: "Image Resizer — Resize Images to Exact Pixels | ToolHarbor" },
+      { title: "Image Resizer — Resize Images to Exact Pixels | ToolHive" },
       { name: "description", content: "Resize images to exact pixel dimensions with optional aspect-ratio lock. Free, in-browser, and private." },
-      { property: "og:title", content: "Image Resizer | ToolHarbor" },
+      { property: "og:title", content: "Image Resizer | ToolHive" },
       { property: "og:description", content: "Resize images to exact pixel dimensions, free and private." },
     ],
   }),
