@@ -32,6 +32,13 @@ export function Header() {
               {c.name.replace(" & Converters", "")}
             </Link>
           ))}
+          <Link
+            to="/blog"
+            className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+            activeProps={{ className: "rounded-md px-3 py-2 text-sm font-medium bg-secondary text-foreground" }}
+          >
+            Blog
+          </Link>
         </nav>
         <form onSubmit={submit} className="relative ml-auto hidden md:block">
           <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />

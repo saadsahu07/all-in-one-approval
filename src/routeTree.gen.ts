@@ -72,6 +72,7 @@ import { Route as CalculatorsCurrencyConverterRouteImport } from './routes/calcu
 import { Route as CalculatorsBmiRouteImport } from './routes/calculators.bmi'
 import { Route as CalculatorsBinaryToDecimalRouteImport } from './routes/calculators.binary-to-decimal'
 import { Route as CalculatorsAgeRouteImport } from './routes/calculators.age'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -401,6 +402,11 @@ const CalculatorsAgeRoute = CalculatorsAgeRouteImport.update({
   path: '/calculators/age',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -410,6 +416,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
@@ -475,6 +482,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
@@ -541,6 +549,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
@@ -608,6 +617,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/search'
     | '/terms'
+    | '/blog/$slug'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
@@ -673,6 +683,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/search'
     | '/terms'
+    | '/blog/$slug'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
@@ -738,6 +749,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/search'
     | '/terms'
+    | '/blog/$slug'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
@@ -804,6 +816,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SearchRoute: typeof SearchRoute
   TermsRoute: typeof TermsRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   CalculatorsAgeRoute: typeof CalculatorsAgeRoute
   CalculatorsBinaryToDecimalRoute: typeof CalculatorsBinaryToDecimalRoute
   CalculatorsBmiRoute: typeof CalculatorsBmiRoute
@@ -1305,6 +1318,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsAgeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -1316,6 +1336,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SearchRoute: SearchRoute,
   TermsRoute: TermsRoute,
+  BlogSlugRoute: BlogSlugRoute,
   CalculatorsAgeRoute: CalculatorsAgeRoute,
   CalculatorsBinaryToDecimalRoute: CalculatorsBinaryToDecimalRoute,
   CalculatorsBmiRoute: CalculatorsBmiRoute,
