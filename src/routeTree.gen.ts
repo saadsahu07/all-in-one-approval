@@ -21,9 +21,9 @@ import { Route as TextToolsIndexRouteImport } from './routes/text-tools.index'
 import { Route as PdfToolsIndexRouteImport } from './routes/pdf-tools.index'
 import { Route as ImageToolsIndexRouteImport } from './routes/image-tools.index'
 import { Route as DeveloperToolsIndexRouteImport } from './routes/developer-tools.index'
+import { Route as ContentCreationIndexRouteImport } from './routes/content-creation.index'
 import { Route as CalculatorsIndexRouteImport } from './routes/calculators.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as TextToolsYoutubeTagGeneratorRouteImport } from './routes/text-tools.youtube-tag-generator'
 import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
 import { Route as TextToolsTextSorterRouteImport } from './routes/text-tools.text-sorter'
 import { Route as TextToolsTextReverserRouteImport } from './routes/text-tools.text-reverser'
@@ -64,6 +64,7 @@ import { Route as DeveloperToolsHtmlMinifierRouteImport } from './routes/develop
 import { Route as DeveloperToolsCssMinifierRouteImport } from './routes/developer-tools.css-minifier'
 import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
 import { Route as DeveloperToolsBase64DecodeRouteImport } from './routes/developer-tools.base64-decode'
+import { Route as ContentCreationYoutubeTagGeneratorRouteImport } from './routes/content-creation.youtube-tag-generator'
 import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
 import { Route as CalculatorsPercentageRouteImport } from './routes/calculators.percentage'
@@ -136,6 +137,11 @@ const DeveloperToolsIndexRoute = DeveloperToolsIndexRouteImport.update({
   path: '/developer-tools/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContentCreationIndexRoute = ContentCreationIndexRouteImport.update({
+  id: '/content-creation/',
+  path: '/content-creation/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsIndexRoute = CalculatorsIndexRouteImport.update({
   id: '/calculators/',
   path: '/calculators/',
@@ -146,12 +152,6 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TextToolsYoutubeTagGeneratorRoute =
-  TextToolsYoutubeTagGeneratorRouteImport.update({
-    id: '/text-tools/youtube-tag-generator',
-    path: '/text-tools/youtube-tag-generator',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const TextToolsWordCounterRoute = TextToolsWordCounterRouteImport.update({
   id: '/text-tools/word-counter',
   path: '/text-tools/word-counter',
@@ -363,6 +363,12 @@ const DeveloperToolsBase64DecodeRoute =
     path: '/developer-tools/base64-decode',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ContentCreationYoutubeTagGeneratorRoute =
+  ContentCreationYoutubeTagGeneratorRouteImport.update({
+    id: '/content-creation/youtube-tag-generator',
+    path: '/content-creation/youtube-tag-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CalculatorsWeightRoute = CalculatorsWeightRouteImport.update({
   id: '/calculators/weight',
   path: '/calculators/weight',
@@ -441,6 +447,7 @@ export interface FileRoutesByFullPath {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -481,9 +488,9 @@ export interface FileRoutesByFullPath {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
-  '/text-tools/youtube-tag-generator': typeof TextToolsYoutubeTagGeneratorRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
+  '/content-creation/': typeof ContentCreationIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
   '/image-tools/': typeof ImageToolsIndexRoute
   '/pdf-tools/': typeof PdfToolsIndexRoute
@@ -509,6 +516,7 @@ export interface FileRoutesByTo {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -549,9 +557,9 @@ export interface FileRoutesByTo {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
-  '/text-tools/youtube-tag-generator': typeof TextToolsYoutubeTagGeneratorRoute
   '/blog': typeof BlogIndexRoute
   '/calculators': typeof CalculatorsIndexRoute
+  '/content-creation': typeof ContentCreationIndexRoute
   '/developer-tools': typeof DeveloperToolsIndexRoute
   '/image-tools': typeof ImageToolsIndexRoute
   '/pdf-tools': typeof PdfToolsIndexRoute
@@ -578,6 +586,7 @@ export interface FileRoutesById {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -618,9 +627,9 @@ export interface FileRoutesById {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
-  '/text-tools/youtube-tag-generator': typeof TextToolsYoutubeTagGeneratorRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
+  '/content-creation/': typeof ContentCreationIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
   '/image-tools/': typeof ImageToolsIndexRoute
   '/pdf-tools/': typeof PdfToolsIndexRoute
@@ -648,6 +657,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/weight'
+    | '/content-creation/youtube-tag-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -688,9 +698,9 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
-    | '/text-tools/youtube-tag-generator'
     | '/blog/'
     | '/calculators/'
+    | '/content-creation/'
     | '/developer-tools/'
     | '/image-tools/'
     | '/pdf-tools/'
@@ -716,6 +726,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/weight'
+    | '/content-creation/youtube-tag-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -756,9 +767,9 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
-    | '/text-tools/youtube-tag-generator'
     | '/blog'
     | '/calculators'
+    | '/content-creation'
     | '/developer-tools'
     | '/image-tools'
     | '/pdf-tools'
@@ -784,6 +795,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/weight'
+    | '/content-creation/youtube-tag-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -824,9 +836,9 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
-    | '/text-tools/youtube-tag-generator'
     | '/blog/'
     | '/calculators/'
+    | '/content-creation/'
     | '/developer-tools/'
     | '/image-tools/'
     | '/pdf-tools/'
@@ -853,6 +865,7 @@ export interface RootRouteChildren {
   CalculatorsPercentageRoute: typeof CalculatorsPercentageRoute
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
   CalculatorsWeightRoute: typeof CalculatorsWeightRoute
+  ContentCreationYoutubeTagGeneratorRoute: typeof ContentCreationYoutubeTagGeneratorRoute
   DeveloperToolsBase64DecodeRoute: typeof DeveloperToolsBase64DecodeRoute
   DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
   DeveloperToolsCssMinifierRoute: typeof DeveloperToolsCssMinifierRoute
@@ -893,9 +906,9 @@ export interface RootRouteChildren {
   TextToolsTextReverserRoute: typeof TextToolsTextReverserRoute
   TextToolsTextSorterRoute: typeof TextToolsTextSorterRoute
   TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
-  TextToolsYoutubeTagGeneratorRoute: typeof TextToolsYoutubeTagGeneratorRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CalculatorsIndexRoute: typeof CalculatorsIndexRoute
+  ContentCreationIndexRoute: typeof ContentCreationIndexRoute
   DeveloperToolsIndexRoute: typeof DeveloperToolsIndexRoute
   ImageToolsIndexRoute: typeof ImageToolsIndexRoute
   PdfToolsIndexRoute: typeof PdfToolsIndexRoute
@@ -988,6 +1001,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/content-creation/': {
+      id: '/content-creation/'
+      path: '/content-creation'
+      fullPath: '/content-creation/'
+      preLoaderRoute: typeof ContentCreationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/': {
       id: '/calculators/'
       path: '/calculators'
@@ -1000,13 +1020,6 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/text-tools/youtube-tag-generator': {
-      id: '/text-tools/youtube-tag-generator'
-      path: '/text-tools/youtube-tag-generator'
-      fullPath: '/text-tools/youtube-tag-generator'
-      preLoaderRoute: typeof TextToolsYoutubeTagGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/word-counter': {
@@ -1289,6 +1302,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsBase64DecodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/content-creation/youtube-tag-generator': {
+      id: '/content-creation/youtube-tag-generator'
+      path: '/content-creation/youtube-tag-generator'
+      fullPath: '/content-creation/youtube-tag-generator'
+      preLoaderRoute: typeof ContentCreationYoutubeTagGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/weight': {
       id: '/calculators/weight'
       path: '/calculators/weight'
@@ -1389,6 +1409,8 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsPercentageRoute: CalculatorsPercentageRoute,
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
   CalculatorsWeightRoute: CalculatorsWeightRoute,
+  ContentCreationYoutubeTagGeneratorRoute:
+    ContentCreationYoutubeTagGeneratorRoute,
   DeveloperToolsBase64DecodeRoute: DeveloperToolsBase64DecodeRoute,
   DeveloperToolsBase64EncodeRoute: DeveloperToolsBase64EncodeRoute,
   DeveloperToolsCssMinifierRoute: DeveloperToolsCssMinifierRoute,
@@ -1429,9 +1451,9 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsTextReverserRoute: TextToolsTextReverserRoute,
   TextToolsTextSorterRoute: TextToolsTextSorterRoute,
   TextToolsWordCounterRoute: TextToolsWordCounterRoute,
-  TextToolsYoutubeTagGeneratorRoute: TextToolsYoutubeTagGeneratorRoute,
   BlogIndexRoute: BlogIndexRoute,
   CalculatorsIndexRoute: CalculatorsIndexRoute,
+  ContentCreationIndexRoute: ContentCreationIndexRoute,
   DeveloperToolsIndexRoute: DeveloperToolsIndexRoute,
   ImageToolsIndexRoute: ImageToolsIndexRoute,
   PdfToolsIndexRoute: PdfToolsIndexRoute,
