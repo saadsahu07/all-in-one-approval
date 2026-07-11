@@ -13,19 +13,19 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ params, loaderData }) => {
     const p = loaderData?.post;
-    if (!p) return { meta: [{ title: "Post not found — ToolHive Blog" }] };
+    if (!p) return { meta: [{ title: "Post not found — ToolsHive Blog" }] };
     const url = `/blog/${params.slug}`;
-    const fullTitle = `${p.title} — ToolHive Blog`;
+    const fullTitle = `${p.title} — ToolsHive Blog`;
     return {
       meta: [
         { title: fullTitle },
         { name: "description", content: p.excerpt },
-        { name: "keywords", content: `${p.category}, ${p.title}, free online tools, ToolHive` },
+        { name: "keywords", content: `${p.category}, ${p.title}, free online tools, ToolsHive` },
         { property: "og:title", content: fullTitle },
         { property: "og:description", content: p.excerpt },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
-        { property: "og:site_name", content: "ToolHive" },
+        { property: "og:site_name", content: "ToolsHive" },
         { property: "article:section", content: p.category },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: fullTitle },
@@ -43,8 +43,8 @@ export const Route = createFileRoute("/blog/$slug")({
             articleSection: p.category,
             timeRequired: `PT${p.readingMinutes}M`,
             mainEntityOfPage: url,
-            author: { "@type": "Organization", name: "ToolHive" },
-            publisher: { "@type": "Organization", name: "ToolHive" },
+            author: { "@type": "Organization", name: "ToolsHive" },
+            publisher: { "@type": "Organization", name: "ToolsHive" },
           }),
         },
         {

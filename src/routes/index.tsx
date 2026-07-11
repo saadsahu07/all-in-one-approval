@@ -5,9 +5,9 @@ import { categories, allTools } from "@/lib/tools";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ToolHive — 55 Free Online Tools for Text, Images, PDFs & Code" },
+      { title: "ToolsHive — 55 Free Online Tools for Text, Images, PDFs & Code" },
       { name: "description", content: "55 free online tools for text, images, PDFs, developers, calculators, and content creation. Fast, private, and processed in your browser." },
-      { property: "og:title", content: "ToolHive — 55 Free Online Tools" },
+      { property: "og:title", content: "ToolsHive — 55 Free Online Tools" },
       { property: "og:description", content: "55 free online tools for text, images, PDFs, developers, calculators, and content creation. Fast, private, and processed in your browser." },
       { property: "og:url", content: "https://all-in-one-approval.lovable.app/" },
     ],

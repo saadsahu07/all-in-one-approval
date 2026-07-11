@@ -16,8 +16,8 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src="/toolhive-logo.png" alt="ToolHive" className="h-8 w-8 object-contain" />
-          <span className="text-base font-semibold tracking-tight">ToolHive</span>
+          <img src="/toolhive-logo.png" alt="ToolsHive" className="h-8 w-8 object-contain" />
+          <span className="text-base font-semibold tracking-tight">ToolsHive</span>
         </Link>
         <nav className="ml-4 hidden items-center gap-1 lg:flex">
           {categories.map((c) => (
@@ -89,7 +89,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-border bg-navy-deep text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-serif text-lg font-bold">ToolHive</p>
+          <p className="font-serif text-lg font-bold">ToolsHive</p>
           <p className="mt-2 text-sm opacity-80">
             55 free online tools. Files are processed in your browser and never uploaded to our servers.
           </p>
@@ -121,7 +121,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-primary-foreground/10 py-4 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} ToolHive. All rights reserved.
+        © {new Date().getFullYear()} ToolsHive. All rights reserved.
       </div>
     </footer>
   );

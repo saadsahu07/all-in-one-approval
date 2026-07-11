@@ -10,7 +10,7 @@ const schema = z.object({ q: fallback(z.string(), "").default("") });
 export const Route = createFileRoute("/search")({
   validateSearch: zodValidator(schema),
   head: () => ({ meta: [
-    { title: "Search tools — ToolHive" },
+    { title: "Search tools — ToolsHive" },
     { name: "description", content: "Search 50 free online tools for text, images, PDFs, developers, and calculators." },
   ]}),
   component: SearchPage,
