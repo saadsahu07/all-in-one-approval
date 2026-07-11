@@ -38,6 +38,21 @@ export const paraphraseText = createServerFn({ method: "POST" })
     ),
   );
 
+export const generateYouTubeTags = createServerFn({ method: "POST" })
+  .inputValidator((input: { title: string; description?: string }) => {
+    if (!input.title?.trim()) throw new Error("Video title is required");
+    return {
+      title: input.title.slice(0, 300),
+      description: (input.description ?? "").slice(0, 2000),
+    };
+  })
+  .handler(async ({ data }) =>
+    runTextTask(
+      "You are a YouTube SEO expert. Given a video title (and optional description), generate 25-35 highly relevant, search-optimized YouTube tags. Mix short single-word tags, mid-tail 2-3 word tags, and long-tail phrases. Include common synonyms and related searches. Output ONLY a single comma-separated line of tags, no numbering, no quotes, no explanations.",
+      `Title: ${data.title}${data.description ? `\n\nDescription: ${data.description}` : ""}`,
+    ),
+  );
+
 export const removeBackground = createServerFn({ method: "POST" })
   .inputValidator((input: { dataUrl: string }) => {
     if (!input.dataUrl?.startsWith("data:image/")) throw new Error("A valid image is required");

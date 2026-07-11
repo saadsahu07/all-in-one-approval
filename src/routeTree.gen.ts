@@ -23,6 +23,7 @@ import { Route as ImageToolsIndexRouteImport } from './routes/image-tools.index'
 import { Route as DeveloperToolsIndexRouteImport } from './routes/developer-tools.index'
 import { Route as CalculatorsIndexRouteImport } from './routes/calculators.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as TextToolsYoutubeTagGeneratorRouteImport } from './routes/text-tools.youtube-tag-generator'
 import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
 import { Route as TextToolsTextSorterRouteImport } from './routes/text-tools.text-sorter'
 import { Route as TextToolsTextReverserRouteImport } from './routes/text-tools.text-reverser'
@@ -145,6 +146,12 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsYoutubeTagGeneratorRoute =
+  TextToolsYoutubeTagGeneratorRouteImport.update({
+    id: '/text-tools/youtube-tag-generator',
+    path: '/text-tools/youtube-tag-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TextToolsWordCounterRoute = TextToolsWordCounterRouteImport.update({
   id: '/text-tools/word-counter',
   path: '/text-tools/word-counter',
@@ -474,6 +481,7 @@ export interface FileRoutesByFullPath {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/text-tools/youtube-tag-generator': typeof TextToolsYoutubeTagGeneratorRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
@@ -541,6 +549,7 @@ export interface FileRoutesByTo {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/text-tools/youtube-tag-generator': typeof TextToolsYoutubeTagGeneratorRoute
   '/blog': typeof BlogIndexRoute
   '/calculators': typeof CalculatorsIndexRoute
   '/developer-tools': typeof DeveloperToolsIndexRoute
@@ -609,6 +618,7 @@ export interface FileRoutesById {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/text-tools/youtube-tag-generator': typeof TextToolsYoutubeTagGeneratorRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
@@ -678,6 +688,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/text-tools/youtube-tag-generator'
     | '/blog/'
     | '/calculators/'
     | '/developer-tools/'
@@ -745,6 +756,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/text-tools/youtube-tag-generator'
     | '/blog'
     | '/calculators'
     | '/developer-tools'
@@ -812,6 +824,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/text-tools/youtube-tag-generator'
     | '/blog/'
     | '/calculators/'
     | '/developer-tools/'
@@ -880,6 +893,7 @@ export interface RootRouteChildren {
   TextToolsTextReverserRoute: typeof TextToolsTextReverserRoute
   TextToolsTextSorterRoute: typeof TextToolsTextSorterRoute
   TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
+  TextToolsYoutubeTagGeneratorRoute: typeof TextToolsYoutubeTagGeneratorRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CalculatorsIndexRoute: typeof CalculatorsIndexRoute
   DeveloperToolsIndexRoute: typeof DeveloperToolsIndexRoute
@@ -986,6 +1000,13 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/youtube-tag-generator': {
+      id: '/text-tools/youtube-tag-generator'
+      path: '/text-tools/youtube-tag-generator'
+      fullPath: '/text-tools/youtube-tag-generator'
+      preLoaderRoute: typeof TextToolsYoutubeTagGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/word-counter': {
@@ -1408,6 +1429,7 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsTextReverserRoute: TextToolsTextReverserRoute,
   TextToolsTextSorterRoute: TextToolsTextSorterRoute,
   TextToolsWordCounterRoute: TextToolsWordCounterRoute,
+  TextToolsYoutubeTagGeneratorRoute: TextToolsYoutubeTagGeneratorRoute,
   BlogIndexRoute: BlogIndexRoute,
   CalculatorsIndexRoute: CalculatorsIndexRoute,
   DeveloperToolsIndexRoute: DeveloperToolsIndexRoute,
