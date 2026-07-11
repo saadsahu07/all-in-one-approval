@@ -39,18 +39,18 @@ function Index() {
           className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/3 rounded-full blur-3xl"
           style={{ background: "radial-gradient(circle, oklch(0.62 0.22 275 / 0.35), transparent 60%)" }}
         />
-        <div className="relative mx-auto max-w-6xl px-4 py-24 text-center sm:py-32">
+        <div className="relative mx-auto w-full max-w-6xl px-5 py-20 text-center sm:px-6 sm:py-32">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
             <span>AI-assisted · 55 tools · 100% in-browser</span>
           </div>
-          <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl">
+          <h1 className="mx-auto mt-6 max-w-4xl text-balance text-[clamp(2rem,9vw,4.5rem)] font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl">
             The intelligent toolkit for <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent">
               modern workflows
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
             Fifty precision-built utilities for text, images, PDFs, code, and calculations.
             No accounts. No uploads. Everything runs privately in your browser.
           </p>
@@ -70,7 +70,7 @@ function Index() {
               Read the blog
             </Link>
           </div>
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs uppercase tracking-[0.18em] text-muted-foreground/70">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground/70 sm:text-xs">
             <span>Text</span><span className="opacity-40">·</span>
             <span>Image</span><span className="opacity-40">·</span>
             <span>PDF</span><span className="opacity-40">·</span>
