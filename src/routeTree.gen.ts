@@ -35,6 +35,7 @@ import { Route as ImageToolsImageToPdfRouteImport } from './routes/image-tools.i
 import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
 import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
+import { Route as DeveloperToolsJsonFormatterRouteImport } from './routes/developer-tools.json-formatter'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -169,9 +170,16 @@ const ImageToolsBackgroundRemoverRoute =
     path: '/image-tools/background-remover',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsJsonFormatterRoute =
+  DeveloperToolsJsonFormatterRouteImport.update({
+    id: '/developer-tools/json-formatter',
+    path: '/developer-tools/json-formatter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -200,6 +208,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -229,6 +238,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -259,6 +269,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/developer-tools/json-formatter'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -287,6 +298,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/developer-tools/json-formatter'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -315,6 +327,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/developer-tools/json-formatter'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -344,6 +357,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DeveloperToolsJsonFormatterRoute: typeof DeveloperToolsJsonFormatterRoute
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
   ImageToolsCompressRoute: typeof ImageToolsCompressRoute
   ImageToolsCropRoute: typeof ImageToolsCropRoute
@@ -555,11 +569,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsBackgroundRemoverRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/json-formatter': {
+      id: '/developer-tools/json-formatter'
+      path: '/developer-tools/json-formatter'
+      fullPath: '/developer-tools/json-formatter'
+      preLoaderRoute: typeof DeveloperToolsJsonFormatterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DeveloperToolsJsonFormatterRoute: DeveloperToolsJsonFormatterRoute,
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
   ImageToolsCompressRoute: ImageToolsCompressRoute,
   ImageToolsCropRoute: ImageToolsCropRoute,
@@ -589,13 +611,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
