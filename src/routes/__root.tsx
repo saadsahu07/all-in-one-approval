@@ -15,7 +15,6 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer } from "../components/site-chrome";
 import { Toaster } from "../components/ui/sonner";
 import { PageLoader } from "../components/page-loader";
-import { supabase } from "../integrations/supabase/client";
 
 function NotFoundComponent() {
   return (
@@ -157,16 +156,6 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const router = useRouter();
-
-  useEffect(() => {
-    const { data: sub } = supabase.auth.onAuthStateChange((event) => {
-      if (event !== "SIGNED_IN" && event !== "SIGNED_OUT" && event !== "USER_UPDATED") return;
-      router.invalidate();
-      if (event !== "SIGNED_OUT") queryClient.invalidateQueries();
-    });
-    return () => sub.subscription.unsubscribe();
-  }, [router, queryClient]);
 
   return (
     <QueryClientProvider client={queryClient}>
