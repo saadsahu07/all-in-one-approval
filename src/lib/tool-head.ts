@@ -14,8 +14,8 @@ export function toolHead(categorySlug: string, toolSlug: string) {
   const url = `${SITE}${path}`;
   const seo = getToolSeo(path);
 
-  const title = seo?.title ?? `${tool?.name ?? toolSlug} | ToolHive`;
-  const description = seo?.metaDescription ?? tool?.short ?? "Free online tool from ToolHive.";
+  const title = seo?.title ?? `${tool?.name ?? toolSlug} | ToolsHive`;
+  const description = seo?.metaDescription ?? tool?.short ?? "Free online tool from ToolsHive.";
 
   return {
     meta: [

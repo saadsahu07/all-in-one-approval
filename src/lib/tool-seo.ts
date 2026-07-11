@@ -31,7 +31,7 @@ export const toolSeo: Record<string, ToolSeo> = {
       { q: "How does the YouTube tag generator work?", a: "It uses AI to analyze your video title (and optional description) and produce tags matching how viewers actually search on YouTube — a mix of broad keywords, related terms, and long-tail phrases." },
       { q: "How many YouTube tags should I use?", a: "YouTube allows up to 500 characters of tags per video. Aim for 15–30 relevant tags. Prioritize accuracy — irrelevant tags can hurt your ranking." },
       { q: "Is this tool really free?", a: "Yes. The YouTube tag generator is 100% free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/content-creation/youtube-title-generator": {
@@ -52,7 +52,7 @@ export const toolSeo: Record<string, ToolSeo> = {
       { q: "What makes a good YouTube title?", a: "A good title is under 70 characters, includes the main keyword near the start, sparks curiosity or promises a clear benefit, and matches the actual video content." },
       { q: "How many titles will I get?", a: "Ten titles per generation. Re-run the tool as many times as you like to get fresh variations." },
       { q: "Is this tool really free?", a: "Yes. The YouTube title generator is 100% free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/content-creation/youtube-description-generator": {
@@ -73,7 +73,7 @@ export const toolSeo: Record<string, ToolSeo> = {
       { q: "How long should a YouTube description be?", a: "YouTube allows up to 5,000 characters, but 500–1,500 characters is the sweet spot: enough for SEO context without overwhelming viewers." },
       { q: "Do YouTube descriptions really affect SEO?", a: "Yes. YouTube uses your description (especially the first 150 characters) to understand your video's topic and rank it in search and suggested videos." },
       { q: "Is this tool really free?", a: "Yes. The YouTube description generator is 100% free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/content-creation/youtube-thumbnail-downloader": {
@@ -94,7 +94,7 @@ export const toolSeo: Record<string, ToolSeo> = {
       { q: "Is downloading YouTube thumbnails legal?", a: "Thumbnails are served publicly by YouTube for embedding and preview. Using them for personal reference, reviews, or commentary is generally fine. Republishing someone else's thumbnail as your own may infringe copyright — always credit the source." },
       { q: "Why is the maxres thumbnail missing?", a: "Not every video has a maxres (1280×720) version — YouTube only generates it for videos uploaded above 1280×720. In that case, use the HQ (480×360) thumbnail instead." },
       { q: "Is this tool really free?", a: "Yes. The YouTube thumbnail downloader is 100% free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/content-creation/youtube-video-idea-generator": {
@@ -115,7 +115,7 @@ export const toolSeo: Record<string, ToolSeo> = {
       { q: "Are the video ideas original?", a: "Yes — each generation produces fresh combinations. Re-run the tool for a completely different batch whenever you need more." },
       { q: "Will these ideas actually get views?", a: "Ideas are only step one — filming, thumbnail, and audience fit matter most. Use the ideas as starting points and validate against your existing analytics." },
       { q: "Is this tool really free?", a: "Yes. The YouTube video idea generator is 100% free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/ai-summarizer": {
@@ -134,8 +134,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is the AI summarizer really free?", a: "Yes. The summarizer is 100% free with no signup, no watermark, and no daily quota for typical use." },
       { q: "What kind of text works best?", a: "Any English prose: articles, essays, blog posts, research papers, meeting notes, or transcripts. For very long content, split it into 3–5 page chunks for the sharpest summary." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/grammar-checker": {
@@ -154,8 +154,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Do I need to install anything?", a: "No. The grammar checker runs in your browser — no download, no Word plugin, no signup." },
       { q: "Does it replace a human editor?", a: "No tool does, but it catches the great majority of typos and mechanical errors so a human reviewer can focus on style and substance." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/paraphraser": {
@@ -174,8 +174,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is the paraphrased text unique?", a: "Yes — the rewriter produces fresh phrasing. Always proofread for accuracy before publishing." },
       { q: "Will it fool plagiarism detectors?", a: "The intent of this tool is rewriting for clarity or tone, not evading detection. Always credit sources when using someone else's ideas." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/word-counter": {
@@ -194,8 +194,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Does the word counter work offline?", a: "Yes. Once the page loads, counting happens entirely in your browser — no internet connection required." },
       { q: "How accurate is the reading time?", a: "Reading time uses an average of ~230 words per minute, which matches typical adult silent reading speed for prose." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/character-counter": {
@@ -214,8 +214,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Does it count spaces?", a: "It shows both counts side by side — with spaces and without — so you always know what you're at." },
       { q: "Are emoji counted correctly?", a: "Yes. Emoji and multi-byte characters are counted as one character each, matching how most social platforms count them." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/case-converter": {
@@ -234,8 +234,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "What is the difference between title case and sentence case?", a: "Title case capitalizes the first letter of each major word (My New Article). Sentence case only capitalizes the first word and proper nouns (My new article)." },
       { q: "Does it work for long text?", a: "Yes. It handles any length instantly since conversion happens in your browser." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/remove-duplicate-lines": {
@@ -254,8 +254,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is order preserved?", a: "Yes. The first occurrence of each unique line is kept in its original position." },
       { q: "Is this safe for sensitive data?", a: "Yes. Deduplication happens entirely in your browser — the text never leaves your device." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/text-sorter": {
@@ -274,8 +274,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Can I sort numbers?", a: "Numeric lines sort numerically when the whole line parses as a number; otherwise sorting is lexical." },
       { q: "Is my data private?", a: "Yes. All sorting happens in your browser — nothing is uploaded or logged." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/text-reverser": {
@@ -294,8 +294,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Will it break emoji?", a: "The reverser is unicode-aware and keeps multi-byte characters like emoji intact." },
       { q: "Can I un-reverse text?", a: "Yes — running the reverse operation a second time on the output restores the original text." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/text-tools/lorem-ipsum": {
@@ -314,8 +314,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is lorem ipsum real Latin?", a: "It's a scrambled excerpt of a 1st-century BC Latin text by Cicero. It looks like Latin but doesn't mean anything coherent — that's the point." },
       { q: "Why use placeholder text instead of real copy?", a: "Placeholder text lets viewers focus on layout and typography without being distracted by content — the standard practice in design mockups." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/compress": {
@@ -334,8 +334,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How much smaller will my image be?", a: "Typical savings range from 40% to 80% depending on the source. Photos compress more than screenshots or graphics with flat color." },
       { q: "Do you upload my images anywhere?", a: "No. Compression happens entirely in your browser — the original and compressed files never leave your device." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/resize": {
@@ -354,8 +354,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Will resizing reduce quality?", a: "Upscaling makes images blurry. Downscaling to a smaller size is safe and often improves file size dramatically." },
       { q: "Which formats are supported?", a: "JPG, PNG, and WebP. Output matches the input format." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/jpg-to-png": {
@@ -374,8 +374,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Will the file size get bigger?", a: "Usually yes. PNG is lossless, so expect a larger file — that's the tradeoff for higher fidelity." },
       { q: "Does JPG to PNG add transparency?", a: "No — JPG has no transparency data, so the PNG will have a solid background. Use a background remover to add transparency." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/png-to-jpg": {
@@ -394,8 +394,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Will I lose quality?", a: "JPG uses lossy compression, so there is some quality loss — usually invisible at the default quality setting." },
       { q: "What happens to transparency?", a: "JPG doesn't support transparency, so transparent areas of the PNG are filled with white in the output." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/crop": {
@@ -414,8 +414,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Which aspect ratios are supported?", a: "Freeform, 1:1, 4:3, 16:9, and 4:5 are one-click options. You can also drag any custom rectangle." },
       { q: "Does cropping reduce quality?", a: "No — cropping just removes pixels outside the selection. The kept area retains its original quality." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/background-remover": {
@@ -434,8 +434,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is the background remover really free?", a: "Yes. You can remove backgrounds without a signup or watermark." },
       { q: "What image sizes work best?", a: "Uploads up to 5 MB. High-contrast subjects with even lighting give the cleanest cutouts." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/rotate": {
@@ -454,8 +454,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Will rotation reduce quality?", a: "Rotations of 90°, 180°, and 270° are lossless. Arbitrary-angle rotations aren't supported here to keep quality perfect." },
       { q: "Which formats are supported?", a: "JPG, PNG, and WebP. Output matches the input format." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/image-to-pdf": {
@@ -474,8 +474,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is there a file limit?", a: "No hard limit, but very large PDFs may take longer to generate. Compression is applied to keep files reasonable." },
       { q: "Are my images uploaded?", a: "No — the PDF is built entirely in your browser and your images never leave your device." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/watermark": {
@@ -494,8 +494,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Can I use my logo as a watermark?", a: "The current tool supports text watermarks. For logo watermarks, save your logo as a PNG and use it as an image overlay in a photo editor." },
       { q: "Will the watermark be permanent?", a: "Yes. The watermark is baked into the exported image and cannot be removed with standard tools." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/image-tools/qr-code": {
@@ -514,8 +514,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Do the QR codes expire?", a: "No. All codes are static and will work forever — there is no server dependency." },
       { q: "Are the QR codes trackable?", a: "No. Since codes are generated locally and encode the data directly, there is no tracking or redirect layer." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/merge": {
@@ -534,8 +534,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is there a file limit?", a: "No hard limit, but very large merges may take longer. Total size depends on your device's memory." },
       { q: "Are my PDFs private?", a: "Yes. Merging happens entirely in your browser — nothing is uploaded to a server." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/split": {
@@ -554,8 +554,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Can I split into more than one file?", a: "Yes — repeat the extraction with different page ranges to produce multiple PDFs." },
       { q: "Is my PDF uploaded anywhere?", a: "No. Splitting happens entirely in your browser." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/compress": {
@@ -574,8 +574,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How much smaller will my PDF be?", a: "Savings depend heavily on the source. Image-heavy PDFs shrink the most; text-only PDFs are usually already small." },
       { q: "Will text remain searchable?", a: "Yes. Text layers are preserved so the PDF remains searchable and copyable." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/pdf-to-word": {
@@ -594,8 +594,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Does it work on scanned PDFs?", a: "This tool extracts existing text layers. Scanned PDFs need OCR before extraction and may return no text." },
       { q: "Will the layout be perfect?", a: "Basic paragraph structure is preserved, but complex layouts (multi-column, tables) may need light cleanup in Word." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/word-to-pdf": {
@@ -614,8 +614,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Which Word versions are supported?", a: "Modern .docx files created in Word 2007+ or Google Docs export." },
       { q: "Are my documents private?", a: "Yes. Conversion happens entirely in your browser — documents never leave your device." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/pdf-to-jpg": {
@@ -634,8 +634,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "What resolution are the JPGs?", a: "The default rendering is 150 DPI — high enough for on-screen sharing. Higher DPI produces sharper images but larger files." },
       { q: "Is my PDF uploaded?", a: "No. All rendering happens in your browser." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/jpg-to-pdf": {
@@ -654,8 +654,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Can I mix JPG and PNG?", a: "Yes. Both formats work and can be combined in the same PDF." },
       { q: "Is there a page limit?", a: "No hard limit — very large documents just take longer to generate." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/rotate": {
@@ -674,8 +674,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Can I rotate individual pages?", a: "This tool rotates every page uniformly. For per-page control, split the PDF first and merge again after rotating." },
       { q: "Is text quality preserved?", a: "Yes. Rotation is lossless and text layers stay searchable." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/unlock": {
@@ -694,8 +694,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Does it remove open passwords?", a: "No. This tool clears restriction (owner) passwords only. PDFs that require a password to open cannot be unlocked without it." },
       { q: "Is this legal?", a: "You may only remove restrictions from PDFs you own or have permission to modify. Don't use this on files you don't have rights to." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/pdf-tools/page-numbers": {
@@ -714,8 +714,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Can I start numbering from a specific page?", a: "Yes. Set the start page and starting number to skip cover pages or a table of contents." },
       { q: "Is the numbering easy to remove later?", a: "The numbers are baked into the PDF. Keep an unnumbered copy if you might need to change the numbering later." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/json-formatter": {
@@ -734,8 +734,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is my JSON sent anywhere?", a: "No. Formatting and validation happen entirely in your browser." },
       { q: "Does it support huge JSON files?", a: "It handles files into the tens of megabytes. Extremely large files may briefly freeze the tab while parsing." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/json-validator": {
@@ -754,8 +754,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Does it validate against a schema?", a: "This tool checks JSON syntax only. Schema validation (JSON Schema) is a separate step best done in code." },
       { q: "Is my JSON private?", a: "Yes. Validation happens entirely in your browser." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/base64-encode": {
@@ -774,8 +774,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Is Base64 secure encryption?", a: "No. Base64 is an encoding, not encryption — anyone can decode it. Use it for transport, not secrecy." },
       { q: "Does it handle unicode?", a: "Yes. Multi-byte characters like emoji and non-Latin scripts are encoded correctly." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/base64-decode": {
@@ -794,8 +794,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Can it decode a JWT?", a: "Copy the middle segment of a JWT (between the dots) and this tool decodes it into the JSON payload." },
       { q: "What happens with invalid input?", a: "Invalid Base64 is flagged with an error so you can fix the input." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/url-encode": {
@@ -814,8 +814,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "What is URL encoding?", a: "It's the process of replacing unsafe characters (like spaces or &) with % escape sequences so they're valid inside a URL." },
       { q: "Does it encode the whole URL?", a: "No — encode only the component (query value, path segment) that contains special characters. Encoding the whole URL breaks its structure." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/url-decode": {
@@ -834,8 +834,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "What is a percent-encoded URL?", a: "A URL where special characters have been replaced with % escape sequences (e.g. %20 for a space) so the URL is safe to transmit." },
       { q: "Can I decode a URL that was encoded multiple times?", a: "Yes — run the decoder repeatedly until the output stops changing." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/html-minifier": {
@@ -854,8 +854,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Will it break my page?", a: "Standards-compliant HTML minifies safely. Malformed HTML that relies on whitespace may need manual review." },
       { q: "How much smaller will the output be?", a: "Typical savings range from 15% to 40% depending on how much whitespace and how many comments the source had." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/css-minifier": {
@@ -874,8 +874,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Will it break my styles?", a: "Standard CSS minifies safely. Non-standard hacks may need manual review." },
       { q: "How much smaller will the output be?", a: "Typical savings range from 20% to 50% before gzip." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/js-minifier": {
@@ -894,8 +894,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Does it mangle variable names?", a: "No. This is a conservative minifier that keeps variable names intact. For aggressive minification and mangling, use a build-step tool like Terser." },
       { q: "Is my code private?", a: "Yes. Minification happens entirely in your browser." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/developer-tools/password-generator": {
@@ -914,8 +914,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "Are the passwords truly random?", a: "Yes. Generation uses your browser's built-in cryptographically secure random API — the same source real security libraries use." },
       { q: "Do you store or log passwords?", a: "No. Passwords are generated in your browser and never leave your device." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/age": {
@@ -934,8 +934,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How is the age calculated?", a: "The calculator computes the difference between today and your date of birth using calendar-accurate year and month lengths." },
       { q: "Is my date of birth stored?", a: "No. The calculation happens entirely in your browser." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/bmi": {
@@ -954,8 +954,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "What is a healthy BMI?", a: "The WHO defines healthy adult BMI as 18.5 to 24.9. Anything outside is worth discussing with a doctor." },
       { q: "Is BMI accurate for everyone?", a: "BMI is a rough population measure. It can misclassify athletes with high muscle mass and doesn't account for body composition. Use it as a starting point, not a verdict." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/percentage": {
@@ -974,8 +974,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How do I calculate a discount?", a: "For a 20% off $50 item: 20% of 50 = $10 off, final price $40. Use the 'X% of Y' mode." },
       { q: "How is percent change calculated?", a: "Percent change = ((new − old) / old) × 100. A negative result means a decrease." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/gst-vat": {
@@ -994,8 +994,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "What's the difference between GST and VAT?", a: "GST (Goods and Services Tax) and VAT (Value Added Tax) work the same way — a consumption tax added at each stage. The name just varies by country." },
       { q: "Can I use it for any country's rate?", a: "Yes. Enter the rate that applies to your country (e.g. 20% UK VAT, 10% Australian GST, 18% Indian GST)." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/emi": {
@@ -1014,8 +1014,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "What is EMI?", a: "EMI stands for Equated Monthly Installment — the fixed monthly payment that covers both principal and interest until the loan is fully repaid." },
       { q: "How is EMI calculated?", a: "Using the standard formula: EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is principal, r is monthly interest rate, and n is number of months." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/currency-converter": {
@@ -1034,8 +1034,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How current are the exchange rates?", a: "Rates refresh daily from a public rate source. For live-market trading rates, use a professional platform." },
       { q: "Are there any fees?", a: "No — this is a reference converter and does not process transactions or charge fees." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/length": {
@@ -1054,8 +1054,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How accurate are the conversions?", a: "Conversions use exact factors (e.g. 1 inch = 25.4 mm) and are precise to the decimal you choose to display." },
       { q: "Can I convert historic units?", a: "The converter covers modern SI and imperial units. For obscure historic units, check a dedicated reference." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/weight": {
@@ -1074,8 +1074,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How many pounds in a kilogram?", a: "One kilogram equals about 2.2046 pounds. This tool uses the exact factor." },
       { q: "Is this for weight or mass?", a: "In everyday use, weight and mass are treated the same. This converter uses mass units and the standard g / lb definitions." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/temperature": {
@@ -1094,8 +1094,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How do I convert Celsius to Fahrenheit?", a: "Fahrenheit = (Celsius × 9/5) + 32. This tool does it automatically." },
       { q: "What is absolute zero?", a: "Absolute zero is 0 Kelvin, which equals −273.15°C or −459.67°F — the theoretical lowest possible temperature." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
   "/calculators/binary-to-decimal": {
@@ -1114,8 +1114,8 @@ export const toolSeo: Record<string, ToolSeo> = {
     faqs: [
       { q: "How do I convert binary to decimal by hand?", a: "Each binary digit represents a power of 2. Multiply each digit by its place value (from right: 1, 2, 4, 8, ...) and sum the results." },
       { q: "Is there a size limit?", a: "The tool handles very large numbers using arbitrary-precision arithmetic — well beyond what a 32- or 64-bit register can hold." },
-      { q: "Is this tool really free?", a: "Yes. Every ToolHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
-      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
   },
 };

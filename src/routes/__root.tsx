@@ -80,13 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ToolHive — 50 Free Online Tools" },
+      { title: "ToolsHive — 50 Free Online Tools" },
       { name: "description", content: "Free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
-      { name: "author", content: "ToolHive" },
-      { property: "og:title", content: "ToolHive — 50 Free Online Tools" },
+      { name: "author", content: "ToolsHive" },
+      { property: "og:title", content: "ToolsHive — 50 Free Online Tools" },
       { property: "og:description", content: "Free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "ToolHive" },
+      { property: "og:site_name", content: "ToolsHive" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#7c3aed" },
     ],
@@ -109,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "ToolHive",
+          name: "ToolsHive",
           url: "https://all-in-one-approval.lovable.app",
           description:
             "50+ free online tools for text, images, PDFs, developers, and everyday calculations — no signup, works in your browser.",
@@ -125,9 +125,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "ToolHive",
+          name: "ToolsHive",
           url: "https://all-in-one-approval.lovable.app",
-          logo: "https://all-in-one-approval.lovable.app/toolhive-logo.png",
+          logo: "https://all-in-one-approval.lovable.app/toolshive-logo.png",
         }),
       },
     ],

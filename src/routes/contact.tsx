@@ -7,10 +7,10 @@ import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({ meta: [
-    { title: "Contact ToolHive — Feedback & Complaints" },
-    { name: "description", content: "Send feedback, report a bug, or file a complaint. The ToolHive team replies within 2 business days." },
-    { property: "og:title", content: "Contact ToolHive" },
-    { property: "og:description", content: "Feedback, complaints, and support requests for ToolHive's free online tools." },
+    { title: "Contact ToolsHive — Feedback & Complaints" },
+    { name: "description", content: "Send feedback, report a bug, or file a complaint. The ToolsHive team replies within 2 business days." },
+    { property: "og:title", content: "Contact ToolsHive" },
+    { property: "og:description", content: "Feedback, complaints, and support requests for ToolsHive's free online tools." },
     { property: "og:url", content: "https://all-in-one-approval.lovable.app/contact" },
   ],
   links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/contact" }],

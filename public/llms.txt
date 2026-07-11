@@ -1,13 +1,13 @@
-# ToolHive
+# ToolsHive
 
 > 55+ free online tools for text, images, PDFs, developers, calculators, and content creators — fast, private, and processed in your browser.
 
-ToolHive is a free web app that bundles everyday utilities — text tools, image converters, PDF editors, developer helpers, calculators, and YouTube content-creation helpers — into one site. Most tools run entirely client-side; a few use a hosted AI gateway for generation tasks.
+ToolsHive is a free web app that bundles everyday utilities — text tools, image converters, PDF editors, developer helpers, calculators, and YouTube content-creation helpers — into one site. Most tools run entirely client-side; a few use a hosted AI gateway for generation tasks.
 
 ## Pages
 
 - [Home](/): Directory of all tool categories.
-- [About](/about): What ToolHive is and how it works.
+- [About](/about): What ToolsHive is and how it works.
 - [Contact](/contact): Feedback, complaints, and bug reports.
 - [Search](/search): Search across every tool.
 - [Blog](/blog): Guides and articles about the tools.

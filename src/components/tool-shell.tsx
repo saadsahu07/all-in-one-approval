@@ -37,7 +37,7 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
           browserRequirements: "Requires JavaScript. Requires HTML5.",
           isAccessibleForFree: true,
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          publisher: { "@type": "Organization", name: "ToolHive", url: SITE },
+          publisher: { "@type": "Organization", name: "ToolsHive", url: SITE },
         },
         {
           "@context": "https://schema.org",
