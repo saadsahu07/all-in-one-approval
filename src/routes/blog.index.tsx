@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
 import { z } from "zod";
 import { Search, X } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { postsMeta as posts } from "@/lib/blog-meta";
 
 const searchSchema = z.object({
@@ -23,27 +24,51 @@ export const Route = createFileRoute("/blog/")({
 });
 
 const ALL_CATEGORIES = Array.from(new Set(posts.map((p) => p.category)));
+const PAGE_SIZE = 8;
 
 function BlogIndex() {
   const { q, category } = Route.useSearch();
   const navigate = useNavigate({ from: "/blog" });
   const query = q.trim().toLowerCase();
 
-  const filtered = posts.filter((p) => {
-    if (category && p.category !== category) return false;
-    if (!query) return true;
-    return (
-      p.title.toLowerCase().includes(query) ||
-      p.excerpt.toLowerCase().includes(query) ||
-      p.category.toLowerCase().includes(query) ||
-      p.slug.toLowerCase().includes(query)
-    );
-  });
+  const filtered = useMemo(
+    () =>
+      posts.filter((p) => {
+        if (category && p.category !== category) return false;
+        if (!query) return true;
+        return (
+          p.title.toLowerCase().includes(query) ||
+          p.excerpt.toLowerCase().includes(query) ||
+          p.category.toLowerCase().includes(query) ||
+          p.slug.toLowerCase().includes(query)
+        );
+      }),
+    [query, category],
+  );
 
-  const byCategory = filtered.reduce<Record<string, typeof posts>>((acc, p) => {
-    (acc[p.category] ||= []).push(p);
-    return acc;
-  }, {});
+  const [visible, setVisible] = useState(PAGE_SIZE);
+  useEffect(() => {
+    setVisible(PAGE_SIZE);
+  }, [query, category]);
+
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (visible >= filtered.length) return;
+    const el = sentinelRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setVisible((v) => Math.min(v + PAGE_SIZE, filtered.length));
+        }
+      },
+      { rootMargin: "400px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [visible, filtered.length]);
+
+  const shown = filtered.slice(0, visible);
 
   const setQ = (value: string) => navigate({ search: { q: value, category } });
   const setCategory = (value: string) => navigate({ search: { q, category: value } });
@@ -125,9 +150,9 @@ function BlogIndex() {
         </div>
 
         <p className="text-sm text-muted-foreground">
-          {filtered.length === posts.length
-            ? `Showing all ${posts.length} guides`
-            : `Showing ${filtered.length} of ${posts.length} guides`}
+          {filtered.length === 0
+            ? `No guides`
+            : `Showing ${Math.min(visible, filtered.length)} of ${filtered.length} guide${filtered.length === 1 ? "" : "s"}`}
         </p>
       </div>
 
@@ -145,25 +170,40 @@ function BlogIndex() {
         </div>
       )}
 
-      {Object.entries(byCategory).map(([cat, items]) => (
-        <section key={cat} className="mb-12">
-          <h2 className="mb-4 font-serif text-2xl font-bold">{cat}</h2>
+      {filtered.length > 0 && (
+        <>
           <div className="grid gap-4 sm:grid-cols-2">
-            {items.map((p) => (
+            {shown.map((p) => (
               <Link
                 key={p.slug}
                 to="/blog/$slug"
                 params={{ slug: p.slug }}
                 className="group rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/50 hover:bg-secondary/50"
               >
-                <h3 className="font-serif text-lg font-semibold group-hover:text-primary">{p.title}</h3>
+                <p className="text-xs font-medium uppercase tracking-wide text-primary">{p.category}</p>
+                <h3 className="mt-1 font-serif text-lg font-semibold group-hover:text-primary">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
                 <p className="mt-3 text-xs text-muted-foreground">{p.readingMinutes} min read</p>
               </Link>
             ))}
           </div>
-        </section>
-      ))}
+          {visible < filtered.length ? (
+            <div ref={sentinelRef} className="mt-8 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setVisible((v) => Math.min(v + PAGE_SIZE, filtered.length))}
+                className="rounded-md border border-border bg-card px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground"
+              >
+                Load more ({filtered.length - visible} left)
+              </button>
+            </div>
+          ) : (
+            filtered.length > PAGE_SIZE && (
+              <p className="mt-8 text-center text-sm text-muted-foreground">You've reached the end.</p>
+            )
+          )}
+        </>
+      )}
     </div>
   );
 }
