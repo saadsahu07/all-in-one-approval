@@ -126,51 +126,6 @@ function decodeEntities(str: string): string {
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
 }
 
-export const fetchYouTubeTranscript = createServerFn({ method: "POST" })
-  .inputValidator((input: { url: string }) => {
-    if (!input.url?.trim()) throw new Error("Video URL is required");
-    return { url: input.url.slice(0, 500) };
-  })
-  .handler(async ({ data }): Promise<{ videoId: string; title: string; transcript: string; error?: string }> => {
-    const videoId = extractVideoId(data.url);
-    if (!videoId) return { videoId: "", title: "", transcript: "", error: "Could not find a YouTube video ID in that URL." };
-    try {
-      const watchRes = await fetch(`https://www.youtube.com/watch?v=${videoId}&hl=en`, {
-        headers: {
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
-          "Accept-Language": "en-US,en;q=0.9",
-        },
-      });
-      if (!watchRes.ok) return { videoId, title: "", transcript: "", error: "Could not reach YouTube. Please try again." };
-      const html = await watchRes.text();
-      const titleMatch = html.match(/<title>([^<]*)<\/title>/);
-      const title = titleMatch ? decodeEntities(titleMatch[1].replace(/ - YouTube$/, "")).trim() : "";
-      const tracksMatch = html.match(/"captionTracks":(\[[^\]]+\])/);
-      if (!tracksMatch) {
-        return { videoId, title, transcript: "", error: "This video has no captions available." };
-      }
-      const tracks = JSON.parse(tracksMatch[1]) as { baseUrl: string; languageCode?: string; kind?: string }[];
-      const preferred =
-        tracks.find((t) => t.languageCode === "en" && !t.kind) ??
-        tracks.find((t) => t.languageCode === "en") ??
-        tracks[0];
-      if (!preferred?.baseUrl) return { videoId, title, transcript: "", error: "This video has no captions available." };
-      const capUrl = preferred.baseUrl.replace(/\\u0026/g, "&");
-      const capRes = await fetch(capUrl);
-      if (!capRes.ok) return { videoId, title, transcript: "", error: "Could not fetch captions." };
-      const xml = await capRes.text();
-      const lines = Array.from(xml.matchAll(/<text[^>]*>([\s\S]*?)<\/text>/g))
-        .map((m) => decodeEntities(m[1].replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim())
-        .filter(Boolean);
-      const transcript = lines.join(" ");
-      if (!transcript) return { videoId, title, transcript: "", error: "No text found in captions." };
-      return { videoId, title, transcript };
-    } catch (err) {
-      console.error("Transcript fetch failed:", err);
-      return { videoId, title: "", transcript: "", error: "Could not extract the transcript. Try another video." };
-    }
-  });
-
 export const removeBackground = createServerFn({ method: "POST" })
   .inputValidator((input: { dataUrl: string }) => {
     if (!input.dataUrl?.startsWith("data:image/")) throw new Error("A valid image is required");
