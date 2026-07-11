@@ -4,6 +4,7 @@ import { ChevronRight, Copy, Check, BookOpen } from "lucide-react";
 import { allTools, getCategory } from "@/lib/tools";
 import { postsMeta } from "@/lib/blog-meta";
 import { Button } from "@/components/ui-primitives";
+import { getToolSeo } from "@/lib/tool-seo";
 
 interface ToolShellProps {
   categorySlug: string;
@@ -21,13 +22,15 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
   const blogPost = tool ? postsMeta.find((p) => p.toolPath === tool.path) : undefined;
   const SITE = "https://all-in-one-approval.lovable.app";
   const toolUrl = tool ? `${SITE}${tool.path}` : undefined;
+  const seo = tool ? getToolSeo(tool.path) : undefined;
+  const displayIntro = seo?.intro?.[0] ?? intro;
   const jsonLd = tool && category
     ? [
         {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
           name: tool.name,
-          description: intro,
+          description: seo?.metaDescription ?? intro,
           url: toolUrl,
           applicationCategory: "UtilitiesApplication",
           operatingSystem: "Any (web browser)",
@@ -51,6 +54,19 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
           name: `How to use the ${tool.name}`,
           step: howTo.map((s, i) => ({ "@type": "HowToStep", position: i + 1, text: s })),
         },
+        ...(seo?.faqs?.length
+          ? [
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: seo.faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              },
+            ]
+          : []),
       ]
     : null;
 
@@ -76,7 +92,21 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
       </nav>
 
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{tool?.name ?? toolSlug}</h1>
-      <p className="mt-3 max-w-2xl text-muted-foreground">{intro}</p>
+      <p className="mt-3 max-w-2xl text-muted-foreground">{displayIntro}</p>
+      {seo?.intro?.[1] && (
+        <p className="mt-3 max-w-2xl text-muted-foreground">{seo.intro[1]}</p>
+      )}
+
+      {seo?.features && seo.features.length > 0 && (
+        <ul className="mt-5 grid max-w-2xl gap-2 sm:grid-cols-2">
+          {seo.features.map((f, i) => (
+            <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+      )}
 
       {blogPost && (
         <Link
@@ -110,6 +140,23 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
           ))}
         </ol>
       </section>
+
+      {seo?.faqs && seo.faqs.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xl font-bold">Frequently asked questions</h2>
+          <div className="mt-4 divide-y divide-border rounded-lg border border-border bg-card">
+            {seo.faqs.map((f, i) => (
+              <details key={i} className="group px-4 py-3">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 text-sm font-medium text-foreground">
+                  <span>{f.q}</span>
+                  <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-90" />
+                </summary>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="mt-12">
