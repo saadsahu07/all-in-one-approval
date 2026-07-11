@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer } from "../components/site-chrome";
 import { Toaster } from "../components/ui/sonner";
+import { PageLoader } from "../components/page-loader";
 
 function NotFoundComponent() {
   return (
@@ -168,6 +169,7 @@ function RootComponent() {
         </main>
         <Footer />
         <Toaster />
+        <PageLoader />
       </div>
     </QueryClientProvider>
   );
