@@ -21,6 +21,7 @@ import { Route as PdfToolsIndexRouteImport } from './routes/pdf-tools.index'
 import { Route as ImageToolsIndexRouteImport } from './routes/image-tools.index'
 import { Route as DeveloperToolsIndexRouteImport } from './routes/developer-tools.index'
 import { Route as CalculatorsIndexRouteImport } from './routes/calculators.index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
 import { Route as TextToolsTextSorterRouteImport } from './routes/text-tools.text-sorter'
 import { Route as TextToolsTextReverserRouteImport } from './routes/text-tools.text-reverser'
@@ -71,6 +72,7 @@ import { Route as CalculatorsCurrencyConverterRouteImport } from './routes/calcu
 import { Route as CalculatorsBmiRouteImport } from './routes/calculators.bmi'
 import { Route as CalculatorsBinaryToDecimalRouteImport } from './routes/calculators.binary-to-decimal'
 import { Route as CalculatorsAgeRouteImport } from './routes/calculators.age'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -130,6 +132,11 @@ const DeveloperToolsIndexRoute = DeveloperToolsIndexRouteImport.update({
 const CalculatorsIndexRoute = CalculatorsIndexRouteImport.update({
   id: '/calculators/',
   path: '/calculators/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TextToolsWordCounterRoute = TextToolsWordCounterRouteImport.update({
@@ -395,6 +402,11 @@ const CalculatorsAgeRoute = CalculatorsAgeRouteImport.update({
   path: '/calculators/age',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -404,6 +416,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
@@ -454,6 +467,7 @@ export interface FileRoutesByFullPath {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
   '/image-tools/': typeof ImageToolsIndexRoute
@@ -468,6 +482,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
@@ -518,6 +533,7 @@ export interface FileRoutesByTo {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/blog': typeof BlogIndexRoute
   '/calculators': typeof CalculatorsIndexRoute
   '/developer-tools': typeof DeveloperToolsIndexRoute
   '/image-tools': typeof ImageToolsIndexRoute
@@ -533,6 +549,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
@@ -583,6 +600,7 @@ export interface FileRoutesById {
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
   '/image-tools/': typeof ImageToolsIndexRoute
@@ -599,6 +617,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/search'
     | '/terms'
+    | '/blog/$slug'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
@@ -649,6 +668,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/blog/'
     | '/calculators/'
     | '/developer-tools/'
     | '/image-tools/'
@@ -663,6 +683,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/search'
     | '/terms'
+    | '/blog/$slug'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
@@ -713,6 +734,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/blog'
     | '/calculators'
     | '/developer-tools'
     | '/image-tools'
@@ -727,6 +749,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/search'
     | '/terms'
+    | '/blog/$slug'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
@@ -777,6 +800,7 @@ export interface FileRouteTypes {
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
+    | '/blog/'
     | '/calculators/'
     | '/developer-tools/'
     | '/image-tools/'
@@ -792,6 +816,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SearchRoute: typeof SearchRoute
   TermsRoute: typeof TermsRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   CalculatorsAgeRoute: typeof CalculatorsAgeRoute
   CalculatorsBinaryToDecimalRoute: typeof CalculatorsBinaryToDecimalRoute
   CalculatorsBmiRoute: typeof CalculatorsBmiRoute
@@ -842,6 +867,7 @@ export interface RootRouteChildren {
   TextToolsTextReverserRoute: typeof TextToolsTextReverserRoute
   TextToolsTextSorterRoute: typeof TextToolsTextSorterRoute
   TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   CalculatorsIndexRoute: typeof CalculatorsIndexRoute
   DeveloperToolsIndexRoute: typeof DeveloperToolsIndexRoute
   ImageToolsIndexRoute: typeof ImageToolsIndexRoute
@@ -933,6 +959,13 @@ declare module '@tanstack/react-router' {
       path: '/calculators'
       fullPath: '/calculators/'
       preLoaderRoute: typeof CalculatorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/word-counter': {
@@ -1285,6 +1318,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsAgeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -1296,6 +1336,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SearchRoute: SearchRoute,
   TermsRoute: TermsRoute,
+  BlogSlugRoute: BlogSlugRoute,
   CalculatorsAgeRoute: CalculatorsAgeRoute,
   CalculatorsBinaryToDecimalRoute: CalculatorsBinaryToDecimalRoute,
   CalculatorsBmiRoute: CalculatorsBmiRoute,
@@ -1346,6 +1387,7 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsTextReverserRoute: TextToolsTextReverserRoute,
   TextToolsTextSorterRoute: TextToolsTextSorterRoute,
   TextToolsWordCounterRoute: TextToolsWordCounterRoute,
+  BlogIndexRoute: BlogIndexRoute,
   CalculatorsIndexRoute: CalculatorsIndexRoute,
   DeveloperToolsIndexRoute: DeveloperToolsIndexRoute,
   ImageToolsIndexRoute: ImageToolsIndexRoute,
