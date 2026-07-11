@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { type ReactNode, useState } from "react";
-import { ChevronRight, Copy, Check } from "lucide-react";
+import { ChevronRight, Copy, Check, BookOpen } from "lucide-react";
 import { allTools, getCategory } from "@/lib/tools";
+import { postsMeta } from "@/lib/blog-meta";
 import { Button } from "@/components/ui-primitives";
 
 interface ToolShellProps {
@@ -17,6 +18,7 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
   const category = getCategory(categorySlug);
   const tool = category?.tools.find((t) => t.slug === toolSlug);
   const related = (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4);
+  const blogPost = tool ? postsMeta.find((p) => p.toolPath === tool.path) : undefined;
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
@@ -34,6 +36,17 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
 
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{tool?.name ?? toolSlug}</h1>
       <p className="mt-3 max-w-2xl text-muted-foreground">{intro}</p>
+
+      {blogPost && (
+        <Link
+          to="/blog/$slug"
+          params={{ slug: blogPost.slug }}
+          className="mt-4 inline-flex items-center gap-2 rounded-md border border-border bg-secondary px-3 py-2 text-sm font-medium text-secondary-foreground transition-colors hover:border-accent hover:text-accent"
+        >
+          <BookOpen className="h-4 w-4" />
+          Read the full guide: {blogPost.title}
+        </Link>
+      )}
 
       <div className="mt-8">{children}</div>
 
