@@ -86,7 +86,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "ToolHive — 50 Free Online Tools" },
       { property: "og:description", content: "Free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "ToolHive" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#7c3aed" },
     ],
     links: [
       {
@@ -99,6 +101,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Hind:wght@300;400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "ToolHive",
+          url: "https://all-in-one-approval.lovable.app",
+          description:
+            "50+ free online tools for text, images, PDFs, developers, and everyday calculations — no signup, works in your browser.",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://all-in-one-approval.lovable.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "ToolHive",
+          url: "https://all-in-one-approval.lovable.app",
+          logo: "https://all-in-one-approval.lovable.app/toolhive-logo.png",
+        }),
       },
     ],
   }),
