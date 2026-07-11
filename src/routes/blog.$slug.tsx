@@ -11,17 +11,56 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!content) throw notFound();
     return { post: { ...meta, content } };
   },
-  head: ({ loaderData }) => {
+  head: ({ params, loaderData }) => {
     const p = loaderData?.post;
-    if (!p) return { meta: [{ title: "Post not found" }] };
-    return { meta: [
-      { title: `${p.title} — ToolHarbor Blog` },
-      { name: "description", content: p.excerpt },
-      { property: "og:title", content: p.title },
-      { property: "og:description", content: p.excerpt },
-      { property: "og:type", content: "article" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ]};
+    if (!p) return { meta: [{ title: "Post not found — ToolHarbor Blog" }] };
+    const url = `/blog/${params.slug}`;
+    const fullTitle = `${p.title} — ToolHarbor Blog`;
+    return {
+      meta: [
+        { title: fullTitle },
+        { name: "description", content: p.excerpt },
+        { name: "keywords", content: `${p.category}, ${p.title}, free online tools, ToolHarbor` },
+        { property: "og:title", content: fullTitle },
+        { property: "og:description", content: p.excerpt },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { property: "og:site_name", content: "ToolHarbor" },
+        { property: "article:section", content: p.category },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: fullTitle },
+        { name: "twitter:description", content: p.excerpt },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: p.title,
+            description: p.excerpt,
+            articleSection: p.category,
+            timeRequired: `PT${p.readingMinutes}M`,
+            mainEntityOfPage: url,
+            author: { "@type": "Organization", name: "ToolHarbor" },
+            publisher: { "@type": "Organization", name: "ToolHarbor" },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "/blog" },
+              { "@type": "ListItem", position: 3, name: p.title, item: url },
+            ],
+          }),
+        },
+      ],
+    };
   },
   notFoundComponent: () => (
     <div className="mx-auto max-w-2xl px-4 py-16 text-center">

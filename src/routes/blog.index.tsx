@@ -12,14 +12,41 @@ const searchSchema = z.object({
 
 export const Route = createFileRoute("/blog/")({
   validateSearch: zodValidator(searchSchema),
-  head: () => ({ meta: [
-    { title: "Blog — Guides for Every ToolHarbor Tool" },
-    { name: "description", content: "In-depth guides, tips, and use cases for our free online text, image, PDF, developer, and calculator tools." },
-    { property: "og:title", content: "ToolHarbor Blog" },
-    { property: "og:description", content: "Long-form guides for 25+ free online tools." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
-  ]}),
+  head: () => {
+    const title = "Blog — Guides for Every ToolHarbor Tool";
+    const description =
+      "In-depth guides, tips, and use cases for our free online text, image, PDF, developer, and calculator tools.";
+    const url = "/blog";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "keywords", content: "online tools, blog, guides, text tools, image tools, PDF tools, developer tools, calculators" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+        { property: "og:site_name", content: "ToolHarbor" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "ToolHarbor Blog",
+            description,
+            url,
+            publisher: { "@type": "Organization", name: "ToolHarbor" },
+          }),
+        },
+      ],
+    };
+  },
   component: BlogIndex,
 });
 
