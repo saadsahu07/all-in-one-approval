@@ -37,6 +37,7 @@ import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.com
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
 import { Route as DeveloperToolsJsonValidatorRouteImport } from './routes/developer-tools.json-validator'
 import { Route as DeveloperToolsJsonFormatterRouteImport } from './routes/developer-tools.json-formatter'
+import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -183,9 +184,16 @@ const DeveloperToolsJsonFormatterRoute =
     path: '/developer-tools/json-formatter',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsBase64EncodeRoute =
+  DeveloperToolsBase64EncodeRouteImport.update({
+    id: '/developer-tools/base64-encode',
+    path: '/developer-tools/base64-encode',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
@@ -216,6 +224,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
@@ -247,6 +256,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
@@ -279,6 +289,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/developer-tools/base64-encode'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
     | '/image-tools/background-remover'
@@ -309,6 +320,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/developer-tools/base64-encode'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
     | '/image-tools/background-remover'
@@ -339,6 +351,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/developer-tools/base64-encode'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
     | '/image-tools/background-remover'
@@ -370,6 +383,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
   DeveloperToolsJsonFormatterRoute: typeof DeveloperToolsJsonFormatterRoute
   DeveloperToolsJsonValidatorRoute: typeof DeveloperToolsJsonValidatorRoute
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
@@ -597,11 +611,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsJsonFormatterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/base64-encode': {
+      id: '/developer-tools/base64-encode'
+      path: '/developer-tools/base64-encode'
+      fullPath: '/developer-tools/base64-encode'
+      preLoaderRoute: typeof DeveloperToolsBase64EncodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DeveloperToolsBase64EncodeRoute: DeveloperToolsBase64EncodeRoute,
   DeveloperToolsJsonFormatterRoute: DeveloperToolsJsonFormatterRoute,
   DeveloperToolsJsonValidatorRoute: DeveloperToolsJsonValidatorRoute,
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
