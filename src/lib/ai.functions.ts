@@ -101,31 +101,6 @@ export const generateYouTubeVideoIdeas = createServerFn({ method: "POST" })
     ),
   );
 
-function extractVideoId(input: string): string | null {
-  const s = input.trim();
-  if (/^[a-zA-Z0-9_-]{11}$/.test(s)) return s;
-  const patterns = [
-    /[?&]v=([a-zA-Z0-9_-]{11})/,
-    /youtu\.be\/([a-zA-Z0-9_-]{11})/,
-    /youtube\.com\/(?:embed|shorts|live|v)\/([a-zA-Z0-9_-]{11})/,
-  ];
-  for (const re of patterns) {
-    const m = s.match(re);
-    if (m) return m[1];
-  }
-  return null;
-}
-
-function decodeEntities(str: string): string {
-  return str
-    .replace(/&amp;/g, "&")
-    .replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"')
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
-}
-
 export const removeBackground = createServerFn({ method: "POST" })
   .inputValidator((input: { dataUrl: string }) => {
     if (!input.dataUrl?.startsWith("data:image/")) throw new Error("A valid image is required");
