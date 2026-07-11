@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
@@ -6,7 +7,7 @@ import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/jpg-to-pdf")({
-  head: () => ({ meta: [{ title: "JPG to PDF — ToolHive" }, { name: "description", content: "Combine JPG or PNG images into a single PDF." }] }),
+  head: () => toolHead("pdf-tools", "jpg-to-pdf"),
   component: Page,
 });
 

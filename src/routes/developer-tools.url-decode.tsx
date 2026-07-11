@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/url-decode")({
-  head: () => ({ meta: [{ title: "URL Decoder — ToolHive" }, { name: "description", content: "Decode percent-encoded URLs to readable text." }] }),
+  head: () => toolHead("developer-tools", "url-decode"),
   component: Page,
 });
 

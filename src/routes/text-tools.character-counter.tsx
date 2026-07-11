@@ -1,17 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useMemo, useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Textarea, Card } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/text-tools/character-counter")({
-  head: () => ({
-    meta: [
-      { title: "Character Counter — With & Without Spaces | ToolHive" },
-      { name: "description", content: "Count characters with and without spaces, plus lines and words. Perfect for tweets, meta descriptions, and SMS. Free online." },
-      { property: "og:title", content: "Character Counter | ToolHive" },
-      { property: "og:description", content: "Count characters with and without spaces instantly." },
-    ],
-  }),
+  head: () => toolHead("text-tools", "character-counter"),
   component: CharacterCounter,
 });
 

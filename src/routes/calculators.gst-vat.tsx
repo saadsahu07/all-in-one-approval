@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/gst-vat")({
-  head: () => ({ meta: [{ title: "GST / VAT Calculator — ToolHive" }, { name: "description", content: "Add or remove GST/VAT from any amount at any rate." }] }),
+  head: () => toolHead("calculators", "gst-vat"),
   component: Page,
 });
 

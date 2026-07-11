@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/weight")({
-  head: () => ({ meta: [{ title: "Weight Converter — ToolHive" }, { name: "description", content: "Convert weights between g, kg, lb, oz, and tons." }] }),
+  head: () => toolHead("calculators", "weight"),
   component: Page,
 });
 

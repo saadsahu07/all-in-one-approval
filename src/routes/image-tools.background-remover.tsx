@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
@@ -9,14 +10,7 @@ import { Button } from "@/components/ui-primitives";
 import { fileToDataUrl, formatBytes } from "@/lib/image-utils";
 
 export const Route = createFileRoute("/image-tools/background-remover")({
-  head: () => ({
-    meta: [
-      { title: "AI Background Remover — Free Online | ToolHive" },
-      { name: "description", content: "Remove image backgrounds automatically with AI. Upload a photo and download a clean PNG cutout in seconds." },
-      { property: "og:title", content: "AI Background Remover | ToolHive" },
-      { property: "og:description", content: "Remove image backgrounds automatically with AI." },
-    ],
-  }),
+  head: () => toolHead("image-tools", "background-remover"),
   component: BackgroundRemover,
 });
 

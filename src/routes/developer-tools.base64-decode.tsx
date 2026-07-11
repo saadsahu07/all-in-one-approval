@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/base64-decode")({
-  head: () => ({ meta: [{ title: "Base64 Decoder — ToolHive" }, { name: "description", content: "Decode Base64 text back to plain UTF-8." }] }),
+  head: () => toolHead("developer-tools", "base64-decode"),
   component: Page,
 });
 

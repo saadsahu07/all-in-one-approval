@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useEffect, useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select, Button } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/currency-converter")({
-  head: () => ({ meta: [{ title: "Currency Converter — ToolHive" }, { name: "description", content: "Convert world currencies using live exchange rates." }] }),
+  head: () => toolHead("calculators", "currency-converter"),
   component: Page,
 });
 

@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Input, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/percentage")({
-  head: () => ({ meta: [{ title: "Percentage Calculator — ToolHive" }, { name: "description", content: "Solve common percentage problems fast." }] }),
+  head: () => toolHead("calculators", "percentage"),
   component: Page,
 });
 

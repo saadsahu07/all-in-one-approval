@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
 import { FileDrop } from "@/components/file-drop";
@@ -6,14 +7,7 @@ import { Button, Input, Label, Select } from "@/components/ui-primitives";
 import { loadImageFromFile, drawToCanvas, canvasToBlob } from "@/lib/image-utils";
 
 export const Route = createFileRoute("/image-tools/watermark")({
-  head: () => ({
-    meta: [
-      { title: "Watermark Adder — Add Text Watermarks | ToolHive" },
-      { name: "description", content: "Add a text watermark to your images with custom position, size, and opacity. Free, in-browser, and private." },
-      { property: "og:title", content: "Watermark Adder | ToolHive" },
-      { property: "og:description", content: "Add a text watermark to protect your images." },
-    ],
-  }),
+  head: () => toolHead("image-tools", "watermark"),
   component: WatermarkAdder,
 });
 

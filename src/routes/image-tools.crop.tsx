@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
 import { FileDrop } from "@/components/file-drop";
@@ -6,14 +7,7 @@ import { Button, Input, Label } from "@/components/ui-primitives";
 import { loadImageFromFile, canvasToBlob } from "@/lib/image-utils";
 
 export const Route = createFileRoute("/image-tools/crop")({
-  head: () => ({
-    meta: [
-      { title: "Image Cropper — Crop Images Online Free | ToolHive" },
-      { name: "description", content: "Crop images to an exact area by position and size, with live preview. Free, in-browser, and private." },
-      { property: "og:title", content: "Image Cropper | ToolHive" },
-      { property: "og:description", content: "Crop images to a custom area, free and private." },
-    ],
-  }),
+  head: () => toolHead("image-tools", "crop"),
   component: ImageCropper,
 });
 

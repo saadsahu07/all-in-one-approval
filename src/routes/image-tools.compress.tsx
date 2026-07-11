@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
 import { FileDrop } from "@/components/file-drop";
@@ -6,14 +7,7 @@ import { Button, Label } from "@/components/ui-primitives";
 import { loadImageFromFile, drawToCanvas, canvasToBlob, formatBytes } from "@/lib/image-utils";
 
 export const Route = createFileRoute("/image-tools/compress")({
-  head: () => ({
-    meta: [
-      { title: "Image Compressor — Reduce Image Size Online | ToolHive" },
-      { name: "description", content: "Compress JPG, PNG, and WebP images in your browser. Adjust quality and download smaller files — nothing is uploaded." },
-      { property: "og:title", content: "Image Compressor | ToolHive" },
-      { property: "og:description", content: "Shrink image file size while keeping quality, free and private." },
-    ],
-  }),
+  head: () => toolHead("image-tools", "compress"),
   component: ImageCompressor,
 });
 

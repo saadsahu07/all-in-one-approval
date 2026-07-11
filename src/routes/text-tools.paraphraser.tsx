@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
@@ -7,14 +8,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea, Select, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/text-tools/paraphraser")({
-  head: () => ({
-    meta: [
-      { title: "Free Paraphrasing Tool — Rewrite Text Online | ToolHive" },
-      { name: "description", content: "Rewrite sentences and paragraphs in fresh words while keeping the meaning. Free AI paraphrasing tool with tone options." },
-      { property: "og:title", content: "Free Paraphrasing Tool | ToolHive" },
-      { property: "og:description", content: "Rewrite text in fresh words with AI, free." },
-    ],
-  }),
+  head: () => toolHead("text-tools", "paraphraser"),
   component: Paraphraser,
 });
 

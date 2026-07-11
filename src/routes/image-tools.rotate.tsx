@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
 import { FileDrop } from "@/components/file-drop";
@@ -6,14 +7,7 @@ import { Button } from "@/components/ui-primitives";
 import { loadImageFromFile, canvasToBlob } from "@/lib/image-utils";
 
 export const Route = createFileRoute("/image-tools/rotate")({
-  head: () => ({
-    meta: [
-      { title: "Image Rotator — Rotate & Flip Images Online | ToolHive" },
-      { name: "description", content: "Rotate images by 90° steps or flip them horizontally and vertically. Free, in-browser, and private." },
-      { property: "og:title", content: "Image Rotator | ToolHive" },
-      { property: "og:description", content: "Rotate or flip images in 90° steps, free and private." },
-    ],
-  }),
+  head: () => toolHead("image-tools", "rotate"),
   component: ImageRotator,
 });
 

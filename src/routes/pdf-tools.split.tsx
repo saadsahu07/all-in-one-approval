@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
@@ -6,7 +7,7 @@ import { Button, Input, Label } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/split")({
-  head: () => ({ meta: [{ title: "Split PDF — ToolHive" }, { name: "description", content: "Extract a page range from a PDF into a new file." }] }),
+  head: () => toolHead("pdf-tools", "split"),
   component: Page,
 });
 
