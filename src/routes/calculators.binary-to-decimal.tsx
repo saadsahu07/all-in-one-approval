@@ -4,7 +4,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Input, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/binary-to-decimal")({
-  head: () => ({ meta: [{ title: "Binary ↔ Decimal Converter — ToolHarbor" }, { name: "description", content: "Convert binary numbers to decimal and back." }] }),
+  head: () => ({ meta: [{ title: "Binary ↔ Decimal Converter — ToolHive" }, { name: "description", content: "Convert binary numbers to decimal and back." }] }),
   component: Page,
 });
 

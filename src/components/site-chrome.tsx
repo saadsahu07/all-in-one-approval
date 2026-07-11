@@ -19,7 +19,7 @@ export function Header() {
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Wrench className="h-5 w-5" />
           </span>
-          <span className="font-serif text-lg font-bold tracking-tight">ToolHarbor</span>
+          <span className="font-serif text-lg font-bold tracking-tight">ToolHive</span>
         </Link>
         <nav className="ml-4 hidden items-center gap-1 lg:flex">
           {categories.map((c) => (
@@ -91,7 +91,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-border bg-navy-deep text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-serif text-lg font-bold">ToolHarbor</p>
+          <p className="font-serif text-lg font-bold">ToolHive</p>
           <p className="mt-2 text-sm opacity-80">
             50 free online tools. Files are processed in your browser and never uploaded to our servers.
           </p>
@@ -123,7 +123,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-primary-foreground/10 py-4 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} ToolHarbor. All rights reserved.
+        © {new Date().getFullYear()} ToolHive. All rights reserved.
       </div>
     </footer>
   );

@@ -4,7 +4,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/html-minifier")({
-  head: () => ({ meta: [{ title: "HTML Minifier — ToolHarbor" }, { name: "description", content: "Strip comments and collapse whitespace from HTML." }] }),
+  head: () => ({ meta: [{ title: "HTML Minifier — ToolHive" }, { name: "description", content: "Strip comments and collapse whitespace from HTML." }] }),
   component: Page,
 });
 

@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({ meta: [
-    { title: "Privacy Policy — ToolHarbor" },
-    { name: "description", content: "How ToolHarbor handles data, cookies, analytics, and advertising." },
+    { title: "Privacy Policy — ToolHive" },
+    { name: "description", content: "How ToolHive handles data, cookies, analytics, and advertising." },
   ]}),
   component: PrivacyPage,
 });
@@ -14,7 +14,7 @@ function PrivacyPage() {
       <h1 className="font-serif text-4xl font-bold text-foreground">Privacy Policy</h1>
       <p className="mt-2 text-sm">Last updated: {new Date().toLocaleDateString()}</p>
       <h2 className="mt-8 text-2xl font-bold text-foreground">Overview</h2>
-      <p className="mt-2">ToolHarbor respects your privacy. Most of our tools run entirely in your browser and do not upload your files or text to any server.</p>
+      <p className="mt-2">ToolHive respects your privacy. Most of our tools run entirely in your browser and do not upload your files or text to any server.</p>
       <h2 className="mt-6 text-2xl font-bold text-foreground">Data we process</h2>
       <p className="mt-2">For AI-powered tools (summarizer, grammar checker, paraphraser, background remover), the text or image you submit is transmitted to a secure AI provider solely to generate a result. We do not retain your inputs after processing.</p>
       <h2 className="mt-6 text-2xl font-bold text-foreground">Cookies and analytics</h2>

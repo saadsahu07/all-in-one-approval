@@ -6,9 +6,9 @@ import { Button, Label, Select, Textarea } from "@/components/ui-primitives";
 export const Route = createFileRoute("/image-tools/qr-code")({
   head: () => ({
     meta: [
-      { title: "QR Code Generator — Free Online | ToolHarbor" },
+      { title: "QR Code Generator — Free Online | ToolHive" },
       { name: "description", content: "Create QR codes for links, text, Wi-Fi, and more. Choose the size and download as PNG. Free, no sign-up." },
-      { property: "og:title", content: "QR Code Generator | ToolHarbor" },
+      { property: "og:title", content: "QR Code Generator | ToolHive" },
       { property: "og:description", content: "Create QR codes for links, text, and more, free." },
     ],
   }),

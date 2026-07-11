@@ -6,7 +6,7 @@ import { Button, Label, Select } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/rotate")({
-  head: () => ({ meta: [{ title: "Rotate PDF — ToolHarbor" }, { name: "description", content: "Rotate every page of a PDF by 90, 180, or 270 degrees." }] }),
+  head: () => ({ meta: [{ title: "Rotate PDF — ToolHive" }, { name: "description", content: "Rotate every page of a PDF by 90, 180, or 270 degrees." }] }),
   component: Page,
 });
 

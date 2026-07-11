@@ -4,7 +4,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/base64-encode")({
-  head: () => ({ meta: [{ title: "Base64 Encoder — ToolHarbor" }, { name: "description", content: "Encode text to Base64 in your browser." }] }),
+  head: () => ({ meta: [{ title: "Base64 Encoder — ToolHive" }, { name: "description", content: "Encode text to Base64 in your browser." }] }),
   component: Page,
 });
 

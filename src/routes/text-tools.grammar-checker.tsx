@@ -9,9 +9,9 @@ import { Button, Textarea } from "@/components/ui-primitives";
 export const Route = createFileRoute("/text-tools/grammar-checker")({
   head: () => ({
     meta: [
-      { title: "Free Grammar Checker — Fix Grammar & Spelling | ToolHarbor" },
+      { title: "Free Grammar Checker — Fix Grammar & Spelling | ToolHive" },
       { name: "description", content: "Check and correct grammar, spelling, and punctuation mistakes in any text with AI. Free online grammar checker." },
-      { property: "og:title", content: "Free Grammar Checker | ToolHarbor" },
+      { property: "og:title", content: "Free Grammar Checker | ToolHive" },
       { property: "og:description", content: "Fix grammar, spelling, and punctuation with AI, free." },
     ],
   }),

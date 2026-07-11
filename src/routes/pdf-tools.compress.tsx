@@ -7,7 +7,7 @@ import { FileDrop } from "@/components/file-drop";
 import { formatBytes } from "@/lib/image-utils";
 
 export const Route = createFileRoute("/pdf-tools/compress")({
-  head: () => ({ meta: [{ title: "Compress PDF — ToolHarbor" }, { name: "description", content: "Reduce PDF file size with basic optimization." }] }),
+  head: () => ({ meta: [{ title: "Compress PDF — ToolHive" }, { name: "description", content: "Reduce PDF file size with basic optimization." }] }),
   component: Page,
 });
 

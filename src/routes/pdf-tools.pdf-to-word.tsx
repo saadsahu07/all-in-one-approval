@@ -5,7 +5,7 @@ import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/pdf-to-word")({
-  head: () => ({ meta: [{ title: "PDF to Word — ToolHarbor" }, { name: "description", content: "Extract PDF text into an editable Word (.docx) document." }] }),
+  head: () => ({ meta: [{ title: "PDF to Word — ToolHive" }, { name: "description", content: "Extract PDF text into an editable Word (.docx) document." }] }),
   component: Page,
 });
 

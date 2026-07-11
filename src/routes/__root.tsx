@@ -80,10 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ToolHarbor — 50 Free Online Tools" },
+      { title: "ToolHive — 50 Free Online Tools" },
       { name: "description", content: "Free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
-      { name: "author", content: "ToolHarbor" },
-      { property: "og:title", content: "ToolHarbor — 50 Free Online Tools" },
+      { name: "author", content: "ToolHive" },
+      { property: "og:title", content: "ToolHive — 50 Free Online Tools" },
       { property: "og:description", content: "Free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

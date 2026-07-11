@@ -4,7 +4,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Input, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/password-generator")({
-  head: () => ({ meta: [{ title: "Password Generator — ToolHarbor" }, { name: "description", content: "Generate strong random passwords with symbols and numbers." }] }),
+  head: () => ({ meta: [{ title: "Password Generator — ToolHive" }, { name: "description", content: "Generate strong random passwords with symbols and numbers." }] }),
   component: Page,
 });
 

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/merge")({
-  head: () => ({ meta: [{ title: "Merge PDF — ToolHarbor" }, { name: "description", content: "Combine multiple PDF files into one document, in your browser." }] }),
+  head: () => ({ meta: [{ title: "Merge PDF — ToolHive" }, { name: "description", content: "Combine multiple PDF files into one document, in your browser." }] }),
   component: Page,
 });
 

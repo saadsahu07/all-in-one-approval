@@ -8,9 +8,9 @@ import { fileToDataUrl, loadImageFromFile } from "@/lib/image-utils";
 export const Route = createFileRoute("/image-tools/image-to-pdf")({
   head: () => ({
     meta: [
-      { title: "Image to PDF Converter — Free Online | ToolHarbor" },
+      { title: "Image to PDF Converter — Free Online | ToolHive" },
       { name: "description", content: "Combine one or more images into a single PDF document, one image per page. Free, in-browser, and private." },
-      { property: "og:title", content: "Image to PDF | ToolHarbor" },
+      { property: "og:title", content: "Image to PDF | ToolHive" },
       { property: "og:description", content: "Combine images into a PDF document, free and private." },
     ],
   }),

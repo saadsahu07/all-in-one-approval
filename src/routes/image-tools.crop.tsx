@@ -8,9 +8,9 @@ import { loadImageFromFile, canvasToBlob } from "@/lib/image-utils";
 export const Route = createFileRoute("/image-tools/crop")({
   head: () => ({
     meta: [
-      { title: "Image Cropper — Crop Images Online Free | ToolHarbor" },
+      { title: "Image Cropper — Crop Images Online Free | ToolHive" },
       { name: "description", content: "Crop images to an exact area by position and size, with live preview. Free, in-browser, and private." },
-      { property: "og:title", content: "Image Cropper | ToolHarbor" },
+      { property: "og:title", content: "Image Cropper | ToolHive" },
       { property: "og:description", content: "Crop images to a custom area, free and private." },
     ],
   }),

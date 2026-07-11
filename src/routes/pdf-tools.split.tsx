@@ -6,7 +6,7 @@ import { Button, Input, Label } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/split")({
-  head: () => ({ meta: [{ title: "Split PDF — ToolHarbor" }, { name: "description", content: "Extract a page range from a PDF into a new file." }] }),
+  head: () => ({ meta: [{ title: "Split PDF — ToolHive" }, { name: "description", content: "Extract a page range from a PDF into a new file." }] }),
   component: Page,
 });
 

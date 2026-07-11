@@ -4,7 +4,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/url-encode")({
-  head: () => ({ meta: [{ title: "URL Encoder — ToolHarbor" }, { name: "description", content: "Percent-encode text for safe use in URLs." }] }),
+  head: () => ({ meta: [{ title: "URL Encoder — ToolHive" }, { name: "description", content: "Percent-encode text for safe use in URLs." }] }),
   component: Page,
 });
 

@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/gst-vat")({
-  head: () => ({ meta: [{ title: "GST / VAT Calculator — ToolHarbor" }, { name: "description", content: "Add or remove GST/VAT from any amount at any rate." }] }),
+  head: () => ({ meta: [{ title: "GST / VAT Calculator — ToolHive" }, { name: "description", content: "Add or remove GST/VAT from any amount at any rate." }] }),
   component: Page,
 });
 

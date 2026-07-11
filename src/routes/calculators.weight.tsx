@@ -4,7 +4,7 @@ import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/weight")({
-  head: () => ({ meta: [{ title: "Weight Converter — ToolHarbor" }, { name: "description", content: "Convert weights between g, kg, lb, oz, and tons." }] }),
+  head: () => ({ meta: [{ title: "Weight Converter — ToolHive" }, { name: "description", content: "Convert weights between g, kg, lb, oz, and tons." }] }),
   component: Page,
 });
 

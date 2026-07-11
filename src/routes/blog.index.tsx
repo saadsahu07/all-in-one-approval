@@ -13,7 +13,7 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/blog/")({
   validateSearch: zodValidator(searchSchema),
   head: () => {
-    const title = "Blog — Guides for Every ToolHarbor Tool";
+    const title = "Blog — Guides for Every ToolHive Tool";
     const description =
       "In-depth guides, tips, and use cases for our free online text, image, PDF, developer, and calculator tools.";
     const url = "/blog";
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/blog/")({
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
         { property: "og:url", content: url },
-        { property: "og:site_name", content: "ToolHarbor" },
+        { property: "og:site_name", content: "ToolHive" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
@@ -38,10 +38,10 @@ export const Route = createFileRoute("/blog/")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Blog",
-            name: "ToolHarbor Blog",
+            name: "ToolHive Blog",
             description,
             url,
-            publisher: { "@type": "Organization", name: "ToolHarbor" },
+            publisher: { "@type": "Organization", name: "ToolHive" },
           }),
         },
       ],
@@ -105,7 +105,7 @@ function BlogIndex() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
       <header className="mb-10">
-        <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl">The ToolHarbor Blog</h1>
+        <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl">The ToolHive Blog</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           Deep-dive guides for our most popular tools — how they work, when to use them, and how to get the best results.
         </p>

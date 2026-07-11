@@ -6,7 +6,7 @@ import { Button, Label, Select } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/page-numbers")({
-  head: () => ({ meta: [{ title: "Add Page Numbers to PDF — ToolHarbor" }, { name: "description", content: "Stamp page numbers on every PDF page in your browser." }] }),
+  head: () => ({ meta: [{ title: "Add Page Numbers to PDF — ToolHive" }, { name: "description", content: "Stamp page numbers on every PDF page in your browser." }] }),
   component: Page,
 });
 

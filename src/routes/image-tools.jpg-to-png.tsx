@@ -4,9 +4,9 @@ import { ImageConverter } from "@/components/image-converter";
 export const Route = createFileRoute("/image-tools/jpg-to-png")({
   head: () => ({
     meta: [
-      { title: "JPG to PNG Converter — Free Online | ToolHarbor" },
+      { title: "JPG to PNG Converter — Free Online | ToolHive" },
       { name: "description", content: "Convert JPG photos to lossless PNG format in your browser. Free, fast, and private — no upload required." },
-      { property: "og:title", content: "JPG to PNG Converter | ToolHarbor" },
+      { property: "og:title", content: "JPG to PNG Converter | ToolHive" },
       { property: "og:description", content: "Convert JPG photos to PNG format, free and private." },
     ],
   }),
