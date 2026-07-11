@@ -13,7 +13,7 @@ export interface ToolSeo {
 }
 
 export const toolSeo: Record<string, ToolSeo> = {
-  "/text-tools/youtube-tag-generator": {
+  "/content-creation/youtube-tag-generator": {
     title: "YouTube Tag Generator — Free AI SEO Tags",
     metaDescription: "Generate SEO-optimized YouTube tags from your video title with AI. Free, instant, no signup — boost views with keyword-rich tags in seconds.",
     keyword: "youtube tag generator",

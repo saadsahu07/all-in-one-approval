@@ -7,7 +7,7 @@ import { generateYouTubeTags } from "@/lib/ai.functions";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Input, Label, Textarea } from "@/components/ui-primitives";
 
-export const Route = createFileRoute("/text-tools/youtube-tag-generator")({
+export const Route = createFileRoute("/content-creation/youtube-tag-generator")({
   head: () => toolHead("text-tools", "youtube-tag-generator"),
   component: YouTubeTagGenerator,
 });

@@ -12,4 +12,5 @@ export const navCategories: NavCategory[] = [
   { slug: "pdf-tools", path: "/pdf-tools", name: "PDF Tools" },
   { slug: "developer-tools", path: "/developer-tools", name: "Developer Tools" },
   { slug: "calculators", path: "/calculators", name: "Calculators & Converters" },
+  { slug: "content-creation", path: "/content-creation", name: "Content Creation" },
 ];
