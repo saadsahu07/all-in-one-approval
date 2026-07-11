@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useEffect, useState } from "react";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Input, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/password-generator")({
-  head: () => ({ meta: [{ title: "Password Generator — ToolHive" }, { name: "description", content: "Generate strong random passwords with symbols and numbers." }] }),
+  head: () => toolHead("developer-tools", "password-generator"),
   component: Page,
 });
 

@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Input, Label, Select } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/bmi")({
-  head: () => ({ meta: [{ title: "BMI Calculator — ToolHive" }, { name: "description", content: "Calculate body mass index from height and weight." }] }),
+  head: () => toolHead("calculators", "bmi"),
   component: Page,
 });
 

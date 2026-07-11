@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { PDFDocument, degrees } from "pdf-lib";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
@@ -6,7 +7,7 @@ import { Button, Label, Select } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/rotate")({
-  head: () => ({ meta: [{ title: "Rotate PDF — ToolHive" }, { name: "description", content: "Rotate every page of a PDF by 90, 180, or 270 degrees." }] }),
+  head: () => toolHead("pdf-tools", "rotate"),
   component: Page,
 });
 

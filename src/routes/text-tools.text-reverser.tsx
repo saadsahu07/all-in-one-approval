@@ -1,17 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/text-tools/text-reverser")({
-  head: () => ({
-    meta: [
-      { title: "Text Reverser — Reverse Text, Words & Lines | ToolHive" },
-      { name: "description", content: "Reverse text character by character, reverse word order, or reverse the order of lines. Free online text reverser." },
-      { property: "og:title", content: "Text Reverser | ToolHive" },
-      { property: "og:description", content: "Reverse text, words, or lines in one click." },
-    ],
-  }),
+  head: () => toolHead("text-tools", "text-reverser"),
   component: TextReverser,
 });
 

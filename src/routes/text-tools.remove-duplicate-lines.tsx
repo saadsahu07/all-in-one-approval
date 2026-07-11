@@ -1,17 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/text-tools/remove-duplicate-lines")({
-  head: () => ({
-    meta: [
-      { title: "Remove Duplicate Lines Online — Free Tool | ToolHive" },
-      { name: "description", content: "Paste a list and remove duplicate lines instantly, with options for case sensitivity and trimming. Free online deduplication tool." },
-      { property: "og:title", content: "Remove Duplicate Lines | ToolHive" },
-      { property: "og:description", content: "Delete repeated lines from any list or text instantly." },
-    ],
-  }),
+  head: () => toolHead("text-tools", "remove-duplicate-lines"),
   component: RemoveDuplicates,
 });
 

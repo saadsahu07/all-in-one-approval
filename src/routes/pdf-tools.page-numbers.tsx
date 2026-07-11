@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
@@ -6,7 +7,7 @@ import { Button, Label, Select } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/page-numbers")({
-  head: () => ({ meta: [{ title: "Add Page Numbers to PDF — ToolHive" }, { name: "description", content: "Stamp page numbers on every PDF page in your browser." }] }),
+  head: () => toolHead("pdf-tools", "page-numbers"),
   component: Page,
 });
 

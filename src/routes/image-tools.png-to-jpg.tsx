@@ -1,15 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { ImageConverter } from "@/components/image-converter";
 
 export const Route = createFileRoute("/image-tools/png-to-jpg")({
-  head: () => ({
-    meta: [
-      { title: "PNG to JPG Converter — Free Online | ToolHive" },
-      { name: "description", content: "Convert PNG images to smaller JPG files in your browser. Transparent areas become white. Free and private." },
-      { property: "og:title", content: "PNG to JPG Converter | ToolHive" },
-      { property: "og:description", content: "Convert PNG images to smaller JPG files, free and private." },
-    ],
-  }),
+  head: () => toolHead("image-tools", "png-to-jpg"),
   component: () => (
     <ImageConverter
       toolSlug="png-to-jpg"

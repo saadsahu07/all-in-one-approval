@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
@@ -6,7 +7,7 @@ import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/unlock")({
-  head: () => ({ meta: [{ title: "Unlock PDF — ToolHive" }, { name: "description", content: "Remove restrictions from PDFs you own." }] }),
+  head: () => toolHead("pdf-tools", "unlock"),
   component: Page,
 });
 

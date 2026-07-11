@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Input, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/age")({
-  head: () => ({ meta: [{ title: "Age Calculator — ToolHive" }, { name: "description", content: "Calculate your exact age in years, months, and days." }] }),
+  head: () => toolHead("calculators", "age"),
   component: Page,
 });
 

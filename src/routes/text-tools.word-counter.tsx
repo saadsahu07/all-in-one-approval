@@ -1,17 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useMemo, useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Textarea, Card } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/text-tools/word-counter")({
-  head: () => ({
-    meta: [
-      { title: "Word Counter — Count Words & Sentences Online | ToolHive" },
-      { name: "description", content: "Count words, characters, sentences, paragraphs, and reading time instantly as you type. Free online word counter." },
-      { property: "og:title", content: "Word Counter | ToolHive" },
-      { property: "og:description", content: "Count words, sentences, and reading time instantly." },
-    ],
-  }),
+  head: () => toolHead("text-tools", "word-counter"),
   component: WordCounter,
 });
 

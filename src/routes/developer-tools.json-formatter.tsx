@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/json-formatter")({
-  head: () => ({ meta: [{ title: "JSON Formatter — ToolHive" }, { name: "description", content: "Pretty-print and beautify JSON with 2 or 4 space indentation." }] }),
+  head: () => toolHead("developer-tools", "json-formatter"),
   component: Page,
 });
 

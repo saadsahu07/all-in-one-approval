@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
 import { FileDrop } from "@/components/file-drop";
@@ -6,14 +7,7 @@ import { Button, Input, Label } from "@/components/ui-primitives";
 import { loadImageFromFile, drawToCanvas, canvasToBlob } from "@/lib/image-utils";
 
 export const Route = createFileRoute("/image-tools/resize")({
-  head: () => ({
-    meta: [
-      { title: "Image Resizer — Resize Images to Exact Pixels | ToolHive" },
-      { name: "description", content: "Resize images to exact pixel dimensions with optional aspect-ratio lock. Free, in-browser, and private." },
-      { property: "og:title", content: "Image Resizer | ToolHive" },
-      { property: "og:description", content: "Resize images to exact pixel dimensions, free and private." },
-    ],
-  }),
+  head: () => toolHead("image-tools", "resize"),
   component: ImageResizer,
 });
 

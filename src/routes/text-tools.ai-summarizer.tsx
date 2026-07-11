@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
@@ -7,14 +8,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea, Select, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/text-tools/ai-summarizer")({
-  head: () => ({
-    meta: [
-      { title: "AI Text Summarizer — Free Online | ToolHive" },
-      { name: "description", content: "Summarize long articles, essays, and documents into short, clear summaries with AI. Free and instant." },
-      { property: "og:title", content: "AI Text Summarizer | ToolHive" },
-      { property: "og:description", content: "Summarize long text into clear summaries with AI, free." },
-    ],
-  }),
+  head: () => toolHead("text-tools", "ai-summarizer"),
   component: AiSummarizer,
 });
 

@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
 import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/pdf-to-jpg")({
-  head: () => ({ meta: [{ title: "PDF to JPG — ToolHive" }, { name: "description", content: "Render each page of a PDF as a JPG image." }] }),
+  head: () => toolHead("pdf-tools", "pdf-to-jpg"),
   component: Page,
 });
 

@@ -1,17 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/text-tools/case-converter")({
-  head: () => ({
-    meta: [
-      { title: "Case Converter — UPPER, lower, Title Case | ToolHive" },
-      { name: "description", content: "Convert text between uppercase, lowercase, title case, sentence case, and alternating case. Free online case converter." },
-      { property: "og:title", content: "Case Converter | ToolHive" },
-      { property: "og:description", content: "Switch text between upper, lower, title, and sentence case." },
-    ],
-  }),
+  head: () => toolHead("text-tools", "case-converter"),
   component: CaseConverter,
 });
 

@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
 import { Button } from "@/components/ui-primitives";
 import { FileDrop } from "@/components/file-drop";
 
 export const Route = createFileRoute("/pdf-tools/word-to-pdf")({
-  head: () => ({ meta: [{ title: "Word to PDF — ToolHive" }, { name: "description", content: "Convert Word (.docx) documents to PDF in your browser." }] }),
+  head: () => toolHead("pdf-tools", "word-to-pdf"),
   component: Page,
 });
 

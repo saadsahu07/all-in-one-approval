@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell } from "@/components/tool-shell";
 import { Input, Label } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/calculators/emi")({
-  head: () => ({ meta: [{ title: "EMI Calculator — ToolHive" }, { name: "description", content: "Estimate monthly loan payments (EMI) and total interest." }] }),
+  head: () => toolHead("calculators", "emi"),
   component: Page,
 });
 

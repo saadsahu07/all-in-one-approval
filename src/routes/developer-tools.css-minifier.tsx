@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/developer-tools/css-minifier")({
-  head: () => ({ meta: [{ title: "CSS Minifier — ToolHive" }, { name: "description", content: "Compress CSS by removing comments and whitespace." }] }),
+  head: () => toolHead("developer-tools", "css-minifier"),
   component: Page,
 });
 

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
@@ -7,14 +8,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/text-tools/grammar-checker")({
-  head: () => ({
-    meta: [
-      { title: "Free Grammar Checker — Fix Grammar & Spelling | ToolHive" },
-      { name: "description", content: "Check and correct grammar, spelling, and punctuation mistakes in any text with AI. Free online grammar checker." },
-      { property: "og:title", content: "Free Grammar Checker | ToolHive" },
-      { property: "og:description", content: "Fix grammar, spelling, and punctuation with AI, free." },
-    ],
-  }),
+  head: () => toolHead("text-tools", "grammar-checker"),
   component: GrammarChecker,
 });
 

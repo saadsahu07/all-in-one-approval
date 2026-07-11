@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { toolHead } from "@/lib/tool-head";
 import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { ToolShell, downloadBlob } from "@/components/tool-shell";
@@ -7,7 +8,7 @@ import { FileDrop } from "@/components/file-drop";
 import { formatBytes } from "@/lib/image-utils";
 
 export const Route = createFileRoute("/pdf-tools/compress")({
-  head: () => ({ meta: [{ title: "Compress PDF — ToolHive" }, { name: "description", content: "Reduce PDF file size with basic optimization." }] }),
+  head: () => toolHead("pdf-tools", "compress"),
   component: Page,
 });
 
