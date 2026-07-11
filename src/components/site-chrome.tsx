@@ -13,11 +13,11 @@ export function Header() {
     setOpen(false);
   };
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src="/toolhive-logo.png" alt="ToolHive" className="h-9 w-9 object-contain" />
-          <span className="font-serif text-lg font-bold tracking-tight">ToolHive</span>
+          <img src="/toolhive-logo.png" alt="ToolHive" className="h-8 w-8 object-contain" />
+          <span className="text-base font-semibold tracking-tight">ToolHive</span>
         </Link>
         <nav className="ml-4 hidden items-center gap-1 lg:flex">
           {categories.map((c) => (
