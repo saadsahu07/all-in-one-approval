@@ -1,0 +1,28 @@
+# ToolHive
+
+> 55+ free online tools for text, images, PDFs, developers, calculators, and content creators — fast, private, and processed in your browser.
+
+ToolHive is a free web app that bundles everyday utilities — text tools, image converters, PDF editors, developer helpers, calculators, and YouTube content-creation helpers — into one site. Most tools run entirely client-side; a few use a hosted AI gateway for generation tasks.
+
+## Pages
+
+- [Home](/): Directory of all tool categories.
+- [About](/about): What ToolHive is and how it works.
+- [Contact](/contact): Feedback, complaints, and bug reports.
+- [Search](/search): Search across every tool.
+- [Blog](/blog): Guides and articles about the tools.
+
+## Tool categories
+
+- [Text tools](/text-tools): Word counter, case converter, paraphraser, grammar checker, AI summarizer, and more.
+- [Image tools](/image-tools): Compress, resize, crop, rotate, watermark, background remover, JPG↔PNG, QR code, image to PDF.
+- [PDF tools](/pdf-tools): Merge, split, compress, rotate, unlock, page numbers, PDF↔Word, PDF↔JPG.
+- [Developer tools](/developer-tools): JSON formatter/validator, Base64 encode/decode, URL encode/decode, HTML/CSS/JS minifiers, password generator.
+- [Calculators](/calculators): BMI, EMI, age, percentage, GST/VAT, currency, length, weight, temperature, binary↔decimal.
+- [Content creation](/content-creation): YouTube title, description, tag, and video idea generators, plus thumbnail downloader.
+
+## Optional
+
+- [Privacy policy](/privacy-policy)
+- [Terms](/terms)
+- [Disclaimer](/disclaimer)
