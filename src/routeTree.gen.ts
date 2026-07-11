@@ -25,9 +25,15 @@ import { Route as TextToolsGrammarCheckerRouteImport } from './routes/text-tools
 import { Route as TextToolsCharacterCounterRouteImport } from './routes/text-tools.character-counter'
 import { Route as TextToolsCaseConverterRouteImport } from './routes/text-tools.case-converter'
 import { Route as TextToolsAiSummarizerRouteImport } from './routes/text-tools.ai-summarizer'
+import { Route as PdfToolsWordToPdfRouteImport } from './routes/pdf-tools.word-to-pdf'
+import { Route as PdfToolsUnlockRouteImport } from './routes/pdf-tools.unlock'
 import { Route as PdfToolsSplitRouteImport } from './routes/pdf-tools.split'
 import { Route as PdfToolsRotateRouteImport } from './routes/pdf-tools.rotate'
+import { Route as PdfToolsPdfToWordRouteImport } from './routes/pdf-tools.pdf-to-word'
+import { Route as PdfToolsPdfToJpgRouteImport } from './routes/pdf-tools.pdf-to-jpg'
+import { Route as PdfToolsPageNumbersRouteImport } from './routes/pdf-tools.page-numbers'
 import { Route as PdfToolsMergeRouteImport } from './routes/pdf-tools.merge'
+import { Route as PdfToolsJpgToPdfRouteImport } from './routes/pdf-tools.jpg-to-pdf'
 import { Route as PdfToolsCompressRouteImport } from './routes/pdf-tools.compress'
 import { Route as ImageToolsWatermarkRouteImport } from './routes/image-tools.watermark'
 import { Route as ImageToolsRotateRouteImport } from './routes/image-tools.rotate'
@@ -142,6 +148,16 @@ const TextToolsAiSummarizerRoute = TextToolsAiSummarizerRouteImport.update({
   path: '/text-tools/ai-summarizer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PdfToolsWordToPdfRoute = PdfToolsWordToPdfRouteImport.update({
+  id: '/pdf-tools/word-to-pdf',
+  path: '/pdf-tools/word-to-pdf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsUnlockRoute = PdfToolsUnlockRouteImport.update({
+  id: '/pdf-tools/unlock',
+  path: '/pdf-tools/unlock',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PdfToolsSplitRoute = PdfToolsSplitRouteImport.update({
   id: '/pdf-tools/split',
   path: '/pdf-tools/split',
@@ -152,9 +168,29 @@ const PdfToolsRotateRoute = PdfToolsRotateRouteImport.update({
   path: '/pdf-tools/rotate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PdfToolsPdfToWordRoute = PdfToolsPdfToWordRouteImport.update({
+  id: '/pdf-tools/pdf-to-word',
+  path: '/pdf-tools/pdf-to-word',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsPdfToJpgRoute = PdfToolsPdfToJpgRouteImport.update({
+  id: '/pdf-tools/pdf-to-jpg',
+  path: '/pdf-tools/pdf-to-jpg',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsPageNumbersRoute = PdfToolsPageNumbersRouteImport.update({
+  id: '/pdf-tools/page-numbers',
+  path: '/pdf-tools/page-numbers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PdfToolsMergeRoute = PdfToolsMergeRouteImport.update({
   id: '/pdf-tools/merge',
   path: '/pdf-tools/merge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsJpgToPdfRoute = PdfToolsJpgToPdfRouteImport.update({
+  id: '/pdf-tools/jpg-to-pdf',
+  path: '/pdf-tools/jpg-to-pdf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PdfToolsCompressRoute = PdfToolsCompressRouteImport.update({
@@ -357,9 +393,15 @@ export interface FileRoutesByFullPath {
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
+  '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
+  '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
+  '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
   '/pdf-tools/rotate': typeof PdfToolsRotateRoute
   '/pdf-tools/split': typeof PdfToolsSplitRoute
+  '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
+  '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -409,9 +451,15 @@ export interface FileRoutesByTo {
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
+  '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
+  '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
+  '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
   '/pdf-tools/rotate': typeof PdfToolsRotateRoute
   '/pdf-tools/split': typeof PdfToolsSplitRoute
+  '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
+  '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -462,9 +510,15 @@ export interface FileRoutesById {
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
+  '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
+  '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
+  '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
   '/pdf-tools/rotate': typeof PdfToolsRotateRoute
   '/pdf-tools/split': typeof PdfToolsSplitRoute
+  '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
+  '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -516,9 +570,15 @@ export interface FileRouteTypes {
     | '/image-tools/rotate'
     | '/image-tools/watermark'
     | '/pdf-tools/compress'
+    | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
+    | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-to-jpg'
+    | '/pdf-tools/pdf-to-word'
     | '/pdf-tools/rotate'
     | '/pdf-tools/split'
+    | '/pdf-tools/unlock'
+    | '/pdf-tools/word-to-pdf'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -568,9 +628,15 @@ export interface FileRouteTypes {
     | '/image-tools/rotate'
     | '/image-tools/watermark'
     | '/pdf-tools/compress'
+    | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
+    | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-to-jpg'
+    | '/pdf-tools/pdf-to-word'
     | '/pdf-tools/rotate'
     | '/pdf-tools/split'
+    | '/pdf-tools/unlock'
+    | '/pdf-tools/word-to-pdf'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -620,9 +686,15 @@ export interface FileRouteTypes {
     | '/image-tools/rotate'
     | '/image-tools/watermark'
     | '/pdf-tools/compress'
+    | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
+    | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-to-jpg'
+    | '/pdf-tools/pdf-to-word'
     | '/pdf-tools/rotate'
     | '/pdf-tools/split'
+    | '/pdf-tools/unlock'
+    | '/pdf-tools/word-to-pdf'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -673,9 +745,15 @@ export interface RootRouteChildren {
   ImageToolsRotateRoute: typeof ImageToolsRotateRoute
   ImageToolsWatermarkRoute: typeof ImageToolsWatermarkRoute
   PdfToolsCompressRoute: typeof PdfToolsCompressRoute
+  PdfToolsJpgToPdfRoute: typeof PdfToolsJpgToPdfRoute
   PdfToolsMergeRoute: typeof PdfToolsMergeRoute
+  PdfToolsPageNumbersRoute: typeof PdfToolsPageNumbersRoute
+  PdfToolsPdfToJpgRoute: typeof PdfToolsPdfToJpgRoute
+  PdfToolsPdfToWordRoute: typeof PdfToolsPdfToWordRoute
   PdfToolsRotateRoute: typeof PdfToolsRotateRoute
   PdfToolsSplitRoute: typeof PdfToolsSplitRoute
+  PdfToolsUnlockRoute: typeof PdfToolsUnlockRoute
+  PdfToolsWordToPdfRoute: typeof PdfToolsWordToPdfRoute
   TextToolsAiSummarizerRoute: typeof TextToolsAiSummarizerRoute
   TextToolsCaseConverterRoute: typeof TextToolsCaseConverterRoute
   TextToolsCharacterCounterRoute: typeof TextToolsCharacterCounterRoute
@@ -807,6 +885,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TextToolsAiSummarizerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pdf-tools/word-to-pdf': {
+      id: '/pdf-tools/word-to-pdf'
+      path: '/pdf-tools/word-to-pdf'
+      fullPath: '/pdf-tools/word-to-pdf'
+      preLoaderRoute: typeof PdfToolsWordToPdfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/unlock': {
+      id: '/pdf-tools/unlock'
+      path: '/pdf-tools/unlock'
+      fullPath: '/pdf-tools/unlock'
+      preLoaderRoute: typeof PdfToolsUnlockRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pdf-tools/split': {
       id: '/pdf-tools/split'
       path: '/pdf-tools/split'
@@ -821,11 +913,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PdfToolsRotateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pdf-tools/pdf-to-word': {
+      id: '/pdf-tools/pdf-to-word'
+      path: '/pdf-tools/pdf-to-word'
+      fullPath: '/pdf-tools/pdf-to-word'
+      preLoaderRoute: typeof PdfToolsPdfToWordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/pdf-to-jpg': {
+      id: '/pdf-tools/pdf-to-jpg'
+      path: '/pdf-tools/pdf-to-jpg'
+      fullPath: '/pdf-tools/pdf-to-jpg'
+      preLoaderRoute: typeof PdfToolsPdfToJpgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/page-numbers': {
+      id: '/pdf-tools/page-numbers'
+      path: '/pdf-tools/page-numbers'
+      fullPath: '/pdf-tools/page-numbers'
+      preLoaderRoute: typeof PdfToolsPageNumbersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pdf-tools/merge': {
       id: '/pdf-tools/merge'
       path: '/pdf-tools/merge'
       fullPath: '/pdf-tools/merge'
       preLoaderRoute: typeof PdfToolsMergeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/jpg-to-pdf': {
+      id: '/pdf-tools/jpg-to-pdf'
+      path: '/pdf-tools/jpg-to-pdf'
+      fullPath: '/pdf-tools/jpg-to-pdf'
+      preLoaderRoute: typeof PdfToolsJpgToPdfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pdf-tools/compress': {
@@ -1081,9 +1201,15 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsRotateRoute: ImageToolsRotateRoute,
   ImageToolsWatermarkRoute: ImageToolsWatermarkRoute,
   PdfToolsCompressRoute: PdfToolsCompressRoute,
+  PdfToolsJpgToPdfRoute: PdfToolsJpgToPdfRoute,
   PdfToolsMergeRoute: PdfToolsMergeRoute,
+  PdfToolsPageNumbersRoute: PdfToolsPageNumbersRoute,
+  PdfToolsPdfToJpgRoute: PdfToolsPdfToJpgRoute,
+  PdfToolsPdfToWordRoute: PdfToolsPdfToWordRoute,
   PdfToolsRotateRoute: PdfToolsRotateRoute,
   PdfToolsSplitRoute: PdfToolsSplitRoute,
+  PdfToolsUnlockRoute: PdfToolsUnlockRoute,
+  PdfToolsWordToPdfRoute: PdfToolsWordToPdfRoute,
   TextToolsAiSummarizerRoute: TextToolsAiSummarizerRoute,
   TextToolsCaseConverterRoute: TextToolsCaseConverterRoute,
   TextToolsCharacterCounterRoute: TextToolsCharacterCounterRoute,
