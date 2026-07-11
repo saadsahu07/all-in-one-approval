@@ -8,7 +8,7 @@ import {
   FileCode, KeyRound, CalendarDays, HeartPulse, Percent, Receipt, Landmark,
   Coins, Ruler, Weight, Thermometer, Calculator,
   PenLine, Image as ImageIcon, FileStack, TerminalSquare,
-  Youtube, Wand2, Image as ImageIcon2, Lightbulb, DollarSign,
+  Youtube, Wand2, Image as ImageIcon2, Lightbulb,
 } from "lucide-react";
 
 export interface ToolDef {
@@ -132,7 +132,6 @@ export const categories: CategoryDef[] = [
       ["youtube-description-generator", "YouTube Description Generator", "Write SEO-friendly YouTube video descriptions with AI.", Youtube],
       ["youtube-thumbnail-downloader", "YouTube Thumbnail Downloader", "Download HD, SD, and HQ thumbnails from any YouTube video.", ImageIcon2],
       ["youtube-video-idea-generator", "YouTube Video Idea Generator", "Generate 10 fresh YouTube video ideas from a niche or keyword.", Lightbulb],
-      ["youtube-money-calculator", "YouTube Money Calculator", "Estimate YouTube earnings from views and CPM — no signup, no API.", DollarSign],
     ]),
   },
 ];
