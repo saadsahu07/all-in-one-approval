@@ -8,7 +8,7 @@ import {
   FileCode, KeyRound, CalendarDays, HeartPulse, Percent, Receipt, Landmark,
   Coins, Ruler, Weight, Thermometer, Calculator,
   PenLine, Image as ImageIcon, FileStack, TerminalSquare,
-  Youtube, Wand2,
+  Youtube, Wand2, Image as ImageIcon2, Captions, Lightbulb,
 } from "lucide-react";
 
 export interface ToolDef {
@@ -130,6 +130,9 @@ export const categories: CategoryDef[] = [
       ["youtube-tag-generator", "YouTube Tag Generator", "Generate SEO-optimized YouTube tags from a video title with AI.", Youtube],
       ["youtube-title-generator", "YouTube Title Generator", "Generate catchy, click-worthy YouTube video titles with AI.", Youtube],
       ["youtube-description-generator", "YouTube Description Generator", "Write SEO-friendly YouTube video descriptions with AI.", Youtube],
+      ["youtube-thumbnail-downloader", "YouTube Thumbnail Downloader", "Download HD, SD, and HQ thumbnails from any YouTube video.", ImageIcon2],
+      ["youtube-transcript-extractor", "YouTube Transcript Extractor", "Extract the full transcript from a YouTube video URL.", Captions],
+      ["youtube-video-idea-generator", "YouTube Video Idea Generator", "Generate 10 fresh YouTube video ideas from a niche or keyword.", Lightbulb],
     ]),
   },
 ];
