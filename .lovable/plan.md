@@ -1,110 +1,51 @@
-# All-in-One Tools Website — Implementation Plan
-
 ## Goal
-Multi-page, professional "all-in-one" tools site with 50 utilities across 5 categories, aimed at general users and AdSense-approval-friendly.
 
-## Design Direction
-- **Palette:** Ocean Deep — `#0c2340`, `#1a4a6e`, `#2d8a9e`, `#5cbdb9`
-- **Typography:** Libre Baskerville (headings) + IBM Plex Sans (body), loaded via `<link>` in `__root.tsx`
-- **Homepage:** Hero Grid — hero banner + category cards + tool grid
-- **Mood:** Trustworthy, calm, professional
+Make every tool page (~50) individually rank-worthy on Google: unique title & description, canonical + `og:url`, keyword-targeted intro, FAQ block, and FAQPage schema — without hand-editing 50 route files for every content tweak.
 
-## Site Structure
+## Approach: one content file drives all tool pages
 
-Category landing pages + one route per tool.
+Instead of scattering SEO metadata across 50 route files, centralize it in one keyed dictionary. `ToolShell` reads from it automatically for rendering (intro, FAQs, JSON-LD). Route files only need a one-line `head` helper.
 
-```
-/                              Home (hero + categories + featured tools)
-/text-tools                    Text Tools index
-/image-tools                   Image Tools index
-/pdf-tools                     PDF Tools index
-/developer-tools               Developer Tools index
-/calculators                   Calculators & Converters index
-/about                         About the toolkit
-/contact                       Contact
-/privacy-policy                Privacy policy (static, AdSense-required)
-/terms                         Terms (static, AdSense-required)
-/disclaimer                    Disclaimer (static, AdSense-required)
-```
+### New files
 
-### Tool Routes (50)
+- **`src/lib/tool-seo.ts`** — the SEO content dictionary, keyed by tool path.
+  For each tool: `title`, `metaDescription`, `h1` (optional override), `keywords[]`, `longIntro` (2 short paragraphs targeting the primary keyword + intent), `features[]` (3–5 bullets), `faqs[]` (4–6 Q&As covering "is it free", "is it safe", "does it work on mobile", tool-specific questions).
+- **`src/lib/tool-head.ts`** — exports `toolHead(categorySlug, toolSlug)` returning a TanStack `head()` object: title, meta description, `og:title`, `og:description`, `og:url`, `og:type=website`, `twitter:card`, plus `links: [{ rel: "canonical", href }]`.
 
-**Text Tools** (`/text-tools/...`)
-`ai-summarizer`, `grammar-checker`, `paraphraser`, `word-counter`, `character-counter`, `case-converter`, `remove-duplicate-lines`, `text-sorter`, `text-reverser`, `lorem-ipsum`
+### Edits
 
-**Image Tools** (`/image-tools/...`)
-`compress`, `resize`, `jpg-to-png`, `png-to-jpg`, `crop`, `background-remover`, `rotate`, `image-to-pdf`, `watermark`, `qr-code`
+- **`src/components/tool-shell.tsx`** — look up SEO entry by `tool.path`. If present, render:
+  - longer intro paragraphs above the tool UI
+  - a "Features" bullet list
+  - an "FAQ" section below "How to use", with proper `<h2>`/`<h3>` semantics
+  - `FAQPage` JSON-LD (added to the existing `SoftwareApplication` + `BreadcrumbList` + `HowTo` array)
+- **50 route files** — add `head: () => toolHead("<category-slug>", "<tool-slug>")` to each `createFileRoute` (replacing any existing hand-written head). Mechanical, done with a scripted patch.
 
-**PDF Tools** (`/pdf-tools/...`)
-`merge`, `split`, `compress`, `pdf-to-word`, `word-to-pdf`, `pdf-to-jpg`, `jpg-to-pdf`, `rotate`, `unlock`, `page-numbers`
+### Copy strategy
 
-**Developer Tools** (`/developer-tools/...`)
-`json-formatter`, `json-validator`, `base64-encode`, `base64-decode`, `url-encode`, `url-decode`, `html-minifier`, `css-minifier`, `js-minifier`, `password-generator`
+Copy is written for search intent, not padding. Each tool targets its core keyword phrase (e.g. "word counter", "merge pdf", "background remover free") in:
+- title (`<Primary Keyword> — <Benefit> | ToolHive`, ≤60 chars)
+- meta description (natural sentence with keyword + differentiator, 140–160 chars)
+- H1 (keyword-first)
+- First sentence of intro
+- One FAQ question
 
-**Calculators** (`/calculators/...`)
-`age`, `bmi`, `percentage`, `gst-vat`, `emi`, `currency-converter`, `length`, `weight`, `temperature`, `binary-to-decimal`
+All 50 tools get bespoke copy in this pass — no lorem-style filler.
 
-## Implementation Approach
+### Sitemap
 
-All 50 tools run **client-side in the browser** — no backend needed for v1, except:
-- **AI Summarizer, Grammar Checker, Paraphraser, Background Remover** → require Lovable AI Gateway (server function using `createServerFn` + `openai/gpt-5.5`, and image AI for background removal).
-- **Currency Converter** → fetches free public exchange-rate API client-side.
+Already dynamic; no change needed. New per-page `canonical` + `og:url` will be picked up automatically by crawlers.
 
-Everything else uses pure JS/browser APIs — Canvas (image ops), pdf-lib (PDF ops), native `atob`/`btoa`, `URL` API, etc.
+## What this does NOT include
 
-## Technical Work
+- Blog post creation (deferred — separate phase per the SEO plan)
+- Backlink outreach or GSC verification (not code)
+- Per-tool custom `og:image` (skipped; hosting falls back to site preview, which beats a placeholder)
 
-### 1. Design system (`src/styles.css`)
-Ocean Deep palette mapped to oklch semantic tokens (`--background`, `--foreground`, `--primary`, `--accent`, etc.) with `@theme inline`. Register `--font-serif` and `--font-sans`.
+## Deliverable
 
-### 2. Root layout (`src/routes/__root.tsx`)
-- `<link>` tags for Google Fonts (Libre Baskerville + IBM Plex Sans).
-- App title/description/OG metadata.
-- Shared `<Header>` (logo, category nav, mobile menu) and `<Footer>` (legal links).
-- Keep `QueryClientProvider` and `<Outlet />`.
+After this ships, every tool page has: unique indexable title/description, self-referencing canonical, ~200 words of keyword-targeted body copy, 4–6 FAQs, and rich Article + FAQ + HowTo + Breadcrumb + SoftwareApplication schema. That's the on-page SEO ceiling for a tool page — remaining ranking factors move to off-page (links, brand signals) which aren't code.
 
-### 3. Shared components (`src/components/`)
-- `Header`, `Footer`, `MobileNav`
-- `ToolCard`, `CategoryCard`
-- `ToolLayout` — consistent shell (title, description, tool UI, "how to use" section, related tools, ad-slot placeholders)
-- `CopyButton`, `DownloadButton`, `FileDropzone`
+## Rough size
 
-### 4. Tool implementations
-
-**Text tools** — plain React + string manipulation. AI ones call a server function.
-
-**Image tools** — Canvas API for compress/resize/crop/rotate/format-convert/watermark. `qrcode` package for QR. `jspdf` for image-to-PDF. Background remover → Lovable AI image edit.
-
-**PDF tools** — `pdf-lib` for merge/split/rotate/page-numbers/unlock/compress-lite. `jspdf` + Canvas for jpg↔pdf. `pdf-to-word` and `pdf-to-jpg` use `pdfjs-dist` for rendering; word conversion produces `.docx` via `docx` package. Note PDF-to-Word fidelity is best-effort (text extraction only); UI states this clearly.
-
-**Developer tools** — pure JS. `js-beautify` for JSON formatting, `html-minifier-terser`, `clean-css`, `terser` for minifiers (run in browser).
-
-**Calculators** — pure JS math. Currency converter fetches `https://open.er-api.com/v6/latest/USD` client-side.
-
-### 5. AI server functions (`src/lib/ai.functions.ts`)
-- `summarizeText`, `checkGrammar`, `paraphraseText` — one `createServerFn` each, calling `openai/gpt-5.5` via Lovable AI Gateway helper (`src/lib/ai-gateway.server.ts`).
-- Handles `429`/`402` errors with user-facing messages.
-
-### 6. SEO
-- Per-route `head()` with unique title, description, OG/Twitter tags.
-- `public/robots.txt` allowing all crawlers.
-- `public/sitemap.xml` listing every public route.
-- Each tool page has a "How to use" section with real content (AdSense-friendly).
-
-### 7. Legal pages (AdSense requirement)
-Static Privacy Policy, Terms, Disclaimer, Contact, About pages with real, generic-but-substantive content and clear "not legal advice" disclaimers.
-
-## Packages to Add
-`pdf-lib`, `pdfjs-dist`, `jspdf`, `docx`, `qrcode`, `js-beautify`, `html-minifier-terser`, `clean-css`, `terser`
-
-## Out of Scope for v1
-- Server-side file storage or user accounts
-- OCR / scanned-PDF text extraction
-- True background removal without AI (falls back to Lovable AI)
-- Batch processing across multiple files simultaneously (single-file at a time)
-- Real-time collaborative editing
-
-## Notes
-- No user login; all file processing happens in the browser so uploads never leave the device (except the 4 AI tools and currency API). We'll say this on the homepage as a trust signal.
-- Lovable AI Gateway will be enabled to power the AI-based tools. Uses your workspace AI credits.
-- Legal-page copy is a starting template; users should review it for their jurisdiction.
+~50 route file edits (1 line each) + 1 content file (~50 entries × ~800 chars = ~40KB) + 2 small helpers + ToolShell changes. Roughly one large content file to author.
