@@ -25,6 +25,7 @@ import { Route as TextToolsGrammarCheckerRouteImport } from './routes/text-tools
 import { Route as TextToolsCharacterCounterRouteImport } from './routes/text-tools.character-counter'
 import { Route as TextToolsCaseConverterRouteImport } from './routes/text-tools.case-converter'
 import { Route as TextToolsAiSummarizerRouteImport } from './routes/text-tools.ai-summarizer'
+import { Route as PdfToolsMergeRouteImport } from './routes/pdf-tools.merge'
 import { Route as ImageToolsWatermarkRouteImport } from './routes/image-tools.watermark'
 import { Route as ImageToolsRotateRouteImport } from './routes/image-tools.rotate'
 import { Route as ImageToolsResizeRouteImport } from './routes/image-tools.resize'
@@ -136,6 +137,11 @@ const TextToolsCaseConverterRoute = TextToolsCaseConverterRouteImport.update({
 const TextToolsAiSummarizerRoute = TextToolsAiSummarizerRouteImport.update({
   id: '/text-tools/ai-summarizer',
   path: '/text-tools/ai-summarizer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsMergeRoute = PdfToolsMergeRouteImport.update({
+  id: '/pdf-tools/merge',
+  path: '/pdf-tools/merge',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageToolsWatermarkRoute = ImageToolsWatermarkRouteImport.update({
@@ -332,6 +338,7 @@ export interface FileRoutesByFullPath {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -380,6 +387,7 @@ export interface FileRoutesByTo {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -429,6 +437,7 @@ export interface FileRoutesById {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
@@ -479,6 +488,7 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/pdf-tools/merge'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -527,6 +537,7 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/pdf-tools/merge'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -575,6 +586,7 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/pdf-tools/merge'
     | '/text-tools/ai-summarizer'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
@@ -624,6 +636,7 @@ export interface RootRouteChildren {
   ImageToolsResizeRoute: typeof ImageToolsResizeRoute
   ImageToolsRotateRoute: typeof ImageToolsRotateRoute
   ImageToolsWatermarkRoute: typeof ImageToolsWatermarkRoute
+  PdfToolsMergeRoute: typeof PdfToolsMergeRoute
   TextToolsAiSummarizerRoute: typeof TextToolsAiSummarizerRoute
   TextToolsCaseConverterRoute: typeof TextToolsCaseConverterRoute
   TextToolsCharacterCounterRoute: typeof TextToolsCharacterCounterRoute
@@ -753,6 +766,13 @@ declare module '@tanstack/react-router' {
       path: '/text-tools/ai-summarizer'
       fullPath: '/text-tools/ai-summarizer'
       preLoaderRoute: typeof TextToolsAiSummarizerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/merge': {
+      id: '/pdf-tools/merge'
+      path: '/pdf-tools/merge'
+      fullPath: '/pdf-tools/merge'
+      preLoaderRoute: typeof PdfToolsMergeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-tools/watermark': {
@@ -1000,6 +1020,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsResizeRoute: ImageToolsResizeRoute,
   ImageToolsRotateRoute: ImageToolsRotateRoute,
   ImageToolsWatermarkRoute: ImageToolsWatermarkRoute,
+  PdfToolsMergeRoute: PdfToolsMergeRoute,
   TextToolsAiSummarizerRoute: TextToolsAiSummarizerRoute,
   TextToolsCaseConverterRoute: TextToolsCaseConverterRoute,
   TextToolsCharacterCounterRoute: TextToolsCharacterCounterRoute,
