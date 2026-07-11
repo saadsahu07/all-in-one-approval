@@ -53,6 +53,39 @@ export const generateYouTubeTags = createServerFn({ method: "POST" })
     ),
   );
 
+export const generateYouTubeTitles = createServerFn({ method: "POST" })
+  .inputValidator((input: { topic: string; keyword?: string; tone?: string }) => {
+    if (!input.topic?.trim()) throw new Error("Video topic is required");
+    const tones = ["engaging", "clickbait", "professional", "howto", "listicle"];
+    return {
+      topic: input.topic.slice(0, 500),
+      keyword: (input.keyword ?? "").slice(0, 100),
+      tone: tones.includes(input.tone ?? "") ? input.tone! : "engaging",
+    };
+  })
+  .handler(async ({ data }) =>
+    runTextTask(
+      "You are a YouTube growth expert. Generate 10 catchy, high-CTR YouTube video titles based on the user's topic. Each title must be under 70 characters, front-load the main keyword when provided, and use proven patterns (numbers, curiosity gaps, brackets, power words) without being misleading. Output ONLY the 10 titles as a numbered list (1. ... 2. ...), no intro, no explanations.",
+      `Topic: ${data.topic}${data.keyword ? `\nPrimary keyword: ${data.keyword}` : ""}\nStyle: ${data.tone}`,
+    ),
+  );
+
+export const generateYouTubeDescription = createServerFn({ method: "POST" })
+  .inputValidator((input: { title: string; topic?: string; keywords?: string }) => {
+    if (!input.title?.trim()) throw new Error("Video title is required");
+    return {
+      title: input.title.slice(0, 300),
+      topic: (input.topic ?? "").slice(0, 2000),
+      keywords: (input.keywords ?? "").slice(0, 300),
+    };
+  })
+  .handler(async ({ data }) =>
+    runTextTask(
+      "You are a YouTube SEO copywriter. Write a complete, engaging YouTube video description. Structure: (1) a strong 2-3 sentence hook that includes the main keyword in the first 150 characters, (2) a short expanded summary of what viewers will learn, (3) a bulleted 'In this video:' section with 4-6 timestamps placeholders like '00:00 Intro', (4) a call-to-action asking viewers to like and subscribe, (5) a 'Follow us' placeholder line, (6) a final line of 3-5 relevant hashtags. Keep it under 1500 characters. Output only the description text, no preamble.",
+      `Title: ${data.title}${data.topic ? `\n\nWhat the video covers: ${data.topic}` : ""}${data.keywords ? `\n\nTarget keywords: ${data.keywords}` : ""}`,
+    ),
+  );
+
 export const removeBackground = createServerFn({ method: "POST" })
   .inputValidator((input: { dataUrl: string }) => {
     if (!input.dataUrl?.startsWith("data:image/")) throw new Error("A valid image is required");
