@@ -208,7 +208,7 @@ function BlogIndex() {
                 className="group rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/50 hover:bg-secondary/50"
               >
                 <p className="text-xs font-medium uppercase tracking-wide text-primary">{p.category}</p>
-                <h3 className="mt-1 font-serif text-lg font-semibold group-hover:text-primary">{p.title}</h3>
+                <h2 className="mt-1 font-serif text-lg font-semibold group-hover:text-primary">{p.title}</h2>
                 <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
                 <p className="mt-3 text-xs text-muted-foreground">{p.readingMinutes} min read</p>
               </Link>
