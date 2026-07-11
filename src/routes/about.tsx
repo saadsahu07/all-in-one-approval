@@ -4,7 +4,12 @@ export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
     { title: "About ToolHive — Free Online Tools" },
     { name: "description", content: "ToolHive is a free suite of 55 online tools for text, images, PDFs, developers, calculators, and content creation." },
-  ]}),
+    { property: "og:title", content: "About ToolHive — Free Online Tools" },
+    { property: "og:description", content: "ToolHive is a free suite of 55 online tools for text, images, PDFs, developers, calculators, and content creation." },
+    { property: "og:url", content: "https://all-in-one-approval.lovable.app/about" },
+  ],
+  links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/about" }],
+  }),
   component: AboutPage,
 });
 

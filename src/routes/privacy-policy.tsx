@@ -4,7 +4,12 @@ export const Route = createFileRoute("/privacy-policy")({
   head: () => ({ meta: [
     { title: "Privacy Policy — ToolHive" },
     { name: "description", content: "How ToolHive handles data, cookies, analytics, and advertising." },
-  ]}),
+    { property: "og:title", content: "Privacy Policy — ToolHive" },
+    { property: "og:description", content: "How ToolHive handles data, cookies, analytics, and advertising." },
+    { property: "og:url", content: "https://all-in-one-approval.lovable.app/privacy-policy" },
+  ],
+  links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/privacy-policy" }],
+  }),
   component: PrivacyPage,
 });
 

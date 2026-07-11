@@ -67,8 +67,8 @@ function BackgroundRemover() {
         {file && preview && (
           <div className="space-y-3">
             <p className="text-sm text-muted-foreground">{file.name} ({formatBytes(file.size)})</p>
-            <img src={preview} alt="Original" className="max-h-56 rounded border border-border" />
-            <Button onClick={submit} disabled={busy}>
+            <img src={preview} alt="Original uploaded image" className="max-h-56 rounded border border-border" />
+            <Button onClick={submit} disabled={busy} aria-label={busy ? "Removing background, please wait" : "Remove background from image"}>
               {busy && <Loader2 className="h-4 w-4 animate-spin" />}
               {busy ? "Removing background…" : "Remove Background"}
             </Button>

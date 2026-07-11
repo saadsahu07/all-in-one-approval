@@ -69,7 +69,7 @@ function ImageRotator() {
             <div className="flex justify-center rounded-lg border border-border bg-secondary p-6">
               <img
                 src={preview}
-                alt="Preview"
+                alt="Rotated image preview"
                 className="max-h-64 transition-transform"
                 style={{ transform: `rotate(${rotation}deg) scaleX(${flipH ? -1 : 1}) scaleY(${flipV ? -1 : 1})` }}
               />
