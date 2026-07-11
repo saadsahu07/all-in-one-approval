@@ -35,9 +35,16 @@ import { Route as ImageToolsImageToPdfRouteImport } from './routes/image-tools.i
 import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
 import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
+import { Route as DeveloperToolsUrlEncodeRouteImport } from './routes/developer-tools.url-encode'
+import { Route as DeveloperToolsUrlDecodeRouteImport } from './routes/developer-tools.url-decode'
+import { Route as DeveloperToolsPasswordGeneratorRouteImport } from './routes/developer-tools.password-generator'
 import { Route as DeveloperToolsJsonValidatorRouteImport } from './routes/developer-tools.json-validator'
 import { Route as DeveloperToolsJsonFormatterRouteImport } from './routes/developer-tools.json-formatter'
+import { Route as DeveloperToolsJsMinifierRouteImport } from './routes/developer-tools.js-minifier'
+import { Route as DeveloperToolsHtmlMinifierRouteImport } from './routes/developer-tools.html-minifier'
+import { Route as DeveloperToolsCssMinifierRouteImport } from './routes/developer-tools.css-minifier'
 import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
+import { Route as DeveloperToolsBase64DecodeRouteImport } from './routes/developer-tools.base64-decode'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -172,6 +179,22 @@ const ImageToolsBackgroundRemoverRoute =
     path: '/image-tools/background-remover',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsUrlEncodeRoute = DeveloperToolsUrlEncodeRouteImport.update({
+  id: '/developer-tools/url-encode',
+  path: '/developer-tools/url-encode',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeveloperToolsUrlDecodeRoute = DeveloperToolsUrlDecodeRouteImport.update({
+  id: '/developer-tools/url-decode',
+  path: '/developer-tools/url-decode',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeveloperToolsPasswordGeneratorRoute =
+  DeveloperToolsPasswordGeneratorRouteImport.update({
+    id: '/developer-tools/password-generator',
+    path: '/developer-tools/password-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsJsonValidatorRoute =
   DeveloperToolsJsonValidatorRouteImport.update({
     id: '/developer-tools/json-validator',
@@ -184,18 +207,49 @@ const DeveloperToolsJsonFormatterRoute =
     path: '/developer-tools/json-formatter',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsJsMinifierRoute =
+  DeveloperToolsJsMinifierRouteImport.update({
+    id: '/developer-tools/js-minifier',
+    path: '/developer-tools/js-minifier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsHtmlMinifierRoute =
+  DeveloperToolsHtmlMinifierRouteImport.update({
+    id: '/developer-tools/html-minifier',
+    path: '/developer-tools/html-minifier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsCssMinifierRoute =
+  DeveloperToolsCssMinifierRouteImport.update({
+    id: '/developer-tools/css-minifier',
+    path: '/developer-tools/css-minifier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsBase64EncodeRoute =
   DeveloperToolsBase64EncodeRouteImport.update({
     id: '/developer-tools/base64-encode',
     path: '/developer-tools/base64-encode',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsBase64DecodeRoute =
+  DeveloperToolsBase64DecodeRouteImport.update({
+    id: '/developer-tools/base64-decode',
+    path: '/developer-tools/base64-decode',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
+  '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
+  '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
+  '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
+  '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
+  '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -224,9 +278,16 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
+  '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
+  '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
+  '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
+  '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
+  '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -256,9 +317,16 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
+  '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
+  '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
+  '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
+  '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
+  '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -289,9 +357,16 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
+    | '/developer-tools/css-minifier'
+    | '/developer-tools/html-minifier'
+    | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
+    | '/developer-tools/password-generator'
+    | '/developer-tools/url-decode'
+    | '/developer-tools/url-encode'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -320,9 +395,16 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
+    | '/developer-tools/css-minifier'
+    | '/developer-tools/html-minifier'
+    | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
+    | '/developer-tools/password-generator'
+    | '/developer-tools/url-decode'
+    | '/developer-tools/url-encode'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -351,9 +433,16 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
+    | '/developer-tools/css-minifier'
+    | '/developer-tools/html-minifier'
+    | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
+    | '/developer-tools/password-generator'
+    | '/developer-tools/url-decode'
+    | '/developer-tools/url-encode'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -383,9 +472,16 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DeveloperToolsBase64DecodeRoute: typeof DeveloperToolsBase64DecodeRoute
   DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
+  DeveloperToolsCssMinifierRoute: typeof DeveloperToolsCssMinifierRoute
+  DeveloperToolsHtmlMinifierRoute: typeof DeveloperToolsHtmlMinifierRoute
+  DeveloperToolsJsMinifierRoute: typeof DeveloperToolsJsMinifierRoute
   DeveloperToolsJsonFormatterRoute: typeof DeveloperToolsJsonFormatterRoute
   DeveloperToolsJsonValidatorRoute: typeof DeveloperToolsJsonValidatorRoute
+  DeveloperToolsPasswordGeneratorRoute: typeof DeveloperToolsPasswordGeneratorRoute
+  DeveloperToolsUrlDecodeRoute: typeof DeveloperToolsUrlDecodeRoute
+  DeveloperToolsUrlEncodeRoute: typeof DeveloperToolsUrlEncodeRoute
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
   ImageToolsCompressRoute: typeof ImageToolsCompressRoute
   ImageToolsCropRoute: typeof ImageToolsCropRoute
@@ -597,6 +693,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsBackgroundRemoverRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/url-encode': {
+      id: '/developer-tools/url-encode'
+      path: '/developer-tools/url-encode'
+      fullPath: '/developer-tools/url-encode'
+      preLoaderRoute: typeof DeveloperToolsUrlEncodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/url-decode': {
+      id: '/developer-tools/url-decode'
+      path: '/developer-tools/url-decode'
+      fullPath: '/developer-tools/url-decode'
+      preLoaderRoute: typeof DeveloperToolsUrlDecodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/password-generator': {
+      id: '/developer-tools/password-generator'
+      path: '/developer-tools/password-generator'
+      fullPath: '/developer-tools/password-generator'
+      preLoaderRoute: typeof DeveloperToolsPasswordGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/json-validator': {
       id: '/developer-tools/json-validator'
       path: '/developer-tools/json-validator'
@@ -611,6 +728,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsJsonFormatterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/js-minifier': {
+      id: '/developer-tools/js-minifier'
+      path: '/developer-tools/js-minifier'
+      fullPath: '/developer-tools/js-minifier'
+      preLoaderRoute: typeof DeveloperToolsJsMinifierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/html-minifier': {
+      id: '/developer-tools/html-minifier'
+      path: '/developer-tools/html-minifier'
+      fullPath: '/developer-tools/html-minifier'
+      preLoaderRoute: typeof DeveloperToolsHtmlMinifierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/css-minifier': {
+      id: '/developer-tools/css-minifier'
+      path: '/developer-tools/css-minifier'
+      fullPath: '/developer-tools/css-minifier'
+      preLoaderRoute: typeof DeveloperToolsCssMinifierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/base64-encode': {
       id: '/developer-tools/base64-encode'
       path: '/developer-tools/base64-encode'
@@ -618,14 +756,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsBase64EncodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/base64-decode': {
+      id: '/developer-tools/base64-decode'
+      path: '/developer-tools/base64-decode'
+      fullPath: '/developer-tools/base64-decode'
+      preLoaderRoute: typeof DeveloperToolsBase64DecodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DeveloperToolsBase64DecodeRoute: DeveloperToolsBase64DecodeRoute,
   DeveloperToolsBase64EncodeRoute: DeveloperToolsBase64EncodeRoute,
+  DeveloperToolsCssMinifierRoute: DeveloperToolsCssMinifierRoute,
+  DeveloperToolsHtmlMinifierRoute: DeveloperToolsHtmlMinifierRoute,
+  DeveloperToolsJsMinifierRoute: DeveloperToolsJsMinifierRoute,
   DeveloperToolsJsonFormatterRoute: DeveloperToolsJsonFormatterRoute,
   DeveloperToolsJsonValidatorRoute: DeveloperToolsJsonValidatorRoute,
+  DeveloperToolsPasswordGeneratorRoute: DeveloperToolsPasswordGeneratorRoute,
+  DeveloperToolsUrlDecodeRoute: DeveloperToolsUrlDecodeRoute,
+  DeveloperToolsUrlEncodeRoute: DeveloperToolsUrlEncodeRoute,
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
   ImageToolsCompressRoute: ImageToolsCompressRoute,
   ImageToolsCropRoute: ImageToolsCropRoute,
