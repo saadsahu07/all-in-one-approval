@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -74,6 +75,11 @@ import { Route as CalculatorsAgeRouteImport } from './routes/calculators.age'
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -396,6 +402,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
@@ -459,6 +466,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
@@ -523,6 +531,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
   '/calculators/age': typeof CalculatorsAgeRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
@@ -588,6 +597,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/privacy-policy'
+    | '/search'
     | '/terms'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
@@ -651,6 +661,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/privacy-policy'
+    | '/search'
     | '/terms'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
@@ -714,6 +725,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/privacy-policy'
+    | '/search'
     | '/terms'
     | '/calculators/age'
     | '/calculators/binary-to-decimal'
@@ -778,6 +790,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  SearchRoute: typeof SearchRoute
   TermsRoute: typeof TermsRoute
   CalculatorsAgeRoute: typeof CalculatorsAgeRoute
   CalculatorsBinaryToDecimalRoute: typeof CalculatorsBinaryToDecimalRoute
@@ -843,6 +856,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -1274,6 +1294,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SearchRoute: SearchRoute,
   TermsRoute: TermsRoute,
   CalculatorsAgeRoute: CalculatorsAgeRoute,
   CalculatorsBinaryToDecimalRoute: CalculatorsBinaryToDecimalRoute,
