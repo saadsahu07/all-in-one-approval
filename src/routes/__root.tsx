@@ -14,7 +14,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer } from "../components/site-chrome";
 import { Toaster } from "../components/ui/sonner";
-import { PageLoader } from "../components/page-loader";
 
 function NotFoundComponent() {
   return (
@@ -163,13 +162,10 @@ function RootComponent() {
         <Header />
         <main className="flex-1">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <div key={pathname} className="page-transition">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
         <Footer />
         <Toaster />
-        <PageLoader />
       </div>
     </QueryClientProvider>
   );
