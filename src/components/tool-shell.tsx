@@ -19,9 +19,50 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
   const tool = category?.tools.find((t) => t.slug === toolSlug);
   const related = (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4);
   const blogPost = tool ? postsMeta.find((p) => p.toolPath === tool.path) : undefined;
+  const SITE = "https://all-in-one-approval.lovable.app";
+  const toolUrl = tool ? `${SITE}${tool.path}` : undefined;
+  const jsonLd = tool && category
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: tool.name,
+          description: intro,
+          url: toolUrl,
+          applicationCategory: "UtilitiesApplication",
+          operatingSystem: "Any (web browser)",
+          browserRequirements: "Requires JavaScript. Requires HTML5.",
+          isAccessibleForFree: true,
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          publisher: { "@type": "Organization", name: "ToolHive", url: SITE },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: category.name, item: `${SITE}${category.path}` },
+            { "@type": "ListItem", position: 3, name: tool.name, item: toolUrl },
+          ],
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: `How to use the ${tool.name}`,
+          step: howTo.map((s, i) => ({ "@type": "HowToStep", position: i + 1, text: s })),
+        },
+      ]
+    : null;
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
       <nav className="mb-6 flex items-center gap-1 text-sm text-muted-foreground">
         <Link to="/" className="hover:text-foreground">Home</Link>
         <ChevronRight className="h-3.5 w-3.5" />
