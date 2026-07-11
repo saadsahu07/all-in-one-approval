@@ -22,7 +22,7 @@ function PrivacyPage() {
       <h2 className="mt-6 text-2xl font-bold text-foreground">Advertising</h2>
       <p className="mt-2">If we display ads, third-party vendors including Google may use cookies to serve ads based on prior visits to this or other sites. You can opt out of personalized advertising by visiting Google's Ads Settings.</p>
       <h2 className="mt-6 text-2xl font-bold text-foreground">Contact</h2>
-      <p className="mt-2">Questions about this policy? Email hello@toolharbor.app.</p>
+      <p className="mt-2">Questions about this policy? Email empiremasteryai@gmail.com.</p>
     </article>
   );
 }
