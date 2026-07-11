@@ -162,13 +162,10 @@ function RootComponent() {
         <Header />
         <main className="flex-1">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <div key={pathname} className="page-transition">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
         <Footer />
         <Toaster />
-        <PageLoader />
       </div>
     </QueryClientProvider>
   );
