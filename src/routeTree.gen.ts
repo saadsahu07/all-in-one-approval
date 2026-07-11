@@ -68,6 +68,7 @@ import { Route as ContentCreationYoutubeVideoIdeaGeneratorRouteImport } from './
 import { Route as ContentCreationYoutubeTitleGeneratorRouteImport } from './routes/content-creation.youtube-title-generator'
 import { Route as ContentCreationYoutubeThumbnailDownloaderRouteImport } from './routes/content-creation.youtube-thumbnail-downloader'
 import { Route as ContentCreationYoutubeTagGeneratorRouteImport } from './routes/content-creation.youtube-tag-generator'
+import { Route as ContentCreationYoutubeMoneyCalculatorRouteImport } from './routes/content-creation.youtube-money-calculator'
 import { Route as ContentCreationYoutubeDescriptionGeneratorRouteImport } from './routes/content-creation.youtube-description-generator'
 import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
@@ -391,6 +392,12 @@ const ContentCreationYoutubeTagGeneratorRoute =
     path: '/content-creation/youtube-tag-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ContentCreationYoutubeMoneyCalculatorRoute =
+  ContentCreationYoutubeMoneyCalculatorRouteImport.update({
+    id: '/content-creation/youtube-money-calculator',
+    path: '/content-creation/youtube-money-calculator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContentCreationYoutubeDescriptionGeneratorRoute =
   ContentCreationYoutubeDescriptionGeneratorRouteImport.update({
     id: '/content-creation/youtube-description-generator',
@@ -476,6 +483,7 @@ export interface FileRoutesByFullPath {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
+  '/content-creation/youtube-money-calculator': typeof ContentCreationYoutubeMoneyCalculatorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
@@ -549,6 +557,7 @@ export interface FileRoutesByTo {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
+  '/content-creation/youtube-money-calculator': typeof ContentCreationYoutubeMoneyCalculatorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
@@ -623,6 +632,7 @@ export interface FileRoutesById {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
+  '/content-creation/youtube-money-calculator': typeof ContentCreationYoutubeMoneyCalculatorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
@@ -698,6 +708,7 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/weight'
     | '/content-creation/youtube-description-generator'
+    | '/content-creation/youtube-money-calculator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
@@ -771,6 +782,7 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/weight'
     | '/content-creation/youtube-description-generator'
+    | '/content-creation/youtube-money-calculator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
@@ -844,6 +856,7 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/weight'
     | '/content-creation/youtube-description-generator'
+    | '/content-creation/youtube-money-calculator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
@@ -918,6 +931,7 @@ export interface RootRouteChildren {
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
   CalculatorsWeightRoute: typeof CalculatorsWeightRoute
   ContentCreationYoutubeDescriptionGeneratorRoute: typeof ContentCreationYoutubeDescriptionGeneratorRoute
+  ContentCreationYoutubeMoneyCalculatorRoute: typeof ContentCreationYoutubeMoneyCalculatorRoute
   ContentCreationYoutubeTagGeneratorRoute: typeof ContentCreationYoutubeTagGeneratorRoute
   ContentCreationYoutubeThumbnailDownloaderRoute: typeof ContentCreationYoutubeThumbnailDownloaderRoute
   ContentCreationYoutubeTitleGeneratorRoute: typeof ContentCreationYoutubeTitleGeneratorRoute
@@ -1386,6 +1400,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContentCreationYoutubeTagGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/content-creation/youtube-money-calculator': {
+      id: '/content-creation/youtube-money-calculator'
+      path: '/content-creation/youtube-money-calculator'
+      fullPath: '/content-creation/youtube-money-calculator'
+      preLoaderRoute: typeof ContentCreationYoutubeMoneyCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/content-creation/youtube-description-generator': {
       id: '/content-creation/youtube-description-generator'
       path: '/content-creation/youtube-description-generator'
@@ -1495,6 +1516,8 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsWeightRoute: CalculatorsWeightRoute,
   ContentCreationYoutubeDescriptionGeneratorRoute:
     ContentCreationYoutubeDescriptionGeneratorRoute,
+  ContentCreationYoutubeMoneyCalculatorRoute:
+    ContentCreationYoutubeMoneyCalculatorRoute,
   ContentCreationYoutubeTagGeneratorRoute:
     ContentCreationYoutubeTagGeneratorRoute,
   ContentCreationYoutubeThumbnailDownloaderRoute:

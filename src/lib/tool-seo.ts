@@ -118,6 +118,27 @@ export const toolSeo: Record<string, ToolSeo> = {
       { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
     ],
   },
+  "/content-creation/youtube-money-calculator": {
+    title: "YouTube Money Calculator — Free Earnings Estimator",
+    metaDescription: "Estimate how much money a YouTube video or channel can earn from views and CPM. Free calculator, no signup, instant results.",
+    keyword: "youtube money calculator",
+    intro: [
+      "Estimate potential YouTube earnings from any view count in seconds. Our free YouTube money calculator uses your monthly views and a CPM (cost per 1,000 ad impressions) range to project low, average, and high revenue after YouTube's standard 45% cut.",
+      "Perfect for creators planning a channel, sponsors sizing a deal, and marketers benchmarking Shorts vs. long-form performance. No signup, no API, no data leaves your browser.",
+    ],
+    features: [
+      "Instant low / average / high earnings estimate",
+      "Adjustable CPM range for any niche (finance, gaming, vlogs, etc.)",
+      "Assumes YouTube's 55% creator share on ad revenue",
+      "Configurable monetized-playback rate for realistic projections",
+    ],
+    faqs: [
+      { q: "How accurate is a YouTube earnings estimate?", a: "It's a projection, not a promise. Real revenue depends on niche CPM, audience geography, ad format, watch time, and monetized playback rate. Use the range as a ballpark, not a guarantee." },
+      { q: "What CPM should I use?", a: "CPMs vary wildly by niche: finance and B2B often see $15–$40, gaming $2–$6, vlogs $3–$8. Check YouTube Studio → Analytics → Revenue for your own CPM if you're already monetized." },
+      { q: "Why 55%?", a: "YouTube keeps 45% of ad revenue on standard long-form videos and pays creators the remaining 55%. Shorts uses a different pool-based split — this calculator targets long-form." },
+      { q: "Is this tool really free?", a: "Yes. The YouTube money calculator is 100% free with no signup and runs entirely in your browser." },
+    ],
+  },
   "/text-tools/ai-summarizer": {
     title: "AI Text Summarizer — Free Online Summary Tool",
     metaDescription: "Summarize long articles, PDFs, and notes into clear key points with AI. Free, no signup, and works instantly in your browser.",
