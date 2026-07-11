@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Wrench, Search } from "lucide-react";
-import { categories } from "@/lib/tools";
+import { navCategories as categories } from "@/lib/nav";
 
 export function Header() {
   const [open, setOpen] = useState(false);

@@ -1,11 +1,15 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getPost, posts } from "@/lib/blog";
+import { getPostMeta, postsMeta } from "@/lib/blog-meta";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
-    const post = getPost(params.slug);
-    if (!post) throw notFound();
-    return { post };
+  loader: async ({ params }) => {
+    const meta = getPostMeta(params.slug);
+    if (!meta) throw notFound();
+    // Content chunk is lazy-split so the blog list doesn't ship it.
+    const { postContent } = await import("@/lib/blog-content");
+    const content = postContent[params.slug];
+    if (!content) throw notFound();
+    return { post: { ...meta, content } };
   },
   head: ({ loaderData }) => {
     const p = loaderData?.post;
@@ -81,7 +85,9 @@ function renderInline(text: string): React.ReactNode {
 
 function BlogPost() {
   const { post } = Route.useLoaderData();
-  const related = posts.filter((p) => p.category === post.category && p.slug !== post.slug).slice(0, 3);
+  const related = postsMeta
+    .filter((p) => p.category === post.category && p.slug !== post.slug)
+    .slice(0, 3);
   return (
     <article className="mx-auto max-w-3xl px-4 py-12">
       <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground">← All posts</Link>
