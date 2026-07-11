@@ -16,9 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <Wrench className="h-5 w-5" />
-          </span>
+          <img src="/toolhive-logo.png" alt="ToolHive" className="h-9 w-9 object-contain" />
           <span className="font-serif text-lg font-bold tracking-tight">ToolHive</span>
         </Link>
         <nav className="ml-4 hidden items-center gap-1 lg:flex">
