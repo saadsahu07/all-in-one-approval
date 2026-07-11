@@ -34,6 +34,48 @@ export const toolSeo: Record<string, ToolSeo> = {
       { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
     ],
   },
+  "/content-creation/youtube-title-generator": {
+    title: "YouTube Title Generator — Free AI Click-Worthy Titles",
+    metaDescription: "Generate 10 catchy, high-CTR YouTube video titles instantly with AI. Free, no signup — boost views with proven title patterns and keywords.",
+    keyword: "youtube title generator",
+    intro: [
+      "Generate 10 catchy, click-worthy YouTube video titles in seconds. Our free AI YouTube title generator uses proven high-CTR patterns — numbers, curiosity gaps, brackets, and power words — to help your videos stand out in search and suggested feeds.",
+      "Perfect for creators, editors, and marketers who want more views without burning hours brainstorming titles. Enter your topic, pick a style, and copy the title that fits your video best.",
+    ],
+    features: [
+      "10 unique title ideas per generation",
+      "Choose from engaging, clickbait, professional, how-to, or listicle styles",
+      "Titles kept under 70 characters for full display on YouTube",
+      "Front-loads your primary keyword for better SEO",
+    ],
+    faqs: [
+      { q: "What makes a good YouTube title?", a: "A good title is under 70 characters, includes the main keyword near the start, sparks curiosity or promises a clear benefit, and matches the actual video content." },
+      { q: "How many titles will I get?", a: "Ten titles per generation. Re-run the tool as many times as you like to get fresh variations." },
+      { q: "Is this tool really free?", a: "Yes. The YouTube title generator is 100% free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/content-creation/youtube-description-generator": {
+    title: "YouTube Description Generator — Free AI SEO Descriptions",
+    metaDescription: "Write SEO-optimized YouTube video descriptions with AI in seconds. Free tool with hook, timestamps, CTA, and hashtags — no signup required.",
+    keyword: "youtube description generator",
+    intro: [
+      "Write complete, SEO-optimized YouTube video descriptions in seconds. Our free AI YouTube description generator produces a strong hook, summary, timestamps, call-to-action, and hashtags — everything YouTube's algorithm and viewers look for.",
+      "Perfect for creators who want to rank higher, keep viewers watching, and stop staring at an empty description box. Paste your title and topic, and get a description you can drop straight into YouTube Studio.",
+    ],
+    features: [
+      "Hook front-loaded with your main keyword in the first 150 characters",
+      "Auto-generated timestamps you can fill in for chapter markers",
+      "Built-in like/subscribe call-to-action",
+      "Relevant hashtags for extra discoverability",
+    ],
+    faqs: [
+      { q: "How long should a YouTube description be?", a: "YouTube allows up to 5,000 characters, but 500–1,500 characters is the sweet spot: enough for SEO context without overwhelming viewers." },
+      { q: "Do YouTube descriptions really affect SEO?", a: "Yes. YouTube uses your description (especially the first 150 characters) to understand your video's topic and rank it in search and suggested videos." },
+      { q: "Is this tool really free?", a: "Yes. The YouTube description generator is 100% free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
   "/text-tools/ai-summarizer": {
     title: "AI Text Summarizer — Free Online Summary Tool",
     metaDescription: "Summarize long articles, PDFs, and notes into clear key points with AI. Free, no signup, and works instantly in your browser.",

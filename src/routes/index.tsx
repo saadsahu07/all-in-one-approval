@@ -32,7 +32,7 @@ function Index() {
         <div className="relative mx-auto max-w-6xl px-4 py-24 text-center sm:py-32">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
-            <span>AI-assisted · 51 tools · 100% in-browser</span>
+            <span>AI-assisted · 53 tools · 100% in-browser</span>
           </div>
           <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl">
             The intelligent toolkit for <br className="hidden sm:block" />
@@ -115,7 +115,7 @@ function Index() {
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent">02 — The full library</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">All 51 tools</h2>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">All 53 tools</h2>
             </div>
             <p className="text-sm text-muted-foreground">Fast, private, and free forever.</p>
           </div>

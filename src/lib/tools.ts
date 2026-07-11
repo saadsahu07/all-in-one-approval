@@ -128,6 +128,8 @@ export const categories: CategoryDef[] = [
     icon: Wand2,
     tools: make("content-creation", "/content-creation", [
       ["youtube-tag-generator", "YouTube Tag Generator", "Generate SEO-optimized YouTube tags from a video title with AI.", Youtube],
+      ["youtube-title-generator", "YouTube Title Generator", "Generate catchy, click-worthy YouTube video titles with AI.", Youtube],
+      ["youtube-description-generator", "YouTube Description Generator", "Write SEO-friendly YouTube video descriptions with AI.", Youtube],
     ]),
   },
 ];
