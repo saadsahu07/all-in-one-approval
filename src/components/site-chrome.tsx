@@ -1,20 +1,27 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Wrench } from "lucide-react";
+import { Menu, X, Wrench, Search } from "lucide-react";
 import { categories } from "@/lib/tools";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [q, setQ] = useState("");
+  const navigate = useNavigate();
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate({ to: "/search", search: { q } });
+    setOpen(false);
+  };
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+      <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Wrench className="h-5 w-5" />
           </span>
           <span className="font-serif text-lg font-bold tracking-tight">ToolHarbor</span>
         </Link>
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="ml-4 hidden items-center gap-1 lg:flex">
           {categories.map((c) => (
             <Link
               key={c.slug}
@@ -26,8 +33,18 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <form onSubmit={submit} className="relative ml-auto hidden md:block">
+          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Search tools…"
+            className="h-9 w-56 rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          />
+        </form>
         <button
-          className="rounded-md p-2 text-foreground md:hidden"
+          className="ml-auto rounded-md p-2 text-foreground md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -36,6 +53,16 @@ export function Header() {
       </div>
       {open && (
         <nav className="border-t border-border bg-card px-4 pb-4 md:hidden">
+          <form onSubmit={submit} className="relative py-3">
+            <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="Search tools…"
+              className="h-10 w-full rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+            />
+          </form>
           {categories.map((c) => (
             <Link
               key={c.slug}
