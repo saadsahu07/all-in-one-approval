@@ -131,7 +131,7 @@ function RootComponent() {
         <Header />
         <main className="flex-1">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <div key={pathname} className="animate-fade-in">
+          <div key={pathname} className="page-transition">
             <Outlet />
           </div>
         </main>
