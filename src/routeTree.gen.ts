@@ -21,6 +21,7 @@ import { Route as TextToolsIndexRouteImport } from './routes/text-tools.index'
 import { Route as PdfToolsIndexRouteImport } from './routes/pdf-tools.index'
 import { Route as ImageToolsIndexRouteImport } from './routes/image-tools.index'
 import { Route as DeveloperToolsIndexRouteImport } from './routes/developer-tools.index'
+import { Route as ContentCreationIndexRouteImport } from './routes/content-creation.index'
 import { Route as CalculatorsIndexRouteImport } from './routes/calculators.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
@@ -134,6 +135,11 @@ const ImageToolsIndexRoute = ImageToolsIndexRouteImport.update({
 const DeveloperToolsIndexRoute = DeveloperToolsIndexRouteImport.update({
   id: '/developer-tools/',
   path: '/developer-tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContentCreationIndexRoute = ContentCreationIndexRouteImport.update({
+  id: '/content-creation/',
+  path: '/content-creation/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalculatorsIndexRoute = CalculatorsIndexRouteImport.update({
@@ -484,6 +490,7 @@ export interface FileRoutesByFullPath {
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
+  '/content-creation/': typeof ContentCreationIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
   '/image-tools/': typeof ImageToolsIndexRoute
   '/pdf-tools/': typeof PdfToolsIndexRoute
@@ -552,6 +559,7 @@ export interface FileRoutesByTo {
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
   '/blog': typeof BlogIndexRoute
   '/calculators': typeof CalculatorsIndexRoute
+  '/content-creation': typeof ContentCreationIndexRoute
   '/developer-tools': typeof DeveloperToolsIndexRoute
   '/image-tools': typeof ImageToolsIndexRoute
   '/pdf-tools': typeof PdfToolsIndexRoute
@@ -621,6 +629,7 @@ export interface FileRoutesById {
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
+  '/content-creation/': typeof ContentCreationIndexRoute
   '/developer-tools/': typeof DeveloperToolsIndexRoute
   '/image-tools/': typeof ImageToolsIndexRoute
   '/pdf-tools/': typeof PdfToolsIndexRoute
@@ -691,6 +700,7 @@ export interface FileRouteTypes {
     | '/text-tools/word-counter'
     | '/blog/'
     | '/calculators/'
+    | '/content-creation/'
     | '/developer-tools/'
     | '/image-tools/'
     | '/pdf-tools/'
@@ -759,6 +769,7 @@ export interface FileRouteTypes {
     | '/text-tools/word-counter'
     | '/blog'
     | '/calculators'
+    | '/content-creation'
     | '/developer-tools'
     | '/image-tools'
     | '/pdf-tools'
@@ -827,6 +838,7 @@ export interface FileRouteTypes {
     | '/text-tools/word-counter'
     | '/blog/'
     | '/calculators/'
+    | '/content-creation/'
     | '/developer-tools/'
     | '/image-tools/'
     | '/pdf-tools/'
@@ -896,6 +908,7 @@ export interface RootRouteChildren {
   TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CalculatorsIndexRoute: typeof CalculatorsIndexRoute
+  ContentCreationIndexRoute: typeof ContentCreationIndexRoute
   DeveloperToolsIndexRoute: typeof DeveloperToolsIndexRoute
   ImageToolsIndexRoute: typeof ImageToolsIndexRoute
   PdfToolsIndexRoute: typeof PdfToolsIndexRoute
@@ -986,6 +999,13 @@ declare module '@tanstack/react-router' {
       path: '/developer-tools'
       fullPath: '/developer-tools/'
       preLoaderRoute: typeof DeveloperToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/': {
+      id: '/content-creation/'
+      path: '/content-creation'
+      fullPath: '/content-creation/'
+      preLoaderRoute: typeof ContentCreationIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators/': {
@@ -1433,6 +1453,7 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsWordCounterRoute: TextToolsWordCounterRoute,
   BlogIndexRoute: BlogIndexRoute,
   CalculatorsIndexRoute: CalculatorsIndexRoute,
+  ContentCreationIndexRoute: ContentCreationIndexRoute,
   DeveloperToolsIndexRoute: DeveloperToolsIndexRoute,
   ImageToolsIndexRoute: ImageToolsIndexRoute,
   PdfToolsIndexRoute: PdfToolsIndexRoute,

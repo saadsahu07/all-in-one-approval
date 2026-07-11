@@ -8,7 +8,7 @@ import { ToolShell, CopyButton } from "@/components/tool-shell";
 import { Button, Input, Label, Textarea } from "@/components/ui-primitives";
 
 export const Route = createFileRoute("/content-creation/youtube-tag-generator")({
-  head: () => toolHead("text-tools", "youtube-tag-generator"),
+  head: () => toolHead("content-creation", "youtube-tag-generator"),
   component: YouTubeTagGenerator,
 });
 
@@ -48,7 +48,7 @@ function YouTubeTagGenerator() {
 
   return (
     <ToolShell
-      categorySlug="text-tools"
+      categorySlug="content-creation"
       toolSlug="youtube-tag-generator"
       intro="Generate SEO-optimized YouTube tags from your video title in seconds. Boost discoverability with a keyword-rich mix of short, mid-tail, and long-tail tags."
       howTo={[
