@@ -4,8 +4,42 @@ import { getCategory } from "@/lib/tools";
 export function CategoryPage({ slug }: { slug: string }) {
   const category = getCategory(slug);
   if (!category) return null;
+  const SITE = "https://all-in-one-approval.lovable.app";
+  const catUrl = `${SITE}${category.path}`;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: category.name, item: catUrl },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: category.name,
+      description: category.short,
+      url: catUrl,
+      hasPart: category.tools.map((t) => ({
+        "@type": "SoftwareApplication",
+        name: t.name,
+        description: t.short,
+        url: `${SITE}${t.path}`,
+        applicationCategory: "UtilitiesApplication",
+        operatingSystem: "Any (web browser)",
+        isAccessibleForFree: true,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      })),
+    },
+  ];
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="flex items-center gap-4">
         <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
           <category.icon className="h-6 w-6" />
