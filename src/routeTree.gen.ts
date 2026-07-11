@@ -45,6 +45,16 @@ import { Route as DeveloperToolsHtmlMinifierRouteImport } from './routes/develop
 import { Route as DeveloperToolsCssMinifierRouteImport } from './routes/developer-tools.css-minifier'
 import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
 import { Route as DeveloperToolsBase64DecodeRouteImport } from './routes/developer-tools.base64-decode'
+import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
+import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
+import { Route as CalculatorsPercentageRouteImport } from './routes/calculators.percentage'
+import { Route as CalculatorsLengthRouteImport } from './routes/calculators.length'
+import { Route as CalculatorsGstVatRouteImport } from './routes/calculators.gst-vat'
+import { Route as CalculatorsEmiRouteImport } from './routes/calculators.emi'
+import { Route as CalculatorsCurrencyConverterRouteImport } from './routes/calculators.currency-converter'
+import { Route as CalculatorsBmiRouteImport } from './routes/calculators.bmi'
+import { Route as CalculatorsBinaryToDecimalRouteImport } from './routes/calculators.binary-to-decimal'
+import { Route as CalculatorsAgeRouteImport } from './routes/calculators.age'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -237,9 +247,71 @@ const DeveloperToolsBase64DecodeRoute =
     path: '/developer-tools/base64-decode',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CalculatorsWeightRoute = CalculatorsWeightRouteImport.update({
+  id: '/calculators/weight',
+  path: '/calculators/weight',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsTemperatureRoute = CalculatorsTemperatureRouteImport.update({
+  id: '/calculators/temperature',
+  path: '/calculators/temperature',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsPercentageRoute = CalculatorsPercentageRouteImport.update({
+  id: '/calculators/percentage',
+  path: '/calculators/percentage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsLengthRoute = CalculatorsLengthRouteImport.update({
+  id: '/calculators/length',
+  path: '/calculators/length',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsGstVatRoute = CalculatorsGstVatRouteImport.update({
+  id: '/calculators/gst-vat',
+  path: '/calculators/gst-vat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsEmiRoute = CalculatorsEmiRouteImport.update({
+  id: '/calculators/emi',
+  path: '/calculators/emi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsCurrencyConverterRoute =
+  CalculatorsCurrencyConverterRouteImport.update({
+    id: '/calculators/currency-converter',
+    path: '/calculators/currency-converter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CalculatorsBmiRoute = CalculatorsBmiRouteImport.update({
+  id: '/calculators/bmi',
+  path: '/calculators/bmi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsBinaryToDecimalRoute =
+  CalculatorsBinaryToDecimalRouteImport.update({
+    id: '/calculators/binary-to-decimal',
+    path: '/calculators/binary-to-decimal',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CalculatorsAgeRoute = CalculatorsAgeRouteImport.update({
+  id: '/calculators/age',
+  path: '/calculators/age',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calculators/age': typeof CalculatorsAgeRoute
+  '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
+  '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/emi': typeof CalculatorsEmiRoute
+  '/calculators/gst-vat': typeof CalculatorsGstVatRoute
+  '/calculators/length': typeof CalculatorsLengthRoute
+  '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/weight': typeof CalculatorsWeightRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -278,6 +350,16 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calculators/age': typeof CalculatorsAgeRoute
+  '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
+  '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/emi': typeof CalculatorsEmiRoute
+  '/calculators/gst-vat': typeof CalculatorsGstVatRoute
+  '/calculators/length': typeof CalculatorsLengthRoute
+  '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/weight': typeof CalculatorsWeightRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -317,6 +399,16 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calculators/age': typeof CalculatorsAgeRoute
+  '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
+  '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/emi': typeof CalculatorsEmiRoute
+  '/calculators/gst-vat': typeof CalculatorsGstVatRoute
+  '/calculators/length': typeof CalculatorsLengthRoute
+  '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/weight': typeof CalculatorsWeightRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
@@ -357,6 +449,16 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/calculators/age'
+    | '/calculators/binary-to-decimal'
+    | '/calculators/bmi'
+    | '/calculators/currency-converter'
+    | '/calculators/emi'
+    | '/calculators/gst-vat'
+    | '/calculators/length'
+    | '/calculators/percentage'
+    | '/calculators/temperature'
+    | '/calculators/weight'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -395,6 +497,16 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/calculators/age'
+    | '/calculators/binary-to-decimal'
+    | '/calculators/bmi'
+    | '/calculators/currency-converter'
+    | '/calculators/emi'
+    | '/calculators/gst-vat'
+    | '/calculators/length'
+    | '/calculators/percentage'
+    | '/calculators/temperature'
+    | '/calculators/weight'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -433,6 +545,16 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/calculators/age'
+    | '/calculators/binary-to-decimal'
+    | '/calculators/bmi'
+    | '/calculators/currency-converter'
+    | '/calculators/emi'
+    | '/calculators/gst-vat'
+    | '/calculators/length'
+    | '/calculators/percentage'
+    | '/calculators/temperature'
+    | '/calculators/weight'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
@@ -472,6 +594,16 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalculatorsAgeRoute: typeof CalculatorsAgeRoute
+  CalculatorsBinaryToDecimalRoute: typeof CalculatorsBinaryToDecimalRoute
+  CalculatorsBmiRoute: typeof CalculatorsBmiRoute
+  CalculatorsCurrencyConverterRoute: typeof CalculatorsCurrencyConverterRoute
+  CalculatorsEmiRoute: typeof CalculatorsEmiRoute
+  CalculatorsGstVatRoute: typeof CalculatorsGstVatRoute
+  CalculatorsLengthRoute: typeof CalculatorsLengthRoute
+  CalculatorsPercentageRoute: typeof CalculatorsPercentageRoute
+  CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
+  CalculatorsWeightRoute: typeof CalculatorsWeightRoute
   DeveloperToolsBase64DecodeRoute: typeof DeveloperToolsBase64DecodeRoute
   DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
   DeveloperToolsCssMinifierRoute: typeof DeveloperToolsCssMinifierRoute
@@ -763,11 +895,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsBase64DecodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/weight': {
+      id: '/calculators/weight'
+      path: '/calculators/weight'
+      fullPath: '/calculators/weight'
+      preLoaderRoute: typeof CalculatorsWeightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/temperature': {
+      id: '/calculators/temperature'
+      path: '/calculators/temperature'
+      fullPath: '/calculators/temperature'
+      preLoaderRoute: typeof CalculatorsTemperatureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/percentage': {
+      id: '/calculators/percentage'
+      path: '/calculators/percentage'
+      fullPath: '/calculators/percentage'
+      preLoaderRoute: typeof CalculatorsPercentageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/length': {
+      id: '/calculators/length'
+      path: '/calculators/length'
+      fullPath: '/calculators/length'
+      preLoaderRoute: typeof CalculatorsLengthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/gst-vat': {
+      id: '/calculators/gst-vat'
+      path: '/calculators/gst-vat'
+      fullPath: '/calculators/gst-vat'
+      preLoaderRoute: typeof CalculatorsGstVatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/emi': {
+      id: '/calculators/emi'
+      path: '/calculators/emi'
+      fullPath: '/calculators/emi'
+      preLoaderRoute: typeof CalculatorsEmiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/currency-converter': {
+      id: '/calculators/currency-converter'
+      path: '/calculators/currency-converter'
+      fullPath: '/calculators/currency-converter'
+      preLoaderRoute: typeof CalculatorsCurrencyConverterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/bmi': {
+      id: '/calculators/bmi'
+      path: '/calculators/bmi'
+      fullPath: '/calculators/bmi'
+      preLoaderRoute: typeof CalculatorsBmiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/binary-to-decimal': {
+      id: '/calculators/binary-to-decimal'
+      path: '/calculators/binary-to-decimal'
+      fullPath: '/calculators/binary-to-decimal'
+      preLoaderRoute: typeof CalculatorsBinaryToDecimalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/age': {
+      id: '/calculators/age'
+      path: '/calculators/age'
+      fullPath: '/calculators/age'
+      preLoaderRoute: typeof CalculatorsAgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalculatorsAgeRoute: CalculatorsAgeRoute,
+  CalculatorsBinaryToDecimalRoute: CalculatorsBinaryToDecimalRoute,
+  CalculatorsBmiRoute: CalculatorsBmiRoute,
+  CalculatorsCurrencyConverterRoute: CalculatorsCurrencyConverterRoute,
+  CalculatorsEmiRoute: CalculatorsEmiRoute,
+  CalculatorsGstVatRoute: CalculatorsGstVatRoute,
+  CalculatorsLengthRoute: CalculatorsLengthRoute,
+  CalculatorsPercentageRoute: CalculatorsPercentageRoute,
+  CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
+  CalculatorsWeightRoute: CalculatorsWeightRoute,
   DeveloperToolsBase64DecodeRoute: DeveloperToolsBase64DecodeRoute,
   DeveloperToolsBase64EncodeRoute: DeveloperToolsBase64EncodeRoute,
   DeveloperToolsCssMinifierRoute: DeveloperToolsCssMinifierRoute,
