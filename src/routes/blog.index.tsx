@@ -45,10 +45,8 @@ function BlogIndex() {
     return acc;
   }, {});
 
-  const setQ = (value: string) =>
-    navigate({ search: (prev) => ({ ...prev, q: value }) });
-  const setCategory = (value: string) =>
-    navigate({ search: (prev) => ({ ...prev, category: value }) });
+  const setQ = (value: string) => navigate({ search: { q: value, category } });
+  const setCategory = (value: string) => navigate({ search: { q, category: value } });
   const clearAll = () => navigate({ search: { q: "", category: "" } });
   const hasFilters = Boolean(query || category);
 
