@@ -13,6 +13,27 @@ export interface ToolSeo {
 }
 
 export const toolSeo: Record<string, ToolSeo> = {
+  "/text-tools/youtube-tag-generator": {
+    title: "YouTube Tag Generator — Free AI SEO Tags",
+    metaDescription: "Generate SEO-optimized YouTube tags from your video title with AI. Free, instant, no signup — boost views with keyword-rich tags in seconds.",
+    keyword: "youtube tag generator",
+    intro: [
+      "Generate high-ranking YouTube tags from any video title in seconds. Our free AI-powered YouTube tag generator suggests a keyword-rich mix of short, mid-tail, and long-tail tags proven to boost discoverability in YouTube search and suggested videos.",
+      "Perfect for creators, marketers, and agencies who want more views without spending hours on keyword research. Paste a title, optionally add a short description, and copy the tags straight into YouTube Studio.",
+    ],
+    features: [
+      "25–35 relevant tags generated from a single title",
+      "Blends short keywords with long-tail search phrases",
+      "Live character counter to stay within YouTube's 500-char limit",
+      "One-click copy — paste directly into YouTube Studio",
+    ],
+    faqs: [
+      { q: "How does the YouTube tag generator work?", a: "It uses AI to analyze your video title (and optional description) and produce tags matching how viewers actually search on YouTube — a mix of broad keywords, related terms, and long-tail phrases." },
+      { q: "How many YouTube tags should I use?", a: "YouTube allows up to 500 characters of tags per video. Aim for 15–30 relevant tags. Prioritize accuracy — irrelevant tags can hurt your ranking." },
+      { q: "Is this tool really free?", a: "Yes. The YouTube tag generator is 100% free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
   "/text-tools/ai-summarizer": {
     title: "AI Text Summarizer — Free Online Summary Tool",
     metaDescription: "Summarize long articles, PDFs, and notes into clear key points with AI. Free, no signup, and works instantly in your browser.",
