@@ -146,7 +146,7 @@ function BlogPost() {
       {related.length > 0 && (
         <section className="mt-12 border-t border-border pt-8">
           <h2 className="font-serif text-xl font-bold">More {post.category} guides</h2>
-          <div className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {related.map((r) => (
               <Link key={r.slug} to="/blog/$slug" params={{ slug: r.slug }} className="rounded-lg border border-border p-4 hover:border-primary/50 hover:bg-secondary/40">
                 <h3 className="font-serif text-base font-semibold">{r.title}</h3>

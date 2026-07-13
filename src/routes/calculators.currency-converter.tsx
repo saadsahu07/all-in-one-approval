@@ -34,7 +34,7 @@ function Page() {
       howTo={["Enter an amount.", "Pick source and target currency.", "See the converted value."]}
       note="Rates are indicative, provided by open.er-api.com. Not for financial trading.">
       {error && <p className="mb-3 text-sm text-destructive">{error} <Button variant="outline" onClick={load}>Retry</Button></p>}
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div><Label>Amount</Label><Input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} /></div>
         <div><Label>From</Label><Select value={from} onChange={(e) => setFrom(e.target.value)}>{codes.map((c) => <option key={c} value={c}>{c}</option>)}</Select></div>
         <div><Label>To</Label><Select value={to} onChange={(e) => setTo(e.target.value)}>{codes.map((c) => <option key={c} value={c}>{c}</option>)}</Select></div>

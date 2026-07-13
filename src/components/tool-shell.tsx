@@ -179,7 +179,7 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
       {related.length > 0 && (
         <section className="mt-12">
           <h2 className="text-xl font-bold">Related tools</h2>
-          <div className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {related.map((t) => (
               <Link
                 key={t.path}

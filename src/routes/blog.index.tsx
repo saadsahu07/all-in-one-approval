@@ -199,7 +199,7 @@ function BlogIndex() {
 
       {filtered.length > 0 && (
         <>
-          <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {shown.map((p) => (
               <Link
                 key={p.slug}

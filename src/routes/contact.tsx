@@ -110,7 +110,7 @@ function ContactPage() {
       </div>
 
       <form onSubmit={onSubmit} noValidate className="mt-8 space-y-5 rounded-xl border border-border bg-card p-6">
-        <div className="grid grid-cols-[minmax(0,1fr)] gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div>
             <label htmlFor="name" className="text-sm font-medium">Your name</label>
             <input

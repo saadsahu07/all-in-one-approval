@@ -18,7 +18,7 @@ function Page() {
     <ToolShell categorySlug="calculators" toolSlug="binary-to-decimal"
       intro="Convert binary numbers to decimal, and decimal numbers back to binary."
       howTo={["Type binary or decimal in the matching field.", "Copy the converted result."]}>
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <Label>Binary</Label>
           <Input value={bin} onChange={(e) => setBin(e.target.value)} placeholder="1010" />
