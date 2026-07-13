@@ -50,4 +50,675 @@ export const postContent: Record<string, string> = {
   "weight-converter": "# Weight Converter: The Complete Guide\n\nConvert kilograms, pounds, ounces, grams, and stones instantly.\n\nIf you've been searching for a reliable weight converter that just works \u2014 no signups, no watermarks, no learning curve \u2014 this guide walks through exactly what the tool does, when it helps, how to get the best results, and the questions people ask most often. Whether you're a student, a marketer, a designer, a developer, or someone who just wants to get one task done quickly, you'll find a workflow here you can use today.\n\n## What is a weight converter?\n\nA weight (mass) converter turns a value in one weight unit into another. It handles metric units (mg, g, kg, tonnes) and imperial units (ounces, pounds, stones, short tons, long tons) with full precision.\n\nThe idea has been around for years, but the tools have improved dramatically. Modern browsers, WebAssembly, and on-device AI mean many operations that once required desktop software now run in a single web page. That means fewer downloads, no software licenses to manage, and \u2014 importantly \u2014 better privacy because your data can stay on your device.\n\n## Why people use a weight converter\n\nRecipes, shipping labels, health tracking, and international products all use different weight units. A converter avoids the awkward mental math around 2.2, 16, and 14 that trips up even people who use both systems regularly.\n\nThere's also a compounding effect. A workflow that saves you two minutes per document doesn't sound like much, but multiplied across a week \u2014 or across a team \u2014 it adds up to hours of reclaimed time. And unlike most productivity gains, this one requires no habit change: you already do the task, you're just doing it faster.\n\n## How to use the weight converter\n\n**1. Enter the value.**\n\n**2. Pick source and target units.**\n\n**3. Read the converted result.**\n\n**4. Swap units with one click.**\n\nThat's the whole flow. It's designed to work from any device with a modern browser \u2014 desktop, laptop, tablet, or phone \u2014 and to be forgiving. If you make a mistake, start over; nothing is committed until you download the result.\n\n## Real-world use cases\n\nTo help you picture where a weight converter fits into your day, here are some concrete scenarios where it earns its place:\n\n- **Converting recipe measurements from oz to grams.** Converting recipe measurements from oz to grams.\n\n- **Reading shipping weights on international parcels.** Reading shipping weights on international parcels.\n\n- **Tracking body weight between kg and lb.** Tracking body weight between kg and lb.\n\n- **Buying produce priced by the pound in a metric country.** Buying produce priced by the pound in a metric country.\n\n- **Calibrating fitness or lifting apps.** Calibrating fitness or lifting apps.\n\nThese are only starting points. Once the tool is a click away, you'll start noticing tasks that used to feel too small to bother automating \u2014 and that's exactly when small utilities pay off most.\n\n## Tips for getting the best results\n\n- 1 kg is 2.2046 lb \u2014 remember 2.2 for quick mental math.\n\n- 1 stone is 14 pounds; UK personal-weight measurement.\n\n- Cook by weight, not volume \u2014 it's more accurate.\n\n- Short ton = 2000 lb, long ton = 2240 lb, metric tonne = 1000 kg \u2014 three different things.\n\nNone of these tips are essential, but any one of them will make the tool feel noticeably better. The biggest jump usually comes from spending sixty seconds reviewing the output instead of downloading and moving on \u2014 a quick check almost always spots the one thing you'd want to redo.\n\n## Privacy and security\n\nWe take a simple stance: your data is yours. Wherever possible, the weight converter runs entirely inside your browser, meaning your files, text, and settings never leave your device. For features that genuinely require server processing \u2014 AI models too large to run in a browser, for example \u2014 inputs are sent over encrypted connections, used only for the immediate request, and not retained or used to train any model.\n\nThat matters more than people think. Free web tools have historically been a common source of data leaks, either because operators quietly log inputs or because a breach exposes uploaded files. Choosing a tool that processes locally sidesteps both risks by design.\n\n## Common mistakes to avoid\n\nA few mistakes trip up almost everyone the first time they try a weight converter:\n\n- **Skipping the preview.** Take five seconds to look at the output before downloading. It catches most issues.\n\n- **Working from a bad source file.** Bad input yields bad output. If a scan is skewed or a paragraph is confused, fix that first.\n\n- **Assuming one pass is enough.** For complex jobs, running the tool twice with slightly different settings often gives the best result.\n\n- **Forgetting to keep the original.** Always keep the source file until you've verified the output \u2014 you can never regenerate a lost original.\n\n## When not to use a weight converter\n\nNo tool is right for every situation. A weight converter is fantastic for everyday, common-case work. If you're dealing with something highly specialized \u2014 a legally binding contract, a piece of critical infrastructure, or content that will be printed at billboard scale \u2014 pair the tool with a professional review. Web utilities save time on the 90% of tasks that don't need bespoke handling; the remaining 10% still benefits from human judgement.\n\n## How it works behind the scenes\n\nYou don't need to understand the internals to get value from a weight converter, but a peek under the hood explains why certain choices matter. The tool combines three ingredients: a parser or decoder that reads your input, a processing engine that transforms it, and an encoder that writes the output. Each stage has trade-offs \u2014 speed versus quality, size versus fidelity, convenience versus control \u2014 and good defaults make those trade-offs for you unless you override them.\n\nModern browsers make this pipeline possible without a server. Features like the File System Access API, WebAssembly, the Canvas and Web Audio APIs, and WebGPU let complex operations run at near-native speed on your own device. When something does need to leave the browser \u2014 a large AI model, for instance \u2014 it goes over an encrypted connection to a purpose-built service and comes straight back.\n\n## A short history\n\nTen years ago, doing any of this required installing a desktop app, learning its interface, and often paying for a license. Five years ago, it usually meant uploading your files to a website that stored them for who-knows-how-long and hoped you upgraded to a paid tier. Today, browser-first tools have flipped both problems: the app is a URL you already trust, and processing stays local. That progression is the reason free, high-quality utilities like the Weight Converter exist at all.\n\nThe pattern isn't unique to this category. Whole workflows that used to require dedicated software \u2014 video editing, 3D modelling, data analysis, coding \u2014 now run in the browser. Small utilities were the first to make the jump because their scope is tight and their audience is broad; specialized apps are catching up.\n\n## Comparing browser-based tools to desktop apps\n\nDesktop apps still have real advantages: they handle huge files, integrate with system dialogs, and often support keyboard-driven power-user workflows. Where browser tools win is friction. No install, no update prompts, no dependency conflicts. Open a tab, do the task, close the tab. For anything you do occasionally \u2014 meaning most of what most people do \u2014 that's the right trade.\n\nThere's also a portability angle. A browser tool works the same on your laptop, your phone, and a borrowed computer. You don't lose access when your device changes or a license lapses. That reliability is quietly valuable, especially for people who work across multiple machines.\n\n## Accessibility and inclusive design\n\nA good weight converter works with a keyboard, a screen reader, and reduced-motion settings. Contrast should meet WCAG AA. Focus indicators should be visible. Language should be plain \u2014 no jargon, no pointless gerunds \u2014 so non-native speakers and casual users can follow along without a glossary. Accessibility isn't a bolt-on; it's part of what 'works well' means, and it makes the tool better for everyone, not just users with specific needs.\n\n## Frequently asked questions\n\n**Does the tool handle tonnes and tons?**\n\nYes, and it distinguishes metric tonne, short ton, and long ton.\n\n**Is it accurate for medical dosing?**\n\nPrecise, but always confirm with a pharmacist for real dosing.\n\n**Is my data stored?**\n\nNo, conversion is local.\n\n**Why do stone conversions look odd?**\n\nStone is 14 lb; the tool splits total pounds into stone + lb.\n\n## Wrapping up\n\nA good weight converter feels almost invisible \u2014 you open the tab, drop in your input, grab the result, and move on. That's the point. Small tools done well let you stop wrestling with software and get back to the actual work. Bookmark the Weight Converter page, and next time this task comes up you'll be finished in under a minute.\n\nIf you find yourself using it often, take a look at the rest of the Calculators & Converters suite \u2014 most people who like one of the tools end up leaning on a handful of them regularly. Everything is free, browser-based, and built to respect your time and your privacy.\n",
   "temperature-converter": "# Temperature Converter: The Complete Guide\n\nConvert between Celsius, Fahrenheit, Kelvin, and Rankine.\n\nIf you've been searching for a reliable temperature converter that just works \u2014 no signups, no watermarks, no learning curve \u2014 this guide walks through exactly what the tool does, when it helps, how to get the best results, and the questions people ask most often. Whether you're a student, a marketer, a designer, a developer, or someone who just wants to get one task done quickly, you'll find a workflow here you can use today.\n\n## What is a temperature converter?\n\nA temperature converter turns a temperature in one scale into another. Celsius, Fahrenheit, Kelvin, and (occasionally) Rankine each define zero and the size of one degree differently, so simple ratios don't work \u2014 you need the right formula every time.\n\nThe idea has been around for years, but the tools have improved dramatically. Modern browsers, WebAssembly, and on-device AI mean many operations that once required desktop software now run in a single web page. That means fewer downloads, no software licenses to manage, and \u2014 importantly \u2014 better privacy because your data can stay on your device.\n\n## Why people use a temperature converter\n\nWeather forecasts, cooking recipes, scientific data, and travel between countries all mix temperature scales. Mental conversion is easy for ballpark numbers and dangerous for exact ones. A converter uses the right formula, including the offset, so oven temperatures and lab data are always right.\n\nThere's also a compounding effect. A workflow that saves you two minutes per document doesn't sound like much, but multiplied across a week \u2014 or across a team \u2014 it adds up to hours of reclaimed time. And unlike most productivity gains, this one requires no habit change: you already do the task, you're just doing it faster.\n\n## How to use the temperature converter\n\n**1. Enter the temperature.**\n\n**2. Pick source and target scales.**\n\n**3. Read the converted value.**\n\n**4. Swap scales to convert back.**\n\nThat's the whole flow. It's designed to work from any device with a modern browser \u2014 desktop, laptop, tablet, or phone \u2014 and to be forgiving. If you make a mistake, start over; nothing is committed until you download the result.\n\n## Real-world use cases\n\nTo help you picture where a temperature converter fits into your day, here are some concrete scenarios where it earns its place:\n\n- **Following an American recipe in a metric country (or vice versa).** Following an American recipe in a metric country (or vice versa).\n\n- **Interpreting international weather forecasts.** Interpreting international weather forecasts.\n\n- **Converting lab data between Celsius and Kelvin.** Converting lab data between Celsius and Kelvin.\n\n- **Setting an oven from an imported cookbook.** Setting an oven from an imported cookbook.\n\n- **Comparing HVAC settings across regions.** Comparing HVAC settings across regions.\n\nThese are only starting points. Once the tool is a click away, you'll start noticing tasks that used to feel too small to bother automating \u2014 and that's exactly when small utilities pay off most.\n\n## Tips for getting the best results\n\n- 0 \u00b0C = 32 \u00b0F and 100 \u00b0C = 212 \u00b0F \u2014 the two anchor points to memorize.\n\n- A Celsius degree and a Kelvin are the same size \u2014 Kelvin is Celsius + 273.15.\n\n- Fahrenheit to Celsius quick trick: subtract 30, halve.\n\n- Absolute zero (0 K, \u2212273.15 \u00b0C) is the coldest possible temperature.\n\nNone of these tips are essential, but any one of them will make the tool feel noticeably better. The biggest jump usually comes from spending sixty seconds reviewing the output instead of downloading and moving on \u2014 a quick check almost always spots the one thing you'd want to redo.\n\n## Privacy and security\n\nWe take a simple stance: your data is yours. Wherever possible, the temperature converter runs entirely inside your browser, meaning your files, text, and settings never leave your device. For features that genuinely require server processing \u2014 AI models too large to run in a browser, for example \u2014 inputs are sent over encrypted connections, used only for the immediate request, and not retained or used to train any model.\n\nThat matters more than people think. Free web tools have historically been a common source of data leaks, either because operators quietly log inputs or because a breach exposes uploaded files. Choosing a tool that processes locally sidesteps both risks by design.\n\n## Common mistakes to avoid\n\nA few mistakes trip up almost everyone the first time they try a temperature converter:\n\n- **Skipping the preview.** Take five seconds to look at the output before downloading. It catches most issues.\n\n- **Working from a bad source file.** Bad input yields bad output. If a scan is skewed or a paragraph is confused, fix that first.\n\n- **Assuming one pass is enough.** For complex jobs, running the tool twice with slightly different settings often gives the best result.\n\n- **Forgetting to keep the original.** Always keep the source file until you've verified the output \u2014 you can never regenerate a lost original.\n\n## When not to use a temperature converter\n\nNo tool is right for every situation. A temperature converter is fantastic for everyday, common-case work. If you're dealing with something highly specialized \u2014 a legally binding contract, a piece of critical infrastructure, or content that will be printed at billboard scale \u2014 pair the tool with a professional review. Web utilities save time on the 90% of tasks that don't need bespoke handling; the remaining 10% still benefits from human judgement.\n\n## How it works behind the scenes\n\nYou don't need to understand the internals to get value from a temperature converter, but a peek under the hood explains why certain choices matter. The tool combines three ingredients: a parser or decoder that reads your input, a processing engine that transforms it, and an encoder that writes the output. Each stage has trade-offs \u2014 speed versus quality, size versus fidelity, convenience versus control \u2014 and good defaults make those trade-offs for you unless you override them.\n\nModern browsers make this pipeline possible without a server. Features like the File System Access API, WebAssembly, the Canvas and Web Audio APIs, and WebGPU let complex operations run at near-native speed on your own device. When something does need to leave the browser \u2014 a large AI model, for instance \u2014 it goes over an encrypted connection to a purpose-built service and comes straight back.\n\n## A short history\n\nTen years ago, doing any of this required installing a desktop app, learning its interface, and often paying for a license. Five years ago, it usually meant uploading your files to a website that stored them for who-knows-how-long and hoped you upgraded to a paid tier. Today, browser-first tools have flipped both problems: the app is a URL you already trust, and processing stays local. That progression is the reason free, high-quality utilities like the Temperature Converter exist at all.\n\nThe pattern isn't unique to this category. Whole workflows that used to require dedicated software \u2014 video editing, 3D modelling, data analysis, coding \u2014 now run in the browser. Small utilities were the first to make the jump because their scope is tight and their audience is broad; specialized apps are catching up.\n\n## Comparing browser-based tools to desktop apps\n\nDesktop apps still have real advantages: they handle huge files, integrate with system dialogs, and often support keyboard-driven power-user workflows. Where browser tools win is friction. No install, no update prompts, no dependency conflicts. Open a tab, do the task, close the tab. For anything you do occasionally \u2014 meaning most of what most people do \u2014 that's the right trade.\n\nThere's also a portability angle. A browser tool works the same on your laptop, your phone, and a borrowed computer. You don't lose access when your device changes or a license lapses. That reliability is quietly valuable, especially for people who work across multiple machines.\n\n## Accessibility and inclusive design\n\nA good temperature converter works with a keyboard, a screen reader, and reduced-motion settings. Contrast should meet WCAG AA. Focus indicators should be visible. Language should be plain \u2014 no jargon, no pointless gerunds \u2014 so non-native speakers and casual users can follow along without a glossary. Accessibility isn't a bolt-on; it's part of what 'works well' means, and it makes the tool better for everyone, not just users with specific needs.\n\n## Frequently asked questions\n\n**Why can't I just multiply?**\n\nBecause the scales have different zero points, not just different sizes.\n\n**Does the tool handle negative values?**\n\nYes, including below absolute zero if you insist \u2014 though physically impossible.\n\n**Is my input stored?**\n\nNo, conversion is local.\n\n**What is Rankine used for?**\n\nUS engineering, especially thermodynamics \u2014 like Kelvin but based on Fahrenheit.\n\n## Wrapping up\n\nA good temperature converter feels almost invisible \u2014 you open the tab, drop in your input, grab the result, and move on. That's the point. Small tools done well let you stop wrestling with software and get back to the actual work. Bookmark the Temperature Converter page, and next time this task comes up you'll be finished in under a minute.\n\nIf you find yourself using it often, take a look at the rest of the Calculators & Converters suite \u2014 most people who like one of the tools end up leaning on a handful of them regularly. Everything is free, browser-based, and built to respect your time and your privacy.\n",
   "binary-to-decimal": "# Binary to Decimal Converter: The Complete Guide\n\nConvert binary numbers to decimal, hex, and octal in one place.\n\nIf you've been searching for a reliable binary to decimal converter that just works \u2014 no signups, no watermarks, no learning curve \u2014 this guide walks through exactly what the tool does, when it helps, how to get the best results, and the questions people ask most often. Whether you're a student, a marketer, a designer, a developer, or someone who just wants to get one task done quickly, you'll find a workflow here you can use today.\n\n## What is a binary to decimal converter?\n\nA binary-to-decimal converter takes a string of 0s and 1s and returns the equivalent decimal value. Bi-directional tools also convert decimal to binary, and often add hex and octal alongside for programmers who move between bases constantly.\n\nThe idea has been around for years, but the tools have improved dramatically. Modern browsers, WebAssembly, and on-device AI mean many operations that once required desktop software now run in a single web page. That means fewer downloads, no software licenses to manage, and \u2014 importantly \u2014 better privacy because your data can stay on your device.\n\n## Why people use a binary to decimal converter\n\nBase conversion shows up in networking (subnet masks), programming (bit flags), embedded work (register maps), and computer science education. Doing it by hand is a great learning exercise once; after that, a converter saves time and avoids silly arithmetic mistakes.\n\nThere's also a compounding effect. A workflow that saves you two minutes per document doesn't sound like much, but multiplied across a week \u2014 or across a team \u2014 it adds up to hours of reclaimed time. And unlike most productivity gains, this one requires no habit change: you already do the task, you're just doing it faster.\n\n## How to use the binary to decimal converter\n\n**1. Enter a binary, decimal, hex, or octal value.**\n\n**2. The tool converts to all other bases live.**\n\n**3. Copy the value in whichever base you need.**\n\n**4. Toggle between signed and unsigned interpretations for two's-complement work.**\n\nThat's the whole flow. It's designed to work from any device with a modern browser \u2014 desktop, laptop, tablet, or phone \u2014 and to be forgiving. If you make a mistake, start over; nothing is committed until you download the result.\n\n## Real-world use cases\n\nTo help you picture where a binary to decimal converter fits into your day, here are some concrete scenarios where it earns its place:\n\n- **Reading and writing subnet masks in network planning.** Reading and writing subnet masks in network planning.\n\n- **Debugging bit flags in embedded firmware.** Debugging bit flags in embedded firmware.\n\n- **Understanding permission modes in Unix.** Understanding permission modes in Unix.\n\n- **Teaching or learning number systems.** Teaching or learning number systems.\n\n- **Converting between color codes in different representations.** Converting between color codes in different representations.\n\nThese are only starting points. Once the tool is a click away, you'll start noticing tasks that used to feel too small to bother automating \u2014 and that's exactly when small utilities pay off most.\n\n## Tips for getting the best results\n\n- Prefix binary with 0b, hex with 0x \u2014 the tool detects the base automatically.\n\n- Signed 8-bit binary 10000000 is \u2212128, not 128 \u2014 remember two's complement.\n\n- Hex is compact for binary because every hex digit is exactly 4 bits.\n\n- Group binary into 4-bit nibbles for easier reading (e.g. 1010 0011).\n\nNone of these tips are essential, but any one of them will make the tool feel noticeably better. The biggest jump usually comes from spending sixty seconds reviewing the output instead of downloading and moving on \u2014 a quick check almost always spots the one thing you'd want to redo.\n\n## Privacy and security\n\nWe take a simple stance: your data is yours. Wherever possible, the binary to decimal converter runs entirely inside your browser, meaning your files, text, and settings never leave your device. For features that genuinely require server processing \u2014 AI models too large to run in a browser, for example \u2014 inputs are sent over encrypted connections, used only for the immediate request, and not retained or used to train any model.\n\nThat matters more than people think. Free web tools have historically been a common source of data leaks, either because operators quietly log inputs or because a breach exposes uploaded files. Choosing a tool that processes locally sidesteps both risks by design.\n\n## Common mistakes to avoid\n\nA few mistakes trip up almost everyone the first time they try a binary to decimal converter:\n\n- **Skipping the preview.** Take five seconds to look at the output before downloading. It catches most issues.\n\n- **Working from a bad source file.** Bad input yields bad output. If a scan is skewed or a paragraph is confused, fix that first.\n\n- **Assuming one pass is enough.** For complex jobs, running the tool twice with slightly different settings often gives the best result.\n\n- **Forgetting to keep the original.** Always keep the source file until you've verified the output \u2014 you can never regenerate a lost original.\n\n## When not to use a binary to decimal converter\n\nNo tool is right for every situation. A binary to decimal converter is fantastic for everyday, common-case work. If you're dealing with something highly specialized \u2014 a legally binding contract, a piece of critical infrastructure, or content that will be printed at billboard scale \u2014 pair the tool with a professional review. Web utilities save time on the 90% of tasks that don't need bespoke handling; the remaining 10% still benefits from human judgement.\n\n## How it works behind the scenes\n\nYou don't need to understand the internals to get value from a binary to decimal converter, but a peek under the hood explains why certain choices matter. The tool combines three ingredients: a parser or decoder that reads your input, a processing engine that transforms it, and an encoder that writes the output. Each stage has trade-offs \u2014 speed versus quality, size versus fidelity, convenience versus control \u2014 and good defaults make those trade-offs for you unless you override them.\n\nModern browsers make this pipeline possible without a server. Features like the File System Access API, WebAssembly, the Canvas and Web Audio APIs, and WebGPU let complex operations run at near-native speed on your own device. When something does need to leave the browser \u2014 a large AI model, for instance \u2014 it goes over an encrypted connection to a purpose-built service and comes straight back.\n\n## A short history\n\nTen years ago, doing any of this required installing a desktop app, learning its interface, and often paying for a license. Five years ago, it usually meant uploading your files to a website that stored them for who-knows-how-long and hoped you upgraded to a paid tier. Today, browser-first tools have flipped both problems: the app is a URL you already trust, and processing stays local. That progression is the reason free, high-quality utilities like the Binary to Decimal Converter exist at all.\n\nThe pattern isn't unique to this category. Whole workflows that used to require dedicated software \u2014 video editing, 3D modelling, data analysis, coding \u2014 now run in the browser. Small utilities were the first to make the jump because their scope is tight and their audience is broad; specialized apps are catching up.\n\n## Comparing browser-based tools to desktop apps\n\nDesktop apps still have real advantages: they handle huge files, integrate with system dialogs, and often support keyboard-driven power-user workflows. Where browser tools win is friction. No install, no update prompts, no dependency conflicts. Open a tab, do the task, close the tab. For anything you do occasionally \u2014 meaning most of what most people do \u2014 that's the right trade.\n\nThere's also a portability angle. A browser tool works the same on your laptop, your phone, and a borrowed computer. You don't lose access when your device changes or a license lapses. That reliability is quietly valuable, especially for people who work across multiple machines.\n\n## Accessibility and inclusive design\n\nA good binary to decimal converter works with a keyboard, a screen reader, and reduced-motion settings. Contrast should meet WCAG AA. Focus indicators should be visible. Language should be plain \u2014 no jargon, no pointless gerunds \u2014 so non-native speakers and casual users can follow along without a glossary. Accessibility isn't a bolt-on; it's part of what 'works well' means, and it makes the tool better for everyone, not just users with specific needs.\n\n## Frequently asked questions\n\n**Can it convert fractional binary?**\n\nYes, values with a binary point are supported.\n\n**What about negative numbers?**\n\nChoose signed mode for two's-complement interpretation.\n\n**Is my data stored?**\n\nNo, conversion runs locally.\n\n**What is the largest value?**\n\nThe tool handles at least 64-bit integers precisely.\n\n## Wrapping up\n\nA good binary to decimal converter feels almost invisible \u2014 you open the tab, drop in your input, grab the result, and move on. That's the point. Small tools done well let you stop wrestling with software and get back to the actual work. Bookmark the Binary to Decimal Converter page, and next time this task comes up you'll be finished in under a minute.\n\nIf you find yourself using it often, take a look at the rest of the Calculators & Converters suite \u2014 most people who like one of the tools end up leaning on a handful of them regularly. Everything is free, browser-based, and built to respect your time and your privacy.\n",
+  "slugify": "# Slug Generator: The Complete Guide
+
+A URL slug is the short, human-readable string at the end of a web address — the *my-first-post* in *example.com/blog/my-first-post*. It's tiny; it's also one of the highest-leverage pieces of SEO real estate you own. This guide covers what makes a good slug, when to change one (and when never to), and how to use the slug generator to get consistent results across your site.
+
+## What a slug actually does
+
+Two audiences read your slug: humans and search engines. Humans use it to decide whether the link is worth clicking — a slug that reads *chocolate-chip-cookies* tells them what they'll get before the page loads. Search engines use the slug as one of many topic signals; the words in the URL contribute to how the page ranks and how it appears in results.
+
+A slug is also functional. It becomes part of the file name, the CDN cache key, the analytics dimension, the redirect map, the RSS feed entry, and every share on every platform. Getting it right once means never touching it again.
+
+## What the Slug Generator does
+
+The tool lowercases the input, normalizes accents (é becomes e), strips punctuation, and joins the remaining alphanumeric runs with the separator you choose. So *\"10 Best Practices for Web Design!\"* becomes *10-best-practices-for-web-design* — safe for any URL, file name, or database key.
+
+You can pick between a dash (`-`) and an underscore (`_`) as the separator. For URLs, always use a dash: search engines treat dashes as word breaks and underscores as part of the word. Underscores are fine in file names, Python identifiers, and internal keys.
+
+## How to use it
+
+**1. Paste the title.** Anything from a two-word phrase to a full sentence works.
+
+**2. Choose the separator.** Dashes for URLs, underscores for file names.
+
+**3. Copy the slug.** Paste it into your CMS, code, database, or bucket configuration.
+
+## Rules for slugs that age well
+
+- **Keep them short.** Three to six words is the sweet spot. Long slugs get truncated in social previews and search snippets.
+- **Use real words.** *?id=4821* tells no one anything; *quarterly-metrics* explains itself.
+- **Drop stopwords.** *a*, *an*, *the*, *and*, *of*, *to* rarely add meaning and make slugs feel bureaucratic.
+- **Lowercase.** Mixed-case slugs are technically valid but cause 404s on case-sensitive servers and confuse anyone typing by hand.
+- **Include your target keyword.** If you'd like the page to rank for *sourdough starter*, put those words in the slug.
+
+## When to change a published slug — almost never
+
+Once a slug is live and indexed, changing it means every existing link, share, and search result breaks. If you must change it, add a 301 redirect from the old slug to the new one. Even then, expect a temporary drop in rankings while search engines re-crawl and re-index.
+
+The best solution is to write a slug you're happy with the first time. That's why a good generator matters — it gives you a clean starting point instead of the first thing you typed.
+
+## Beyond URLs
+
+Slugs are useful anywhere text needs to become an identifier:
+
+- **File names.** *my-hero-photo.jpg* is easier to search and sort than *IMG_2934.JPG*.
+- **S3 keys and CDN paths.** Slugs guarantee your keys don't need URL encoding.
+- **GitHub repos, Notion database titles, Kubernetes labels.** All follow the \"no spaces, lowercase, dashes\" convention automatically satisfied by the tool.
+- **Analytics event names.** Consistent slugs make dashboards readable.
+
+## Common questions
+
+- **Should I include the date?** For time-sensitive content (news, changelogs), yes: *2026-01-launch-notes*. For evergreen content, skip it — dated slugs get stale.
+- **What about non-English characters?** The slug generator transliterates common accents. For non-Latin scripts (Arabic, Chinese, Cyrillic), consider a hand-crafted slug in English or a transliterated one.
+- **Can I make the slug longer than the title?** Sometimes it helps SEO to include a synonym or clarifier: *react-vs-vue-2026-comparison* on a page titled *\"React vs Vue\"* catches searches for the year.
+
+## Wrapping up
+
+Good slugs are quiet infrastructure. Nobody notices when they're right, and everyone notices when they're wrong. Spend the thirty seconds to generate a clean one before you publish, and you'll never think about that URL again.
+",
+  "uuid-generator": "# UUID Generator: The Complete Guide
+
+A UUID (Universally Unique IDentifier) is a 128-bit value formatted as five groups of hex digits — for example, *550e8400-e29b-41d4-a716-446655440000*. UUIDs let any machine, anywhere, generate an identifier that will never collide with any other machine's — no central authority, no coordination, no lookup. This guide covers where UUIDs shine, where they don't, and what version to reach for.
+
+## What a v4 UUID guarantees
+
+Version 4 UUIDs are derived from cryptographically random bytes. The generator here uses your browser's *crypto.getRandomValues*, the same source real security libraries use. That gives 122 bits of entropy — enough that if you generated a billion UUIDs per second for eighty-five years, the probability of a single collision is about 50%. For any real application, treat collisions as impossible.
+
+That guarantee is why UUIDs beat auto-increment integer IDs for so many use cases: any machine can produce one, they leak no information about row counts or ordering, and they never conflict.
+
+## Where UUIDs shine
+
+- **Primary keys in distributed systems.** When your data comes from multiple regions, offline clients, or microservices, UUIDs let each origin mint its own IDs and merge them without a central sequence.
+- **Correlation IDs.** Tag a request with a UUID at the edge and log it at every service the request touches. You get end-to-end tracing without any coordination.
+- **Object storage keys.** *550e8400-e29b-41d4-a716-446655440000.jpg* is guaranteed unique across every user and every device.
+- **Session tokens and one-time links.** 122 bits of entropy is well beyond brute-force range.
+- **Idempotency keys.** Attach a UUID to a POST request; the server can dedupe retries safely.
+
+## Where UUIDs are the wrong choice
+
+- **Short URLs.** UUIDs are 36 characters. Use *nanoid* or base62-encoded IDs when length matters.
+- **Ordering.** Two v4 UUIDs generated sequentially have no time relationship. If you need time-ordered IDs (useful for database index performance), look at UUIDv7.
+- **User-facing identifiers.** Nobody wants to type or read a UUID. Order numbers, invoice numbers, and account codes should be short, memorable, and possibly checksummed.
+
+## How to use the generator
+
+**1. Choose how many you need.** One for a single token; a few for tests; a few hundred for seeding a database.
+
+**2. Click Generate.** The UUIDs appear immediately.
+
+**3. Copy.** Grab a single UUID or the whole batch with one click.
+
+## v4 vs v1 vs v7
+
+- **v1** encodes the machine's MAC address and a timestamp. Deterministic and monotonically increasing, but leaks hardware info.
+- **v4** is fully random. The default choice for almost every application.
+- **v7** is timestamp-prefixed random. Same collision safety as v4 but sorts by creation time — better for database index locality.
+
+If you have the choice on a fresh project and your database benefits from ordered IDs, use v7. If you're using an older library or need cross-platform simplicity, stick with v4.
+
+## Database considerations
+
+Store UUIDs as the native *uuid* type when your database supports it (PostgreSQL, most modern ORMs). Falling back to *char(36)* works but takes more space and doesn't validate.
+
+For very high-write tables, be aware that random v4 UUIDs cause more page-splitting in B-tree indexes than sequential IDs. UUIDv7 solves that; if you're stuck with v4 on a hot table, consider a composite key (created_at + uuid) or moving to a hash index.
+
+## Privacy
+
+The generator runs entirely in your browser using *crypto.getRandomValues*. No UUID leaves your device, none is logged, and no two page loads share state.
+
+## Wrapping up
+
+UUIDs are the go-to identifier when independence and uniqueness matter more than length or ordering. Generate them freely, store them everywhere you'd otherwise use a sequential ID, and you'll write systems that scale without central coordination.
+",
+  "jwt-decoder": "# JWT Decoder: The Complete Guide
+
+A JSON Web Token (JWT) is a compact, URL-safe string that carries a signed JSON payload between a client and a server. When you log in to almost any modern API, the response includes a JWT that your app then sends on every subsequent request. This guide covers how to decode one, what to look for, and — importantly — the difference between decoding and verifying.
+
+## What a JWT looks like
+
+A JWT is three base64url-encoded strings joined by dots: *header.payload.signature*. Each part has a specific job.
+
+- The **header** describes the signing algorithm and (optionally) the key ID.
+- The **payload** carries the actual claims — who the user is, when the token expires, what they can access.
+- The **signature** proves the header and payload have not been changed since the issuer signed them.
+
+The header and payload are only base64 — anyone can decode them. That's the point. The signature is what makes the token trustworthy.
+
+## What the decoder does (and doesn't)
+
+The decoder splits the token on its dots, base64-decodes the header and payload, and pretty-prints the resulting JSON. It does **not** verify the signature — that requires the issuer's public key or shared secret, and it must happen server-side. Anyone can decode a JWT; only your server should trust the contents.
+
+## Step-by-step debugging with a JWT
+
+**1. Paste the token.** Drop the *Bearer* prefix if present.
+
+**2. Read the header.** Confirm the algorithm (*alg*). If it says *none*, throw the token away — the *none* algorithm is a well-known attack surface.
+
+**3. Read the payload.** Check the standard claims:
+
+- **iss** (issuer) — who minted the token.
+- **sub** (subject) — usually the user ID.
+- **aud** (audience) — who the token is meant for.
+- **exp** (expiry) — Unix timestamp. Convert to a date and compare with now.
+- **iat** (issued at) — when the token was minted.
+- **nbf** (not before) — earliest valid time.
+
+Custom claims (roles, scopes, tenant IDs) appear alongside these.
+
+**4. Compare against the failing request.** \"Invalid audience\"? Check *aud*. \"Expired\"? Check *exp*. \"Wrong tenant\"? Check the custom claim.
+
+## Common debugging scenarios
+
+- **\"Token expired.\"** *exp* is in the past. Refresh the token from the auth server.
+- **\"Invalid audience.\"** *aud* doesn't match what the resource server expects. Fix the audience in your auth config.
+- **\"Signature verification failed.\"** Almost always a key mismatch. The token was signed with a key different from what the verifier is checking against.
+- **Missing custom claim.** Decode, confirm the claim is absent, then fix the rule in your auth provider that should have added it.
+
+## Security warnings
+
+- **Never trust the payload without verifying the signature.** Decoding is trivial. A malicious client can produce any payload it wants; the signature is the only thing that says the server actually issued it.
+- **Never put secrets in a JWT payload.** The payload is base64, not encrypted. Anyone with the token can read every claim.
+- **Never accept tokens signed with *alg: none*.** Configure your JWT library to reject that algorithm explicitly.
+- **Prefer short-lived access tokens** (minutes to hours) paired with a longer-lived refresh token. If a token leaks, the damage is bounded.
+
+## What about JWE?
+
+Standard JWTs are signed but not encrypted. If you need the payload to be secret from the client, use JWE (JSON Web Encryption). For most authentication flows, though, signing is enough — the payload is not sensitive, it's just claims like \"user 5821 is allowed to access this API until 4pm.\"
+
+## Privacy
+
+The decoder runs entirely in your browser using the *atob* API. The token you paste is never sent to a server. Even so, get in the habit of using development-environment tokens for debugging — any tool that touches a real production token is one accidental log line away from being a security incident.
+
+## Wrapping up
+
+JWTs are one of the most useful and most misunderstood building blocks in modern web development. Decode them freely to debug; verify them rigorously to trust them. The decoder here is safe to use as often as you like — but always remember that reading a JWT is not the same as trusting it.
+",
+  "tip-calculator": "# Tip Calculator: The Complete Guide
+
+Tipping is a simple math problem that gets stressful in exactly the situations where you need it to be effortless — a big group at a restaurant, a taxi at the airport, a delivery you didn't budget for. This guide covers how the tip calculator works, how tipping conventions vary by country, and a few pro tips for making the whole moment quick and fair.
+
+## What the calculator does
+
+You enter the bill amount, the tip percentage, and the number of people. The calculator returns three numbers instantly: the tip amount, the grand total (bill plus tip), and the per-person share when the total is split evenly. Every field updates live, so you can dial the tip up or down and watch the per-person figure change in real time.
+
+## The math, in plain English
+
+- **Tip** = bill × (percentage ÷ 100).
+- **Total** = bill + tip.
+- **Per person** = total ÷ number of people.
+
+For a $80 bill with 18% tip split three ways: tip is $14.40, total is $94.40, each person owes about $31.47. Easy to check by hand once, awkward to do on the third round of drinks.
+
+## How to use it
+
+**1. Enter the bill amount.** Include tax if you tip on the post-tax total; exclude tax if you tip on the subtotal (see the section below).
+
+**2. Pick a tip percentage.** Use a preset for common values or type your own.
+
+**3. Enter the number of people.** Leave at 1 if you're paying alone.
+
+**4. Read the three numbers.** Tip amount, grand total, and per-person share.
+
+## Tipping norms around the world
+
+Tipping conventions vary dramatically. A quick tour:
+
+- **United States, Canada.** 15–20% is standard at sit-down restaurants. 10% on delivery. 15–20% on taxis. Servers' income depends heavily on tips.
+- **United Kingdom, Ireland.** 10–15% at restaurants if service charge isn't already added. Check the bill first — many restaurants pre-add 12.5% for groups.
+- **Continental Europe.** 5–10% is generous. Rounding up the bill to the nearest round number is common at casual places.
+- **Japan, South Korea.** No tipping. Attempting to leave one is often refused or considered awkward.
+- **Australia, New Zealand.** Optional. 10% for exceptional service in a nice restaurant is generous.
+- **India, Southeast Asia.** 5–10% at restaurants if service isn't included. Rounding up on taxi fares is common.
+
+If you're traveling somewhere new, a two-minute check before you sit down for your first meal saves a lot of second-guessing later.
+
+## Pre-tax or post-tax?
+
+In the US, the technical convention is to tip on the pre-tax subtotal. In practice, most people tip on the total that appears at the bottom of the bill — the difference is small enough that nobody notices. In countries where the bill includes VAT (most of Europe), tip on the total as shown; the pre-tax amount usually isn't broken out on the check.
+
+## Splitting the bill unevenly
+
+The calculator splits the total evenly. When one person ate the burger and one person had a three-course meal, the fair approach is: each person pays their own subtotal, then tax and tip are split proportionally to what each person ate. Do the subtotal split by hand and use the calculator on each individual share of the tip.
+
+## When service was bad
+
+Tipping is not compulsory. In cultures where service workers depend on tips, leaving 10% instead of 18% is the polite way to say \"this was not good.\" Below that, you're saying something stronger. Consider whether the problem was the server or the kitchen — the server usually can't help kitchen mistakes.
+
+## Pro tips
+
+- **Round up** the per-person share to the nearest whole dollar when the group is settling in cash. Servers appreciate the tidier tip.
+- **Add a couple of extra dollars** on small tabs. 20% of a $10 breakfast is $2, which is too little for a barista who was great.
+- **Hand your phone around the table.** It's the fastest way for the whole group to agree on the numbers without accusation.
+- **Tip in the local currency.** Foreign coins aren't spendable and cost the server the effort of a bank trip.
+
+## Privacy
+
+The calculator runs entirely in your browser. Bill amounts, tip percentages, and split counts are never uploaded, logged, or stored.
+
+## Wrapping up
+
+Tipping is a small ritual that shouldn't take up more than ten seconds of your attention. Bookmark the calculator, use it whenever the math gets awkward, and get back to the meal.
+",
+  "discount-calculator": "# Discount Calculator: The Complete Guide
+
+Every shopper has stared at a \"40% off\" sign and wondered, is that actually a good deal? This guide covers what the discount calculator does, the surprisingly tricky math of stacked discounts, and how to spot inflated \"original\" prices that make a small saving look bigger than it is.
+
+## What the calculator does
+
+You enter the original price and the discount percentage. The calculator returns two numbers: the amount saved, and the final price you'll actually pay. Both fields update live, so you can compare candidate items in seconds.
+
+## The math, in plain English
+
+- **Savings** = original price × (percentage ÷ 100).
+- **Final price** = original price − savings.
+
+A $60 shirt with 25% off saves you $15 and costs $45. Straightforward — until two discounts stack.
+
+## Stacked discounts don't add
+
+When a store runs a 20% sale on top of a 10% coupon, the total discount is not 30%. Each discount applies to the *already-discounted* price.
+
+Take a $100 item. 20% off makes it $80. 10% off *that* removes another $8, leaving $72. The effective discount is 28%, not 30%. The bigger the individual discounts, the bigger the gap:
+
+- 50% + 50% is not 100% off. It's 75% off (first cut leaves $50, second cut leaves $25).
+- 30% + 20% is 44% off, not 50%.
+- Two 10% coupons stack to 19% off, not 20%.
+
+This is why \"extra 20% at checkout\" ads never quite deliver the savings the headline suggests. Always calculate stacked discounts one step at a time.
+
+## When the \"original\" price isn't real
+
+Retailers know shoppers compare percentages, not final prices. A common tactic: mark an item up to $200 for a week, then advertise \"50% off — was $200, now $100\" when $100 was always the intended price. This is legal in most jurisdictions but misleading.
+
+Two ways to spot it:
+
+- **Search the item on Google Shopping.** If competing retailers sell it for $100 without any discount, the \"was $200\" was a fiction.
+- **Check price-tracking sites.** For Amazon, sites like Keepa and CamelCamelCamel show the real historical price. A \"lowest price ever!\" that matches the price of six weeks ago isn't much of a deal.
+
+## Discount versus markup — different math
+
+Discount and markup use the same word \"percent\" but they measure from different starting points. A 50% markup on a $10 wholesale item is $15 retail. A 50% discount off a $15 retail item is $7.50 — not $10. Retailers set prices by markup and advertise them by discount, and the two calculations don't cancel out. This calculator handles discount; for pricing, use a markup calculator.
+
+## How to use it
+
+**1. Enter the original price.** Pre-tax, unless the discount specifically applies to the tax-inclusive amount.
+
+**2. Enter the discount percentage.** Any number between 0 and 100.
+
+**3. Read the savings and final price.**
+
+**4. Compare options.** Repeat for each candidate item. Pick the one with the lowest *final price*, not the highest percentage.
+
+## Tips for smarter shopping
+
+- **Ignore the percentage. Look at the final price.** A 40% discount on an overpriced jacket can still leave you paying more than the honest competitor's 10% off.
+- **Watch for minimum spend.** A \"20% off orders over $100\" coupon is worthless if you're spending $80 — unless the extra item is one you actually want.
+- **Check return policies during sales.** Some stores make final-sale items non-returnable, which shifts risk to you.
+- **Sign up for price-drop alerts.** For anything you don't need immediately, letting a price-tracker email you when the item hits your target beats guessing when to buy.
+
+## For sellers and pricing
+
+If you're pricing products for a promotion, use the calculator in reverse:
+
+1. Decide the final price you're willing to accept.
+2. Work backwards to the discount percentage that gets you there from your usual price.
+3. If the headline percentage feels too small, raise the original price — but expect a customer or a review to eventually notice.
+
+## Privacy
+
+The calculator runs entirely in your browser. No price, discount, or item name is uploaded or logged.
+
+## Wrapping up
+
+The discount calculator is a tiny tool that pays for itself the first time it saves you from a bad deal. Compare *final prices*, calculate stacked discounts one step at a time, and treat any \"was $X\" claim with a little skepticism.
+",
+  "youtube-tag-generator": "# YouTube Tag Generator: The Complete Guide
+
+YouTube tags used to be everything. Today they're a small ranking signal — but a small, free signal is still worth capturing. This guide covers when tags actually help, what a good tag list looks like, and how to use the AI tag generator without falling into the traps that got tags demoted in the first place.
+
+## Do YouTube tags still matter in 2026?
+
+Honest answer: less than they did five years ago, more than nothing. YouTube's own documentation says tags help mainly when your topic is commonly misspelled or uses jargon that doesn't appear in your title. In other cases, the title, thumbnail, description, and viewer behavior signals dominate.
+
+That said, tags are free to set and take under a minute with a generator. Skipping them entirely is an unforced error, especially in niches where terminology varies (fitness, gaming, tech).
+
+## What the AI Tag Generator does
+
+You paste your video title (and optionally a short description). The AI produces 25–35 tags spanning three tiers:
+
+- **Broad tags** (1–2 words) capturing the big topic.
+- **Mid-tail tags** (3–4 words) matching common search patterns.
+- **Long-tail tags** (5+ words) targeting specific questions and phrases viewers actually type.
+
+Together they cover the different ways real viewers arrive at your video.
+
+## How to use it
+
+**1. Paste your video title.** Include your primary keyword — the phrase you most want to rank for.
+
+**2. Add a short description (optional).** One or two sentences of context makes the tags sharper. Skip if you're in a rush.
+
+**3. Generate.** The list appears ranked from broad to specific.
+
+**4. Review and prune.** Drop any tag that isn't genuinely relevant. Irrelevant tags don't help and can hurt long-term trust with the algorithm.
+
+**5. Copy.** Paste directly into YouTube Studio > Details > Tags.
+
+## Rules for tags that help, not hurt
+
+- **First tag matters most.** Put your primary keyword there.
+- **Stay relevant.** A tag list padded with unrelated popular terms (*viral*, *funny*, *satisfying*) doesn't earn extra impressions and signals low-quality intent to the algorithm.
+- **Match viewer phrasing.** Real viewers search *how to make sourdough at home*, not *sourdough baking methodology*.
+- **Stay under 500 characters** across all tags — YouTube silently truncates the rest.
+- **Skip competitor names.** Tagging *Mr. Beast* on an unrelated video looks manipulative and won't lift you into his suggested feed.
+
+## Pro tips
+
+- **Reuse tags across a series.** Consistent tagging helps YouTube group your videos as related content.
+- **Update tags on old videos** when search trends shift. Old videos routinely pick up new traffic from refreshed metadata.
+- **Ten sharp tags beat thirty vague ones.** More tags do not mean more views.
+- **Pair with strong title and thumbnail work.** Tags help YouTube understand your video. Title and thumbnail decide whether anyone clicks it.
+
+## Anti-patterns to avoid
+
+- Copy-pasting a competitor's tags. YouTube's algorithm doesn't move you into their audience just because you share tags.
+- Stuffing hashtags into the description as extra tags. They live in different fields for a reason.
+- Setting the exact same tag list on every video. It looks lazy and doesn't help discovery.
+
+## Common questions
+
+- **How many tags should I use?** Fifteen to thirty relevant tags is a good target. The 500-character limit fills up around there anyway.
+- **Should I include misspellings?** Only for genuinely common ones. Deliberately misspelling for extra reach looks unprofessional and rarely delivers.
+- **Do tags affect Shorts?** Less than they affect regular videos. Shorts discovery leans almost entirely on the hook, hold rate, and hashtags.
+
+## Privacy
+
+Your title is sent to the AI provider to generate the tag list. Nothing is stored on our servers or used to train models. Once the tags are returned, the request is closed.
+
+## Wrapping up
+
+Tags are a small win, not a magic bullet. Spend a minute generating a clean list, put it in Studio, and get back to the parts of your video that actually decide its performance — the title, the thumbnail, and the first fifteen seconds of the video itself.
+",
+  "youtube-title-generator": "# YouTube Title Generator: The Complete Guide
+
+On YouTube, the title and thumbnail decide almost everything. A great video with a weak title dies in the algorithm; a mediocre video with a great title gets a chance to prove itself. This guide covers what makes a YouTube title actually earn the click, how to use the AI title generator well, and the anti-patterns that quietly hurt your channel.
+
+## Why the title matters more than almost anything
+
+Click-through rate (CTR) is one of YouTube's strongest early signals. If a thousand people see your video in their feed and forty click it, YouTube shows it to more people. If ten click it, the video quietly fades. The title (paired with the thumbnail) is what decides whether a viewer becomes one of the forty.
+
+Spending five minutes on the title before you upload is one of the highest-leverage things a creator can do. Titles are also editable after upload, so a good title on a launched video is not a one-shot decision.
+
+## What the AI Title Generator does
+
+You enter your video topic and pick a style. The tool returns ten title ideas, each under 70 characters, using proven high-CTR patterns:
+
+- **Numbers.** *7 tools every developer should know.*
+- **Curiosity gaps.** *The one setting that changed how I edit forever.*
+- **Brackets and labels.** *Beginner tutorial: React in 2026 [full course].*
+- **Contrarian claims.** *Why I stopped using TypeScript (for now).*
+- **Direct promises.** *How to grow a YouTube channel to 10k subs.*
+
+Read all ten before you pick. The second-best title often reads better than the first once you have others to compare against.
+
+## How to use it
+
+**1. Enter your topic.** Be specific: *iPhone 17 review after 30 days* beats *phone review*.
+
+**2. Pick a style.** *Engaging* is a safe general choice. *How-to* fits tutorials. *Listicle* fits round-ups. *Professional* fits business and tech. *Clickbait* pushes the curiosity gap — use only when the video actually delivers.
+
+**3. Generate.** Ten options appear.
+
+**4. Pick your winner.** Or take two candidates and A/B test with a tool like TubeBuddy if you have it.
+
+## What great YouTube titles have in common
+
+- **Under 60 characters** so the whole title shows everywhere.
+- **Primary keyword near the start** for both SEO and to survive truncation.
+- **A number, a promise, or a curiosity hook.**
+- **Consistent with the thumbnail.** If they contradict each other, CTR crashes.
+- **Delivers what it promises.** Misleading titles cost you in watch time (the algorithm's other favorite metric) and in unsubscribes.
+
+## Common traps to avoid
+
+- **ALL CAPS.** Feels like shouting and rarely wins clicks anymore.
+- **Vague titles.** *An amazing video you have to watch* tells nobody anything.
+- **Keyword stuffing.** *iPhone review iPhone 17 Apple iPhone 2026 review* looks broken.
+- **Emojis at the front.** They compete with your words for space and often push the headline off-screen on mobile.
+- **Depending on the description for context.** Almost nobody reads it before clicking.
+
+## Editing titles after upload
+
+If a video is 24 hours old and CTR is under 4%, change the title. This alone can 2× or 3× a video's lifetime views. The algorithm re-tests the video's performance with the new title, and a stronger title flips the trajectory in either direction.
+
+Rules for post-upload title edits:
+
+- Wait at least 24 hours before the first edit. Younger videos don't have enough data to judge.
+- Change only one thing at a time — title *or* thumbnail — so you can tell what worked.
+- Give each version at least 24 hours before you evaluate.
+
+## Studying what works in your niche
+
+The best title-writing practice is watching your own top performers and the recent hits on adjacent channels. Look at:
+
+- **The first three words.** Is a keyword there?
+- **The emotional register.** Are they curious, urgent, promising, contrarian?
+- **The pattern.** Numbers? Questions? Brackets? Direct address?
+
+Reverse-engineer three or four templates that work in your niche, and use the title generator to fill each template with fresh topic ideas.
+
+## Privacy
+
+Your topic is sent to the AI provider to generate titles. Nothing is stored on our servers or used to train models.
+
+## Wrapping up
+
+The title is not a garnish on the video. It's the largest single lever you have over your video's performance. Spend the time to write a good one — and don't be afraid to change it if the first attempt underperforms.
+",
+  "youtube-description-generator": "# YouTube Description Generator: The Complete Guide
+
+The YouTube description is prime real estate for both SEO and viewer trust — and most creators leave it half-empty. This guide covers what a great description contains, how to use the AI description generator well, and the small habits that turn descriptions into a real driver of watch time and subscribers.
+
+## Why descriptions matter more than creators think
+
+Three audiences read your description:
+
+- **The YouTube algorithm** uses the full description to understand what your video is about. A blank description tells YouTube almost nothing.
+- **New viewers** read the first 150 characters (the part above \"…more\") when deciding whether the video is worth their time.
+- **Returning fans and search engines** read everything below the fold, including timestamps, links, and hashtags.
+
+A well-written description helps all three at once. A blank or lazy one helps none of them.
+
+## What the AI Description Generator produces
+
+You paste your video title and a short description of what the video covers. The generator returns a complete, ready-to-post description block:
+
+- **A hook** front-loaded with your primary keyword in the first 150 characters.
+- **A body** of two or three paragraphs describing what the video covers.
+- **Timestamps placeholders** you fill in for chapter markers.
+- **A subscribe call-to-action.**
+- **Three to five relevant hashtags.**
+
+You review, fill in the timestamps against your own video, and paste into YouTube Studio.
+
+## The anatomy of a great description
+
+- **Hook (first 150 characters).** Answer *what does this video do for me?* with your primary keyword included. This is what viewers see before clicking \"…more.\"
+- **Body (2–3 paragraphs).** Expand on what the video covers, using the words viewers actually search for.
+- **Chapters.** Timestamped list starting with *0:00* — YouTube requires the first timestamp to be *0:00* for chapters to activate. Chapters improve retention by helping viewers skip to the part they want.
+- **Call-to-action.** One clear ask — subscribe, follow on X, download a resource. One CTA outperforms three.
+- **Links.** Related videos, playlists, product/affiliate links. Label each one clearly.
+- **Hashtags.** Three to five relevant ones at the bottom. Only the first three appear above your title on mobile.
+
+## How to fill in the timestamps
+
+The generator produces placeholder timestamps. Watch your own video with the description open in a text editor and add a chapter at every natural transition — every 30 to 90 seconds is a good rhythm. Rules:
+
+- The first chapter must be at *0:00*.
+- Every subsequent chapter must be at least 10 seconds later.
+- You need at least three chapters total for chapters to show up.
+- Chapter titles should describe the content, not just say \"part 1\" — search inside chapters relies on the titles.
+
+## What to avoid
+
+- **Copy-pasting the same description across videos.** YouTube notices boilerplate and it does nothing for the new video's SEO.
+- **Wall of tags.** Tags belong in the tags field, not the description. Padding descriptions with tag lists looks spammy and doesn't help.
+- **Too many hashtags.** YouTube ignores hashtags after the fifteenth and can shadow-penalize videos that stuff them.
+- **Broken or unrelated links.** Every link is a chance for the viewer to bounce — keep them relevant and check they work.
+- **Long paragraphs with no line breaks.** Descriptions are read on mobile. Short paragraphs, clear labels.
+
+## Habits that compound
+
+- **Update descriptions on old videos** when your channel focus shifts. Descriptions are the easiest metadata to improve after upload.
+- **Include one long-tail keyword** that isn't in your title. Titles are short; descriptions have room to catch adjacent searches.
+- **Link forward and back** to related videos on your channel. Every internal link is a chance to keep the session going, which the algorithm rewards.
+- **Match voice with your channel.** A stiff description on a fun channel breaks trust; a jokey description on a professional channel does the same.
+
+## Common questions
+
+- **How long should a description be?** The technical limit is 5,000 characters. The practical sweet spot is 500–1,500 characters — enough for SEO context without overwhelming viewers.
+- **Do links in descriptions still work?** Yes, YouTube renders them as clickable links after about a day.
+- **Should I include a full transcript?** For long educational content, sometimes — it helps SEO and accessibility. For short videos, it's overkill.
+
+## Privacy
+
+Your title and topic are sent to the AI provider to generate the description. Nothing is stored or used to train models.
+
+## Wrapping up
+
+A good description is the free upgrade that most creators skip. Ten minutes per video to write a strong hook, add real chapters, and include the right hashtags is one of the highest-return habits a small channel can build.
+",
+  "youtube-thumbnail-downloader": "# YouTube Thumbnail Downloader: The Complete Guide
+
+Every YouTube video has a thumbnail — and every thumbnail is stored on a public CDN that anyone can request. The YouTube Thumbnail Downloader is a tiny utility that lets you grab any of the four sizes with one click. This guide covers what it does, when it's useful, and the legal and ethical rules for using thumbnails you didn't create.
+
+## What the downloader does
+
+You paste any YouTube video URL. The tool extracts the video ID and requests four sizes from YouTube's image CDN:
+
+- **Maxres** — 1280×720. Only available for videos uploaded at HD or higher.
+- **HQ** — 480×360. Available for every video.
+- **MQ** — 320×180. The size YouTube uses in the recommended sidebar.
+- **SD** — 120×90. Legacy thumbnail size for old embeds.
+
+Each size can be previewed and downloaded as a JPG with one click.
+
+## Why maxres is sometimes missing
+
+YouTube only generates the 1280×720 *maxresdefault.jpg* for videos uploaded at or above 1280×720 resolution. Older videos, low-resolution uploads, and some Shorts don't have this size. When it's missing, HQ (480×360) is the highest-quality thumbnail available — still fine for most uses.
+
+## When creators and marketers use it
+
+- **Researching thumbnails in your niche.** Studying what top-viewed videos in your topic are doing is one of the fastest ways to improve your own thumbnail design.
+- **Preparing case studies** on YouTube campaigns and creator growth.
+- **Writing articles or blog posts** about a video that need a preview image.
+- **Building slide decks** that reference an educational video.
+- **Recovering your own old thumbnails** when the source file is gone.
+- **Making a mood board** for a new video's thumbnail before you design one.
+
+## Is downloading YouTube thumbnails legal?
+
+Thumbnails are served publicly by YouTube for embedding and preview — anyone visiting the video sees them. Downloading a thumbnail for personal reference, education, journalism, review, or commentary is generally fine and falls under fair use in most jurisdictions.
+
+Where it gets legally and ethically fuzzier:
+
+- **Republishing someone else's thumbnail as your own** on a competing video may infringe copyright and violates YouTube's community guidelines.
+- **Using a competitor's thumbnail** in your own article without credit is at best rude and at worst infringing. Always link back and name the creator.
+- **Commercial use** (putting the thumbnail on merchandise, using it in paid ads) requires the creator's permission, not just YouTube's.
+
+Rule of thumb: if you're using the thumbnail to reference or discuss the original video, credit the creator and you'll almost always be fine. If you're using the thumbnail to make your own content look more compelling without adding value, don't.
+
+## How to use it
+
+**1. Copy the YouTube video URL.** Any format works — *youtube.com/watch?v=...*, *youtu.be/...*, *youtube.com/shorts/...*.
+
+**2. Paste it into the input.** The tool extracts the video ID immediately.
+
+**3. Preview the sizes.** See which are available.
+
+**4. Click download** next to the size you want.
+
+## Tips for creators studying thumbnails
+
+- **Compare three thumbnails, not one.** Patterns emerge from a channel's top three thumbnails that a single image doesn't reveal.
+- **Test at small sizes.** The thumbnail that looks great at 1280×720 sometimes falls apart at 240px in the sidebar. Preview your own thumbnails at that scale before uploading.
+- **Study faces and eyes.** Thumbnails with a clear human face and eye contact routinely outperform text-only or product-only thumbnails in most niches.
+- **Note the color palette.** Successful channels often share a consistent thumbnail palette that makes their videos recognizable at a glance.
+- **Notice text weight and length.** Big, bold, three-to-five-word text tends to beat small, wordy captions in the sidebar.
+
+## Common questions
+
+- **Can I download thumbnails from private videos?** No. Only public videos have publicly accessible thumbnails.
+- **Are Shorts thumbnails different?** Shorts often have vertical previews. The maxres landscape image is still available if the video was uploaded that way.
+- **Can I download the animated preview?** No — those are streaming assets, not downloadable images. This tool handles static thumbnails only.
+
+## Privacy
+
+The tool fetches images directly from YouTube's public CDN. The video URL is not stored or logged.
+
+## Wrapping up
+
+The thumbnail downloader is a small utility that pays back handsomely for anyone studying YouTube seriously. Use it as often as you like — and always credit the creators whose work you learn from.
+",
+  "youtube-video-idea-generator": "# YouTube Video Idea Generator: The Complete Guide
+
+Every YouTube creator hits the wall eventually — the day when the camera is charged, the schedule is clear, and you have absolutely no idea what to film. The video idea generator is a way to break through that wall without falling back on generic ideas that don't fit your channel. This guide covers how to use it well, and what to do with an idea you actually like.
+
+## What the generator does
+
+You enter your niche (and optionally your target viewer). The AI returns ten fresh video ideas, each with a working title and a one-line hook explaining the angle. The list mixes formats deliberately — tutorials, listicles, comparisons, reactions, case studies — so you leave with a range of options instead of ten variations on one theme.
+
+## Why creators hit the wall
+
+What runs out isn't creativity — it's the mental model that sparks it. When you've been staring at the same niche for months, the paths through it start to feel worn. A list of ten unrelated angles disrupts that pattern and gives your brain something to react to. You're not committing to any of them; you're spotting which one fits a video you've secretly wanted to make anyway.
+
+## How to use it
+
+**1. Enter your niche.** Be specific. *Home cooking for beginners* produces sharper ideas than *food*. *React tutorials for backend developers* beats *tech*.
+
+**2. Add your target viewer (optional).** *For busy parents* or *for college students* changes the flavor of every idea.
+
+**3. Generate.** Ten ideas appear.
+
+**4. Skim, don't judge.** Read the whole list before you evaluate any single idea. The point is to notice which one makes you actually want to open the camera.
+
+**5. Re-run if nothing lands.** A second generation is a totally different set — often the one with the winner.
+
+## What to do with an idea you like
+
+Generating the idea is 5% of the work. Turning it into a video that actually performs:
+
+- **Sharpen the title.** The generated title is a starting draft. Run it through the title generator or write two or three variations of your own.
+- **Sketch the hook and payoff.** In one sentence, what does the viewer get by the end? If you can't answer, the idea isn't ready.
+- **Design the thumbnail concept.** Before you film. If you can't imagine a thumbnail that makes someone click, the idea will underperform regardless of the video's quality.
+- **Search YouTube for the idea.** If ten strong videos already exist, either angle differently or pick another. If nothing exists, that can be an opportunity — or a sign the audience isn't there. Study viewership on adjacent topics before committing.
+- **Batch shoots.** If several generated ideas fit the same background and outfit, film them the same day.
+
+## Patterns that consistently work
+
+- **The tutorial you wish had existed** when you were learning your niche.
+- **The comparison** between two things your audience already argues about.
+- **The reality check** — what the marketing promised versus what actually happens.
+- **The 30-day challenge** — commit to something, film every day, publish the summary.
+- **The mistake list** — five things you (or beginners) get wrong.
+- **The setup or workflow tour** — what tools/gear/software you use and why.
+- **The origin story** — how you got started, what worked, what didn't.
+- **The response** — a video engaging with a claim, video, or trend in your space.
+
+## Anti-patterns to avoid
+
+- **Ideas that fit any channel.** *10 productivity tips* is not specific to you. Ideas that could just as easily be filmed by a competitor won't build your unique audience.
+- **Ideas that require expertise you don't have.** Faking authority on YouTube is transparent to viewers within the first 30 seconds.
+- **Ideas that don't excite you.** If you're not into it, the video will look and sound like it. Delete the idea and generate again.
+
+## Building an ongoing idea library
+
+Serious channels don't generate ideas on the day they need one — they keep a running list. A useful habit:
+
+- **Run the generator once a week** with a slightly different phrasing of your niche.
+- **Add the ideas you like to a spreadsheet or notes app.**
+- **Score each idea on excitement, effort, and audience fit.**
+- **Pick from the top of the list** on filming days instead of brainstorming from scratch.
+
+Within a few weeks you'll have a library of 50+ vetted ideas — enough to fuel a full year of publishing.
+
+## Privacy
+
+Your niche keyword is sent to the AI provider to generate ideas. Nothing is stored on our servers or used to train models.
+
+## Wrapping up
+
+The idea generator is a starting point, not an answer. The best videos on your channel will always be the ones that hit an angle only you could take. The tool's job is to hand you the angles fast so you can spend your time on the parts that actually decide whether a video works — the writing, the filming, the thumbnail, and the edit.
+",
 };
