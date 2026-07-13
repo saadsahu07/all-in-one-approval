@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { categories } from "@/lib/tools";
 
 /** Landing hero: gradient backdrop, headline, primary CTAs. */
 export function HeroSection() {
@@ -44,7 +43,8 @@ export function HeroSection() {
         </p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <Link
-            to={categories[0].path as "/"}
+            to="/"
+            hash="all-tools"
             className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all hover:brightness-110"
             style={{ boxShadow: "var(--shadow-glow)" }}
           >
