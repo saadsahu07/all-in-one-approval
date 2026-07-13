@@ -21,7 +21,7 @@ function Page() {
     <ToolShell categorySlug="calculators" toolSlug="temperature"
       intro="Convert Celsius, Fahrenheit, and Kelvin instantly."
       howTo={["Enter a temperature.", "Pick source and target scales."]}>
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div><Label>Value</Label><Input type="number" value={v} onChange={(e) => setV(e.target.value)} /></div>
         <div><Label>From</Label><Select value={from} onChange={(e) => setFrom(e.target.value)}><option>C</option><option>F</option><option>K</option></Select></div>
         <div><Label>To</Label><Select value={to} onChange={(e) => setTo(e.target.value)}><option>C</option><option>F</option><option>K</option></Select></div>

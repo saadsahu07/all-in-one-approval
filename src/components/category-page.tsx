@@ -49,7 +49,7 @@ export function CategoryPage({ slug }: { slug: string }) {
           <p className="mt-1 text-sm text-muted-foreground sm:text-base">{category.short}</p>
         </div>
       </div>
-      <div className="mt-10 grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {category.tools.map((t) => (
           <Link
             key={t.path}

@@ -62,7 +62,7 @@ function SearchPage() {
           <p className="mt-1 text-sm text-muted-foreground">Try a shorter or different keyword.</p>
         </div>
       ) : (
-        <ul className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
+        <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {matches.map((t) => {
             const cat = categories.find((c) => c.slug === t.category);
             return (

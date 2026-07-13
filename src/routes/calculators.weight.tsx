@@ -20,7 +20,7 @@ function Page() {
     <ToolShell categorySlug="calculators" toolSlug="weight"
       intro="Convert between metric and imperial weight units."
       howTo={["Enter a value.", "Pick source and target units."]}>
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div><Label>Value</Label><Input type="number" value={v} onChange={(e) => setV(e.target.value)} /></div>
         <div><Label>From</Label><Select value={from} onChange={(e) => setFrom(e.target.value)}>{Object.keys(G).map((k) => <option key={k}>{k}</option>)}</Select></div>
         <div><Label>To</Label><Select value={to} onChange={(e) => setTo(e.target.value)}>{Object.keys(G).map((k) => <option key={k}>{k}</option>)}</Select></div>

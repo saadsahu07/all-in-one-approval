@@ -33,7 +33,7 @@ function Page() {
     <ToolShell categorySlug="developer-tools" toolSlug="password-generator"
       intro="Create cryptographically strong random passwords locally in your browser."
       howTo={["Pick a length and character set.", "Regenerate as needed.", "Copy the password to your manager."]}>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div><Label>Length: {len}</Label><input type="range" min={6} max={64} value={len} onChange={(e) => setLen(+e.target.value)} className="w-full" /></div>
         <div className="space-y-2 text-sm">
           <label className="flex gap-2"><input type="checkbox" checked={upper} onChange={(e) => setUpper(e.target.checked)} /> Uppercase</label>

@@ -46,7 +46,7 @@ function Page() {
       {file && <p className="mt-3 text-sm text-muted-foreground">{file.name}</p>}
       <div className="mt-4"><Button disabled={!file || busy} onClick={run}>{busy ? "Rendering…" : "Convert"}</Button></div>
       {imgs.length > 0 && (
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {imgs.map((src, i) => (
             <div key={i} className="rounded-lg border border-border p-3">
               <img src={src} alt={`Page ${i + 1}`} className="w-full rounded" />

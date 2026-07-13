@@ -29,7 +29,7 @@ function Page() {
     <ToolShell categorySlug="calculators" toolSlug="age"
       intro="Enter a birth date to see the exact age in years, months, and days."
       howTo={["Pick your date of birth.", "Optionally change the reference date.", "Read the breakdown."]}>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div><Label>Date of birth</Label><Input type="date" value={dob} onChange={(e) => setDob(e.target.value)} /></div>
         <div><Label>Age on</Label><Input type="date" value={on} onChange={(e) => setOn(e.target.value)} /></div>
       </div>

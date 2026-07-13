@@ -86,7 +86,7 @@ function YouTubeThumbnailDownloader() {
         </div>
         {error && <p className="text-sm text-destructive">{error}</p>}
         {videoId && (
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {QUALITIES.map((q) => (
               <div key={q.key} className="rounded-lg border border-border bg-card p-3">
                 <img
