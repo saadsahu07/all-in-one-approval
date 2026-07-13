@@ -13,10 +13,10 @@ const OG_IMAGE = `${SITE}${ogCover}`;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ToolsHive — 60 Free Online Tools for Text, Images, PDFs & Code" },
-      { name: "description", content: "60 free online tools for text, images, PDFs, developers, calculators, and content creation. Fast, private, and processed in your browser." },
-      { property: "og:title", content: "ToolsHive — 60 Free Online Tools" },
-      { property: "og:description", content: "60 free online tools for text, images, PDFs, developers, calculators, and content creation. Fast, private, and processed in your browser." },
+      { title: "ToolsHive — 60 Free Online Tools + Blog Guides" },
+      { name: "description", content: "Tools and blog in one place: 60 free tools for text, images, PDFs, developers, calculators plus guides on making money online, productivity, tech tips, and careers." },
+      { property: "og:title", content: "ToolsHive — 60 Free Online Tools + Blog Guides" },
+      { property: "og:description", content: "Tools and blog in one place: 60 free tools for text, images, PDFs, developers, calculators plus guides on making money online, productivity, tech tips, and careers." },
       { property: "og:url", content: `${SITE}/` },
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
