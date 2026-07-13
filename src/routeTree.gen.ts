@@ -27,6 +27,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
 import { Route as TextToolsTextSorterRouteImport } from './routes/text-tools.text-sorter'
 import { Route as TextToolsTextReverserRouteImport } from './routes/text-tools.text-reverser'
+import { Route as TextToolsSlugifyRouteImport } from './routes/text-tools.slugify'
 import { Route as TextToolsRemoveDuplicateLinesRouteImport } from './routes/text-tools.remove-duplicate-lines'
 import { Route as TextToolsParaphraserRouteImport } from './routes/text-tools.paraphraser'
 import { Route as TextToolsLoremIpsumRouteImport } from './routes/text-tools.lorem-ipsum'
@@ -54,9 +55,11 @@ import { Route as ImageToolsImageToPdfRouteImport } from './routes/image-tools.i
 import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
 import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
+import { Route as DeveloperToolsUuidGeneratorRouteImport } from './routes/developer-tools.uuid-generator'
 import { Route as DeveloperToolsUrlEncodeRouteImport } from './routes/developer-tools.url-encode'
 import { Route as DeveloperToolsUrlDecodeRouteImport } from './routes/developer-tools.url-decode'
 import { Route as DeveloperToolsPasswordGeneratorRouteImport } from './routes/developer-tools.password-generator'
+import { Route as DeveloperToolsJwtDecoderRouteImport } from './routes/developer-tools.jwt-decoder'
 import { Route as DeveloperToolsJsonValidatorRouteImport } from './routes/developer-tools.json-validator'
 import { Route as DeveloperToolsJsonFormatterRouteImport } from './routes/developer-tools.json-formatter'
 import { Route as DeveloperToolsJsMinifierRouteImport } from './routes/developer-tools.js-minifier'
@@ -70,11 +73,13 @@ import { Route as ContentCreationYoutubeThumbnailDownloaderRouteImport } from '.
 import { Route as ContentCreationYoutubeTagGeneratorRouteImport } from './routes/content-creation.youtube-tag-generator'
 import { Route as ContentCreationYoutubeDescriptionGeneratorRouteImport } from './routes/content-creation.youtube-description-generator'
 import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
+import { Route as CalculatorsTipRouteImport } from './routes/calculators.tip'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
 import { Route as CalculatorsPercentageRouteImport } from './routes/calculators.percentage'
 import { Route as CalculatorsLengthRouteImport } from './routes/calculators.length'
 import { Route as CalculatorsGstVatRouteImport } from './routes/calculators.gst-vat'
 import { Route as CalculatorsEmiRouteImport } from './routes/calculators.emi'
+import { Route as CalculatorsDiscountRouteImport } from './routes/calculators.discount'
 import { Route as CalculatorsCurrencyConverterRouteImport } from './routes/calculators.currency-converter'
 import { Route as CalculatorsBmiRouteImport } from './routes/calculators.bmi'
 import { Route as CalculatorsBinaryToDecimalRouteImport } from './routes/calculators.binary-to-decimal'
@@ -169,6 +174,11 @@ const TextToolsTextSorterRoute = TextToolsTextSorterRouteImport.update({
 const TextToolsTextReverserRoute = TextToolsTextReverserRouteImport.update({
   id: '/text-tools/text-reverser',
   path: '/text-tools/text-reverser',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsSlugifyRoute = TextToolsSlugifyRouteImport.update({
+  id: '/text-tools/slugify',
+  path: '/text-tools/slugify',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TextToolsRemoveDuplicateLinesRoute =
@@ -309,6 +319,12 @@ const ImageToolsBackgroundRemoverRoute =
     path: '/image-tools/background-remover',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsUuidGeneratorRoute =
+  DeveloperToolsUuidGeneratorRouteImport.update({
+    id: '/developer-tools/uuid-generator',
+    path: '/developer-tools/uuid-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsUrlEncodeRoute = DeveloperToolsUrlEncodeRouteImport.update({
   id: '/developer-tools/url-encode',
   path: '/developer-tools/url-encode',
@@ -323,6 +339,12 @@ const DeveloperToolsPasswordGeneratorRoute =
   DeveloperToolsPasswordGeneratorRouteImport.update({
     id: '/developer-tools/password-generator',
     path: '/developer-tools/password-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsJwtDecoderRoute =
+  DeveloperToolsJwtDecoderRouteImport.update({
+    id: '/developer-tools/jwt-decoder',
+    path: '/developer-tools/jwt-decoder',
     getParentRoute: () => rootRouteImport,
   } as any)
 const DeveloperToolsJsonValidatorRoute =
@@ -402,6 +424,11 @@ const CalculatorsWeightRoute = CalculatorsWeightRouteImport.update({
   path: '/calculators/weight',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatorsTipRoute = CalculatorsTipRouteImport.update({
+  id: '/calculators/tip',
+  path: '/calculators/tip',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsTemperatureRoute = CalculatorsTemperatureRouteImport.update({
   id: '/calculators/temperature',
   path: '/calculators/temperature',
@@ -425,6 +452,11 @@ const CalculatorsGstVatRoute = CalculatorsGstVatRouteImport.update({
 const CalculatorsEmiRoute = CalculatorsEmiRouteImport.update({
   id: '/calculators/emi',
   path: '/calculators/emi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsDiscountRoute = CalculatorsDiscountRouteImport.update({
+  id: '/calculators/discount',
+  path: '/calculators/discount',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalculatorsCurrencyConverterRoute =
@@ -469,11 +501,13 @@ export interface FileRoutesByFullPath {
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
@@ -487,9 +521,11 @@ export interface FileRoutesByFullPath {
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
+  '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
+  '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -517,6 +553,7 @@ export interface FileRoutesByFullPath {
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/slugify': typeof TextToolsSlugifyRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
@@ -542,11 +579,13 @@ export interface FileRoutesByTo {
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
@@ -560,9 +599,11 @@ export interface FileRoutesByTo {
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
+  '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
+  '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -590,6 +631,7 @@ export interface FileRoutesByTo {
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/slugify': typeof TextToolsSlugifyRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
@@ -616,11 +658,13 @@ export interface FileRoutesById {
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
@@ -634,9 +678,11 @@ export interface FileRoutesById {
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
+  '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
+  '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
@@ -664,6 +710,7 @@ export interface FileRoutesById {
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/slugify': typeof TextToolsSlugifyRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
@@ -691,11 +738,13 @@ export interface FileRouteTypes {
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
     | '/calculators/currency-converter'
+    | '/calculators/discount'
     | '/calculators/emi'
     | '/calculators/gst-vat'
     | '/calculators/length'
     | '/calculators/percentage'
     | '/calculators/temperature'
+    | '/calculators/tip'
     | '/calculators/weight'
     | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
@@ -709,9 +758,11 @@ export interface FileRouteTypes {
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
+    | '/developer-tools/jwt-decoder'
     | '/developer-tools/password-generator'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
+    | '/developer-tools/uuid-generator'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -739,6 +790,7 @@ export interface FileRouteTypes {
     | '/text-tools/lorem-ipsum'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/slugify'
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
@@ -764,11 +816,13 @@ export interface FileRouteTypes {
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
     | '/calculators/currency-converter'
+    | '/calculators/discount'
     | '/calculators/emi'
     | '/calculators/gst-vat'
     | '/calculators/length'
     | '/calculators/percentage'
     | '/calculators/temperature'
+    | '/calculators/tip'
     | '/calculators/weight'
     | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
@@ -782,9 +836,11 @@ export interface FileRouteTypes {
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
+    | '/developer-tools/jwt-decoder'
     | '/developer-tools/password-generator'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
+    | '/developer-tools/uuid-generator'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -812,6 +868,7 @@ export interface FileRouteTypes {
     | '/text-tools/lorem-ipsum'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/slugify'
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
@@ -837,11 +894,13 @@ export interface FileRouteTypes {
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
     | '/calculators/currency-converter'
+    | '/calculators/discount'
     | '/calculators/emi'
     | '/calculators/gst-vat'
     | '/calculators/length'
     | '/calculators/percentage'
     | '/calculators/temperature'
+    | '/calculators/tip'
     | '/calculators/weight'
     | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
@@ -855,9 +914,11 @@ export interface FileRouteTypes {
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
+    | '/developer-tools/jwt-decoder'
     | '/developer-tools/password-generator'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
+    | '/developer-tools/uuid-generator'
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
@@ -885,6 +946,7 @@ export interface FileRouteTypes {
     | '/text-tools/lorem-ipsum'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/slugify'
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
     | '/text-tools/word-counter'
@@ -911,11 +973,13 @@ export interface RootRouteChildren {
   CalculatorsBinaryToDecimalRoute: typeof CalculatorsBinaryToDecimalRoute
   CalculatorsBmiRoute: typeof CalculatorsBmiRoute
   CalculatorsCurrencyConverterRoute: typeof CalculatorsCurrencyConverterRoute
+  CalculatorsDiscountRoute: typeof CalculatorsDiscountRoute
   CalculatorsEmiRoute: typeof CalculatorsEmiRoute
   CalculatorsGstVatRoute: typeof CalculatorsGstVatRoute
   CalculatorsLengthRoute: typeof CalculatorsLengthRoute
   CalculatorsPercentageRoute: typeof CalculatorsPercentageRoute
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
+  CalculatorsTipRoute: typeof CalculatorsTipRoute
   CalculatorsWeightRoute: typeof CalculatorsWeightRoute
   ContentCreationYoutubeDescriptionGeneratorRoute: typeof ContentCreationYoutubeDescriptionGeneratorRoute
   ContentCreationYoutubeTagGeneratorRoute: typeof ContentCreationYoutubeTagGeneratorRoute
@@ -929,9 +993,11 @@ export interface RootRouteChildren {
   DeveloperToolsJsMinifierRoute: typeof DeveloperToolsJsMinifierRoute
   DeveloperToolsJsonFormatterRoute: typeof DeveloperToolsJsonFormatterRoute
   DeveloperToolsJsonValidatorRoute: typeof DeveloperToolsJsonValidatorRoute
+  DeveloperToolsJwtDecoderRoute: typeof DeveloperToolsJwtDecoderRoute
   DeveloperToolsPasswordGeneratorRoute: typeof DeveloperToolsPasswordGeneratorRoute
   DeveloperToolsUrlDecodeRoute: typeof DeveloperToolsUrlDecodeRoute
   DeveloperToolsUrlEncodeRoute: typeof DeveloperToolsUrlEncodeRoute
+  DeveloperToolsUuidGeneratorRoute: typeof DeveloperToolsUuidGeneratorRoute
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
   ImageToolsCompressRoute: typeof ImageToolsCompressRoute
   ImageToolsCropRoute: typeof ImageToolsCropRoute
@@ -959,6 +1025,7 @@ export interface RootRouteChildren {
   TextToolsLoremIpsumRoute: typeof TextToolsLoremIpsumRoute
   TextToolsParaphraserRoute: typeof TextToolsParaphraserRoute
   TextToolsRemoveDuplicateLinesRoute: typeof TextToolsRemoveDuplicateLinesRoute
+  TextToolsSlugifyRoute: typeof TextToolsSlugifyRoute
   TextToolsTextReverserRoute: typeof TextToolsTextReverserRoute
   TextToolsTextSorterRoute: typeof TextToolsTextSorterRoute
   TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
@@ -1097,6 +1164,13 @@ declare module '@tanstack/react-router' {
       path: '/text-tools/text-reverser'
       fullPath: '/text-tools/text-reverser'
       preLoaderRoute: typeof TextToolsTextReverserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/slugify': {
+      id: '/text-tools/slugify'
+      path: '/text-tools/slugify'
+      fullPath: '/text-tools/slugify'
+      preLoaderRoute: typeof TextToolsSlugifyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/remove-duplicate-lines': {
@@ -1288,6 +1362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsBackgroundRemoverRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/uuid-generator': {
+      id: '/developer-tools/uuid-generator'
+      path: '/developer-tools/uuid-generator'
+      fullPath: '/developer-tools/uuid-generator'
+      preLoaderRoute: typeof DeveloperToolsUuidGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/url-encode': {
       id: '/developer-tools/url-encode'
       path: '/developer-tools/url-encode'
@@ -1307,6 +1388,13 @@ declare module '@tanstack/react-router' {
       path: '/developer-tools/password-generator'
       fullPath: '/developer-tools/password-generator'
       preLoaderRoute: typeof DeveloperToolsPasswordGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/jwt-decoder': {
+      id: '/developer-tools/jwt-decoder'
+      path: '/developer-tools/jwt-decoder'
+      fullPath: '/developer-tools/jwt-decoder'
+      preLoaderRoute: typeof DeveloperToolsJwtDecoderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/developer-tools/json-validator': {
@@ -1400,6 +1488,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsWeightRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/tip': {
+      id: '/calculators/tip'
+      path: '/calculators/tip'
+      fullPath: '/calculators/tip'
+      preLoaderRoute: typeof CalculatorsTipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/temperature': {
       id: '/calculators/temperature'
       path: '/calculators/temperature'
@@ -1433,6 +1528,13 @@ declare module '@tanstack/react-router' {
       path: '/calculators/emi'
       fullPath: '/calculators/emi'
       preLoaderRoute: typeof CalculatorsEmiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/discount': {
+      id: '/calculators/discount'
+      path: '/calculators/discount'
+      fullPath: '/calculators/discount'
+      preLoaderRoute: typeof CalculatorsDiscountRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators/currency-converter': {
@@ -1487,11 +1589,13 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsBinaryToDecimalRoute: CalculatorsBinaryToDecimalRoute,
   CalculatorsBmiRoute: CalculatorsBmiRoute,
   CalculatorsCurrencyConverterRoute: CalculatorsCurrencyConverterRoute,
+  CalculatorsDiscountRoute: CalculatorsDiscountRoute,
   CalculatorsEmiRoute: CalculatorsEmiRoute,
   CalculatorsGstVatRoute: CalculatorsGstVatRoute,
   CalculatorsLengthRoute: CalculatorsLengthRoute,
   CalculatorsPercentageRoute: CalculatorsPercentageRoute,
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
+  CalculatorsTipRoute: CalculatorsTipRoute,
   CalculatorsWeightRoute: CalculatorsWeightRoute,
   ContentCreationYoutubeDescriptionGeneratorRoute:
     ContentCreationYoutubeDescriptionGeneratorRoute,
@@ -1510,9 +1614,11 @@ const rootRouteChildren: RootRouteChildren = {
   DeveloperToolsJsMinifierRoute: DeveloperToolsJsMinifierRoute,
   DeveloperToolsJsonFormatterRoute: DeveloperToolsJsonFormatterRoute,
   DeveloperToolsJsonValidatorRoute: DeveloperToolsJsonValidatorRoute,
+  DeveloperToolsJwtDecoderRoute: DeveloperToolsJwtDecoderRoute,
   DeveloperToolsPasswordGeneratorRoute: DeveloperToolsPasswordGeneratorRoute,
   DeveloperToolsUrlDecodeRoute: DeveloperToolsUrlDecodeRoute,
   DeveloperToolsUrlEncodeRoute: DeveloperToolsUrlEncodeRoute,
+  DeveloperToolsUuidGeneratorRoute: DeveloperToolsUuidGeneratorRoute,
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
   ImageToolsCompressRoute: ImageToolsCompressRoute,
   ImageToolsCropRoute: ImageToolsCropRoute,
@@ -1540,6 +1646,7 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsLoremIpsumRoute: TextToolsLoremIpsumRoute,
   TextToolsParaphraserRoute: TextToolsParaphraserRoute,
   TextToolsRemoveDuplicateLinesRoute: TextToolsRemoveDuplicateLinesRoute,
+  TextToolsSlugifyRoute: TextToolsSlugifyRoute,
   TextToolsTextReverserRoute: TextToolsTextReverserRoute,
   TextToolsTextSorterRoute: TextToolsTextSorterRoute,
   TextToolsWordCounterRoute: TextToolsWordCounterRoute,
