@@ -9,10 +9,17 @@ const schema = z.object({ q: fallback(z.string(), "").default("") });
 
 export const Route = createFileRoute("/search")({
   validateSearch: zodValidator(schema),
-  head: () => ({ meta: [
-    { title: "Search tools — ToolsHive" },
-    { name: "description", content: "Search 50 free online tools for text, images, PDFs, developers, and calculators." },
-  ]}),
+  head: () => ({
+    meta: [
+      { title: "Search tools — ToolsHive" },
+      { name: "description", content: "Search 50 free online tools for text, images, PDFs, developers, and calculators." },
+      { property: "og:title", content: "Search tools — ToolsHive" },
+      { property: "og:description", content: "Search 50 free online tools for text, images, PDFs, developers, and calculators." },
+      { property: "og:url", content: "https://all-in-one-approval.lovable.app/search" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/search" }],
+  }),
   component: SearchPage,
 });
 
