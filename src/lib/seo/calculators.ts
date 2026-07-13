@@ -20,6 +20,39 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What the age calculator does
+
+Enter a birth date and the calculator tells you the exact age in years, months, and days — plus useful extras like total days lived, upcoming birthday countdown, and the day of the week you were born. Great for filling in forms that need an exact age, calculating age gaps, or working out how old someone will be on a specific future date.
+
+## Step-by-step
+
+**1. Enter the birth date.** Use the date picker or type the date directly.
+
+**2. Optionally set a target date.** Defaults to today; change it to calculate age at any past or future date (useful for policy eligibility, retirement planning, or "how old will I be in 2030?" questions).
+
+**3. Read the result.** Years, months, days, and total days between the two dates appear immediately.
+
+## Common uses
+
+- **Government forms** that ask for exact age at a specific date.
+- **Retirement planning** — how many years, months, and days until you hit 65 (or 60, or whichever milestone matters).
+- **Family record-keeping** — the ages of everyone at a wedding photo or reunion.
+- **Sports eligibility** where age categories are defined precisely.
+- **Insurance premiums** which often depend on age at policy start date to the day.
+
+## Age gap calculations
+
+To find the gap between two people, run the calculator twice against a common reference date (today works fine) and subtract. Or use the target-date field: enter person A's birth date and set the target to person B's birth date — the result is the exact difference between the two.
+
+## Tips
+
+- **Watch time zones** for births near midnight. The calculator uses local time; if the person was born in a different time zone, the calendar date may shift.
+- **Leap years are handled correctly.** Someone born on 29 February gets aged one year on 28 February in non-leap years by convention.
+- **Copy the result** into any form — total days is often what fitness, insurance, and medical records ask for.
+
+## Privacy
+
+Everything runs in your browser. No dates are stored or logged.`,
   },
   "/calculators/bmi": {
     title: "BMI Calculator — Body Mass Index Free Online",
@@ -40,6 +73,47 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What BMI is (and isn't)
+
+Body Mass Index divides your weight by the square of your height. It's a rough population-level indicator of whether you're in a healthy weight range for your height. It says nothing about body composition — muscle weighs more than fat, so athletes routinely score in the "overweight" range while being extremely fit. Use BMI as one data point among many, not a verdict.
+
+## What this tool does
+
+Calculates BMI from height and weight in metric or imperial units and shows which of the standard categories you fall into: underweight, healthy, overweight, or obese. Also shows the healthy weight range for your height.
+
+## Step-by-step
+
+**1. Pick units.** Metric (kg, cm) or imperial (lb, in).
+
+**2. Enter height and weight.** Use the values you'd give at a doctor's appointment.
+
+**3. Read the result.** BMI value, category, and healthy weight range for your height.
+
+## The standard categories
+
+- **Under 18.5** — underweight.
+- **18.5 – 24.9** — healthy range.
+- **25.0 – 29.9** — overweight.
+- **30.0 and above** — obese (with sub-categories at 35 and 40 for clinical use).
+
+These bands are based on population studies of white, middle-aged adults. Different ethnic populations have different risk thresholds; people of South Asian descent, for example, face weight-related health risks at lower BMI values than the standard categories suggest.
+
+## What BMI misses
+
+- **Muscle mass.** Bodybuilders and athletes routinely score "overweight" or "obese" while carrying very little fat.
+- **Body fat distribution.** Two people with identical BMIs face very different health risks if one carries fat around the waist and the other around the hips.
+- **Age.** Older adults often benefit from being at the higher end of "healthy" or slightly into "overweight."
+- **Children.** Adult BMI categories don't apply to under-18s; paediatric charts use age-and-sex-specific percentiles.
+
+## Better metrics to pair with BMI
+
+- **Waist circumference.** A waist above 94 cm (37 in) for men or 80 cm (31.5 in) for women indicates elevated risk regardless of BMI.
+- **Waist-to-height ratio.** Keep your waist below half your height.
+- **Body composition** measured by a scan or a decent smart scale.
+
+## Privacy
+
+Everything runs in your browser. No measurements are stored.`,
   },
   "/calculators/percentage": {
     title: "Percentage Calculator — Solve % Problems Free",
@@ -60,6 +134,46 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What the percentage calculator does
+
+Percentages come up constantly — tips, discounts, taxes, tips, grades, growth rates, commissions — and the mental math is easy to get wrong when the numbers aren't round. This calculator handles the three most common percentage questions in a single interface:
+
+- **What is X% of Y?** (e.g. what is 15% of 240)
+- **X is what percent of Y?** (e.g. 30 is what percent of 240)
+- **What percent has X changed to Y?** (e.g. from 200 to 250 is a 25% increase)
+
+## Step-by-step
+
+**1. Pick which question you're asking.** The tool shows three input rows; use whichever matches your problem.
+
+**2. Type the numbers.** Results update as you type.
+
+**3. Copy the answer** or take a screenshot for reference.
+
+## Everyday examples
+
+- **Tip and service:** 18% of £42.30 = £7.61.
+- **Sales tax:** if a receipt shows $87 including 8.5% tax, the pre-tax amount is 87 ÷ 1.085 = $80.18.
+- **Test scores:** 47 out of 60 is 78.3%.
+- **Growth:** revenue up from £120k to £147k is a 22.5% increase.
+- **Discounts:** an item marked from $199 to $149 is 25.1% off.
+
+## Percentage points vs percent
+
+If interest rates go from 4% to 6%, that's a rise of **2 percentage points** — but a **50% increase** relative to the starting value. News headlines mix these up constantly. When a number is expressed as a percentage of another percentage, be explicit about which base you mean.
+
+## Compounding percentages
+
+Two 10% discounts stacked don't give you 20% off. The second discount applies to the already-discounted price, so the effective total is 19%. When you multiply percentages, work them one after another, not by adding.
+
+## Tips
+
+- **Round late, not early.** If you round intermediate results, error accumulates. Keep decimals through the calculation, round only the final answer.
+- **Sanity-check the direction.** Percentage-change answers should have the sign you expect. If revenue went from 100 to 80 and the tool says +25%, you asked the wrong question.
+
+## Privacy
+
+All calculations happen in your browser.`,
   },
   "/calculators/gst-vat": {
     title: "GST / VAT Calculator — Add or Remove Tax Free",
@@ -80,6 +194,50 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What GST and VAT are
+
+Goods and Services Tax (GST) and Value Added Tax (VAT) are the same idea under different names: a consumption tax added to most goods and services at each stage of production, with the final consumer bearing the cost. Countries use different rates — 5% in Canada, 10% in Australia, 17% in Pakistan, 20% in the UK — but the math is identical.
+
+## What this tool does
+
+Calculates GST or VAT in both directions:
+
+- **Add tax:** enter the pre-tax price and the rate; get the tax amount and the tax-inclusive total.
+- **Remove tax:** enter the tax-inclusive price and the rate; get the tax amount and the pre-tax price.
+
+## Step-by-step
+
+**1. Pick a direction.** Adding tax or removing it.
+
+**2. Enter the amount.** Pre-tax if adding, tax-inclusive if removing.
+
+**3. Enter the tax rate.** Whatever applies in your country or state.
+
+**4. Read the two figures** — tax portion and the other price.
+
+## Common uses
+
+- **Invoicing.** Charge a customer $500 excluding tax, add 10% GST, invoice for $550.
+- **Expense claims.** A receipt shows £120 including 20% VAT — the deductible tax portion is £20 and the net cost is £100.
+- **Product pricing.** Set a shelf price of $99 including 10% GST, so the ex-tax revenue you keep is $90.
+- **Cross-border comparison.** Compare a €150 European price (VAT-inclusive) with a $150 US price (tax-added at checkout) on a like-for-like basis.
+
+## The math, in plain English
+
+- **Tax added:** tax = amount × rate ÷ 100. Total = amount + tax.
+- **Tax removed:** net = amount ÷ (1 + rate ÷ 100). Tax = amount − net.
+
+The removing-tax formula is the one people most often get wrong. A £120 price at 20% VAT is *not* £96 (which is £120 minus 20% of £120). It's £100 — because the £120 is 120% of the pre-tax amount, so divide by 1.20.
+
+## Tips
+
+- **Match the rate to what applies at the point of sale.** Different regions and product categories have different rates (books at 5%, essentials at 0%, standard goods at the full rate).
+- **Keep tax and net figures separate on invoices.** Any accounting system will need both, and combining them makes the return harder to file.
+- **For B2B sales, verify tax registration.** In many jurisdictions, sales to registered businesses in the same country are still taxed; sales to businesses in another country may be zero-rated. Rules vary — consult a local guide.
+
+## Privacy
+
+Calculations run in your browser.`,
   },
   "/calculators/emi": {
     title: "EMI Calculator — Loan Payment & Interest Free",
@@ -100,6 +258,50 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What an EMI is
+
+Equated Monthly Installment (EMI) is the fixed amount you pay each month on a loan — combining principal and interest into one predictable payment. Auto loans, home loans, personal loans, and most consumer credit use EMIs so borrowers know exactly what to budget every month for the entire loan term.
+
+## What this tool does
+
+Given a loan amount, interest rate, and tenure, calculates the monthly EMI, the total interest you'll pay over the life of the loan, and the total amount repaid. Also shows how much of each early payment goes to interest vs principal — a critical detail borrowers rarely see up front.
+
+## Step-by-step
+
+**1. Enter the loan amount.** The principal — how much you're actually borrowing.
+
+**2. Enter the annual interest rate.** Use the nominal APR the lender quoted.
+
+**3. Enter the tenure.** In years or months; the calculator handles both.
+
+**4. Read the results.** Monthly EMI, total interest, total repayment, and a breakdown of principal vs interest across the loan term.
+
+## The math, in plain English
+
+EMI is calculated with the standard amortization formula:
+
+*EMI = P × r × (1 + r)ⁿ ÷ ((1 + r)ⁿ − 1)*
+
+Where **P** is principal, **r** is the monthly interest rate (annual ÷ 12 ÷ 100), and **n** is the number of monthly payments. You don't need to compute this by hand — but understanding what the formula does helps explain why longer tenures cost dramatically more in total interest.
+
+## The hidden cost of long tenures
+
+Extending a $30,000 auto loan from 4 to 7 years cuts the monthly payment noticeably — but nearly doubles the total interest paid. In the first year of a long loan, most of each payment is interest and almost none reduces the principal. Any calculator you use should make this trade-off obvious; use the total-interest number to compare loans, not just the monthly EMI.
+
+## Prepayment can save huge amounts
+
+Paying an extra $100 per month against a $200,000 mortgage at 6% can cut the loan term by five years or more and save tens of thousands in interest. Most lenders allow prepayment without penalty — check your loan agreement.
+
+## Tips for smart borrowing
+
+- **Compare total interest across loan offers**, not just the interest rate. A lower rate with fees or a longer tenure can be more expensive overall.
+- **Aim for EMIs under 30–40% of monthly income.** Higher ratios leave no margin for emergencies.
+- **Fixed vs floating rate.** Fixed rates are predictable; floating rates are cheaper on average but expose you to hikes. Pick based on how much predictability you value.
+- **Refinance if rates drop.** A one-percentage-point drop on a large loan usually pays back the refinance cost within a year.
+
+## Privacy
+
+Calculations run in your browser.`,
   },
   "/calculators/currency-converter": {
     title: "Currency Converter — Live Exchange Rates Free",
@@ -120,6 +322,54 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What the currency converter does
+
+Converts between world currencies using exchange rates that update regularly. Enter an amount in any supported currency, pick a target currency, and read the converted value. Use it for travel budgeting, invoicing international clients, comparing prices across regions, or estimating what a purchase will cost on your bank statement.
+
+## Step-by-step
+
+**1. Enter an amount** in whichever currency you have or are quoted.
+
+**2. Pick the source currency.**
+
+**3. Pick the target currency.**
+
+**4. Read the converted amount** and the exchange rate used.
+
+## What the rate means
+
+The rate shown is the mid-market rate — the middle point between buy and sell prices in the wholesale currency market. It's the fair rate before anyone takes a cut. Banks, cards, and exchange bureaus all charge a margin on top of this. Expect a real-world exchange to cost 0.5%–3% more than the mid-market rate depending on where you exchange.
+
+## Common uses
+
+- **Travel budgeting.** Estimate what a hotel or restaurant price will cost you back home.
+- **International invoicing.** Quote a client in their currency using the current rate.
+- **Comparing product prices.** A gadget for $299 in the US vs €329 in Germany — which is cheaper today?
+- **Salary comparisons** when considering a job in another country.
+- **Bank statement decoding** when a foreign transaction posts and you want to check the rate you were charged.
+
+## Where you'll pay more than the shown rate
+
+- **ATMs abroad** — most add a per-withdrawal fee plus a currency margin.
+- **Credit cards without a no-foreign-transaction-fee benefit** — typically 2-3% margin.
+- **Airport currency booths** — often 5–10% worse than the mid-market rate.
+- **PayPal and similar** — sometimes 3–4% margin on top of the market rate.
+
+## Where you'll pay close to the rate
+
+- **Multi-currency accounts** (Wise, Revolut, Payoneer) — typically 0.3-1% margin.
+- **Cards marketed as no-foreign-transaction-fee** paired with a bank that uses the interbank rate.
+- **Trading platforms** for large transfers.
+
+## Tips
+
+- **Convert at the moment of purchase**, not the day before or after. Rates move minute-by-minute.
+- **For large transfers, get a quote in advance** rather than relying on the current mid-market rate — the actual delivered rate for a large sum is usually better than the ATM rate.
+- **Round for planning, not for accounting.** A rough conversion is fine for a trip budget; use exact rates for anything you'll file.
+
+## Privacy
+
+Conversions run in your browser using the loaded rate table. No transaction data is captured.`,
   },
   "/calculators/length": {
     title: "Length Converter — Metric to Imperial Free",
@@ -140,6 +390,50 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What the length converter does
+
+Converts between metric and imperial units of length: millimeters, centimeters, meters, kilometers, inches, feet, yards, and miles. Enter a value in any unit and read equivalent values in every other unit at once.
+
+## Step-by-step
+
+**1. Enter a value** in whichever unit you have.
+
+**2. Pick the source unit.**
+
+**3. Read the equivalent** in every supported unit. Copy whichever one you need.
+
+## Everyday conversions worth memorising
+
+- **1 inch = 2.54 cm** (exact by definition).
+- **1 foot ≈ 30.48 cm.**
+- **1 yard = 3 feet ≈ 0.914 m.**
+- **1 mile ≈ 1.609 km.**
+- **1 meter ≈ 39.37 inches ≈ 3.28 feet.**
+- **1 km ≈ 0.621 miles.**
+
+Rough head-math: multiply miles by 1.6 for km, or divide km by 1.6 for miles. Multiply meters by 3.3 for feet.
+
+## Common uses
+
+- **Buying furniture** from a foreign catalogue — a 60-inch sofa is 1.52 meters.
+- **Travel** where road signs use unfamiliar units — a 100 km drive is 62 miles.
+- **DIY and construction** projects where plans are in one system and materials are sold in another.
+- **Running and cycling** — a 10 km race is 6.2 miles; a marathon is 42.2 km.
+- **Aviation and marine** distances traditionally in nautical miles (1 nautical mile = 1.852 km).
+
+## The pitfalls of unit confusion
+
+Unit mix-ups have caused real disasters, from the Mars Climate Orbiter (destroyed in 1999 by a pound-force vs newton mix-up in a small thruster calculation) to smaller-scale construction errors where mixed metric and imperial plans produced parts that didn't fit. When you convert, label the result with the unit. Never write down a bare number and rely on memory to attach the right suffix later.
+
+## Tips
+
+- **Convert once and store the result** with the unit. Rounding twice loses precision.
+- **Use the exact definitions** (1 inch = exactly 2.54 cm) when your calculation matters — the approximations are fine for daily life but wrong at engineering precision.
+- **For very small or very large distances** switch units accordingly: microns for machining, kilometers or miles for driving, light-years for astronomy.
+
+## Privacy
+
+Conversion happens in your browser.`,
   },
   "/calculators/weight": {
     title: "Weight Converter — kg, lb, oz, g Free Online",
@@ -160,6 +454,53 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What the weight converter does
+
+Converts between the units of mass and weight people actually use day-to-day: milligrams, grams, kilograms, tonnes, ounces, pounds, and stones. Enter a value in any unit and read every equivalent at once. (Technically these are units of mass, not weight — the difference matters in physics but not in the kitchen or the gym.)
+
+## Step-by-step
+
+**1. Enter a value** in whichever unit you have.
+
+**2. Pick the source unit.**
+
+**3. Read the equivalents** in every supported unit.
+
+## Conversions worth memorising
+
+- **1 kg ≈ 2.205 lb.**
+- **1 lb ≈ 0.454 kg.**
+- **1 oz ≈ 28.35 g.**
+- **1 stone = 14 pounds ≈ 6.35 kg** (used in the UK for body weight).
+- **1 metric tonne = 1000 kg ≈ 2205 lb.**
+
+Rough head-math: double kg and add 10% for pounds. Halve pounds and subtract 10% for kg.
+
+## Common uses
+
+- **Cooking** where a recipe is in ounces but your scale reads grams.
+- **Fitness tracking** where a scale reads one unit and the app you log to expects another.
+- **Shipping** where declared weight determines cost — often to the gram.
+- **Baby weight** at appointments (kilograms in most of the world, pounds and ounces in the US and UK).
+- **Sports** where weight classes are defined in specific units.
+
+## Beware two different pounds
+
+There are historically several definitions of the pound. Modern usage almost always means the international avoirdupois pound (exactly 0.45359237 kg), which is what this tool uses. Recipes and older references occasionally use the troy pound (used for precious metals, 373.24 g) or the pound-force (a unit of force, not mass). Unless you're weighing gold or doing physics, assume avoirdupois.
+
+## Grams vs mL
+
+Weight and volume are different things. 1 mL of water weighs 1 g, but 1 mL of honey weighs about 1.4 g and 1 mL of oil weighs about 0.92 g. Recipes calling for weight (grams) are more precise than those calling for volume (cups, mL) because different ingredients have different densities. Weigh, don't measure by volume, whenever you want consistent baking results.
+
+## Tips
+
+- **Zero (tare) your scale** before each measurement to avoid compounding the weight of the container.
+- **Round for cooking, not for shipping.** A gram matters when postage is priced to the ounce.
+- **Convert once, store the result** rather than re-converting each time.
+
+## Privacy
+
+Conversion runs in your browser.`,
   },
   "/calculators/temperature": {
     title: "Temperature Converter — °C, °F, K Free Online",
@@ -180,6 +521,59 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What the temperature converter does
+
+Converts between Celsius, Fahrenheit, and Kelvin — the three temperature scales you'll encounter in daily life, cooking, weather, and science. Enter a value in any scale and read equivalents in the others.
+
+## Step-by-step
+
+**1. Enter a value** in whichever scale you have.
+
+**2. Pick the source scale.**
+
+**3. Read the equivalents.**
+
+## The three scales
+
+- **Celsius (°C).** Water freezes at 0°C, boils at 100°C. Used by every country except the US, the Bahamas, the Cayman Islands, and Liberia.
+- **Fahrenheit (°F).** Water freezes at 32°F, boils at 212°F. Used in the US for weather, cooking, and body temperature.
+- **Kelvin (K).** Same size step as Celsius, but zero is absolute zero (−273.15°C). Used in science; note no degree sign.
+
+## The formulas
+
+- **°C to °F:** multiply by 9/5, add 32.
+- **°F to °C:** subtract 32, multiply by 5/9.
+- **°C to K:** add 273.15.
+- **K to °C:** subtract 273.15.
+
+Head-math shortcut for weather-range Celsius to Fahrenheit: double the Celsius value and add 30. It's not exact — 20°C is really 68°F, not 70°F — but close enough to tell whether you need a jacket.
+
+## Reference points worth knowing
+
+- **−40** — Celsius and Fahrenheit meet here. The only temperature where the two numbers match.
+- **0°C / 32°F** — water freezes.
+- **20°C / 68°F** — comfortable room temperature.
+- **37°C / 98.6°F** — normal body temperature.
+- **100°C / 212°F** — water boils at sea level.
+- **180°C / 356°F** — a moderate oven for baking.
+- **200°C / 400°F** — a hot oven for roasting.
+
+## Common uses
+
+- **Cooking** where a recipe uses one scale and your oven displays another.
+- **Weather** when travelling to or from the US.
+- **Body temperature** — the difference between "warm" and "medically feverish" is small, and matters more than the scale you use to describe it.
+- **Science homework** where all three scales might appear in one problem.
+- **Industrial and lab settings** where a controller or datasheet uses Kelvin.
+
+## Tips
+
+- **Don't over-round oven temperatures.** A recipe calling for 180°C wants a moderate oven; 356°F is precisely equivalent but 350°F is what your oven dial actually reads and works fine.
+- **Body temperature precision matters.** A single degree Celsius is nearly two degrees Fahrenheit. When talking about fevers, use the same scale as whoever you're comparing to.
+
+## Privacy
+
+Conversion runs in your browser.`,
   },
   "/calculators/binary-to-decimal": {
     title: "Binary to Decimal Converter — Free Online",
@@ -200,6 +594,47 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What binary-to-decimal conversion does
+
+Computers store numbers in binary — base 2, using only 0 and 1. Humans read numbers in decimal — base 10, using 0 through 9. Converting between them lets you read register values, memory dumps, network masks, permission bits, and any other place binary shows up in source code, hardware docs, or debugging output.
+
+## Step-by-step
+
+**1. Enter a value** in either binary or decimal.
+
+**2. Read the converted value** in the other base. Hex and octal are usually shown alongside for reference.
+
+**3. Copy the result** into your code, config, or notes.
+
+## The mechanics, briefly
+
+Each digit in a binary number represents a power of 2. Rightmost bit is 2⁰ (1), next is 2¹ (2), then 2² (4), 2³ (8), and so on. To convert binary to decimal, add up the powers of 2 corresponding to each 1 bit. So *1011* is 8 + 0 + 2 + 1 = 11 in decimal.
+
+Decimal to binary is the reverse: repeatedly divide by 2 and read the remainders bottom-up. 11 ÷ 2 = 5 remainder 1; 5 ÷ 2 = 2 r 1; 2 ÷ 2 = 1 r 0; 1 ÷ 2 = 0 r 1 → binary *1011*.
+
+## Where binary shows up
+
+- **Bitmasks and flags.** A single byte can store 8 boolean values as bits. Reading or setting them requires binary awareness.
+- **File permissions on Unix.** 755 in octal is 111 101 101 in binary — read/write/execute for owner, read/execute for group and others.
+- **Network masks.** A /24 subnet is 24 leading 1 bits in a 32-bit binary number.
+- **Hardware registers.** Datasheets specify individual bits' meaning; you have to read the register value in binary to interpret them.
+- **Color values.** #FFAA00 in hex is a bit pattern that also has a meaningful binary form.
+
+## Common bases you'll see beside binary
+
+- **Hexadecimal (base 16)** uses 0–9 and A–F. Each hex digit is exactly 4 binary bits, so hex is a much more compact way to write binary.
+- **Octal (base 8)** uses 0–7. Each octal digit is exactly 3 binary bits. Common in Unix file permissions and older systems.
+- **Decimal (base 10)** is what humans read by default.
+
+## Tips
+
+- **Group binary in 4-bit chunks** for readability. *10110001* reads more easily as *1011 0001*.
+- **Use hex, not binary, for anything longer than a byte.** Human eyes can compare hex faster than binary.
+- **Watch for endianness** when reading multi-byte values from memory dumps — a 32-bit integer may appear byte-reversed depending on the platform.
+
+## Privacy
+
+Conversion runs in your browser.`,
   },
   "/calculators/tip": {
     title: "Tip Calculator — Split a Bill and Tip Fast Online",
