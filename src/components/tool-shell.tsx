@@ -20,6 +20,7 @@ import { loadToolSeo } from "@/lib/seo";
 import type { ToolSeo } from "@/lib/seo/types";
 import { useFavorites, trackRecent } from "@/lib/user-prefs";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { renderMarkdown } from "@/lib/render-md";
 
 // Precomputed once — avoids scanning `postsMeta` on every tool mount.
 const blogByToolPath = new Map(postsMeta.map((p) => [p.toolPath, p] as const));
@@ -209,6 +210,13 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
         </ol>
       </section>
 
+      {seo?.guide && (
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold tracking-tight">How to use — the full guide</h2>
+          <div className="mt-2">{renderMarkdown(seo.guide)}</div>
+        </section>
+      )}
+
       {seo?.faqs && seo.faqs.length > 0 && (
         <section className="mt-12">
           <h2 className="text-xl font-bold">Frequently asked questions</h2>
@@ -223,6 +231,23 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
               </details>
             ))}
           </div>
+        </section>
+      )}
+
+      {blogPost && (
+        <section className="mt-10 rounded-lg border border-border bg-secondary/40 p-6">
+          <h2 className="text-lg font-bold">Want the deep dive?</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Read the complete guide: workflows, pro tips, edge cases, and comparisons.
+          </p>
+          <Link
+            to="/blog/$slug"
+            params={{ slug: blogPost.slug }}
+            className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            <BookOpen className="h-4 w-4" />
+            Read the full blog post →
+          </Link>
         </section>
       )}
 
