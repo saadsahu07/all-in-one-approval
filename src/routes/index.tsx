@@ -100,7 +100,7 @@ function Index() {
                   <Star className="h-4 w-4 fill-accent text-accent" />
                   <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Your favorites</h2>
                 </div>
-                <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2 lg:grid-cols-4">
                   {favTools.map((t) => (
                     <Link
                       key={t.path}
@@ -122,7 +122,7 @@ function Index() {
                   <Clock className="h-4 w-4 text-muted-foreground" />
                   <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">Recently used</h2>
                 </div>
-                <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2 lg:grid-cols-4">
                   {recentTools.map((t) => (
                     <Link
                       key={t.path}
@@ -153,7 +153,7 @@ function Index() {
             Five focused collections. Ten precision-built utilities per category.
           </p>
         </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((c) => (
             <Link
               key={c.slug}
@@ -191,7 +191,7 @@ function Index() {
             </div>
             <p className="text-sm text-muted-foreground">Fast, private, and free forever.</p>
           </div>
-          <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {allTools.map((t) => (
               <Link
                 key={t.path}

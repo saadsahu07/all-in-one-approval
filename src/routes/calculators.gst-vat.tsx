@@ -21,13 +21,13 @@ function Page() {
     <ToolShell categorySlug="calculators" toolSlug="gst-vat"
       intro="Compute tax-inclusive or tax-exclusive totals for GST or VAT."
       howTo={["Enter amount and rate.", "Pick add or remove tax.", "See breakdown."]}>
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-3">
         <div><Label>Amount</Label><Input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} /></div>
         <div><Label>Rate (%)</Label><Input type="number" value={rate} onChange={(e) => setRate(e.target.value)} /></div>
         <div><Label>Mode</Label><Select value={mode} onChange={(e) => setMode(e.target.value as "add" | "remove")}><option value="add">Add tax</option><option value="remove">Remove tax</option></Select></div>
       </div>
       {a > 0 && (
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+        <div className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-3">
           <div className="rounded-lg border border-border p-4"><p className="text-xs uppercase text-muted-foreground">Net</p><p className="text-xl font-bold">{net.toFixed(2)}</p></div>
           <div className="rounded-lg border border-border p-4"><p className="text-xs uppercase text-muted-foreground">Tax</p><p className="text-xl font-bold">{tax.toFixed(2)}</p></div>
           <div className="rounded-lg border border-border p-4"><p className="text-xs uppercase text-muted-foreground">Total</p><p className="text-xl font-bold">{total.toFixed(2)}</p></div>

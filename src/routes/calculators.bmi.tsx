@@ -24,7 +24,7 @@ function Page() {
       intro="Get your Body Mass Index with a category classification."
       howTo={["Pick units.", "Enter height and weight.", "See your BMI value and range."]}
       note="BMI is a general guide only. It doesn't account for muscle mass, age, or body composition. Consult a healthcare provider for medical advice.">
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-3">
         <div><Label>Units</Label><Select value={unit} onChange={(e) => setUnit(e.target.value as "metric" | "imperial")}><option value="metric">Metric (cm, kg)</option><option value="imperial">Imperial (in, lb)</option></Select></div>
         <div><Label>Height ({unit === "metric" ? "cm" : "in"})</Label><Input type="number" value={h} onChange={(e) => setH(e.target.value)} /></div>
         <div><Label>Weight ({unit === "metric" ? "kg" : "lb"})</Label><Input type="number" value={w} onChange={(e) => setW(e.target.value)} /></div>

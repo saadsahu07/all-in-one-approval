@@ -20,7 +20,7 @@ function Page() {
       howTo={["Fill in the fields.", "Read the answer live."]}>
       <div className="rounded-lg border border-border p-4">
         <p className="text-sm font-medium">What is X% of Y?</p>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        <div className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
           <div><Label>X (%)</Label><Input type="number" value={p} onChange={(e) => setP(e.target.value)} /></div>
           <div><Label>Y</Label><Input type="number" value={n} onChange={(e) => setN(e.target.value)} /></div>
         </div>
@@ -28,7 +28,7 @@ function Page() {
       </div>
       <div className="mt-4 rounded-lg border border-border p-4">
         <p className="text-sm font-medium">A is what % of B?</p>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        <div className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
           <div><Label>A</Label><Input type="number" value={a} onChange={(e) => setA(e.target.value)} /></div>
           <div><Label>B</Label><Input type="number" value={b} onChange={(e) => setB(e.target.value)} /></div>
         </div>
