@@ -1,107 +1,62 @@
+## What already exists
 
-# SEO plan for ToolsHive
+- Every tool page (via `ToolShell`) already renders **intro paragraphs**, **feature bullets**, **"How to use" steps**, and — for tools with SEO shards — an **FAQ accordion** and a **"Read the full guide" blog link**.
+- 50 tools have blog posts (~1500-word long-form). 10 tools have no blog post and no FAQs.
 
-Site: https://all-in-one-approval.lovable.app · 55 tools, 6 categories, blog
+## What's missing vs your ask
 
-## Where we stand (audit)
+1. **Inline ~500-word "How to use" article on the tool page itself.** Currently we only show short steps + a link out. You want the full mini-guide right below the tool.
+2. **FAQs missing on 10 tools** (all image-tools/pdf-tools already have them — my earlier grep was wrong; the real gap is the 10 below).
+3. **Blog posts missing** for those same 10 tools.
 
-Already in place (do not redo):
-- Per-route `head()` via `toolHead()` — title, description, og:*, canonical
-- Absolute canonical + og:url self-referencing every route
-- WebSite + Organization JSON-LD in `__root.tsx`; SoftwareApplication + BreadcrumbList + HowTo + FAQPage per tool in `ToolShell`
-- Dynamic `sitemap.xml` server route covering categories, tools, blog, legal
-- `robots.txt` with sitemap directive
-- Sharded rich SEO copy (intro / features / FAQs) per category
+Missing SEO shards **and** blog posts (10 tools):
 
-Open scanner findings:
-- `lighthouse:lighthouse_performance` — LCP slow on the published homepage
-- `gsc:gsc` — Google Search Console not connected / sitemap not submitted
+```text
+text-tools:       slugify
+developer-tools:  uuid-generator, jwt-decoder
+calculators:      tip, discount
+content-creation: youtube-tag-generator, youtube-title-generator,
+                  youtube-description-generator, youtube-thumbnail-downloader,
+                  youtube-video-idea-generator
+```
 
-Gaps we found reading the code:
-- Root title/description say "50" tools, actual count is 55 — inconsistency
-- No `og:image` anywhere (WhatsApp/Slack/X share previews will be blank or platform-generated)
-- Hero has no LCP element hint (no dominant image, so LCP is the H1 text — currently unoptimized)
-- Google Fonts loaded via `<link rel="stylesheet">` — render-blocking on first paint
-- No breadcrumb JSON-LD on category pages, only on tool pages
-- No `ItemList` JSON-LD on the homepage or category pages (loses rich results for tool grids)
-- No hreflang / language tag beyond `<html lang="en">` (fine, monolingual)
-- Blog list page has no `Blog` schema
-- No 404-specific `noindex` (soft-404 risk)
+## Approach
 
-## Phase 1 — Ship the two scanner findings
+### Structural change (one-time, batch 1)
 
-1. **Fix LCP on the homepage**
-   - The LCP element is the H1 "The intelligent toolkit for modern workflows". Web fonts (Space Grotesk) are the bottleneck.
-   - Add `&display=swap` — already present, good. Add `<link rel="preload" as="font" type="font/woff2" crossorigin>` for the single Space Grotesk 600 weight actually used in the H1, in `__root.tsx` `head().links`.
-   - Add `fetchpriority="high"` on the logo `<img>` (currently the only above-the-fold image) and keep the width/height already set.
-   - Confirm no `loading="lazy"` on any above-the-fold image.
-   - Publish after the fix — Lighthouse re-scans the published site, not preview.
+- Extend `ToolSeo` type with an optional `guide: string` field (markdown-style: `##` headings, paragraphs, `-` bullets, `**bold**`).
+- Add a new section in `ToolShell` rendered **below the tool UI, above FAQs**:
+  - Heading: "How to use — the full guide"
+  - Renders the `guide` markdown using the same lightweight renderer already in `blog.$slug.tsx` (extracted to `src/lib/render-md.tsx` so both use it).
+  - Below the article, a prominent CTA card linking to the full blog post (`Read the complete guide →`).
+- Adjust ordering: **Tool UI → 500-word inline guide → FAQs → Full blog CTA → Related tools**.
 
-2. **Connect Google Search Console**
-   - Call `standard_connectors--connect` with `connector_id: "google_search_console"` in the chat where the user is ready to authorize (requires their OAuth click).
-   - After connection: verify ownership of `https://all-in-one-approval.lovable.app/`, submit `/sitemap.xml`.
-   - Mark both findings fixed via `update_findings`.
+### Content batches (unique, hand-written)
 
-## Phase 2 — Fix on-page metadata gaps
+Given 60 tools × ~500 words = ~30k words plus 10 new blog posts (~15k words) = ~45k words of hand-written content, I'll ship it in batches over multiple turns:
 
-3. **Homepage & root copy consistency**
-   - Update root `__root.tsx` title/description to say "55" (or a rounder phrase like "50+" if we want to add more without a copy edit). Match the value used in the homepage `head()`.
+- **Batch 1 (this turn):** Structure + first 10 tools' guides (all text-tools) + fill the 10 missing SEO shards (so every tool at least has FAQs) + 10 missing blog posts.
+- **Batch 2:** 10 image-tools guides.
+- **Batch 3:** 10 pdf-tools guides.
+- **Batch 4:** 12 developer-tools guides.
+- **Batch 5:** 12 calculator guides.
+- **Batch 6:** 5 content-creation guides.
 
-4. **Add site-wide `og:image` (share preview)**
-   - Generate one 1200×630 branded image (dark navy + accent, "ToolsHive · 55 free tools") and save to `src/assets/og-cover.jpg` (imported so Vite fingerprints it).
-   - Add `og:image` + `twitter:image` on the **homepage** `head()` only (never in `__root.tsx` — root concatenates into every match and would override leaf images).
-   - Category and tool routes get their own leaf-level `og:image` (see phase 3).
+After each batch you can review the tone/length and I'll continue. Say **"continue"** to move to the next batch.
 
-5. **`toolHead()` — add og:image per tool**
-   - Extend `toolHead()` to emit `og:image` + `twitter:image` per tool. Two options; recommend a single generated per-category cover (6 images total) so we don't need 55 assets.
-   - Store as `og-<category>.jpg` in `src/assets/` and map by categorySlug.
+## Files touched in batch 1
 
-## Phase 3 — Structured data expansion
+- `src/lib/seo/types.ts` — add `guide?: string`.
+- `src/lib/render-md.tsx` — new shared markdown renderer.
+- `src/components/tool-shell.tsx` — render `guide` section + repositioned blog CTA.
+- `src/routes/blog.$slug.tsx` — swap inline renderer for the shared one (no visual change).
+- `src/lib/seo/text-tools.ts` — add `guide` on all 11 text-tools + new `slugify` entry with FAQs + guide.
+- `src/lib/seo/developer-tools.ts` — add `uuid-generator` and `jwt-decoder` entries.
+- `src/lib/seo/calculators.ts` — add `tip` and `discount` entries.
+- `src/lib/seo/content-creation.ts` — add 5 YouTube-tool entries.
+- `src/lib/blog-meta.ts` — add 10 missing blog post entries.
+- `src/lib/blog-content.ts` — add 10 missing blog post bodies.
 
-6. **Category pages**: add `BreadcrumbList` + `ItemList` JSON-LD in `category-page.tsx` — one `ListItem` per tool with `url`, `name`, `position`. Rich results eligibility for "list" carousels.
+## Confirm
 
-7. **Homepage**: add `ItemList` JSON-LD of all 55 tools (or top 20) to `src/routes/index.tsx` head scripts.
-
-8. **Blog list**: add `Blog` + `ItemList` JSON-LD to `blog.index.tsx`; the individual `blog.$slug.tsx` should already emit `Article` — verify and add if missing.
-
-9. **404 route**: add `<meta name="robots" content="noindex">` to `NotFoundComponent`'s head to prevent soft-404 indexing.
-
-## Phase 4 — Discoverability & internal linking
-
-10. **Internal linking**:
-    - Every tool page already shows "Related tools" + a linked blog guide when one exists — good.
-    - Add a compact "More in this category" strip on category pages (already present, verify).
-    - Add contextual links from top blog posts back to their tool (via `postsMeta.toolPath`) — already present in ToolShell reverse direction; add the forward direction in `blog.$slug.tsx` if not there.
-
-11. **Anchor text hygiene**: audit `<Link>` labels — no "click here" / "read more" alone. Prefer descriptive labels matching the target page's H1 keyword.
-
-## Phase 5 — Content & keyword targeting
-
-12. **Keyword-driven title rewrite** (top 10 highest-traffic tools):
-    - Run `semrush--keyword_research` for each tool's primary phrase (e.g. "word counter", "json formatter", "pdf compressor", "qr code generator", "image compressor", "background remover", "password generator", "youtube tag generator", "base64 encoder", "grammar checker").
-    - Rewrite `seoTitles[path].title` to lead with the highest-volume phrase we can realistically rank for (KDI <50 given a new site's AS).
-    - Same treatment for `metaDescription` — include the phrase + a benefit + a soft CTA under 155 chars.
-
-13. **New blog posts** — publish one guide per high-value tool that doesn't have one yet. Each post: 800–1500 words, targeted to a long-tail phrase (e.g. "how to compress a pdf without losing quality"), links back to the tool with descriptive anchor text.
-
-14. **Competitor gap analysis**: run `semrush--competitive_analysis` for the site to auto-discover competitors, then `semrush--serp_analysis` on 3–5 phrases we want to own. Only target phrases with KDI ≤ 40 initially.
-
-## Phase 6 — Performance (SEO is downstream of Core Web Vitals)
-
-15. Already shipped: SEO shard lazy-loading, `defaultPreload: "intent"`, memoized ToolShell schema, search index precomputed.
-16. Remaining: preload the single web font weight used above the fold (see #1), self-host the two font families (drop `fonts.googleapis.com` dependency entirely) to remove one third-party origin.
-17. Add `Cache-Control: public, max-age=86400, s-maxage=604800` on `sitemap.xml` response (currently 3600s — safe to lengthen for a mostly-static route list).
-
-## Phase 7 — Verification loop
-
-18. After each phase, ask the user to click **Rescan** in the SEO tab.
-19. When the LCP finding clears, publish and let Lighthouse re-check the live URL.
-20. Once GSC has 7+ days of data, run `semrush--seo_trend` monthly and `semrush--page_analysis` on the tools ranking on page 2 — one-off content refreshes turn page-2 rankings into page-1 wins faster than any new page.
-
-## Technical notes (safe to skim)
-
-- `og:image` MUST live on leaf routes, never `__root.tsx` — the root head concatenates into every match.
-- Canonical stays leaf-only (already correct); root has no canonical.
-- All new schema goes through `head().scripts` with `type: "application/ld+json"`, not a raw `<script>` in JSX.
-- Font preload is a `head().links` entry: `{ rel: "preload", as: "font", type: "font/woff2", href: "...", crossOrigin: "anonymous" }`.
-- Any published-site changes (LCP, meta, images) only affect crawlers after **publish**, not preview.
+Reply **"go"** to start batch 1, or **"change plan"** with adjustments (e.g. skip blog posts, shorter guides, different batch order).
