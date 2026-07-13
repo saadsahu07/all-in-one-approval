@@ -20,6 +20,35 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What JSON formatting does
+
+JSON is easy for machines to parse and hard for humans to read once it's minified. The formatter pretty-prints your JSON with proper indentation, one key per line, and consistent quoting so you can actually see the structure. It also catches syntax errors — trailing commas, unquoted keys, single quotes — that would otherwise show up as cryptic "Unexpected token" messages in your code.
+
+## Step-by-step
+
+**1. Paste your JSON** into the input area. Any size works.
+
+**2. Read the formatted output.** Nested objects and arrays are indented; each key sits on its own line. Errors, if any, are highlighted with the exact position so you can jump straight to the problem.
+
+**3. Copy the cleaned version** back into your file, or minify it if the destination cares about size.
+
+## Common uses
+
+- **API responses** you want to inspect before writing parsing code.
+- **Config files** — package.json, tsconfig.json, eslint.json — where indentation matters for readability but the file arrived on one line.
+- **Debugging** where an endpoint returns JSON as one long string and you can't tell what's inside.
+- **Diffing** — two formatted versions produce a readable git diff; two minified versions don't.
+
+## Tips
+
+- **Sort keys** if you're comparing two similar JSON documents. Two files with identical content but different key orders otherwise look completely different.
+- **Watch for trailing commas.** JSON5 and JavaScript object literals allow them; strict JSON does not. Most syntax errors in hand-edited JSON come from this.
+- **Use double quotes only.** Single quotes are not valid JSON, even though JavaScript accepts them.
+- **Escape correctly.** Newlines inside strings must be \`\\n\`, not literal line breaks. The formatter will flag this for you.
+
+## Privacy
+
+Formatting runs entirely in your browser. Nothing you paste is sent to a server or logged.`,
   },
   "/developer-tools/json-validator": {
     title: "JSON Validator — Check JSON Syntax Online Free",
@@ -40,6 +69,41 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## Why validate JSON
+
+A single missing bracket or trailing comma turns a valid JSON document into an error that breaks every downstream consumer. Instead of finding out at runtime — when your API call fails, your build breaks, or your config silently loads defaults — validate first and fix issues while they're still in front of you.
+
+## What the validator does
+
+Parses your JSON with a strict RFC 8259 parser and either confirms it's valid or reports the exact line, column, and cause of the first error. You get either a green tick or a precise pointer to what to fix.
+
+## Step-by-step
+
+**1. Paste your JSON.**
+
+**2. Read the verdict.** Valid JSON gets a confirmation and a formatted view. Invalid JSON gets an error message showing where the parser gave up.
+
+**3. Fix and re-run.** Fix one issue at a time — later errors sometimes disappear once earlier ones are resolved.
+
+## Errors it commonly catches
+
+- **Trailing commas** after the last item in an array or object.
+- **Single quotes** instead of double quotes around strings and keys.
+- **Unquoted keys** — JavaScript allows them, JSON does not.
+- **Missing commas** between array or object elements.
+- **Unclosed brackets or braces** — the classic "expected end of input" error.
+- **Invalid escape sequences** in strings.
+- **Duplicate keys** in the same object (technically allowed but almost always a mistake).
+
+## Tips
+
+- **Validate before committing** any hand-edited config file. A malformed JSON commit that breaks the build is embarrassing and totally avoidable.
+- **Use a schema** for anything larger than a config toggle. JSON Schema catches structural mistakes the validator can't — wrong types, missing required fields, out-of-range numbers.
+- **Format after validating.** A pretty-printed valid JSON file is much easier to review in code review than the same file on one line.
+
+## Privacy
+
+Validation runs entirely in your browser. Your data never leaves your device.`,
   },
   "/developer-tools/base64-encode": {
     title: "Base64 Encoder — Encode Text to Base64 Online",
@@ -60,6 +124,44 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What Base64 encoding is
+
+Base64 converts binary data into a text string made only of letters, digits, and the characters \`+\`, \`/\`, and \`=\`. It's not encryption — anyone can decode it — but it lets you shove binary content through channels that only accept text: URLs, JSON, XML, HTTP headers, email bodies, and config files.
+
+## What this tool does
+
+Takes any text or file you drop in and returns the Base64-encoded version. Works on strings (a password, a hash), file contents (a small image, a certificate), or arbitrary binary.
+
+## Step-by-step
+
+**1. Paste text or upload a file.**
+
+**2. Copy the Base64 output.** It's roughly one-third longer than the original — that's the tradeoff for encoding binary as text.
+
+**3. Paste it wherever you need it.** Common targets: \`data:\` URLs, JWT payloads, HTTP Basic Auth headers, JSON fields that need to carry binary.
+
+## When to use Base64
+
+- **Embedding small images** directly into HTML or CSS as \`data:image/png;base64,...\` URLs to save an HTTP request.
+- **Storing binary in JSON** — JSON has no binary type, so Base64 is the standard way.
+- **HTTP Basic Auth** — the \`Authorization: Basic <base64>\` header uses this encoding.
+- **Certificates and keys** — PEM format is Base64-wrapped binary with headers.
+- **Email attachments** — MIME transports everything as Base64.
+
+## When not to use Base64
+
+- **Never for encryption.** It's not secret. Anyone with the string can decode it in one line of code.
+- **Not for large files** that could be transferred as raw binary — Base64 wastes 33% of the bandwidth.
+- **Not for URL parameters** without switching to Base64URL, which uses \`-\` and \`_\` instead of \`+\` and \`/\` (they mean something in URLs).
+
+## Tips
+
+- **Watch for line breaks.** Some Base64 encoders add newlines every 76 characters (email convention). Strip them if the receiver expects one continuous string.
+- **Padding matters.** The trailing \`=\` signs aren't decorative — they signal the original length. Don't strip them unless you're using an unpadded variant deliberately.
+
+## Privacy
+
+Encoding runs in your browser. Nothing uploads.`,
   },
   "/developer-tools/base64-decode": {
     title: "Base64 Decoder — Decode Base64 to Text Online",
@@ -80,6 +182,40 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What Base64 decoding does
+
+Decoding reverses Base64 encoding — you paste the text-safe string and get the original bytes back. This is how you inspect what's inside a \`data:\` URL, a JWT payload, an HTTP Basic Auth header, a certificate, or any other place Base64 shows up.
+
+## Step-by-step
+
+**1. Paste the Base64 string** into the input. Include or exclude the padding \`=\` signs — the decoder handles both.
+
+**2. Choose the output.** Text if you know the source was text (a password, a JSON payload). Download if the source was binary (an image, a PDF, a certificate).
+
+**3. Read or save the result.**
+
+## Common decoding tasks
+
+- **JWT payloads.** Take the middle chunk of a JWT (between the dots) and Base64-decode it to see the claims.
+- **HTTP Basic Auth headers.** \`Basic dXNlcjpwYXNz\` decodes to \`user:pass\` — useful for debugging failing API calls.
+- **Data URLs.** Extract the image or file embedded in an HTML page.
+- **Certificate contents.** PEM-format certificates and keys are Base64 with header/footer lines around them.
+- **API debugging.** Some services return Base64-encoded binary in JSON responses — decode to see what you actually got.
+
+## Watch out for
+
+- **Base64URL vs Base64.** URLs and JWTs use \`-\` and \`_\` instead of \`+\` and \`/\`. If a decode fails with "invalid character," you probably need the Base64URL variant.
+- **Missing padding.** Some encoders drop the trailing \`=\` signs. Most decoders (including this one) tolerate this, but strict decoders don't.
+- **Text vs binary.** Decoding a binary source as text produces garbage. If the output looks like \`��PNG\`, you have a PNG image — save it as a file instead.
+
+## Tips
+
+- **Never trust decoded content for security.** If someone hands you a Base64 string and claims it's harmless, decode it in a sandbox first. Encoding doesn't neutralize malicious content.
+- **Pair with a JSON formatter.** If the decoded output is JSON, pipe it through the formatter to make it readable.
+
+## Privacy
+
+Decoding runs in your browser. Nothing you paste is uploaded.`,
   },
   "/developer-tools/url-encode": {
     title: "URL Encoder — Encode URL Components Online Free",
@@ -100,6 +236,39 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What URL encoding is
+
+URLs have a limited alphabet — letters, digits, and a handful of punctuation. Everything else — spaces, question marks inside a value, non-ASCII characters, \`&\`, \`=\`, \`#\`, \`+\` — has to be percent-encoded so the URL parser doesn't confuse your data with URL syntax. A space becomes \`%20\`. An \`&\` inside a query value becomes \`%26\`. A German \`ü\` becomes \`%C3%BC\`.
+
+## What this tool does
+
+Takes any string and returns the URL-encoded version, ready to drop into a query parameter, a path segment, or a \`Location\` header. Uses the standard percent-encoding rules (RFC 3986).
+
+## Step-by-step
+
+**1. Paste your text.** A search query, a path with spaces, a JSON blob you want to put in a query string — anything.
+
+**2. Copy the encoded output.** Every reserved and non-ASCII character is now percent-escaped.
+
+**3. Paste it into the URL.** The receiver's URL parser will decode it back to your original text automatically.
+
+## When to encode
+
+- **Query parameters.** \`?q=hello world\` fails; \`?q=hello%20world\` works.
+- **Path segments** containing user data. A filename with spaces or slashes needs encoding.
+- **Redirect URLs** you're passing as a parameter to another URL — otherwise their \`&\` and \`?\` collide with the outer URL.
+- **Non-ASCII text** in any URL. Non-Latin scripts must be UTF-8 encoded then percent-escaped.
+- **Form data** in \`application/x-www-form-urlencoded\` requests.
+
+## Tips
+
+- **Encode components, not whole URLs.** Encoding the whole URL turns \`://\` into \`%3A%2F%2F\` and breaks it. Encode only the values that go into query params or path segments.
+- **\`+\` is spaces only in form-encoding.** In a path or fragment, \`+\` is a literal plus. Be careful which layer you're working at.
+- **Non-ASCII becomes UTF-8 first.** A single accented character usually turns into two or three percent-escaped bytes — that's correct.
+
+## Privacy
+
+Encoding runs in your browser. Nothing uploads.`,
   },
   "/developer-tools/url-decode": {
     title: "URL Decoder — Decode Percent-Encoded URLs Free",
@@ -120,6 +289,39 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What URL decoding is
+
+URL decoding turns \`%20\` back into a space, \`%26\` back into \`&\`, and \`%C3%BC\` back into \`ü\`. It reverses percent-encoding so you can read what was actually meant when a value arrived escaped inside a URL.
+
+## Step-by-step
+
+**1. Paste the encoded string.** Any query parameter value, path segment, or full URL will do.
+
+**2. Read the decoded output.** Percent-escapes are converted back to their original characters, including multi-byte UTF-8.
+
+**3. Copy the result** into wherever you need it — an editor, a form field, a log, a debugger.
+
+## Common uses
+
+- **Debugging tracking parameters.** Marketing links often stuff URL-encoded JSON into a \`utm_content\` value. Decode to read it.
+- **Inspecting redirect URLs.** OAuth and SSO flows chain redirect URLs through query strings; decoding shows what the final destination actually is.
+- **Reading server logs.** Access logs record raw request paths — decoded, they show the query the user actually made.
+- **Investigating suspicious links.** A URL that looks like *https://safe.com/%2F%2Fevil.com* isn't safe; decoding reveals the real target.
+
+## Watch out for
+
+- **Double-encoded values.** Sometimes a value is encoded twice (\`%2520\` → \`%20\` → space). Run the decoder twice if the first pass still shows percent sequences.
+- **\`+\` vs \`%20\`.** In query strings, \`+\` means a space. In path segments, \`+\` is a literal plus. Some decoders treat them differently — this one preserves standard behavior.
+- **Malformed sequences.** \`%ZZ\` isn't valid; the decoder will flag it rather than silently producing garbage.
+
+## Tips
+
+- **Decode step by step** when debugging chained redirects. Decode the top-level URL, then decode each parameter that itself contains a URL. Doing it all at once is confusing.
+- **Pair with the JSON formatter** if the decoded content is JSON — you'll see the structure immediately.
+
+## Privacy
+
+Decoding runs in your browser. Nothing is sent anywhere.`,
   },
   "/developer-tools/html-minifier": {
     title: "HTML Minifier — Strip Whitespace from HTML Free",
@@ -140,6 +342,43 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What HTML minification does
+
+Minification strips everything a browser doesn't need — comments, extra whitespace, redundant quotes, and optional closing tags — from your HTML. The output looks unreadable but works exactly the same. Smaller HTML means fewer bytes over the wire, which means faster page loads, especially on slow mobile networks.
+
+## What this tool does
+
+Takes any HTML and produces a minified version. Common savings on a real page are 15–40% of the file size, mostly from removing whitespace and comments.
+
+## Step-by-step
+
+**1. Paste your HTML.** Any snippet or full document works.
+
+**2. Copy the minified output.** Deploy or embed it as-is.
+
+**3. Keep the original** in your source repository. Minified HTML is deploy output, not something you edit.
+
+## When to minify
+
+- **Static HTML sites** where the file is served directly to browsers.
+- **Email templates** where every kilobyte counts (some clients truncate large messages).
+- **Server-rendered pages** that don't go through a build step.
+- **Inline templates** stored in JavaScript or config where size matters.
+
+## When not to minify manually
+
+- **Frameworks handle it for you.** Next.js, Astro, Vite, and every modern build tool minify HTML in production automatically. Don't hand-minify what your build already does.
+- **During development.** Readable HTML is easier to debug in DevTools. Minify only for production output.
+
+## Tips
+
+- **Gzip beats minification** on the wire. Minification helps too, but the biggest win comes from serving the response with \`Content-Encoding: gzip\` or \`br\`.
+- **Keep essential comments.** Conditional comments for legacy browsers, license headers, and template markers should survive minification. Most minifiers offer flags for this.
+- **Test the output.** Minifiers occasionally break malformed HTML that browsers happily tolerate. Load the minified page once before shipping.
+
+## Privacy
+
+Minification runs entirely in your browser.`,
   },
   "/developer-tools/css-minifier": {
     title: "CSS Minifier — Compress CSS Online Free",
@@ -160,6 +399,44 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What CSS minification does
+
+Minification strips comments, whitespace, redundant semicolons, and unnecessary units from your CSS. The compiled output is unreadable but functionally identical. Combined with gzip, minification cuts CSS payloads dramatically and is a standard part of every production build.
+
+## What this tool does
+
+Takes your CSS and returns a compact version. Typical savings are 30–60% depending on how much whitespace and how many comments the source had.
+
+## Step-by-step
+
+**1. Paste your CSS.** Any length — a single component's styles or a whole stylesheet.
+
+**2. Copy the minified output** and use it in production.
+
+**3. Keep your original CSS** in source control. Editing minified CSS by hand is miserable.
+
+## When to minify
+
+- **Static sites** with hand-written CSS that isn't built through a bundler.
+- **Small landing pages** where a full build tool is overkill.
+- **Inline \`<style>\` blocks** in HTML where every byte counts.
+- **CSS-in-JS output** you're baking into a static asset.
+
+## Tips
+
+- **Frameworks minify for you.** Vite, Webpack, Next.js, and every modern bundler already minify CSS in production. Don't paste build output into a minifier — it's already minified.
+- **PurgeCSS beats minification.** If your CSS is huge, the biggest win is removing unused selectors, not squeezing whitespace. Look at Tailwind's JIT mode or PurgeCSS if the file is large.
+- **Preserve license comments** by wrapping them in \`/*!\` — most minifiers keep those and drop the rest.
+- **Gzip is where the real savings are.** Serve minified CSS with \`Content-Encoding: gzip\` or \`br\` and you're at the practical limit.
+
+## Common issues
+
+- **Broken selectors** if your source CSS has unclosed braces. The minifier fails fast; fix the source, don't blame the tool.
+- **Removed vendor prefixes.** Some minifiers are aggressive; if you rely on old prefixes, verify they survived.
+
+## Privacy
+
+Minification runs in your browser. Your CSS stays local.`,
   },
   "/developer-tools/js-minifier": {
     title: "JavaScript Minifier — Free Online JS Compression",
@@ -180,6 +457,43 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## What JavaScript minification does
+
+Minification takes your readable JavaScript and rewrites it as the shortest equivalent code — short variable names, no whitespace, no comments, dead code removed. The result is unreadable but runs identically. On real-world code, minification alone cuts size 40–60%; combined with gzip or brotli, total payload can be a fraction of the source.
+
+## What this tool does
+
+Minifies your JavaScript in the browser. Comments, whitespace, and unreachable code go; local variable names get shortened. Public API names stay intact so your minified code still works when called from other files.
+
+## Step-by-step
+
+**1. Paste your JavaScript.** ES modules, plain scripts, or bundled output.
+
+**2. Copy the minified version** and deploy it.
+
+**3. Ship a source map** if you can generate one — minified stack traces are impossible to debug without them.
+
+## When to minify by hand
+
+- **Small standalone scripts** that don't go through a build tool.
+- **Inline \`<script>\` blocks** in HTML.
+- **Snippets you paste into third-party embed configurations** where size limits apply.
+- **Learning what a minifier actually does** to your code.
+
+## When to skip this tool
+
+- **You're using a bundler.** Webpack, Vite, esbuild, Rollup — all of them minify with esbuild or Terser in production. Don't manually minify build output; it's already minified.
+- **You need source maps.** This tool minifies but doesn't produce a source map. For real production code, use a build tool so you can debug crashes.
+
+## Tips
+
+- **Never edit minified code.** Change the original, re-minify.
+- **Watch for property mangling.** Basic minification renames only local variables. Aggressive minifiers can rename object properties too, which breaks code that reads properties dynamically (\`obj['name']\` vs \`obj.name\`).
+- **Test after minifying.** Load the minified script in a real browser once. A working non-minified script that breaks after minification usually means you hit a corner case — an eval, a Function constructor, or dynamic property access.
+
+## Privacy
+
+Minification runs in your browser. Your code never uploads.`,
   },
   "/developer-tools/password-generator": {
     title: "Password Generator — Strong Random Passwords Free",
@@ -200,6 +514,38 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
       { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
     ],
+    guide: `## Why use a password generator
+
+Human-invented passwords are predictable. We reuse patterns, substitute obvious characters (\`p@ssw0rd\`), and stick to combinations that keyboards make easy. Attackers know this — every credential-stuffing dictionary is built on human patterns. A password generated from random bytes has none of these weaknesses, and paired with a password manager, you never have to remember it.
+
+## What this tool does
+
+Generates cryptographically random passwords of the length and character set you choose. Uses the browser's \`crypto.getRandomValues\` API — the same source that powers TLS session keys — so the output is genuinely unpredictable, not "random-looking."
+
+## Step-by-step
+
+**1. Pick a length.** 16 characters is a reasonable minimum for a new account today. 20+ is safer. Password-manager-generated passwords are usually 20–30 characters because there's no downside — you never type them.
+
+**2. Pick a character set.** All of uppercase, lowercase, digits, and symbols is standard. Some legacy sites reject symbols; use letters and digits only if you have to.
+
+**3. Generate.** A fresh password appears. Generate again if you don't like the shape of it.
+
+**4. Copy.** One click copies it to your clipboard. Paste into your password manager first, then into the site you're registering with. The clipboard clears after a short delay in most modern browsers.
+
+## Length matters more than complexity
+
+A 20-character password of just lowercase letters is stronger than an 8-character password with every symbol on the keyboard. Length adds entropy exponentially; character set additions only add it linearly. If a site limits length before it limits character set, always max out the length.
+
+## Tips
+
+- **Use a password manager.** Bitwarden, 1Password, iCloud Keychain, or the one built into your browser. A generator without a manager is a half-solution — you'll end up reusing the passwords you can remember.
+- **Never reuse.** Every account gets its own password. A breach at one site should not compromise any other.
+- **Turn on 2FA.** A generated password plus a second factor is the standard for modern security.
+- **Don't email or SMS passwords.** Both are stored in plain text on servers and devices you don't control.
+
+## Privacy
+
+Passwords are generated entirely in your browser. Nothing is transmitted, stored, or logged.`,
   },
   "/developer-tools/uuid-generator": {
     title: "UUID Generator — Free v4 UUIDs Online",
