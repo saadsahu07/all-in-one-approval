@@ -62,11 +62,11 @@ function SearchPage() {
           <p className="mt-1 text-sm text-muted-foreground">Try a shorter or different keyword.</p>
         </div>
       ) : (
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+        <ul className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
           {matches.map((t) => {
             const cat = categories.find((c) => c.slug === t.category);
             return (
-              <li key={t.path}>
+              <li key={t.path} className="min-w-0">
                 <Link
                   to={t.path as "/"}
                   className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 transition-colors hover:border-accent"
@@ -74,7 +74,7 @@ function SearchPage() {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
                     <t.icon className="h-5 w-5" />
                   </span>
-                  <span className="min-w-0">
+                  <span className="min-w-0 flex-1">
                     <span className="block font-medium">{t.name}</span>
                     <span className="block truncate text-sm text-muted-foreground">{t.short}</span>
                     <span className="mt-1 inline-block text-xs uppercase tracking-wide text-accent">{cat?.name}</span>
