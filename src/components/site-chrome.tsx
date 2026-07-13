@@ -234,15 +234,18 @@ export function Header() {
           {showDropdown && <Suggestions id="tool-suggest-desktop" />}
         </div>
         <button
-          className="ml-auto rounded-md p-2 text-foreground md:hidden"
+          type="button"
+          className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-secondary md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
       {open && (
-        <nav className="border-t border-border bg-card px-4 pb-4 md:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border bg-card px-4 pb-4 md:hidden">
           <div ref={mobileBoxRef} className="relative py-3">
             <form onSubmit={submit}>
               <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -267,11 +270,18 @@ export function Header() {
               key={c.slug}
               to={c.path as "/"}
               onClick={() => setOpen(false)}
-              className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground hover:bg-secondary"
+              className="block min-h-11 rounded-md px-3 py-3 text-sm font-medium text-foreground hover:bg-secondary"
             >
               {c.name}
             </Link>
           ))}
+          <Link
+            to="/blog"
+            onClick={() => setOpen(false)}
+            className="block min-h-11 rounded-md px-3 py-3 text-sm font-medium text-foreground hover:bg-secondary"
+          >
+            Blog
+          </Link>
         </nav>
       )}
     </header>
