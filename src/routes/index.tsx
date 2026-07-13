@@ -87,7 +87,7 @@ function Index() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Fifty precision-built utilities for text, images, PDFs, code, and calculations.
+            Fifty-five precision-built utilities for text, images, PDFs, code, and calculations.
             No accounts. No uploads. Everything runs privately in your browser.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -176,35 +176,72 @@ function Index() {
             <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Browse by category</h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground">
-            Five focused collections. Ten precision-built utilities per category.
+            Six focused collections. Purpose-built utilities in every one.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((c) => (
-            <Link
-              key={c.slug}
-              to={c.path as "/"}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/60"
-            >
-              <div
-                aria-hidden
-                className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100"
-                style={{ background: "radial-gradient(circle at 30% 0%, oklch(0.62 0.22 275 / 0.15), transparent 60%)" }}
-              />
-              <div className="relative">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-secondary/50 text-accent transition-colors group-hover:border-primary/50 group-hover:text-primary">
-                  <c.icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-5 text-lg font-semibold tracking-tight">{c.name}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{c.short}</p>
-                <p className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors group-hover:text-accent">
-                  {c.tools.length} tools
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/*
+          Bento grid: one hero tile (2×2), four medium tiles, one wide CTA row.
+          Sizes stack on mobile → 2-col md → 4-col lg with explicit spans.
+        */}
+        <ul className="mt-12 grid auto-rows-[minmax(180px,auto)] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {categories.map((c, i) => {
+            const isHero = i === 0;
+            const isWide = i === categories.length - 1;
+            const spanClass = isHero
+              ? "md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2"
+              : isWide
+                ? "md:col-span-2 lg:col-span-4"
+                : "";
+            return (
+              <li key={c.slug} className={spanClass}>
+                <Link
+                  to={c.path as "/"}
+                  className={`group relative flex h-full min-h-[180px] flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/70 hover:-translate-y-0.5 focus-visible:border-primary ${
+                    isHero ? "sm:p-8" : ""
+                  }`}
+                  style={{ boxShadow: "var(--shadow-card)" }}
+                  aria-label={`${c.name} — ${c.tools.length} tools`}
+                >
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100"
+                    style={{
+                      background:
+                        "radial-gradient(circle at 25% 0%, oklch(0.78 0.16 165 / 0.18), transparent 60%)",
+                    }}
+                  />
+                  <div className="relative flex flex-1 flex-col">
+                    <span
+                      className={`flex shrink-0 items-center justify-center rounded-xl border border-border bg-secondary/50 text-primary transition-colors group-hover:border-primary/60 group-hover:text-accent ${
+                        isHero ? "h-14 w-14" : "h-11 w-11"
+                      }`}
+                    >
+                      <c.icon className={isHero ? "h-7 w-7" : "h-5 w-5"} />
+                    </span>
+                    <h3
+                      className={`mt-5 font-semibold tracking-tight ${
+                        isHero ? "text-2xl sm:text-3xl" : "text-lg"
+                      }`}
+                    >
+                      {c.name}
+                    </h3>
+                    <p
+                      className={`mt-2 leading-relaxed text-muted-foreground ${
+                        isHero ? "text-base max-w-md" : "text-sm"
+                      }`}
+                    >
+                      {c.short}
+                    </p>
+                    <p className="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground transition-colors group-hover:text-accent">
+                      {c.tools.length} tools
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </section>
 
       {/* All tools */}
