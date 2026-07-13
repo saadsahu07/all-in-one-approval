@@ -80,11 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ToolsHive — 55 Free Online Tools" },
-      { name: "description", content: "55 free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
+      { title: "ToolsHive — 60 Free Online Tools" },
+      { name: "description", content: "60 free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
       { name: "author", content: "ToolsHive" },
-      { property: "og:title", content: "ToolsHive — 55 Free Online Tools" },
-      { property: "og:description", content: "55 free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
+      { property: "og:title", content: "ToolsHive — 60 Free Online Tools" },
+      { property: "og:description", content: "60 free text, image, PDF, developer, and calculator tools. Fast, private, and processed in your browser." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "ToolsHive" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -114,7 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "ToolsHive",
           url: "https://all-in-one-approval.lovable.app",
           description:
-            "55 free online tools for text, images, PDFs, developers, and everyday calculations — no signup, works in your browser.",
+            "60 free online tools for text, images, PDFs, developers, and everyday calculations — no signup, works in your browser.",
           potentialAction: {
             "@type": "SearchAction",
             target: "https://all-in-one-approval.lovable.app/search?q={search_term_string}",

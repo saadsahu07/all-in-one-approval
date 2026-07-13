@@ -29,7 +29,7 @@ export function HeroSection() {
       <div className="relative mx-auto w-full max-w-6xl px-5 py-20 text-center sm:px-6 sm:py-32">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
           <Sparkles className="h-3.5 w-3.5 text-accent" />
-          <span>AI-assisted · 55 tools · 100% in-browser</span>
+          <span>AI-assisted · 60 tools · 100% in-browser</span>
         </div>
         <h1 className="mx-auto mt-6 max-w-4xl text-balance text-[clamp(2rem,9vw,4.5rem)] font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl">
           The intelligent toolkit for <br className="hidden sm:block" />

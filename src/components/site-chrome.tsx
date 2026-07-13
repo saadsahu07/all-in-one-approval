@@ -295,7 +295,7 @@ export const Footer = memo(function Footer() {
         <div>
           <p className="font-serif text-lg font-bold">ToolsHive</p>
           <p className="mt-2 text-sm opacity-80">
-            55 free online tools. Files are processed in your browser and never uploaded to our servers.
+            60 free online tools. Files are processed in your browser and never uploaded to our servers.
           </p>
         </div>
         <div>
