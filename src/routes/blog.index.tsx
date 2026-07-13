@@ -64,7 +64,7 @@ const PAGE_SIZE = 8;
 
 function BlogIndex() {
   const { q, category } = Route.useSearch();
-  const navigate = useNavigate({ from: "/blog" });
+  const navigate = useNavigate({ from: "/blog/" });
   const query = q.trim().toLowerCase();
 
   const filtered = useMemo(
