@@ -9,7 +9,7 @@ export function AllToolsGrid() {
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent">02 — The full library</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">All 55 tools</h2>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">All 60 tools</h2>
           </div>
           <p className="text-sm text-muted-foreground">Fast, private, and free forever.</p>
         </div>

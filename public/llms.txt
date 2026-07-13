@@ -1,6 +1,6 @@
 # ToolsHive
 
-> 55+ free online tools for text, images, PDFs, developers, calculators, and content creators — fast, private, and processed in your browser.
+> 60+ free online tools for text, images, PDFs, developers, calculators, and content creators — fast, private, and processed in your browser.
 
 ToolsHive is a free web app that bundles everyday utilities — text tools, image converters, PDF editors, developer helpers, calculators, and YouTube content-creation helpers — into one site. Most tools run entirely client-side; a few use a hosted AI gateway for generation tasks.
 
