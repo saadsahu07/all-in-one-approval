@@ -141,16 +141,18 @@ function BlogPost() {
       <p className="mt-6 text-sm font-medium uppercase tracking-wide text-primary">{post.category}</p>
       {renderContent(post.content)}
       <p className="mt-4 text-sm text-muted-foreground">{post.readingMinutes} min read</p>
-      <div className="my-10 rounded-lg border border-border bg-secondary/40 p-6">
-        <h3 className="font-serif text-xl font-bold">Try the tool now</h3>
-        <p className="mt-2 text-sm text-muted-foreground">Open {post.title.replace(": The Complete Guide", "")} and put this guide into practice.</p>
-        <Link
-          to={post.toolPath as "/"}
-          className="mt-4 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
-        >
-          Open the tool →
-        </Link>
-      </div>
+      {post.toolPath && (
+        <div className="my-10 rounded-lg border border-border bg-secondary/40 p-6">
+          <h3 className="font-serif text-xl font-bold">Try the tool now</h3>
+          <p className="mt-2 text-sm text-muted-foreground">Open the tool and put this guide into practice.</p>
+          <Link
+            to={post.toolPath as "/"}
+            className="mt-4 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
+          >
+            Open the tool →
+          </Link>
+        </div>
+      )}
       {related.length > 0 && (
         <section className="mt-12 border-t border-border pt-8">
           <h2 className="font-serif text-xl font-bold">More {post.category} guides</h2>
