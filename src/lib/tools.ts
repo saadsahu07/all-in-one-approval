@@ -21,6 +21,7 @@ import {
   Coins, Ruler, Weight, Thermometer, Calculator,
   PenLine, Image as ImageIcon, FileStack, TerminalSquare,
   Youtube, Wand2, Image as ImageIcon2, Lightbulb,
+  Link as LinkIcon, Fingerprint, ShieldCheck, Utensils, Tag,
 } from "lucide-react";
 
 /** Single tool entry (a leaf page under a category). */
@@ -71,6 +72,7 @@ export const categories: CategoryDef[] = [
       ["text-sorter", "Text Sorter", "Sort lines alphabetically, reversed, or by length.", ArrowDownAZ],
       ["text-reverser", "Text Reverser", "Reverse text, words, or lines in one click.", FlipHorizontal2],
       ["lorem-ipsum", "Lorem Ipsum Generator", "Generate placeholder text for designs and mockups.", FileText],
+      ["slugify", "Slug Generator", "Convert any text into a clean, URL-friendly slug.", LinkIcon],
     ]),
   },
   {
@@ -122,6 +124,8 @@ export const categories: CategoryDef[] = [
       ["css-minifier", "CSS Minifier", "Compress CSS by removing comments and spaces.", Paintbrush],
       ["js-minifier", "JavaScript Minifier", "Lightly minify JavaScript code.", FileCode],
       ["password-generator", "Password Generator", "Create strong random passwords instantly.", KeyRound],
+      ["uuid-generator", "UUID Generator", "Generate v4 UUIDs in bulk with one click.", Fingerprint],
+      ["jwt-decoder", "JWT Decoder", "Decode a JWT to inspect its header and payload.", ShieldCheck],
     ]),
   },
   {
@@ -139,6 +143,8 @@ export const categories: CategoryDef[] = [
       ["weight", "Weight Converter", "Convert kilograms, pounds, ounces, and more.", Weight],
       ["temperature", "Temperature Converter", "Convert Celsius, Fahrenheit, and Kelvin.", Thermometer],
       ["binary-to-decimal", "Binary to Decimal", "Convert binary numbers to decimal and back.", Binary],
+      ["tip", "Tip Calculator", "Split a bill and calculate tip per person.", Utensils],
+      ["discount", "Discount Calculator", "Work out sale prices and how much you save.", Tag],
     ]),
   },
   {
