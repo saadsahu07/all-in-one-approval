@@ -8,7 +8,9 @@ export const Route = createFileRoute("/image-tools/")({
       { name: "description", content: "10 free image tools: compressor, resizer, JPG/PNG converters, cropper, AI background remover, watermark, and QR codes." },
       { property: "og:title", content: "Free Image Tools | ToolsHive" },
       { property: "og:description", content: "Compress, resize, convert, crop, and edit images free in your browser." },
+      { property: "og:url", content: "https://all-in-one-approval.lovable.app/image-tools" },
     ],
+    links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/image-tools" }],
   }),
   component: () => <CategoryPage slug="image-tools" />,
 });

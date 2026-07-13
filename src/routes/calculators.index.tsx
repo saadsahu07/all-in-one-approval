@@ -8,7 +8,9 @@ export const Route = createFileRoute("/calculators/")({
       { name: "description", content: "10 free calculators and converters: age, BMI, percentage, GST/VAT, EMI, currency, length, weight, temperature, and binary." },
       { property: "og:title", content: "Free Calculators & Converters | ToolsHive" },
       { property: "og:description", content: "Everyday calculators and unit converters, free and instant." },
+      { property: "og:url", content: "https://all-in-one-approval.lovable.app/calculators" },
     ],
+    links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/calculators" }],
   }),
   component: () => <CategoryPage slug="calculators" />,
 });
