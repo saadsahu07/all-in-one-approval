@@ -1,5 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getPostMeta, postsMeta } from "@/lib/blog-meta";
+import ogCover from "@/assets/og-cover.jpg";
+
+const SITE = "https://all-in-one-approval.lovable.app";
+const OG = `${SITE}${ogCover}`;
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
@@ -14,7 +18,7 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ params, loaderData }) => {
     const p = loaderData?.post;
     if (!p) return { meta: [{ title: "Post not found — ToolsHive Blog" }] };
-    const url = `/blog/${params.slug}`;
+    const url = `${SITE}/blog/${params.slug}`;
     const fullTitle = `${p.title} — ToolsHive Blog`;
     return {
       meta: [
@@ -27,9 +31,13 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:url", content: url },
         { property: "og:site_name", content: "ToolsHive" },
         { property: "article:section", content: p.category },
+        { property: "og:image", content: OG },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: fullTitle },
         { name: "twitter:description", content: p.excerpt },
+        { name: "twitter:image", content: OG },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
