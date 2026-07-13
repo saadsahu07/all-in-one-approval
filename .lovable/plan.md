@@ -1,115 +1,107 @@
-# Refactor & Optimization Plan
 
-Goal: reduce duplication, shrink bundle, speed up first paint, and harden SSR — without changing any user-visible feature or design.
+# SEO plan for ToolsHive
 
-Current shape: 73 route files, 55 tool pages, ~76 KB `tool-seo.ts`, ~14 KB `blog-meta.ts`, one 237-line home page, one 281-line header. Typecheck is clean; no runtime errors. So this is pure structural improvement.
+Site: https://all-in-one-approval.lovable.app · 55 tools, 6 categories, blog
 
----
+## Where we stand (audit)
 
-## Phase 1 — Kill duplication in tool routes (low risk, high payoff)
+Already in place (do not redo):
+- Per-route `head()` via `toolHead()` — title, description, og:*, canonical
+- Absolute canonical + og:url self-referencing every route
+- WebSite + Organization JSON-LD in `__root.tsx`; SoftwareApplication + BreadcrumbList + HowTo + FAQPage per tool in `ToolShell`
+- Dynamic `sitemap.xml` server route covering categories, tools, blog, legal
+- `robots.txt` with sitemap directive
+- Sharded rich SEO copy (intro / features / FAQs) per category
 
-Every tool page repeats the same skeleton: `createFileRoute` → `toolHead` → `ToolShell` → tiny body. Extract the boilerplate.
+Open scanner findings:
+- `lighthouse:lighthouse_performance` — LCP slow on the published homepage
+- `gsc:gsc` — Google Search Console not connected / sitemap not submitted
 
-Steps:
-1. Add `src/lib/create-tool-route.ts` exporting `createToolRoute({ category, slug, intro, howTo, component, note? })` that returns the `{ head, component }` object for `createFileRoute`.
-2. Convert 55 tool routes to use it. Each file drops from ~30 lines to ~15.
-3. Extract shared tool UI atoms into `src/components/tool-parts.tsx`: `TwoColumnIO`, `ResultBox`, `ActionRow` (used by 20+ tools).
-4. Move duplicated inline helpers (`downloadBlob`, `downloadText`, `copyToClipboard`) into `src/lib/dom-utils.ts` — `tool-shell.tsx` already has them; centralize and re-export.
+Gaps we found reading the code:
+- Root title/description say "50" tools, actual count is 55 — inconsistency
+- No `og:image` anywhere (WhatsApp/Slack/X share previews will be blank or platform-generated)
+- Hero has no LCP element hint (no dominant image, so LCP is the H1 text — currently unoptimized)
+- Google Fonts loaded via `<link rel="stylesheet">` — render-blocking on first paint
+- No breadcrumb JSON-LD on category pages, only on tool pages
+- No `ItemList` JSON-LD on the homepage or category pages (loses rich results for tool grids)
+- No hreflang / language tag beyond `<html lang="en">` (fine, monolingual)
+- Blog list page has no `Blog` schema
+- No 404-specific `noindex` (soft-404 risk)
 
-## Phase 2 — Split the SEO data blob
+## Phase 1 — Ship the two scanner findings
 
-`src/lib/tool-seo.ts` is 76 KB and imported by `tool-head.ts` and `tool-shell.tsx`. Every route pulls the whole map.
+1. **Fix LCP on the homepage**
+   - The LCP element is the H1 "The intelligent toolkit for modern workflows". Web fonts (Space Grotesk) are the bottleneck.
+   - Add `&display=swap` — already present, good. Add `<link rel="preload" as="font" type="font/woff2" crossorigin>` for the single Space Grotesk 600 weight actually used in the H1, in `__root.tsx` `head().links`.
+   - Add `fetchpriority="high"` on the logo `<img>` (currently the only above-the-fold image) and keep the width/height already set.
+   - Confirm no `loading="lazy"` on any above-the-fold image.
+   - Publish after the fix — Lighthouse re-scans the published site, not preview.
 
-Steps:
-1. Shard by category: `src/lib/seo/text-tools.ts`, `.../developer-tools.ts`, etc.
-2. Change `getToolSeo(path)` to `async` and dynamic-`import()` the matching shard on demand.
-3. In routes, read SEO in `head()` synchronously via a small per-route inline object (title + description only); keep the rich FAQ/features shard for the component render where it can be lazy.
-4. Same treatment for `blog-meta.ts` (shard per year or per category if it keeps growing).
+2. **Connect Google Search Console**
+   - Call `standard_connectors--connect` with `connector_id: "google_search_console"` in the chat where the user is ready to authorize (requires their OAuth click).
+   - After connection: verify ownership of `https://all-in-one-approval.lovable.app/`, submit `/sitemap.xml`.
+   - Mark both findings fixed via `update_findings`.
 
-Expected result: main bundle drops ~60 KB gzipped; each tool page loads only its own SEO chunk.
+## Phase 2 — Fix on-page metadata gaps
 
-## Phase 3 — Route-tree hygiene
+3. **Homepage & root copy consistency**
+   - Update root `__root.tsx` title/description to say "55" (or a rounder phrase like "50+" if we want to add more without a copy edit). Match the value used in the homepage `head()`.
 
-1. Convert flat `category.tool.tsx` files into folder form only if editor navigation suffers — otherwise leave (dot form is idiomatic in TanStack and already works). Decision: keep flat.
-2. Introduce a pathless layout `src/routes/_tool.tsx` that renders `<Outlet />` and owns `<ToolShell>` chrome via context, so every tool page renders only its interactive body. Not required, but removes the `ToolShell` wrapper import from 55 files.
-3. Verify every route has `errorComponent` + `notFoundComponent` (root already does; leaf tool routes currently rely on the root — acceptable, document it).
+4. **Add site-wide `og:image` (share preview)**
+   - Generate one 1200×630 branded image (dark navy + accent, "ToolsHive · 55 free tools") and save to `src/assets/og-cover.jpg` (imported so Vite fingerprints it).
+   - Add `og:image` + `twitter:image` on the **homepage** `head()` only (never in `__root.tsx` — root concatenates into every match and would override leaf images).
+   - Category and tool routes get their own leaf-level `og:image` (see phase 3).
 
-## Phase 4 — Component decomposition
+5. **`toolHead()` — add og:image per tool**
+   - Extend `toolHead()` to emit `og:image` + `twitter:image` per tool. Two options; recommend a single generated per-category cover (6 images total) so we don't need 55 assets.
+   - Store as `og-<category>.jpg` in `src/assets/` and map by categorySlug.
 
-1. `src/routes/index.tsx` (237 lines): split into `<HeroSection>`, `<PersonalizedSection>`, `<CategoriesSection>`, `<AllToolsSection>`, `<TrustSection>` under `src/components/home/`. Keeps the route file to routing + composition.
-2. `src/components/site-chrome.tsx` (281 lines): extract `<HeaderSearch>` (input + suggestions dropdown + keyboard nav) and `<MobileNav>` into their own files. Suggestions logic moves into `useSearchSuggestions(query)` hook in `src/hooks/`.
-3. `src/components/tool-shell.tsx`: split render-only sections (`<ToolBreadcrumbs>`, `<ToolHeader>`, `<ToolFaqs>`, `<RelatedTools>`) so `ToolShell` becomes a thin composition.
+## Phase 3 — Structured data expansion
 
-## Phase 5 — Rendering & performance
+6. **Category pages**: add `BreadcrumbList` + `ItemList` JSON-LD in `category-page.tsx` — one `ListItem` per tool with `url`, `name`, `position`. Rich results eligibility for "list" carousels.
 
-1. Convert the "All 55 tools" list on the home page to render only the first ~12 statically and hydrate the rest behind an intersection observer (`useInView`). Big DOM win on mobile.
-2. Preload the LCP hero background/gradient via `head().links` on `/` only.
-3. Convert any `<img>` in tool pages to explicit `width`/`height` to eliminate CLS; enable `loading="lazy"` and `decoding="async"` project-wide via a `<SafeImage>` wrapper.
-4. Add `defaultPreloadStaleTime: 0` review in `src/router.tsx` (confirm current setting matches guidance) and enable `defaultPreload: "intent"` on internal links so hovered links warm their chunk.
-5. Audit `framer-motion`, `lucide-react` icon imports — ensure named imports only (already the case; verify no `import * as Icons from "lucide-react"`).
+7. **Homepage**: add `ItemList` JSON-LD of all 55 tools (or top 20) to `src/routes/index.tsx` head scripts.
 
-## Phase 6 — SSR safety pass
+8. **Blog list**: add `Blog` + `ItemList` JSON-LD to `blog.index.tsx`; the individual `blog.$slug.tsx` should already emit `Article` — verify and add if missing.
 
-1. Anywhere `localStorage`/`window` is read in `useState` initializers (favorites, recent, theme), move to `useEffect` + `useHydrated()` to eliminate hydration mismatches like the `data-tsd-source` drift observed today.
-2. Ensure all `Date.now()`, `Math.random()`, and locale formatting are gated to `useEffect` or SSR-shared seeds.
-3. Verify `src/server.ts` still wraps the SSR entry with lazy import + response normalizer (per SSR-hardening playbook).
+9. **404 route**: add `<meta name="robots" content="noindex">` to `NotFoundComponent`'s head to prevent soft-404 indexing.
 
-## Phase 7 — Type & lint tightening
+## Phase 4 — Discoverability & internal linking
 
-1. Turn on `noUncheckedIndexedAccess` in `tsconfig.json`, then fix the (probably small) fallout — mostly `tools.find(...)!` bangs.
-2. Add an ESLint rule (`no-restricted-imports`) forbidding `react-router-dom`, `next/*`, and deep `@tanstack/*` paths to prevent regressions.
-3. Add `eslint-plugin-jsx-a11y` recommended set — surface unlabeled buttons/inputs across the tools.
+10. **Internal linking**:
+    - Every tool page already shows "Related tools" + a linked blog guide when one exists — good.
+    - Add a compact "More in this category" strip on category pages (already present, verify).
+    - Add contextual links from top blog posts back to their tool (via `postsMeta.toolPath`) — already present in ToolShell reverse direction; add the forward direction in `blog.$slug.tsx` if not there.
 
-## Phase 8 — Test & CI safety net
+11. **Anchor text hygiene**: audit `<Link>` labels — no "click here" / "read more" alone. Prefer descriptive labels matching the target page's H1 keyword.
 
-1. Add Vitest with 3 smoke tests: `getCategory`, `getToolSeo`, `postsMeta` shape.
-2. Add a Playwright script under `tests/mobile-overflow.spec.ts` that asserts `document.scrollWidth <= innerWidth` on `/`, `/blog`, `/search`, and a sample tool at 320/375/430 — locks in the responsive fix we just shipped.
-3. Wire `bun run typecheck && bun run test` into a single `bun run verify` script.
+## Phase 5 — Content & keyword targeting
 
-## Phase 9 — Content ops
+12. **Keyword-driven title rewrite** (top 10 highest-traffic tools):
+    - Run `semrush--keyword_research` for each tool's primary phrase (e.g. "word counter", "json formatter", "pdf compressor", "qr code generator", "image compressor", "background remover", "password generator", "youtube tag generator", "base64 encoder", "grammar checker").
+    - Rewrite `seoTitles[path].title` to lead with the highest-volume phrase we can realistically rank for (KDI <50 given a new site's AS).
+    - Same treatment for `metaDescription` — include the phrase + a benefit + a soft CTA under 155 chars.
 
-1. Regenerate `sitemap.xml` at build time from `allTools` + `postsMeta` (already dynamic — audit and confirm freshness).
-2. Add JSON-LD `ItemList` on `/` for the 55 tools (SEO — helps rich results).
-3. Add `<link rel="alternate" hreflang="x-default">` on `__root` head if multilingual is ever considered (skip otherwise).
+13. **New blog posts** — publish one guide per high-value tool that doesn't have one yet. Each post: 800–1500 words, targeted to a long-tail phrase (e.g. "how to compress a pdf without losing quality"), links back to the tool with descriptive anchor text.
 
----
+14. **Competitor gap analysis**: run `semrush--competitive_analysis` for the site to auto-discover competitors, then `semrush--serp_analysis` on 3–5 phrases we want to own. Only target phrases with KDI ≤ 40 initially.
 
-## Technical details
+## Phase 6 — Performance (SEO is downstream of Core Web Vitals)
 
-```text
-src/
-  components/
-    home/                       ← Phase 4.1
-      hero-section.tsx
-      personalized-section.tsx
-      categories-section.tsx
-      all-tools-section.tsx
-      trust-section.tsx
-    header/
-      header-search.tsx         ← Phase 4.2
-      mobile-nav.tsx
-    tool/
-      tool-breadcrumbs.tsx      ← Phase 4.3
-      tool-header.tsx
-      tool-faqs.tsx
-      related-tools.tsx
-      tool-parts.tsx            ← Phase 1.3
-  hooks/
-    use-hydrated.ts             ← Phase 6.1
-    use-search-suggestions.ts   ← Phase 4.2
-  lib/
-    create-tool-route.ts        ← Phase 1.1
-    dom-utils.ts                ← Phase 1.4
-    seo/
-      index.ts                  ← Phase 2 (async getToolSeo)
-      text-tools.ts
-      developer-tools.ts
-      image-tools.ts
-      pdf-tools.ts
-      calculators.ts
-      content-creation.ts
-```
+15. Already shipped: SEO shard lazy-loading, `defaultPreload: "intent"`, memoized ToolShell schema, search index precomputed.
+16. Remaining: preload the single web font weight used above the fold (see #1), self-host the two font families (drop `fonts.googleapis.com` dependency entirely) to remove one third-party origin.
+17. Add `Cache-Control: public, max-age=86400, s-maxage=604800` on `sitemap.xml` response (currently 3600s — safe to lengthen for a mostly-static route list).
 
-Execution order: Phases run top-to-bottom, but 1→2→4→5 is the fastest path to visible bundle-size wins. Phases 6–8 are safety-net work — do them once the structure is stable. Each phase is independently shippable; after each, run `bun run verify` and the Playwright overflow spec before moving on.
+## Phase 7 — Verification loop
 
-Rollback plan: every phase is a pure refactor. If a phase regresses, revert its commit — no data or schema changes.
+18. After each phase, ask the user to click **Rescan** in the SEO tab.
+19. When the LCP finding clears, publish and let Lighthouse re-check the live URL.
+20. Once GSC has 7+ days of data, run `semrush--seo_trend` monthly and `semrush--page_analysis` on the tools ranking on page 2 — one-off content refreshes turn page-2 rankings into page-1 wins faster than any new page.
+
+## Technical notes (safe to skim)
+
+- `og:image` MUST live on leaf routes, never `__root.tsx` — the root head concatenates into every match.
+- Canonical stays leaf-only (already correct); root has no canonical.
+- All new schema goes through `head().scripts` with `type: "application/ld+json"`, not a raw `<script>` in JSX.
+- Font preload is a `head().links` entry: `{ rel: "preload", as: "font", type: "font/woff2", href: "...", crossOrigin: "anonymous" }`.
+- Any published-site changes (LCP, meta, images) only affect crawlers after **publish**, not preview.

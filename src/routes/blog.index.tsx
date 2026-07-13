@@ -5,6 +5,8 @@ import { Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { postsMeta as posts } from "@/lib/blog-meta";
 
+const SITE = "https://all-in-one-approval.lovable.app";
+
 const searchSchema = z.object({
   q: fallback(z.string(), "").default(""),
   category: fallback(z.string(), "").default(""),
@@ -16,7 +18,7 @@ export const Route = createFileRoute("/blog/")({
     const title = "Blog — Guides for Every ToolsHive Tool";
     const description =
       "In-depth guides, tips, and use cases for our free online text, image, PDF, developer, and calculator tools.";
-    const url = "/blog";
+    const url = `${SITE}/blog`;
     return {
       meta: [
         { title },
@@ -42,6 +44,13 @@ export const Route = createFileRoute("/blog/")({
             description,
             url,
             publisher: { "@type": "Organization", name: "ToolsHive" },
+            blogPost: posts.map((p) => ({
+              "@type": "BlogPosting",
+              headline: p.title,
+              url: `${SITE}/blog/${p.slug}`,
+              articleSection: p.category,
+              description: p.excerpt,
+            })),
           }),
         },
       ],

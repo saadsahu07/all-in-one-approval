@@ -1,7 +1,9 @@
 import { seoTitles } from "./seo/titles";
 import { getCategory } from "./tools";
+import ogCover from "@/assets/og-cover.jpg";
 
 const SITE = "https://all-in-one-approval.lovable.app";
+const OG_IMAGE = `${SITE}${ogCover}`;
 
 /**
  * Build the TanStack `head()` object for a tool page.
@@ -24,9 +26,13 @@ export function toolHead(categorySlug: string, toolSlug: string) {
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: url },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: url }],
   };

@@ -190,6 +190,7 @@ export function Header() {
             width={32}
             height={32}
             decoding="async"
+            fetchPriority="high"
             className="h-8 w-8 object-contain"
           />
           <span className="text-base font-semibold tracking-tight">ToolsHive</span>

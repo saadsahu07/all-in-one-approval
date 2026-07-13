@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/category-page";
+import ogCover from "@/assets/og-cover.jpg";
+const OG = `https://all-in-one-approval.lovable.app${ogCover}`;
 
 export const Route = createFileRoute("/image-tools/")({
   head: () => ({
@@ -9,6 +11,11 @@ export const Route = createFileRoute("/image-tools/")({
       { property: "og:title", content: "Free Image Tools | ToolsHive" },
       { property: "og:description", content: "Compress, resize, convert, crop, and edit images free in your browser." },
       { property: "og:url", content: "https://all-in-one-approval.lovable.app/image-tools" },
+      { property: "og:image", content: OG },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG },
     ],
     links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/image-tools" }],
   }),
