@@ -15,14 +15,11 @@ export function createToolRoute(opts: {
   intro: string;
   howTo: string[];
   note?: string;
-  render: ComponentType<{}>;
+  render: ComponentType;
 }) {
   const { path, categorySlug, toolSlug, intro, howTo, note, render: Render } = opts;
-  const wrapped = (): ReactNode => (
-    <ToolShell categorySlug={categorySlug} toolSlug={toolSlug} intro={intro} howTo={howTo} note={note}>
-      <Render />
-    </ToolShell>
-  );
+  const wrapped = (): ReactNode =>
+    ToolShell({ categorySlug, toolSlug, intro, howTo, note, children: Render({}) });
   return createFileRoute(path)({
     head: () => toolHead(categorySlug, toolSlug),
     component: wrapped,
