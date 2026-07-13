@@ -1,17 +1,153 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
-import { Menu, X, Search } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Menu, X, Search, CornerDownLeft } from "lucide-react";
 import { navCategories as categories } from "@/lib/nav";
+import { allTools } from "@/lib/tools";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
+  const [focused, setFocused] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const desktopBoxRef = useRef<HTMLDivElement | null>(null);
+  const mobileBoxRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
+
+  const query = q.trim().toLowerCase();
+  const suggestions = useMemo(() => {
+    if (!query) return [];
+    return allTools
+      .filter(
+        (t) =>
+          t.name.toLowerCase().includes(query) ||
+          t.short.toLowerCase().includes(query) ||
+          t.category.toLowerCase().includes(query) ||
+          t.slug.includes(query),
+      )
+      .slice(0, 6);
+  }, [query]);
+
+  useEffect(() => {
+    setActiveIdx(0);
+  }, [query]);
+
+  useEffect(() => {
+    const onDown = (e: MouseEvent) => {
+      const t = e.target as Node;
+      if (
+        desktopBoxRef.current?.contains(t) ||
+        mobileBoxRef.current?.contains(t)
+      ) {
+        return;
+      }
+      setFocused(false);
+    };
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, []);
+
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate({ to: "/search", search: { q } });
+    const target = suggestions[activeIdx];
+    if (target) {
+      navigate({ to: target.path as "/" });
+    } else {
+      navigate({ to: "/search", search: { q } });
+    }
+    setFocused(false);
     setOpen(false);
   };
+
+  const onKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!suggestions.length) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setActiveIdx((i) => (i + 1) % (suggestions.length + 1));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setActiveIdx((i) => (i - 1 + suggestions.length + 1) % (suggestions.length + 1));
+    } else if (e.key === "Escape") {
+      setFocused(false);
+    }
+  };
+
+  const showDropdown = focused && query.length > 0;
+
+  const Suggestions = ({ id }: { id: string }) => (
+    <div
+      id={id}
+      role="listbox"
+      className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-lg border border-border bg-popover shadow-xl"
+    >
+      {suggestions.length === 0 ? (
+        <div className="px-3 py-3 text-sm text-muted-foreground">
+          No tools match "{q}"
+        </div>
+      ) : (
+        <>
+          <ul className="max-h-80 overflow-y-auto py-1">
+            {suggestions.map((t, i) => {
+              const cat = categories.find((c) => c.slug === t.category);
+              const isActive = i === activeIdx;
+              return (
+                <li key={t.path}>
+                  <Link
+                    to={t.path as "/"}
+                    role="option"
+                    aria-selected={isActive}
+                    onMouseEnter={() => setActiveIdx(i)}
+                    onClick={() => {
+                      setFocused(false);
+                      setOpen(false);
+                      setQ("");
+                    }}
+                    className={`flex items-center gap-3 px-3 py-2 text-sm ${
+                      isActive ? "bg-secondary text-foreground" : "text-foreground/90"
+                    }`}
+                  >
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
+                      <t.icon className="h-4 w-4" />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate font-medium">{t.name}</span>
+                      <span className="block truncate text-xs text-muted-foreground">
+                        {cat?.name}
+                      </span>
+                    </span>
+                    <CornerDownLeft
+                      className={`h-3.5 w-3.5 shrink-0 ${
+                        isActive ? "opacity-100 text-muted-foreground" : "opacity-0"
+                      }`}
+                    />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <Link
+            to="/search"
+            search={{ q }}
+            onClick={() => {
+              setFocused(false);
+              setOpen(false);
+            }}
+            role="option"
+            aria-selected={activeIdx === suggestions.length}
+            onMouseEnter={() => setActiveIdx(suggestions.length)}
+            className={`flex items-center justify-between gap-2 border-t border-border px-3 py-2.5 text-xs font-medium ${
+              activeIdx === suggestions.length
+                ? "bg-secondary text-foreground"
+                : "text-muted-foreground"
+            }`}
+          >
+            <span>See all results for "{q}"</span>
+            <CornerDownLeft className="h-3.5 w-3.5" />
+          </Link>
+        </>
+      )}
+    </div>
+  );
+
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
@@ -38,16 +174,25 @@ export function Header() {
             Blog
           </Link>
         </nav>
-        <form onSubmit={submit} className="relative ml-auto hidden md:block">
-          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-          <input
-            type="search"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Search tools…"
-            className="h-9 w-56 rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-          />
-        </form>
+        <div ref={desktopBoxRef} className="relative ml-auto hidden md:block">
+          <form onSubmit={submit}>
+            <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              onFocus={() => setFocused(true)}
+              onKeyDown={onKey}
+              role="combobox"
+              aria-expanded={showDropdown}
+              aria-controls="tool-suggest-desktop"
+              aria-autocomplete="list"
+              placeholder="Search tools…"
+              className="h-9 w-64 rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+            />
+          </form>
+          {showDropdown && <Suggestions id="tool-suggest-desktop" />}
+        </div>
         <button
           className="ml-auto rounded-md p-2 text-foreground md:hidden"
           onClick={() => setOpen((v) => !v)}
@@ -58,16 +203,25 @@ export function Header() {
       </div>
       {open && (
         <nav className="border-t border-border bg-card px-4 pb-4 md:hidden">
-          <form onSubmit={submit} className="relative py-3">
-            <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <input
-              type="search"
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="Search tools…"
-              className="h-10 w-full rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-            />
-          </form>
+          <div ref={mobileBoxRef} className="relative py-3">
+            <form onSubmit={submit}>
+              <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <input
+                type="search"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                onFocus={() => setFocused(true)}
+                onKeyDown={onKey}
+                role="combobox"
+                aria-expanded={showDropdown}
+                aria-controls="tool-suggest-mobile"
+                aria-autocomplete="list"
+                placeholder="Search tools…"
+                className="h-10 w-full rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+            </form>
+            {showDropdown && <Suggestions id="tool-suggest-mobile" />}
+          </div>
           {categories.map((c) => (
             <Link
               key={c.slug}
