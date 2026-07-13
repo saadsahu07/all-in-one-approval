@@ -15,9 +15,9 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/blog/")({
   validateSearch: zodValidator(searchSchema),
   head: () => {
-    const title = "Blog — Guides for Every ToolsHive Tool";
+    const title = "ToolsHive Blog — Make Money Online, Productivity & Tech Guides";
     const description =
-      "In-depth guides, tips, and use cases for our free online text, image, PDF, developer, and calculator tools.";
+      "Micro-guides on making money online, freelancing, productivity, tech tips, and career growth — the blog side of ToolsHive's free tools + blog site.";
     const url = `${SITE}/blog`;
     return {
       meta: [
