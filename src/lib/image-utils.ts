@@ -1,3 +1,11 @@
+/**
+ * Canvas + File helpers shared by image tools (compress, resize, crop,
+ * rotate, watermark, format converters). All operations run in the browser
+ * — nothing here uploads.
+ */
+
+/** Decode a user-selected file into an `HTMLImageElement`. Rejects with a
+ *  user-friendly message when the file is not a valid image. */
 export function loadImageFromFile(file: File): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const url = URL.createObjectURL(file);
@@ -8,6 +16,7 @@ export function loadImageFromFile(file: File): Promise<HTMLImageElement> {
   });
 }
 
+/** Promise wrapper around `HTMLCanvasElement.toBlob` with a typed error path. */
 export function canvasToBlob(canvas: HTMLCanvasElement, type: string, quality?: number): Promise<Blob> {
   return new Promise((resolve, reject) => {
     canvas.toBlob(
@@ -18,6 +27,8 @@ export function canvasToBlob(canvas: HTMLCanvasElement, type: string, quality?: 
   });
 }
 
+/** Paint an image onto a fresh canvas, optionally scaling to `width`/`height`.
+ *  Defaults to the image's natural dimensions (no scaling). */
 export function drawToCanvas(img: HTMLImageElement, width?: number, height?: number): HTMLCanvasElement {
   const canvas = document.createElement("canvas");
   canvas.width = width ?? img.naturalWidth;
@@ -27,6 +38,7 @@ export function drawToCanvas(img: HTMLImageElement, width?: number, height?: num
   return canvas;
 }
 
+/** Read a file as a base64 data URL (for previews and inline embedding). */
 export function fileToDataUrl(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -36,6 +48,7 @@ export function fileToDataUrl(file: File): Promise<string> {
   });
 }
 
+/** Format a byte count as a short human-readable string (e.g. "342 KB"). */
 export function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
