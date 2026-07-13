@@ -7,6 +7,7 @@ import { Button } from "@/components/ui-primitives";
 import { loadToolSeo } from "@/lib/seo";
 import type { ToolSeo } from "@/lib/seo/types";
 import { useFavorites, trackRecent } from "@/lib/user-prefs";
+import { ErrorBoundary } from "@/components/error-boundary";
 
 interface ToolShellProps {
   categorySlug: string;
@@ -28,7 +29,9 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
   useEffect(() => {
     let cancelled = false;
     if (tool?.path) {
-      loadToolSeo(tool.path).then((s) => { if (!cancelled) setSeo(s); });
+      loadToolSeo(tool.path)
+        .then((s) => { if (!cancelled) setSeo(s); })
+        .catch((err) => { console.error("Failed to load tool SEO", err); });
     }
     return () => { cancelled = true; };
   }, [tool?.path]);
