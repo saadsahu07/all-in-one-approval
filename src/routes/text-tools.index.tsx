@@ -8,7 +8,9 @@ export const Route = createFileRoute("/text-tools/")({
       { name: "description", content: "10 free text tools: AI summarizer, grammar checker, paraphraser, word counter, case converter, and more." },
       { property: "og:title", content: "Free Text Tools | ToolsHive" },
       { property: "og:description", content: "10 free text tools: AI summarizer, grammar checker, paraphraser, word counter, and more." },
+      { property: "og:url", content: "https://all-in-one-approval.lovable.app/text-tools" },
     ],
+    links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/text-tools" }],
   }),
   component: () => <CategoryPage slug="text-tools" />,
 });
