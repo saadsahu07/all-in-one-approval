@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { type ReactNode, useState } from "react";
-import { ChevronRight, Copy, Check, BookOpen } from "lucide-react";
+import { type ReactNode, useEffect, useState } from "react";
+import { ChevronRight, Copy, Check, BookOpen, Star } from "lucide-react";
 import { allTools, getCategory } from "@/lib/tools";
 import { postsMeta } from "@/lib/blog-meta";
 import { Button } from "@/components/ui-primitives";
 import { getToolSeo } from "@/lib/tool-seo";
+import { useFavorites, trackRecent } from "@/lib/user-prefs";
 
 interface ToolShellProps {
   categorySlug: string;
@@ -18,6 +19,10 @@ interface ToolShellProps {
 export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note }: ToolShellProps) {
   const category = getCategory(categorySlug);
   const tool = category?.tools.find((t) => t.slug === toolSlug);
+  const { isFavorite, toggle } = useFavorites();
+  useEffect(() => {
+    if (tool?.path) trackRecent(tool.path);
+  }, [tool?.path]);
   const related = (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4);
   const blogPost = tool ? postsMeta.find((p) => p.toolPath === tool.path) : undefined;
   const SITE = "https://all-in-one-approval.lovable.app";
@@ -91,7 +96,20 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
         <span className="text-foreground">{tool?.name ?? toolSlug}</span>
       </nav>
 
-      <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{tool?.name ?? toolSlug}</h1>
+      <div className="flex items-start justify-between gap-4">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{tool?.name ?? toolSlug}</h1>
+        {tool && (
+          <button
+            type="button"
+            onClick={() => toggle(tool.path)}
+            aria-label={isFavorite(tool.path) ? "Remove from favorites" : "Add to favorites"}
+            className="mt-1 inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-accent hover:text-accent"
+          >
+            <Star className={`h-3.5 w-3.5 ${isFavorite(tool.path) ? "fill-accent text-accent" : ""}`} />
+            {isFavorite(tool.path) ? "Saved" : "Save"}
+          </button>
+        )}
+      </div>
       <p className="mt-3 max-w-2xl text-muted-foreground">{displayIntro}</p>
       {seo?.intro?.[1] && (
         <p className="mt-3 max-w-2xl text-muted-foreground">{seo.intro[1]}</p>
