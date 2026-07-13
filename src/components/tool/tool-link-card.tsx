@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import type { Tool } from "@/lib/tools";
+import type { ToolDef } from "@/lib/tools";
 
 /**
  * Compact link card used to preview a single tool.
@@ -13,7 +13,7 @@ export function ToolLinkCard({
   tool,
   variant = "compact",
 }: {
-  tool: Tool;
+  tool: ToolDef;
   variant?: "compact" | "detailed";
 }) {
   const Icon = tool.icon;
