@@ -17,6 +17,18 @@ export function CategoryPage({ slug }: { slug: string }) {
     },
     {
       "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `${category.name} — ToolsHive`,
+      numberOfItems: category.tools.length,
+      itemListElement: category.tools.map((t, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${SITE}${t.path}`,
+        name: t.name,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: category.name,
       description: category.short,
