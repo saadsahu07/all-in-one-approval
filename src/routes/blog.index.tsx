@@ -116,7 +116,7 @@ function BlogIndex() {
       <header className="mb-10">
         <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl">The ToolsHive Blog</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          Deep-dive guides for our most popular tools — how they work, when to use them, and how to get the best results.
+          Short, practical guides on making money online, productivity, tech tips, and careers — the blog side of our free tools + blog site.
         </p>
       </header>
 
