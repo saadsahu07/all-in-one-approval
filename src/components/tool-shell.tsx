@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { type ReactNode, useEffect, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { ChevronRight, Copy, Check, BookOpen, Star } from "lucide-react";
 import { allTools, getCategory } from "@/lib/tools";
 import { postsMeta } from "@/lib/blog-meta";
@@ -8,6 +8,10 @@ import { loadToolSeo } from "@/lib/seo";
 import type { ToolSeo } from "@/lib/seo/types";
 import { useFavorites, trackRecent } from "@/lib/user-prefs";
 import { ErrorBoundary } from "@/components/error-boundary";
+
+// Precomputed once — avoids O(N) find() on every ToolShell mount.
+const blogByToolPath = new Map(postsMeta.map((p) => [p.toolPath, p] as const));
+const SITE = "https://all-in-one-approval.lovable.app";
 
 interface ToolShellProps {
   categorySlug: string;
@@ -20,7 +24,10 @@ interface ToolShellProps {
 
 export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note }: ToolShellProps) {
   const category = getCategory(categorySlug);
-  const tool = category?.tools.find((t) => t.slug === toolSlug);
+  const tool = useMemo(
+    () => category?.tools.find((t) => t.slug === toolSlug),
+    [category, toolSlug],
+  );
   const { isFavorite, toggle } = useFavorites();
   useEffect(() => {
     if (tool?.path) trackRecent(tool.path);
@@ -35,12 +42,14 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
     }
     return () => { cancelled = true; };
   }, [tool?.path]);
-  const related = (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4);
-  const blogPost = tool ? postsMeta.find((p) => p.toolPath === tool.path) : undefined;
-  const SITE = "https://all-in-one-approval.lovable.app";
+  const related = useMemo(
+    () => (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4),
+    [category, toolSlug],
+  );
+  const blogPost = tool ? blogByToolPath.get(tool.path) : undefined;
   const toolUrl = tool ? `${SITE}${tool.path}` : undefined;
   const displayIntro = seo?.intro?.[0] ?? intro;
-  const jsonLd = tool && category
+  const jsonLd = useMemo(() => (tool && category
     ? [
         {
           "@context": "https://schema.org",
@@ -84,7 +93,7 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
             ]
           : []),
       ]
-    : null;
+    : null), [tool, category, seo, intro, howTo, toolUrl]);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">

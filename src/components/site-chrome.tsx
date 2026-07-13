@@ -1,8 +1,15 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { Menu, X, Search, CornerDownLeft } from "lucide-react";
 import { navCategories as categories } from "@/lib/nav";
 import { allTools } from "@/lib/tools";
+
+// Precomputed once at module load — avoids O(N) find() per suggestion render.
+const categoryBySlug = new Map(categories.map((c) => [c.slug, c] as const));
+const searchIndex = allTools.map((t) => ({
+  tool: t,
+  haystack: `${t.name} ${t.short} ${t.category} ${t.slug}`.toLowerCase(),
+}));
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -16,15 +23,14 @@ export function Header() {
   const query = q.trim().toLowerCase();
   const suggestions = useMemo(() => {
     if (!query) return [];
-    return allTools
-      .filter(
-        (t) =>
-          t.name.toLowerCase().includes(query) ||
-          t.short.toLowerCase().includes(query) ||
-          t.category.toLowerCase().includes(query) ||
-          t.slug.includes(query),
-      )
-      .slice(0, 6);
+    const out: typeof allTools = [];
+    for (const entry of searchIndex) {
+      if (entry.haystack.includes(query)) {
+        out.push(entry.tool);
+        if (out.length === 6) break;
+      }
+    }
+    return out;
   }, [query]);
 
   useEffect(() => {
@@ -87,7 +93,7 @@ export function Header() {
         <>
           <ul className="max-h-80 overflow-y-auto py-1">
             {suggestions.map((t, i) => {
-              const cat = categories.find((c) => c.slug === t.category);
+              const cat = categoryBySlug.get(t.category);
               const isActive = i === activeIdx;
               return (
                 <li key={t.path}>
@@ -152,7 +158,14 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src="/toolshive-logo.png" alt="ToolsHive" className="h-8 w-8 object-contain" />
+          <img
+            src="/toolshive-logo.png"
+            alt="ToolsHive"
+            width={32}
+            height={32}
+            decoding="async"
+            className="h-8 w-8 object-contain"
+          />
           <span className="text-base font-semibold tracking-tight">ToolsHive</span>
         </Link>
         <nav className="ml-4 hidden items-center gap-1 lg:flex">
@@ -238,7 +251,7 @@ export function Header() {
   );
 }
 
-export function Footer() {
+export const Footer = memo(function Footer() {
   return (
     <footer className="mt-16 border-t border-border bg-navy-deep text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -279,4 +292,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+});
