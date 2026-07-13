@@ -244,9 +244,11 @@
   table {
     max-width: 100%;
   }
-  /* Long unbreakable strings (URLs, tokens) shouldn't blow out layouts */
+  /* Long unbreakable strings (URLs, tokens) shouldn't blow out layouts,
+   * but regular words must never break mid-letter. */
   p, li, dd, dt, span, a {
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 }
 
