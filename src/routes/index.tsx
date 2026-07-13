@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ShieldCheck, Zap, Lock, Sparkles, ArrowRight } from "lucide-react";
+import { ShieldCheck, Zap, Lock, Sparkles, ArrowRight, Star, Clock } from "lucide-react";
 import { categories, allTools } from "@/lib/tools";
+import { useFavorites, useRecent } from "@/lib/user-prefs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,6 +18,15 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const { favorites } = useFavorites();
+  const recent = useRecent();
+  const favTools = favorites
+    .map((p) => allTools.find((t) => t.path === p))
+    .filter((t): t is (typeof allTools)[number] => !!t);
+  const recentTools = recent
+    .map((p) => allTools.find((t) => t.path === p))
+    .filter((t): t is (typeof allTools)[number] => !!t && !favorites.includes(t.path))
+    .slice(0, 4);
   return (
     <div>
       {/* Hero */}
@@ -79,6 +89,58 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Personalized: favorites + recent */}
+      {(favTools.length > 0 || recentTools.length > 0) && (
+        <section className="border-b border-border bg-navy-deep/40">
+          <div className="mx-auto max-w-6xl px-4 py-12">
+            {favTools.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2">
+                  <Star className="h-4 w-4 fill-accent text-accent" />
+                  <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Your favorites</h2>
+                </div>
+                <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                  {favTools.map((t) => (
+                    <Link
+                      key={t.path}
+                      to={t.path as "/"}
+                      className="group flex items-center gap-3 rounded-lg border border-border bg-card/60 px-4 py-3 transition-all hover:border-accent hover:bg-card"
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-secondary/40 text-accent">
+                        <t.icon className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0 flex-1 truncate text-sm font-medium">{t.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            {recentTools.length > 0 && (
+              <div className={favTools.length > 0 ? "mt-8" : ""}>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-muted-foreground" />
+                  <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">Recently used</h2>
+                </div>
+                <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                  {recentTools.map((t) => (
+                    <Link
+                      key={t.path}
+                      to={t.path as "/"}
+                      className="group flex items-center gap-3 rounded-lg border border-border bg-card/60 px-4 py-3 transition-all hover:border-accent hover:bg-card"
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-secondary/40 text-accent">
+                        <t.icon className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0 flex-1 truncate text-sm font-medium">{t.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Categories */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
