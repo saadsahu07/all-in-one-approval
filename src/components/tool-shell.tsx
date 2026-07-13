@@ -1,3 +1,15 @@
+/**
+ * `ToolShell` is the shared layout wrapping every individual tool page.
+ * It renders the breadcrumbs, title, save-to-favorites button, lazy-loaded
+ * SEO copy (intro / features / FAQs), JSON-LD schema, how-to steps, and
+ * related-tools grid. The tool's own UI is passed in as `children` and
+ * mounted inside an `ErrorBoundary` so a crash in one tool never breaks
+ * the surrounding page.
+ *
+ * Also re-exports `CopyButton`, `downloadBlob`, and `downloadText` for
+ * backwards compatibility with tool pages that imported them from here
+ * before the helpers moved to `@/lib/dom-utils`.
+ */
 import { Link } from "@tanstack/react-router";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { ChevronRight, Copy, Check, BookOpen, Star } from "lucide-react";
@@ -9,16 +21,27 @@ import type { ToolSeo } from "@/lib/seo/types";
 import { useFavorites, trackRecent } from "@/lib/user-prefs";
 import { ErrorBoundary } from "@/components/error-boundary";
 
-// Precomputed once — avoids O(N) find() on every ToolShell mount.
+// Precomputed once — avoids scanning `postsMeta` on every tool mount.
 const blogByToolPath = new Map(postsMeta.map((p) => [p.toolPath, p] as const));
+
+// Canonical site origin, used to build absolute URLs for JSON-LD schema
+// (search engines require absolute `url` / `item` values).
 const SITE = "https://all-in-one-approval.lovable.app";
 
+/** Props passed by every tool route to render the shared shell. */
 interface ToolShellProps {
+  /** URL slug of the parent category, e.g. `"text-tools"`. */
   categorySlug: string;
+  /** URL slug of the tool itself, e.g. `"word-counter"`. */
   toolSlug: string;
+  /** Fallback intro paragraph shown before the lazy SEO shard loads. */
   intro: string;
+  /** Ordered "how to use" steps rendered below the tool UI + emitted as
+   *  `HowTo` JSON-LD for rich results in search. */
   howTo: string[];
+  /** The tool's interactive UI. Wrapped in an `ErrorBoundary`. */
   children: ReactNode;
+  /** Optional disclaimer / usage note rendered below the tool. */
   note?: string;
 }
 
@@ -29,10 +52,13 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
     [category, toolSlug],
   );
   const { isFavorite, toggle } = useFavorites();
+  // Track this tool as most-recently-used for the homepage's "Recent" rail.
   useEffect(() => {
     if (tool?.path) trackRecent(tool.path);
   }, [tool?.path]);
   const [seo, setSeo] = useState<ToolSeo | undefined>(undefined);
+  // Lazy-load the rich SEO shard for this tool (features, FAQs, extra
+  // intro paragraph). Falls back silently if the shard is missing.
   useEffect(() => {
     let cancelled = false;
     if (tool?.path) {

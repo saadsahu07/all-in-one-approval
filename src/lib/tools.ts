@@ -1,3 +1,15 @@
+/**
+ * Central catalog of every tool the site exposes.
+ *
+ * This module is imported by the homepage, the header search, category
+ * pages, and each individual tool route (via `getCategory`). Adding a new
+ * tool is a two-step change:
+ *   1. Add an entry to the correct category's `tools` array below.
+ *   2. Create the matching `src/routes/<category>.<slug>.tsx` route file.
+ *
+ * Keep the shape stable — downstream code assumes every tool has a unique
+ * `path` (used as its React key and canonical URL) and a bound `category`.
+ */
 import type { LucideIcon } from "lucide-react";
 import {
   Sparkles, SpellCheck, Repeat2, Hash, Type, CaseSensitive, ListX, ArrowDownAZ,
@@ -11,6 +23,7 @@ import {
   Youtube, Wand2, Image as ImageIcon2, Lightbulb,
 } from "lucide-react";
 
+/** Single tool entry (a leaf page under a category). */
 export interface ToolDef {
   slug: string;
   path: string;
@@ -20,6 +33,7 @@ export interface ToolDef {
   category: string;
 }
 
+/** Grouping of related tools; renders as a landing page + nav entry. */
 export interface CategoryDef {
   slug: string;
   path: string;
@@ -29,6 +43,11 @@ export interface CategoryDef {
   tools: ToolDef[];
 }
 
+/**
+ * Turn the terse tuple form used in category definitions into full
+ * `ToolDef` objects. Kept private so callers can't skip the required
+ * `category`/`path` fields.
+ */
 function make(category: string, base: string, list: [string, string, string, LucideIcon][]): ToolDef[] {
   return list.map(([slug, name, short, icon]) => ({
     slug, name, short, icon, category,
@@ -136,8 +155,12 @@ export const categories: CategoryDef[] = [
   },
 ];
 
+/** Flat list of every tool across every category. Used by the homepage
+ *  "all tools" grid and the header search index. */
 export const allTools: ToolDef[] = categories.flatMap((c) => c.tools);
 
+/** Look up a category by its URL slug. Returns undefined for unknown slugs
+ *  so callers can render a 404 without throwing. */
 export function getCategory(slug: string): CategoryDef | undefined {
   return categories.find((c) => c.slug === slug);
 }

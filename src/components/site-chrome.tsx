@@ -1,16 +1,33 @@
+/**
+ * Site-wide chrome: the sticky top `Header` (logo, category nav, search
+ * with instant suggestions, mobile menu) and the `Footer` (link columns +
+ * copyright). Rendered from `__root.tsx` around every page's `<Outlet />`.
+ */
 import { Link, useNavigate } from "@tanstack/react-router";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { Menu, X, Search, CornerDownLeft } from "lucide-react";
 import { navCategories as categories } from "@/lib/nav";
 import { allTools } from "@/lib/tools";
 
-// Precomputed once at module load — avoids O(N) find() per suggestion render.
+// --- Search perf: computed once at module load so keystrokes don't re-run
+// per-tool string work.
+// `categoryBySlug` powers the "category label" line under each suggestion
+// without a linear `find()` on every render.
 const categoryBySlug = new Map(categories.map((c) => [c.slug, c] as const));
+// `searchIndex` stores the lowercased haystack for each tool, so the
+// keystroke filter is a single `includes` per entry instead of four
+// `toLowerCase().includes()` calls building throwaway strings.
 const searchIndex = allTools.map((t) => ({
   tool: t,
   haystack: `${t.name} ${t.short} ${t.category} ${t.slug}`.toLowerCase(),
 }));
 
+/**
+ * Top navigation bar. Handles:
+ *   - Desktop category links + search combobox with keyboard nav.
+ *   - Mobile hamburger menu with the same search + category list.
+ *   - Outside-click dismissal of the suggestions dropdown.
+ */
 export function Header() {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
@@ -21,6 +38,8 @@ export function Header() {
   const navigate = useNavigate();
 
   const query = q.trim().toLowerCase();
+  // Top 6 matches for the current query. Early-exits the loop once full
+  // so we never scan more of the catalog than we need to render.
   const suggestions = useMemo(() => {
     if (!query) return [];
     const out: typeof allTools = [];
@@ -33,10 +52,13 @@ export function Header() {
     return out;
   }, [query]);
 
+  // Reset the highlighted row whenever the query changes so ArrowDown
+  // always starts from the top of the fresh result set.
   useEffect(() => {
     setActiveIdx(0);
   }, [query]);
 
+  // Close the dropdown when the user clicks outside either search box.
   useEffect(() => {
     const onDown = (e: MouseEvent) => {
       const t = e.target as Node;
@@ -52,6 +74,8 @@ export function Header() {
     return () => document.removeEventListener("mousedown", onDown);
   }, []);
 
+  // Enter key: navigate to the highlighted suggestion, or fall back to the
+  // full search results page when there is no match.
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const target = suggestions[activeIdx];
@@ -64,6 +88,8 @@ export function Header() {
     setOpen(false);
   };
 
+  // Arrow keys cycle through suggestions + the trailing "See all results"
+  // row (hence `+ 1` in the modulo math). Escape closes the dropdown.
   const onKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (!suggestions.length) return;
     if (e.key === "ArrowDown") {
