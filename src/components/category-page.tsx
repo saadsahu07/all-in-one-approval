@@ -40,16 +40,16 @@ export function CategoryPage({ slug }: { slug: string }) {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="flex items-center gap-4">
-        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground sm:h-12 sm:w-12">
           <category.icon className="h-6 w-6" />
         </span>
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">{category.name}</h1>
-          <p className="mt-1 text-muted-foreground">{category.short}</p>
+        <div className="min-w-0 flex-1">
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{category.name}</h1>
+          <p className="mt-1 text-sm text-muted-foreground sm:text-base">{category.short}</p>
         </div>
       </div>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {category.tools.map((t) => (
           <Link
             key={t.path}

@@ -84,26 +84,26 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
-      <nav className="mb-6 flex items-center gap-1 text-sm text-muted-foreground">
-        <Link to="/" className="hover:text-foreground">Home</Link>
-        <ChevronRight className="h-3.5 w-3.5" />
+      <nav className="mb-6 flex flex-wrap items-center gap-x-1 gap-y-1 text-sm text-muted-foreground">
+        <Link to="/" className="whitespace-nowrap hover:text-foreground">Home</Link>
+        <ChevronRight className="h-3.5 w-3.5 shrink-0" />
         {category && (
           <>
-            <Link to={category.path as "/"} className="hover:text-foreground">{category.name}</Link>
-            <ChevronRight className="h-3.5 w-3.5" />
+            <Link to={category.path as "/"} className="whitespace-nowrap hover:text-foreground">{category.name}</Link>
+            <ChevronRight className="h-3.5 w-3.5 shrink-0" />
           </>
         )}
         <span className="text-foreground">{tool?.name ?? toolSlug}</span>
       </nav>
 
-      <div className="flex items-start justify-between gap-4">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{tool?.name ?? toolSlug}</h1>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <h1 className="min-w-0 flex-1 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">{tool?.name ?? toolSlug}</h1>
         {tool && (
           <button
             type="button"
             onClick={() => toggle(tool.path)}
             aria-label={isFavorite(tool.path) ? "Remove from favorites" : "Add to favorites"}
-            className="mt-1 inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-accent hover:text-accent"
+            className="mt-1 inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-accent hover:text-accent"
           >
             <Star className={`h-3.5 w-3.5 ${isFavorite(tool.path) ? "fill-accent text-accent" : ""}`} />
             {isFavorite(tool.path) ? "Saved" : "Save"}
