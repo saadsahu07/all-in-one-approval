@@ -251,7 +251,7 @@ export function Header() {
   );
 }
 
-export function Footer() {
+export const Footer = memo(function Footer() {
   return (
     <footer className="mt-16 border-t border-border bg-navy-deep text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -292,4 +292,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+});
