@@ -12,18 +12,14 @@
  */
 import { Link } from "@tanstack/react-router";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
-import { ChevronRight, Copy, Check, BookOpen, Star } from "lucide-react";
+import { ChevronRight, Copy, Check, Star } from "lucide-react";
 import { allTools, getCategory } from "@/lib/tools";
-import { postsMeta } from "@/lib/blog-meta";
 import { Button } from "@/components/ui-primitives";
 import { loadToolSeo } from "@/lib/seo";
 import type { ToolSeo } from "@/lib/seo/types";
 import { useFavorites, trackRecent } from "@/lib/user-prefs";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { renderMarkdown } from "@/lib/render-md";
-
-// Precomputed once — avoids scanning `postsMeta` on every tool mount.
-const blogByToolPath = new Map(postsMeta.map((p) => [p.toolPath, p] as const));
 
 // Canonical site origin, used to build absolute URLs for JSON-LD schema
 // (search engines require absolute `url` / `item` values).
@@ -73,7 +69,6 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
     () => (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4),
     [category, toolSlug],
   );
-  const blogPost = tool ? blogByToolPath.get(tool.path) : undefined;
   const toolUrl = tool ? `${SITE}${tool.path}` : undefined;
   const displayIntro = seo?.intro?.[0] ?? intro;
   const jsonLd = useMemo(() => (tool && category
@@ -173,17 +168,6 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
         </ul>
       )}
 
-      {blogPost && (
-        <Link
-          to="/blog/$slug"
-          params={{ slug: blogPost.slug }}
-          className="mt-4 inline-flex items-center gap-2 rounded-md border border-border bg-secondary px-3 py-2 text-sm font-medium text-secondary-foreground transition-colors hover:border-accent hover:text-accent"
-        >
-          <BookOpen className="h-4 w-4" />
-          Read the full guide: {blogPost.title}
-        </Link>
-      )}
-
       <div className="mt-8">
         <ErrorBoundary boundary={`tool:${categorySlug}/${toolSlug}`} resetKey={tool?.path}>
           {children}
@@ -231,23 +215,6 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
               </details>
             ))}
           </div>
-        </section>
-      )}
-
-      {blogPost && (
-        <section className="mt-10 rounded-lg border border-border bg-secondary/40 p-6">
-          <h2 className="text-lg font-bold">Want the deep dive?</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Read the complete guide: workflows, pro tips, edge cases, and comparisons.
-          </p>
-          <Link
-            to="/blog/$slug"
-            params={{ slug: blogPost.slug }}
-            className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            <BookOpen className="h-4 w-4" />
-            Read the full blog post →
-          </Link>
         </section>
       )}
 
