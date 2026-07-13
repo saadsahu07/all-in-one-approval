@@ -4,7 +4,7 @@ import { ToolLinkCard } from "@/components/tool/tool-link-card";
 /** Flat, scannable grid listing every tool in the library. */
 export function AllToolsGrid() {
   return (
-    <section className="border-t border-border bg-navy-deep/60">
+    <section id="all-tools" className="scroll-mt-20 border-t border-border bg-navy-deep/60">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
