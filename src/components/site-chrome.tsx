@@ -1,24 +1,12 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { Menu, X, Search, Command } from "lucide-react";
+import { useState } from "react";
+import { Menu, X, Search } from "lucide-react";
 import { navCategories as categories } from "@/lib/nav";
-import { CommandPalette } from "@/components/command-palette";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
-  const [paletteOpen, setPaletteOpen] = useState(false);
   const navigate = useNavigate();
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        setPaletteOpen((v) => !v);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     navigate({ to: "/search", search: { q } });
@@ -50,18 +38,16 @@ export function Header() {
             Blog
           </Link>
         </nav>
-        <button
-          type="button"
-          onClick={() => setPaletteOpen(true)}
-          className="ml-auto hidden h-9 items-center gap-2 rounded-md border border-input bg-background px-2.5 text-sm text-muted-foreground transition-colors hover:border-accent hover:text-foreground md:flex md:w-56"
-          aria-label="Open command palette"
-        >
-          <Search className="h-4 w-4" />
-          <span className="flex-1 text-left">Search tools…</span>
-          <kbd className="hidden items-center gap-0.5 rounded border border-border bg-secondary px-1.5 py-0.5 text-[10px] font-medium lg:inline-flex">
-            <Command className="h-2.5 w-2.5" />K
-          </kbd>
-        </button>
+        <form onSubmit={submit} className="relative ml-auto hidden md:block">
+          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Search tools…"
+            className="h-9 w-56 rounded-md border border-input bg-background pl-8 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          />
+        </form>
         <button
           className="ml-auto rounded-md p-2 text-foreground md:hidden"
           onClick={() => setOpen((v) => !v)}
@@ -94,7 +80,6 @@ export function Header() {
           ))}
         </nav>
       )}
-      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
     </header>
   );
 }
