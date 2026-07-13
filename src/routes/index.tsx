@@ -190,7 +190,7 @@ function Index() {
             const spanClass = isHero
               ? "md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2"
               : isWide
-                ? "md:col-span-2 lg:col-span-2"
+                ? "md:col-span-2 lg:col-span-4"
                 : "";
             return (
               <li key={c.slug} className={spanClass}>
