@@ -4,7 +4,8 @@ import { ChevronRight, Copy, Check, BookOpen, Star } from "lucide-react";
 import { allTools, getCategory } from "@/lib/tools";
 import { postsMeta } from "@/lib/blog-meta";
 import { Button } from "@/components/ui-primitives";
-import { getToolSeo } from "@/lib/tool-seo";
+import { loadToolSeo } from "@/lib/seo";
+import type { ToolSeo } from "@/lib/seo/types";
 import { useFavorites, trackRecent } from "@/lib/user-prefs";
 
 interface ToolShellProps {
@@ -23,11 +24,18 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
   useEffect(() => {
     if (tool?.path) trackRecent(tool.path);
   }, [tool?.path]);
+  const [seo, setSeo] = useState<ToolSeo | undefined>(undefined);
+  useEffect(() => {
+    let cancelled = false;
+    if (tool?.path) {
+      loadToolSeo(tool.path).then((s) => { if (!cancelled) setSeo(s); });
+    }
+    return () => { cancelled = true; };
+  }, [tool?.path]);
   const related = (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4);
   const blogPost = tool ? postsMeta.find((p) => p.toolPath === tool.path) : undefined;
   const SITE = "https://all-in-one-approval.lovable.app";
   const toolUrl = tool ? `${SITE}${tool.path}` : undefined;
-  const seo = tool ? getToolSeo(tool.path) : undefined;
   const displayIntro = seo?.intro?.[0] ?? intro;
   const jsonLd = tool && category
     ? [

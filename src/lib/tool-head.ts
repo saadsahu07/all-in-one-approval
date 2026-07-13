@@ -1,4 +1,4 @@
-import { getToolSeo } from "./tool-seo";
+import { seoTitles } from "./seo/titles";
 import { getCategory } from "./tools";
 
 const SITE = "https://all-in-one-approval.lovable.app";
@@ -12,8 +12,7 @@ export function toolHead(categorySlug: string, toolSlug: string) {
   const tool = category?.tools.find((t) => t.slug === toolSlug);
   const path = tool?.path ?? `/${categorySlug}/${toolSlug}`;
   const url = `${SITE}${path}`;
-  const seo = getToolSeo(path);
-
+  const seo = seoTitles[path];
   const title = seo?.title ?? `${tool?.name ?? toolSlug} | ToolsHive`;
   const description = seo?.metaDescription ?? tool?.short ?? "Free online tool from ToolsHive.";
 
