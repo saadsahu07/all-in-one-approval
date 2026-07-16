@@ -88,8 +88,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "ToolsHive" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#7c3aed" },
-      { name: "color-scheme", content: "dark" },
+      { name: "theme-color", content: "#3b82f6" },
+      { name: "color-scheme", content: "light" },
       { name: "google-site-verification", content: "wqa0vF6k3GU-lSw6KEKlCS_QE7ufqIjQp7SeIQ48DkI" },
     ],
     links: [
@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
     ],
     scripts: [
