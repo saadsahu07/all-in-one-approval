@@ -591,4 +591,172 @@ Passwords are generated entirely in your browser. Nothing is transmitted, stored
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
     ],
   },
+  "/developer-tools/hash-generator": {
+    title: "Hash Generator — SHA-256, SHA-1, SHA-512 Free",
+    metaDescription: "Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes from any text. Free online hash generator — no signup, runs in your browser.",
+    keyword: "hash generator",
+    intro: [
+      "Generate cryptographic hashes (SHA-1, SHA-256, SHA-384, SHA-512) from any text string in one click.",
+      "Uses the browser's built-in Web Crypto API — nothing is uploaded and results are computed locally.",
+    ],
+    features: [
+      "SHA-1, SHA-256, SHA-384, SHA-512 in one place",
+      "Unicode-safe input, hex-encoded output",
+      "One-click copy of any hash",
+    ],
+    faqs: [
+      { q: "Why is MD5 not included?", a: "MD5 is cryptographically broken and no longer safe for integrity checks. Use SHA-256 or better." },
+      { q: "Is hashing the same as encryption?", a: "No. Hashing is one-way — you cannot recover the original text from a hash. Encryption is reversible with a key." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Open the tool and start hashing immediately." },
+    ],
+    guide: `## What a hash is\n\nA cryptographic hash turns any input — a password, a file, an API payload — into a fixed-length hex string. The same input always produces the same hash; a tiny change to the input produces a completely different hash. That's what makes hashes useful for integrity checks, password storage (with a salt), fingerprinting cache keys, and signing tokens.\n\n## Which algorithm to use\n\n- **SHA-256** is the safe modern default for almost everything.\n- **SHA-384 / SHA-512** are used where longer digests are required (some certificate profiles).\n- **SHA-1** is only for legacy interoperability — do not use it for new security work.\n- **MD5** is not offered here; it's broken.\n\n## Step-by-step\n\n1. Paste or type your text.\n2. Read every algorithm's hex hash instantly.\n3. Copy the one you need.\n\n## Privacy\n\nHashing runs entirely in your browser via the Web Crypto API. Nothing is uploaded.`,
+  },
+  "/developer-tools/color-converter": {
+    title: "Color Converter — HEX, RGB, HSL Free Online",
+    metaDescription: "Convert colors between HEX, RGB, and HSL formats with a live preview. Free online color converter — no signup, instant conversion.",
+    keyword: "color converter",
+    intro: [
+      "Convert any color between HEX, RGB, and HSL with a live swatch preview. Great for design systems, CSS, and quick color tweaks.",
+      "Everything runs in your browser — no signup, no tracking.",
+    ],
+    features: [
+      "HEX ⇄ RGB ⇄ HSL in one place",
+      "Live color swatch preview",
+      "One-click copy of any format",
+    ],
+    faqs: [
+      { q: "Does it support alpha channels?", a: "Yes — 8-digit HEX and rgba/hsla formats include alpha." },
+      { q: "Which format should I use in CSS?", a: "HEX is compact for solid colors, HSL is easiest to tweak by hand, RGB is best when working with alpha or JS." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup and no daily limit." },
+      { q: "Do I need an account?", a: "No — start converting immediately." },
+    ],
+    guide: `## Why convert colors\n\nDesign tools, code editors, and brand guides all speak different color dialects. HEX is compact and everywhere in CSS. RGB is easiest to reason about when compositing. HSL lets you nudge hue, saturation, or lightness independently — perfect for building color scales.\n\n## Step-by-step\n\n1. Type or paste a color in any format.\n2. Every other format updates instantly.\n3. Copy the one your tool expects.\n\n## Tips\n\n- **Build scales in HSL.** Fix hue and saturation, vary lightness — you get an aesthetically consistent ramp.\n- **Use 3-digit HEX only for round numbers.** \`#f0a\` is easy; \`#f2a4b7\` needs the full 6.\n- **Watch alpha handling.** Not every parser accepts 8-digit HEX. Fall back to \`rgba()\` when in doubt.\n\n## Privacy\n\nConversion runs in your browser. Nothing uploads.`,
+  },
+  "/developer-tools/lorem-ipsum-generator": {
+    title: "Lorem Ipsum Generator — Free Placeholder Text",
+    metaDescription: "Generate Lorem Ipsum placeholder text by paragraphs, sentences, or words. Free, no signup — copy clean dummy text for mockups instantly.",
+    keyword: "Lorem Ipsum generator",
+    intro: [
+      "Generate as much Lorem Ipsum as you need — by paragraph, sentence, or word count.",
+      "Perfect for wireframes, mockups, and copy-length testing. No signup, works in your browser.",
+    ],
+    features: [
+      "Paragraphs, sentences, or words",
+      "Classic 'Lorem ipsum dolor sit amet' start (optional)",
+      "One-click copy",
+    ],
+    faqs: [
+      { q: "What is Lorem Ipsum?", a: "It's scrambled Latin text used as placeholder copy since the 1500s. It looks like real prose without distracting from the design." },
+      { q: "Why not just use English placeholder text?", a: "Real words tempt reviewers to read them. Lorem Ipsum keeps attention on layout, typography, and hierarchy." },
+      { q: "Is this tool really free?", a: "Yes — completely free, no signup." },
+      { q: "Do I need an account?", a: "No — generate as much as you need instantly." },
+    ],
+    guide: `## What Lorem Ipsum is\n\nLorem Ipsum is dummy text that has been the industry-standard filler since the 1500s. It gives designers realistic paragraph shapes without the distraction of readable content.\n\n## Step-by-step\n\n1. Pick paragraphs, sentences, or words.\n2. Enter how many you need.\n3. Copy the generated text into your design.\n\n## When to use it\n\n- Wireframes and design comps.\n- Testing that your layout survives realistic copy lengths.\n- Showing a client what a page will feel like before final copy exists.\n\n## Privacy\n\nGeneration runs entirely in your browser.`,
+  },
+  "/developer-tools/regex-tester": {
+    title: "Regex Tester — Test Regular Expressions Online Free",
+    metaDescription: "Test regex patterns against sample text with live match highlighting and groups. Free online regex tester — no signup, in-browser.",
+    keyword: "regex tester",
+    intro: [
+      "Test a JavaScript regular expression against sample text and see every match, group, and index highlighted live.",
+      "Runs in your browser using the native RegExp engine — nothing uploaded.",
+    ],
+    features: [
+      "Live match highlighting",
+      "Named and numbered capture groups",
+      "Standard flags (g, i, m, s, u, y)",
+    ],
+    faqs: [
+      { q: "Which regex flavor is this?", a: "JavaScript's native RegExp (ECMAScript). Most common patterns match PCRE, but a few features differ." },
+      { q: "Can it hang my browser?", a: "A truly catastrophic pattern can. Add specificity (anchors, non-greedy quantifiers) if a run takes more than a second." },
+      { q: "Is this tool really free?", a: "Yes — free, no signup." },
+      { q: "Do I need an account?", a: "No — start testing immediately." },
+    ],
+    guide: `## What a regex tester does\n\nA regex tester lets you write a pattern, paste sample text, and instantly see every match, capture group, and start/end index. It replaces the write-run-guess-fix loop with a live preview.\n\n## Step-by-step\n\n1. Enter a pattern and flags.\n2. Paste sample text.\n3. Read the highlighted matches and inspect any captured groups.\n\n## Tips\n\n- **Prefer non-greedy quantifiers** (\`.*?\`) unless you really want the longest match.\n- **Anchor your patterns** (\`^\`, \`$\`, \`\\\\b\`) to avoid accidental matches.\n- **Test edge cases** — empty input, unicode, very long strings — before shipping the pattern to production.\n\n## Privacy\n\nAll matching runs in your browser.`,
+  },
+  "/developer-tools/timestamp-converter": {
+    title: "Unix Timestamp Converter — Free Online Date Tool",
+    metaDescription: "Convert Unix timestamps to human dates and back, in UTC or local time. Free online timestamp converter — no signup, instant.",
+    keyword: "Unix timestamp converter",
+    intro: [
+      "Convert Unix timestamps (seconds or milliseconds) to human-readable dates in UTC and local time — and go the other way, from date to timestamp.",
+      "Runs in your browser, updates live, no signup.",
+    ],
+    features: [
+      "Seconds and milliseconds supported",
+      "UTC and local time side by side",
+      "Live 'now' timestamp",
+    ],
+    faqs: [
+      { q: "What is a Unix timestamp?", a: "The number of seconds since 1970-01-01 UTC. Milliseconds are the same but ×1000, used by JavaScript's Date." },
+      { q: "How do I know if my timestamp is seconds or milliseconds?", a: "10 digits ≈ seconds (year ~2001-2286). 13 digits ≈ milliseconds. This tool auto-detects." },
+      { q: "Is this tool really free?", a: "Yes — free, no signup." },
+      { q: "Do I need an account?", a: "No — convert immediately." },
+    ],
+    guide: `## Why timestamps matter\n\nEvery API, log line, and database column dealing with time uses either a Unix timestamp or an ISO date string. Converting between them by hand is error-prone, especially across time zones.\n\n## Step-by-step\n\n1. Paste a timestamp (seconds or milliseconds) or type a date.\n2. See the equivalent representation in UTC and local time.\n3. Copy the format you need.\n\n## Tips\n\n- **Store in UTC.** Convert to local time only when displaying to a user.\n- **ISO 8601** (\`2026-07-16T12:00:00Z\`) is the safest string format — unambiguous and sortable.\n- **Beware year-2038.** 32-bit signed second-based timestamps overflow in January 2038. Modern systems use 64-bit.\n\n## Privacy\n\nAll conversion runs in your browser.`,
+  },
+  "/developer-tools/slug-generator": {
+    title: "Slug Generator — URL-Friendly Slugs Free Online",
+    metaDescription: "Turn any title into a clean, URL-friendly slug. Free online slug generator — handles unicode, punctuation, and spaces — no signup.",
+    keyword: "slug generator",
+    intro: [
+      "Turn any title, sentence, or filename into a clean URL slug — lowercase, hyphen-separated, safe for URLs and filesystems.",
+      "Handles unicode, accents, and punctuation. Runs in your browser.",
+    ],
+    features: [
+      "Lowercase, hyphen-separated output",
+      "Removes accents and non-URL characters",
+      "One-click copy",
+    ],
+    faqs: [
+      { q: "Are slugs important for SEO?", a: "Yes. A short, keyword-rich slug is easier for both users and search engines to read than a numeric ID." },
+      { q: "Should slugs include stop words?", a: "Usually drop 'a', 'the', 'of' unless they change meaning. Shorter slugs perform better." },
+      { q: "Is this tool really free?", a: "Yes — free, no signup." },
+      { q: "Do I need an account?", a: "No — start immediately." },
+    ],
+    guide: `## What a slug is\n\nA slug is the human-readable last piece of a URL — e.g. \`/blog/how-to-make-money-online\`. Good slugs are short, lowercase, hyphen-separated, and reflect the page topic.\n\n## Step-by-step\n\n1. Paste a title.\n2. Copy the generated slug.\n3. Use it in your URL, filename, or ID.\n\n## Tips\n\n- **Keep it under ~60 characters.** Long slugs get truncated in search results.\n- **Use hyphens, not underscores.** Google treats hyphens as word separators.\n- **Never change published slugs** without a redirect — you'll lose links and rankings.\n\n## Privacy\n\nRuns in your browser. Nothing is uploaded.`,
+  },
+  "/developer-tools/text-diff": {
+    title: "Text Diff Checker — Compare Two Texts Free Online",
+    metaDescription: "Compare two blocks of text and see added, removed, and unchanged lines highlighted. Free online text diff checker — no signup.",
+    keyword: "text diff checker",
+    intro: [
+      "Compare two blocks of text line by line and see exactly what changed — added, removed, or unchanged.",
+      "Great for reviewing edits, config diffs, or copy revisions. Runs in your browser.",
+    ],
+    features: [
+      "Line-by-line comparison",
+      "Added / removed / unchanged highlighting",
+      "Handles code, prose, or config",
+    ],
+    faqs: [
+      { q: "Does it detect word-level changes?", a: "This diff is line-based. For word-level changes, split your text so each word is on its own line, or use a code editor's built-in diff." },
+      { q: "Is my text uploaded?", a: "No. Everything is compared locally in your browser." },
+      { q: "Is this tool really free?", a: "Yes — free, no signup." },
+      { q: "Do I need an account?", a: "No — start comparing immediately." },
+    ],
+    guide: `## Why diff text\n\nWhether you're reviewing an edited draft, comparing two config files, or checking what a coworker changed, a diff shows the exact deltas so you don't have to eyeball two long documents.\n\n## Step-by-step\n\n1. Paste the original text on the left.\n2. Paste the new text on the right.\n3. Read the highlighted result — green for added, red for removed.\n\n## Tips\n\n- **Normalize line endings** before diffing files from different operating systems.\n- **Trim trailing whitespace** if you only care about content changes.\n- **Use a code editor's diff** for large multi-file diffs — this tool is for quick two-block comparisons.\n\n## Privacy\n\nEverything runs in your browser.`,
+  },
+  "/developer-tools/number-base-converter": {
+    title: "Number Base Converter — Binary, Octal, Hex Free",
+    metaDescription: "Convert numbers between binary, octal, decimal, and hexadecimal in one step. Free online number base converter — instant, no signup.",
+    keyword: "number base converter",
+    intro: [
+      "Convert any integer between binary (base-2), octal (base-8), decimal (base-10), and hexadecimal (base-16) in one step.",
+      "Ideal for low-level debugging, bitmasks, and color values. Runs in your browser.",
+    ],
+    features: [
+      "Binary, octal, decimal, hex — all at once",
+      "Handles arbitrary-length integers",
+      "One-click copy",
+    ],
+    faqs: [
+      { q: "Does it support negative numbers?", a: "Decimal supports negatives. Binary/hex output is unsigned — use two's-complement if you need signed representation." },
+      { q: "Are prefixes required?", a: "No. The tool auto-detects the base from the field you type in." },
+      { q: "Is this tool really free?", a: "Yes — free, no signup." },
+      { q: "Do I need an account?", a: "No — start converting immediately." },
+    ],
+    guide: `## Number bases explained\n\nComputers count in binary (base-2). Programmers use hex (base-16) as a compact way to read binary — every hex digit maps to exactly 4 bits. Octal (base-8) shows up in Unix file permissions. Decimal is what humans use.\n\n## Step-by-step\n\n1. Type a value into any base's field.\n2. Every other base updates instantly.\n3. Copy the representation you need.\n\n## Tips\n\n- **Color codes are hex.** \`#ff8800\` = R=255, G=136, B=0.\n- **File permissions are octal.** \`0755\` = rwxr-xr-x.\n- **Bit flags in hex** are easier to read than long binary strings.\n\n## Privacy\n\nAll conversion runs in your browser.`,
+  },
 };

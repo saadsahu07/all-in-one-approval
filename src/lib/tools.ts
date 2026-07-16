@@ -29,6 +29,9 @@ import {
 import {
   Facebook, Linkedin, Video, Megaphone, ShoppingBag, IdCard, Target,
 } from "lucide-react";
+import {
+  Palette, Regex, Clock, GitCompare, Slash,
+} from "lucide-react";
 
 /** Single tool entry (a leaf page under a category). */
 export interface ToolDef {
@@ -132,6 +135,14 @@ export const categories: CategoryDef[] = [
       ["password-generator", "Password Generator", "Create strong random passwords instantly.", KeyRound],
       ["uuid-generator", "UUID Generator", "Generate v4 UUIDs in bulk with one click.", Fingerprint],
       ["jwt-decoder", "JWT Decoder", "Decode a JWT to inspect its header and payload.", ShieldCheck],
+      ["hash-generator", "Hash Generator", "Compute SHA-1, SHA-256, SHA-384, and SHA-512 hashes.", Hash],
+      ["color-converter", "Color Converter", "Convert colors between HEX, RGB, and HSL formats.", Palette],
+      ["lorem-ipsum-generator", "Lorem Ipsum Generator", "Generate placeholder Lorem Ipsum paragraphs, sentences, or words.", FileText],
+      ["regex-tester", "Regex Tester", "Test regular expressions against sample text with live matches.", Regex],
+      ["timestamp-converter", "Timestamp Converter", "Convert between Unix timestamps and human-readable dates.", Clock],
+      ["slug-generator", "Slug Generator", "Turn any title into a clean URL-friendly slug.", Slash],
+      ["text-diff", "Text Diff Checker", "Compare two blocks of text and highlight the differences.", GitCompare],
+      ["number-base-converter", "Number Base Converter", "Convert numbers between binary, octal, decimal, and hex.", Binary],
     ]),
   },
   {
