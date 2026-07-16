@@ -71,15 +71,22 @@ import { Route as ContentCreationYoutubeVideoIdeaGeneratorRouteImport } from './
 import { Route as ContentCreationYoutubeTitleGeneratorRouteImport } from './routes/content-creation.youtube-title-generator'
 import { Route as ContentCreationYoutubeThumbnailDownloaderRouteImport } from './routes/content-creation.youtube-thumbnail-downloader'
 import { Route as ContentCreationYoutubeTagGeneratorRouteImport } from './routes/content-creation.youtube-tag-generator'
+import { Route as ContentCreationYoutubeShortsScriptGeneratorRouteImport } from './routes/content-creation.youtube-shorts-script-generator'
 import { Route as ContentCreationYoutubeDescriptionGeneratorRouteImport } from './routes/content-creation.youtube-description-generator'
 import { Route as ContentCreationTweetGeneratorRouteImport } from './routes/content-creation.tweet-generator'
 import { Route as ContentCreationTiktokCaptionGeneratorRouteImport } from './routes/content-creation.tiktok-caption-generator'
+import { Route as ContentCreationSloganGeneratorRouteImport } from './routes/content-creation.slogan-generator'
+import { Route as ContentCreationProductDescriptionGeneratorRouteImport } from './routes/content-creation.product-description-generator'
 import { Route as ContentCreationMetaDescriptionGeneratorRouteImport } from './routes/content-creation.meta-description-generator'
+import { Route as ContentCreationLinkedinPostGeneratorRouteImport } from './routes/content-creation.linkedin-post-generator'
 import { Route as ContentCreationInstagramHashtagGeneratorRouteImport } from './routes/content-creation.instagram-hashtag-generator'
 import { Route as ContentCreationInstagramCaptionGeneratorRouteImport } from './routes/content-creation.instagram-caption-generator'
+import { Route as ContentCreationFacebookPostGeneratorRouteImport } from './routes/content-creation.facebook-post-generator'
 import { Route as ContentCreationEmailSubjectLineGeneratorRouteImport } from './routes/content-creation.email-subject-line-generator'
 import { Route as ContentCreationBlogTitleGeneratorRouteImport } from './routes/content-creation.blog-title-generator'
 import { Route as ContentCreationBlogOutlineGeneratorRouteImport } from './routes/content-creation.blog-outline-generator'
+import { Route as ContentCreationBioGeneratorRouteImport } from './routes/content-creation.bio-generator'
+import { Route as ContentCreationAdCopyGeneratorRouteImport } from './routes/content-creation.ad-copy-generator'
 import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
 import { Route as CalculatorsTipRouteImport } from './routes/calculators.tip'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
@@ -421,6 +428,12 @@ const ContentCreationYoutubeTagGeneratorRoute =
     path: '/content-creation/youtube-tag-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ContentCreationYoutubeShortsScriptGeneratorRoute =
+  ContentCreationYoutubeShortsScriptGeneratorRouteImport.update({
+    id: '/content-creation/youtube-shorts-script-generator',
+    path: '/content-creation/youtube-shorts-script-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContentCreationYoutubeDescriptionGeneratorRoute =
   ContentCreationYoutubeDescriptionGeneratorRouteImport.update({
     id: '/content-creation/youtube-description-generator',
@@ -439,10 +452,28 @@ const ContentCreationTiktokCaptionGeneratorRoute =
     path: '/content-creation/tiktok-caption-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ContentCreationSloganGeneratorRoute =
+  ContentCreationSloganGeneratorRouteImport.update({
+    id: '/content-creation/slogan-generator',
+    path: '/content-creation/slogan-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationProductDescriptionGeneratorRoute =
+  ContentCreationProductDescriptionGeneratorRouteImport.update({
+    id: '/content-creation/product-description-generator',
+    path: '/content-creation/product-description-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContentCreationMetaDescriptionGeneratorRoute =
   ContentCreationMetaDescriptionGeneratorRouteImport.update({
     id: '/content-creation/meta-description-generator',
     path: '/content-creation/meta-description-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationLinkedinPostGeneratorRoute =
+  ContentCreationLinkedinPostGeneratorRouteImport.update({
+    id: '/content-creation/linkedin-post-generator',
+    path: '/content-creation/linkedin-post-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ContentCreationInstagramHashtagGeneratorRoute =
@@ -455,6 +486,12 @@ const ContentCreationInstagramCaptionGeneratorRoute =
   ContentCreationInstagramCaptionGeneratorRouteImport.update({
     id: '/content-creation/instagram-caption-generator',
     path: '/content-creation/instagram-caption-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationFacebookPostGeneratorRoute =
+  ContentCreationFacebookPostGeneratorRouteImport.update({
+    id: '/content-creation/facebook-post-generator',
+    path: '/content-creation/facebook-post-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ContentCreationEmailSubjectLineGeneratorRoute =
@@ -473,6 +510,18 @@ const ContentCreationBlogOutlineGeneratorRoute =
   ContentCreationBlogOutlineGeneratorRouteImport.update({
     id: '/content-creation/blog-outline-generator',
     path: '/content-creation/blog-outline-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationBioGeneratorRoute =
+  ContentCreationBioGeneratorRouteImport.update({
+    id: '/content-creation/bio-generator',
+    path: '/content-creation/bio-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationAdCopyGeneratorRoute =
+  ContentCreationAdCopyGeneratorRouteImport.update({
+    id: '/content-creation/ad-copy-generator',
+    path: '/content-creation/ad-copy-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CalculatorsWeightRoute = CalculatorsWeightRouteImport.update({
@@ -565,15 +614,22 @@ export interface FileRoutesByFullPath {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/ad-copy-generator': typeof ContentCreationAdCopyGeneratorRoute
+  '/content-creation/bio-generator': typeof ContentCreationBioGeneratorRoute
   '/content-creation/blog-outline-generator': typeof ContentCreationBlogOutlineGeneratorRoute
   '/content-creation/blog-title-generator': typeof ContentCreationBlogTitleGeneratorRoute
   '/content-creation/email-subject-line-generator': typeof ContentCreationEmailSubjectLineGeneratorRoute
+  '/content-creation/facebook-post-generator': typeof ContentCreationFacebookPostGeneratorRoute
   '/content-creation/instagram-caption-generator': typeof ContentCreationInstagramCaptionGeneratorRoute
   '/content-creation/instagram-hashtag-generator': typeof ContentCreationInstagramHashtagGeneratorRoute
+  '/content-creation/linkedin-post-generator': typeof ContentCreationLinkedinPostGeneratorRoute
   '/content-creation/meta-description-generator': typeof ContentCreationMetaDescriptionGeneratorRoute
+  '/content-creation/product-description-generator': typeof ContentCreationProductDescriptionGeneratorRoute
+  '/content-creation/slogan-generator': typeof ContentCreationSloganGeneratorRoute
   '/content-creation/tiktok-caption-generator': typeof ContentCreationTiktokCaptionGeneratorRoute
   '/content-creation/tweet-generator': typeof ContentCreationTweetGeneratorRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
+  '/content-creation/youtube-shorts-script-generator': typeof ContentCreationYoutubeShortsScriptGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
@@ -651,15 +707,22 @@ export interface FileRoutesByTo {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/ad-copy-generator': typeof ContentCreationAdCopyGeneratorRoute
+  '/content-creation/bio-generator': typeof ContentCreationBioGeneratorRoute
   '/content-creation/blog-outline-generator': typeof ContentCreationBlogOutlineGeneratorRoute
   '/content-creation/blog-title-generator': typeof ContentCreationBlogTitleGeneratorRoute
   '/content-creation/email-subject-line-generator': typeof ContentCreationEmailSubjectLineGeneratorRoute
+  '/content-creation/facebook-post-generator': typeof ContentCreationFacebookPostGeneratorRoute
   '/content-creation/instagram-caption-generator': typeof ContentCreationInstagramCaptionGeneratorRoute
   '/content-creation/instagram-hashtag-generator': typeof ContentCreationInstagramHashtagGeneratorRoute
+  '/content-creation/linkedin-post-generator': typeof ContentCreationLinkedinPostGeneratorRoute
   '/content-creation/meta-description-generator': typeof ContentCreationMetaDescriptionGeneratorRoute
+  '/content-creation/product-description-generator': typeof ContentCreationProductDescriptionGeneratorRoute
+  '/content-creation/slogan-generator': typeof ContentCreationSloganGeneratorRoute
   '/content-creation/tiktok-caption-generator': typeof ContentCreationTiktokCaptionGeneratorRoute
   '/content-creation/tweet-generator': typeof ContentCreationTweetGeneratorRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
+  '/content-creation/youtube-shorts-script-generator': typeof ContentCreationYoutubeShortsScriptGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
@@ -738,15 +801,22 @@ export interface FileRoutesById {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/ad-copy-generator': typeof ContentCreationAdCopyGeneratorRoute
+  '/content-creation/bio-generator': typeof ContentCreationBioGeneratorRoute
   '/content-creation/blog-outline-generator': typeof ContentCreationBlogOutlineGeneratorRoute
   '/content-creation/blog-title-generator': typeof ContentCreationBlogTitleGeneratorRoute
   '/content-creation/email-subject-line-generator': typeof ContentCreationEmailSubjectLineGeneratorRoute
+  '/content-creation/facebook-post-generator': typeof ContentCreationFacebookPostGeneratorRoute
   '/content-creation/instagram-caption-generator': typeof ContentCreationInstagramCaptionGeneratorRoute
   '/content-creation/instagram-hashtag-generator': typeof ContentCreationInstagramHashtagGeneratorRoute
+  '/content-creation/linkedin-post-generator': typeof ContentCreationLinkedinPostGeneratorRoute
   '/content-creation/meta-description-generator': typeof ContentCreationMetaDescriptionGeneratorRoute
+  '/content-creation/product-description-generator': typeof ContentCreationProductDescriptionGeneratorRoute
+  '/content-creation/slogan-generator': typeof ContentCreationSloganGeneratorRoute
   '/content-creation/tiktok-caption-generator': typeof ContentCreationTiktokCaptionGeneratorRoute
   '/content-creation/tweet-generator': typeof ContentCreationTweetGeneratorRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
+  '/content-creation/youtube-shorts-script-generator': typeof ContentCreationYoutubeShortsScriptGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
   '/content-creation/youtube-title-generator': typeof ContentCreationYoutubeTitleGeneratorRoute
@@ -826,15 +896,22 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/tip'
     | '/calculators/weight'
+    | '/content-creation/ad-copy-generator'
+    | '/content-creation/bio-generator'
     | '/content-creation/blog-outline-generator'
     | '/content-creation/blog-title-generator'
     | '/content-creation/email-subject-line-generator'
+    | '/content-creation/facebook-post-generator'
     | '/content-creation/instagram-caption-generator'
     | '/content-creation/instagram-hashtag-generator'
+    | '/content-creation/linkedin-post-generator'
     | '/content-creation/meta-description-generator'
+    | '/content-creation/product-description-generator'
+    | '/content-creation/slogan-generator'
     | '/content-creation/tiktok-caption-generator'
     | '/content-creation/tweet-generator'
     | '/content-creation/youtube-description-generator'
+    | '/content-creation/youtube-shorts-script-generator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
@@ -912,15 +989,22 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/tip'
     | '/calculators/weight'
+    | '/content-creation/ad-copy-generator'
+    | '/content-creation/bio-generator'
     | '/content-creation/blog-outline-generator'
     | '/content-creation/blog-title-generator'
     | '/content-creation/email-subject-line-generator'
+    | '/content-creation/facebook-post-generator'
     | '/content-creation/instagram-caption-generator'
     | '/content-creation/instagram-hashtag-generator'
+    | '/content-creation/linkedin-post-generator'
     | '/content-creation/meta-description-generator'
+    | '/content-creation/product-description-generator'
+    | '/content-creation/slogan-generator'
     | '/content-creation/tiktok-caption-generator'
     | '/content-creation/tweet-generator'
     | '/content-creation/youtube-description-generator'
+    | '/content-creation/youtube-shorts-script-generator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
@@ -998,15 +1082,22 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/tip'
     | '/calculators/weight'
+    | '/content-creation/ad-copy-generator'
+    | '/content-creation/bio-generator'
     | '/content-creation/blog-outline-generator'
     | '/content-creation/blog-title-generator'
     | '/content-creation/email-subject-line-generator'
+    | '/content-creation/facebook-post-generator'
     | '/content-creation/instagram-caption-generator'
     | '/content-creation/instagram-hashtag-generator'
+    | '/content-creation/linkedin-post-generator'
     | '/content-creation/meta-description-generator'
+    | '/content-creation/product-description-generator'
+    | '/content-creation/slogan-generator'
     | '/content-creation/tiktok-caption-generator'
     | '/content-creation/tweet-generator'
     | '/content-creation/youtube-description-generator'
+    | '/content-creation/youtube-shorts-script-generator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
     | '/content-creation/youtube-title-generator'
@@ -1085,15 +1176,22 @@ export interface RootRouteChildren {
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
   CalculatorsTipRoute: typeof CalculatorsTipRoute
   CalculatorsWeightRoute: typeof CalculatorsWeightRoute
+  ContentCreationAdCopyGeneratorRoute: typeof ContentCreationAdCopyGeneratorRoute
+  ContentCreationBioGeneratorRoute: typeof ContentCreationBioGeneratorRoute
   ContentCreationBlogOutlineGeneratorRoute: typeof ContentCreationBlogOutlineGeneratorRoute
   ContentCreationBlogTitleGeneratorRoute: typeof ContentCreationBlogTitleGeneratorRoute
   ContentCreationEmailSubjectLineGeneratorRoute: typeof ContentCreationEmailSubjectLineGeneratorRoute
+  ContentCreationFacebookPostGeneratorRoute: typeof ContentCreationFacebookPostGeneratorRoute
   ContentCreationInstagramCaptionGeneratorRoute: typeof ContentCreationInstagramCaptionGeneratorRoute
   ContentCreationInstagramHashtagGeneratorRoute: typeof ContentCreationInstagramHashtagGeneratorRoute
+  ContentCreationLinkedinPostGeneratorRoute: typeof ContentCreationLinkedinPostGeneratorRoute
   ContentCreationMetaDescriptionGeneratorRoute: typeof ContentCreationMetaDescriptionGeneratorRoute
+  ContentCreationProductDescriptionGeneratorRoute: typeof ContentCreationProductDescriptionGeneratorRoute
+  ContentCreationSloganGeneratorRoute: typeof ContentCreationSloganGeneratorRoute
   ContentCreationTiktokCaptionGeneratorRoute: typeof ContentCreationTiktokCaptionGeneratorRoute
   ContentCreationTweetGeneratorRoute: typeof ContentCreationTweetGeneratorRoute
   ContentCreationYoutubeDescriptionGeneratorRoute: typeof ContentCreationYoutubeDescriptionGeneratorRoute
+  ContentCreationYoutubeShortsScriptGeneratorRoute: typeof ContentCreationYoutubeShortsScriptGeneratorRoute
   ContentCreationYoutubeTagGeneratorRoute: typeof ContentCreationYoutubeTagGeneratorRoute
   ContentCreationYoutubeThumbnailDownloaderRoute: typeof ContentCreationYoutubeThumbnailDownloaderRoute
   ContentCreationYoutubeTitleGeneratorRoute: typeof ContentCreationYoutubeTitleGeneratorRoute
@@ -1586,6 +1684,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContentCreationYoutubeTagGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/content-creation/youtube-shorts-script-generator': {
+      id: '/content-creation/youtube-shorts-script-generator'
+      path: '/content-creation/youtube-shorts-script-generator'
+      fullPath: '/content-creation/youtube-shorts-script-generator'
+      preLoaderRoute: typeof ContentCreationYoutubeShortsScriptGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/content-creation/youtube-description-generator': {
       id: '/content-creation/youtube-description-generator'
       path: '/content-creation/youtube-description-generator'
@@ -1607,11 +1712,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContentCreationTiktokCaptionGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/content-creation/slogan-generator': {
+      id: '/content-creation/slogan-generator'
+      path: '/content-creation/slogan-generator'
+      fullPath: '/content-creation/slogan-generator'
+      preLoaderRoute: typeof ContentCreationSloganGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/product-description-generator': {
+      id: '/content-creation/product-description-generator'
+      path: '/content-creation/product-description-generator'
+      fullPath: '/content-creation/product-description-generator'
+      preLoaderRoute: typeof ContentCreationProductDescriptionGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/content-creation/meta-description-generator': {
       id: '/content-creation/meta-description-generator'
       path: '/content-creation/meta-description-generator'
       fullPath: '/content-creation/meta-description-generator'
       preLoaderRoute: typeof ContentCreationMetaDescriptionGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/linkedin-post-generator': {
+      id: '/content-creation/linkedin-post-generator'
+      path: '/content-creation/linkedin-post-generator'
+      fullPath: '/content-creation/linkedin-post-generator'
+      preLoaderRoute: typeof ContentCreationLinkedinPostGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/content-creation/instagram-hashtag-generator': {
@@ -1626,6 +1752,13 @@ declare module '@tanstack/react-router' {
       path: '/content-creation/instagram-caption-generator'
       fullPath: '/content-creation/instagram-caption-generator'
       preLoaderRoute: typeof ContentCreationInstagramCaptionGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/facebook-post-generator': {
+      id: '/content-creation/facebook-post-generator'
+      path: '/content-creation/facebook-post-generator'
+      fullPath: '/content-creation/facebook-post-generator'
+      preLoaderRoute: typeof ContentCreationFacebookPostGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/content-creation/email-subject-line-generator': {
@@ -1647,6 +1780,20 @@ declare module '@tanstack/react-router' {
       path: '/content-creation/blog-outline-generator'
       fullPath: '/content-creation/blog-outline-generator'
       preLoaderRoute: typeof ContentCreationBlogOutlineGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/bio-generator': {
+      id: '/content-creation/bio-generator'
+      path: '/content-creation/bio-generator'
+      fullPath: '/content-creation/bio-generator'
+      preLoaderRoute: typeof ContentCreationBioGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/ad-copy-generator': {
+      id: '/content-creation/ad-copy-generator'
+      path: '/content-creation/ad-copy-generator'
+      fullPath: '/content-creation/ad-copy-generator'
+      preLoaderRoute: typeof ContentCreationAdCopyGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators/weight': {
@@ -1765,23 +1912,34 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
   CalculatorsTipRoute: CalculatorsTipRoute,
   CalculatorsWeightRoute: CalculatorsWeightRoute,
+  ContentCreationAdCopyGeneratorRoute: ContentCreationAdCopyGeneratorRoute,
+  ContentCreationBioGeneratorRoute: ContentCreationBioGeneratorRoute,
   ContentCreationBlogOutlineGeneratorRoute:
     ContentCreationBlogOutlineGeneratorRoute,
   ContentCreationBlogTitleGeneratorRoute:
     ContentCreationBlogTitleGeneratorRoute,
   ContentCreationEmailSubjectLineGeneratorRoute:
     ContentCreationEmailSubjectLineGeneratorRoute,
+  ContentCreationFacebookPostGeneratorRoute:
+    ContentCreationFacebookPostGeneratorRoute,
   ContentCreationInstagramCaptionGeneratorRoute:
     ContentCreationInstagramCaptionGeneratorRoute,
   ContentCreationInstagramHashtagGeneratorRoute:
     ContentCreationInstagramHashtagGeneratorRoute,
+  ContentCreationLinkedinPostGeneratorRoute:
+    ContentCreationLinkedinPostGeneratorRoute,
   ContentCreationMetaDescriptionGeneratorRoute:
     ContentCreationMetaDescriptionGeneratorRoute,
+  ContentCreationProductDescriptionGeneratorRoute:
+    ContentCreationProductDescriptionGeneratorRoute,
+  ContentCreationSloganGeneratorRoute: ContentCreationSloganGeneratorRoute,
   ContentCreationTiktokCaptionGeneratorRoute:
     ContentCreationTiktokCaptionGeneratorRoute,
   ContentCreationTweetGeneratorRoute: ContentCreationTweetGeneratorRoute,
   ContentCreationYoutubeDescriptionGeneratorRoute:
     ContentCreationYoutubeDescriptionGeneratorRoute,
+  ContentCreationYoutubeShortsScriptGeneratorRoute:
+    ContentCreationYoutubeShortsScriptGeneratorRoute,
   ContentCreationYoutubeTagGeneratorRoute:
     ContentCreationYoutubeTagGeneratorRoute,
   ContentCreationYoutubeThumbnailDownloaderRoute:
