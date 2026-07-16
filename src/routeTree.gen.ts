@@ -37,14 +37,24 @@ import { Route as TextToolsCaseConverterRouteImport } from './routes/text-tools.
 import { Route as TextToolsAiSummarizerRouteImport } from './routes/text-tools.ai-summarizer'
 import { Route as PdfToolsWordToPdfRouteImport } from './routes/pdf-tools.word-to-pdf'
 import { Route as PdfToolsUnlockRouteImport } from './routes/pdf-tools.unlock'
+import { Route as PdfToolsTextToPdfRouteImport } from './routes/pdf-tools.text-to-pdf'
 import { Route as PdfToolsSplitRouteImport } from './routes/pdf-tools.split'
 import { Route as PdfToolsRotateRouteImport } from './routes/pdf-tools.rotate'
+import { Route as PdfToolsReversePagesRouteImport } from './routes/pdf-tools.reverse-pages'
+import { Route as PdfToolsRemovePagesRouteImport } from './routes/pdf-tools.remove-pages'
+import { Route as PdfToolsPdfWatermarkRouteImport } from './routes/pdf-tools.pdf-watermark'
 import { Route as PdfToolsPdfToWordRouteImport } from './routes/pdf-tools.pdf-to-word'
+import { Route as PdfToolsPdfToTextRouteImport } from './routes/pdf-tools.pdf-to-text'
 import { Route as PdfToolsPdfToJpgRouteImport } from './routes/pdf-tools.pdf-to-jpg'
+import { Route as PdfToolsPdfNUpRouteImport } from './routes/pdf-tools.pdf-n-up'
+import { Route as PdfToolsPdfMetadataRouteImport } from './routes/pdf-tools.pdf-metadata'
 import { Route as PdfToolsPageNumbersRouteImport } from './routes/pdf-tools.page-numbers'
 import { Route as PdfToolsMergeRouteImport } from './routes/pdf-tools.merge'
 import { Route as PdfToolsJpgToPdfRouteImport } from './routes/pdf-tools.jpg-to-pdf'
+import { Route as PdfToolsExtractPagesRouteImport } from './routes/pdf-tools.extract-pages'
+import { Route as PdfToolsDuplicatePagesRouteImport } from './routes/pdf-tools.duplicate-pages'
 import { Route as PdfToolsCompressRouteImport } from './routes/pdf-tools.compress'
+import { Route as PdfToolsAddBlankPageRouteImport } from './routes/pdf-tools.add-blank-page'
 import { Route as ImageToolsWatermarkRouteImport } from './routes/image-tools.watermark'
 import { Route as ImageToolsRotateRouteImport } from './routes/image-tools.rotate'
 import { Route as ImageToolsResizeRouteImport } from './routes/image-tools.resize'
@@ -101,12 +111,16 @@ import { Route as CalculatorsTipRouteImport } from './routes/calculators.tip'
 import { Route as CalculatorsTimeRouteImport } from './routes/calculators.time'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
 import { Route as CalculatorsSpeedRouteImport } from './routes/calculators.speed'
+import { Route as CalculatorsSimpleInterestRouteImport } from './routes/calculators.simple-interest'
 import { Route as CalculatorsPercentageRouteImport } from './routes/calculators.percentage'
 import { Route as CalculatorsLengthRouteImport } from './routes/calculators.length'
 import { Route as CalculatorsGstVatRouteImport } from './routes/calculators.gst-vat'
 import { Route as CalculatorsEmiRouteImport } from './routes/calculators.emi'
 import { Route as CalculatorsDiscountRouteImport } from './routes/calculators.discount'
+import { Route as CalculatorsDateDifferenceRouteImport } from './routes/calculators.date-difference'
+import { Route as CalculatorsDataStorageRouteImport } from './routes/calculators.data-storage'
 import { Route as CalculatorsCurrencyConverterRouteImport } from './routes/calculators.currency-converter'
+import { Route as CalculatorsCompoundInterestRouteImport } from './routes/calculators.compound-interest'
 import { Route as CalculatorsBmiRouteImport } from './routes/calculators.bmi'
 import { Route as CalculatorsBinaryToDecimalRouteImport } from './routes/calculators.binary-to-decimal'
 import { Route as CalculatorsAreaRouteImport } from './routes/calculators.area'
@@ -255,6 +269,11 @@ const PdfToolsUnlockRoute = PdfToolsUnlockRouteImport.update({
   path: '/pdf-tools/unlock',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PdfToolsTextToPdfRoute = PdfToolsTextToPdfRouteImport.update({
+  id: '/pdf-tools/text-to-pdf',
+  path: '/pdf-tools/text-to-pdf',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PdfToolsSplitRoute = PdfToolsSplitRouteImport.update({
   id: '/pdf-tools/split',
   path: '/pdf-tools/split',
@@ -265,14 +284,44 @@ const PdfToolsRotateRoute = PdfToolsRotateRouteImport.update({
   path: '/pdf-tools/rotate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PdfToolsReversePagesRoute = PdfToolsReversePagesRouteImport.update({
+  id: '/pdf-tools/reverse-pages',
+  path: '/pdf-tools/reverse-pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsRemovePagesRoute = PdfToolsRemovePagesRouteImport.update({
+  id: '/pdf-tools/remove-pages',
+  path: '/pdf-tools/remove-pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsPdfWatermarkRoute = PdfToolsPdfWatermarkRouteImport.update({
+  id: '/pdf-tools/pdf-watermark',
+  path: '/pdf-tools/pdf-watermark',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PdfToolsPdfToWordRoute = PdfToolsPdfToWordRouteImport.update({
   id: '/pdf-tools/pdf-to-word',
   path: '/pdf-tools/pdf-to-word',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PdfToolsPdfToTextRoute = PdfToolsPdfToTextRouteImport.update({
+  id: '/pdf-tools/pdf-to-text',
+  path: '/pdf-tools/pdf-to-text',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PdfToolsPdfToJpgRoute = PdfToolsPdfToJpgRouteImport.update({
   id: '/pdf-tools/pdf-to-jpg',
   path: '/pdf-tools/pdf-to-jpg',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsPdfNUpRoute = PdfToolsPdfNUpRouteImport.update({
+  id: '/pdf-tools/pdf-n-up',
+  path: '/pdf-tools/pdf-n-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsPdfMetadataRoute = PdfToolsPdfMetadataRouteImport.update({
+  id: '/pdf-tools/pdf-metadata',
+  path: '/pdf-tools/pdf-metadata',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PdfToolsPageNumbersRoute = PdfToolsPageNumbersRouteImport.update({
@@ -290,9 +339,24 @@ const PdfToolsJpgToPdfRoute = PdfToolsJpgToPdfRouteImport.update({
   path: '/pdf-tools/jpg-to-pdf',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PdfToolsExtractPagesRoute = PdfToolsExtractPagesRouteImport.update({
+  id: '/pdf-tools/extract-pages',
+  path: '/pdf-tools/extract-pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsDuplicatePagesRoute = PdfToolsDuplicatePagesRouteImport.update({
+  id: '/pdf-tools/duplicate-pages',
+  path: '/pdf-tools/duplicate-pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PdfToolsCompressRoute = PdfToolsCompressRouteImport.update({
   id: '/pdf-tools/compress',
   path: '/pdf-tools/compress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsAddBlankPageRoute = PdfToolsAddBlankPageRouteImport.update({
+  id: '/pdf-tools/add-blank-page',
+  path: '/pdf-tools/add-blank-page',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageToolsWatermarkRoute = ImageToolsWatermarkRouteImport.update({
@@ -613,6 +677,12 @@ const CalculatorsSpeedRoute = CalculatorsSpeedRouteImport.update({
   path: '/calculators/speed',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatorsSimpleInterestRoute =
+  CalculatorsSimpleInterestRouteImport.update({
+    id: '/calculators/simple-interest',
+    path: '/calculators/simple-interest',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CalculatorsPercentageRoute = CalculatorsPercentageRouteImport.update({
   id: '/calculators/percentage',
   path: '/calculators/percentage',
@@ -638,10 +708,27 @@ const CalculatorsDiscountRoute = CalculatorsDiscountRouteImport.update({
   path: '/calculators/discount',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatorsDateDifferenceRoute =
+  CalculatorsDateDifferenceRouteImport.update({
+    id: '/calculators/date-difference',
+    path: '/calculators/date-difference',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CalculatorsDataStorageRoute = CalculatorsDataStorageRouteImport.update({
+  id: '/calculators/data-storage',
+  path: '/calculators/data-storage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsCurrencyConverterRoute =
   CalculatorsCurrencyConverterRouteImport.update({
     id: '/calculators/currency-converter',
     path: '/calculators/currency-converter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CalculatorsCompoundInterestRoute =
+  CalculatorsCompoundInterestRouteImport.update({
+    id: '/calculators/compound-interest',
+    path: '/calculators/compound-interest',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CalculatorsBmiRoute = CalculatorsBmiRouteImport.update({
@@ -685,12 +772,16 @@ export interface FileRoutesByFullPath {
   '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/compound-interest': typeof CalculatorsCompoundInterestRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/data-storage': typeof CalculatorsDataStorageRoute
+  '/calculators/date-difference': typeof CalculatorsDateDifferenceRoute
   '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/simple-interest': typeof CalculatorsSimpleInterestRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/time': typeof CalculatorsTimeRoute
@@ -747,14 +838,24 @@ export interface FileRoutesByFullPath {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
+  '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
+  '/pdf-tools/extract-pages': typeof PdfToolsExtractPagesRoute
   '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-metadata': typeof PdfToolsPdfMetadataRoute
+  '/pdf-tools/pdf-n-up': typeof PdfToolsPdfNUpRoute
   '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
+  '/pdf-tools/pdf-to-text': typeof PdfToolsPdfToTextRoute
   '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
+  '/pdf-tools/pdf-watermark': typeof PdfToolsPdfWatermarkRoute
+  '/pdf-tools/remove-pages': typeof PdfToolsRemovePagesRoute
+  '/pdf-tools/reverse-pages': typeof PdfToolsReversePagesRoute
   '/pdf-tools/rotate': typeof PdfToolsRotateRoute
   '/pdf-tools/split': typeof PdfToolsSplitRoute
+  '/pdf-tools/text-to-pdf': typeof PdfToolsTextToPdfRoute
   '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
   '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
@@ -790,12 +891,16 @@ export interface FileRoutesByTo {
   '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/compound-interest': typeof CalculatorsCompoundInterestRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/data-storage': typeof CalculatorsDataStorageRoute
+  '/calculators/date-difference': typeof CalculatorsDateDifferenceRoute
   '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/simple-interest': typeof CalculatorsSimpleInterestRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/time': typeof CalculatorsTimeRoute
@@ -852,14 +957,24 @@ export interface FileRoutesByTo {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
+  '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
+  '/pdf-tools/extract-pages': typeof PdfToolsExtractPagesRoute
   '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-metadata': typeof PdfToolsPdfMetadataRoute
+  '/pdf-tools/pdf-n-up': typeof PdfToolsPdfNUpRoute
   '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
+  '/pdf-tools/pdf-to-text': typeof PdfToolsPdfToTextRoute
   '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
+  '/pdf-tools/pdf-watermark': typeof PdfToolsPdfWatermarkRoute
+  '/pdf-tools/remove-pages': typeof PdfToolsRemovePagesRoute
+  '/pdf-tools/reverse-pages': typeof PdfToolsReversePagesRoute
   '/pdf-tools/rotate': typeof PdfToolsRotateRoute
   '/pdf-tools/split': typeof PdfToolsSplitRoute
+  '/pdf-tools/text-to-pdf': typeof PdfToolsTextToPdfRoute
   '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
   '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
@@ -896,12 +1011,16 @@ export interface FileRoutesById {
   '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/compound-interest': typeof CalculatorsCompoundInterestRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
+  '/calculators/data-storage': typeof CalculatorsDataStorageRoute
+  '/calculators/date-difference': typeof CalculatorsDateDifferenceRoute
   '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/simple-interest': typeof CalculatorsSimpleInterestRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/time': typeof CalculatorsTimeRoute
@@ -958,14 +1077,24 @@ export interface FileRoutesById {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
+  '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
+  '/pdf-tools/extract-pages': typeof PdfToolsExtractPagesRoute
   '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-metadata': typeof PdfToolsPdfMetadataRoute
+  '/pdf-tools/pdf-n-up': typeof PdfToolsPdfNUpRoute
   '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
+  '/pdf-tools/pdf-to-text': typeof PdfToolsPdfToTextRoute
   '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
+  '/pdf-tools/pdf-watermark': typeof PdfToolsPdfWatermarkRoute
+  '/pdf-tools/remove-pages': typeof PdfToolsRemovePagesRoute
+  '/pdf-tools/reverse-pages': typeof PdfToolsReversePagesRoute
   '/pdf-tools/rotate': typeof PdfToolsRotateRoute
   '/pdf-tools/split': typeof PdfToolsSplitRoute
+  '/pdf-tools/text-to-pdf': typeof PdfToolsTextToPdfRoute
   '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
   '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
@@ -1003,12 +1132,16 @@ export interface FileRouteTypes {
     | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
+    | '/calculators/compound-interest'
     | '/calculators/currency-converter'
+    | '/calculators/data-storage'
+    | '/calculators/date-difference'
     | '/calculators/discount'
     | '/calculators/emi'
     | '/calculators/gst-vat'
     | '/calculators/length'
     | '/calculators/percentage'
+    | '/calculators/simple-interest'
     | '/calculators/speed'
     | '/calculators/temperature'
     | '/calculators/time'
@@ -1065,14 +1198,24 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/pdf-tools/add-blank-page'
     | '/pdf-tools/compress'
+    | '/pdf-tools/duplicate-pages'
+    | '/pdf-tools/extract-pages'
     | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
     | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-metadata'
+    | '/pdf-tools/pdf-n-up'
     | '/pdf-tools/pdf-to-jpg'
+    | '/pdf-tools/pdf-to-text'
     | '/pdf-tools/pdf-to-word'
+    | '/pdf-tools/pdf-watermark'
+    | '/pdf-tools/remove-pages'
+    | '/pdf-tools/reverse-pages'
     | '/pdf-tools/rotate'
     | '/pdf-tools/split'
+    | '/pdf-tools/text-to-pdf'
     | '/pdf-tools/unlock'
     | '/pdf-tools/word-to-pdf'
     | '/text-tools/ai-summarizer'
@@ -1108,12 +1251,16 @@ export interface FileRouteTypes {
     | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
+    | '/calculators/compound-interest'
     | '/calculators/currency-converter'
+    | '/calculators/data-storage'
+    | '/calculators/date-difference'
     | '/calculators/discount'
     | '/calculators/emi'
     | '/calculators/gst-vat'
     | '/calculators/length'
     | '/calculators/percentage'
+    | '/calculators/simple-interest'
     | '/calculators/speed'
     | '/calculators/temperature'
     | '/calculators/time'
@@ -1170,14 +1317,24 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/pdf-tools/add-blank-page'
     | '/pdf-tools/compress'
+    | '/pdf-tools/duplicate-pages'
+    | '/pdf-tools/extract-pages'
     | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
     | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-metadata'
+    | '/pdf-tools/pdf-n-up'
     | '/pdf-tools/pdf-to-jpg'
+    | '/pdf-tools/pdf-to-text'
     | '/pdf-tools/pdf-to-word'
+    | '/pdf-tools/pdf-watermark'
+    | '/pdf-tools/remove-pages'
+    | '/pdf-tools/reverse-pages'
     | '/pdf-tools/rotate'
     | '/pdf-tools/split'
+    | '/pdf-tools/text-to-pdf'
     | '/pdf-tools/unlock'
     | '/pdf-tools/word-to-pdf'
     | '/text-tools/ai-summarizer'
@@ -1213,12 +1370,16 @@ export interface FileRouteTypes {
     | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
+    | '/calculators/compound-interest'
     | '/calculators/currency-converter'
+    | '/calculators/data-storage'
+    | '/calculators/date-difference'
     | '/calculators/discount'
     | '/calculators/emi'
     | '/calculators/gst-vat'
     | '/calculators/length'
     | '/calculators/percentage'
+    | '/calculators/simple-interest'
     | '/calculators/speed'
     | '/calculators/temperature'
     | '/calculators/time'
@@ -1275,14 +1436,24 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/pdf-tools/add-blank-page'
     | '/pdf-tools/compress'
+    | '/pdf-tools/duplicate-pages'
+    | '/pdf-tools/extract-pages'
     | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
     | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-metadata'
+    | '/pdf-tools/pdf-n-up'
     | '/pdf-tools/pdf-to-jpg'
+    | '/pdf-tools/pdf-to-text'
     | '/pdf-tools/pdf-to-word'
+    | '/pdf-tools/pdf-watermark'
+    | '/pdf-tools/remove-pages'
+    | '/pdf-tools/reverse-pages'
     | '/pdf-tools/rotate'
     | '/pdf-tools/split'
+    | '/pdf-tools/text-to-pdf'
     | '/pdf-tools/unlock'
     | '/pdf-tools/word-to-pdf'
     | '/text-tools/ai-summarizer'
@@ -1319,12 +1490,16 @@ export interface RootRouteChildren {
   CalculatorsAreaRoute: typeof CalculatorsAreaRoute
   CalculatorsBinaryToDecimalRoute: typeof CalculatorsBinaryToDecimalRoute
   CalculatorsBmiRoute: typeof CalculatorsBmiRoute
+  CalculatorsCompoundInterestRoute: typeof CalculatorsCompoundInterestRoute
   CalculatorsCurrencyConverterRoute: typeof CalculatorsCurrencyConverterRoute
+  CalculatorsDataStorageRoute: typeof CalculatorsDataStorageRoute
+  CalculatorsDateDifferenceRoute: typeof CalculatorsDateDifferenceRoute
   CalculatorsDiscountRoute: typeof CalculatorsDiscountRoute
   CalculatorsEmiRoute: typeof CalculatorsEmiRoute
   CalculatorsGstVatRoute: typeof CalculatorsGstVatRoute
   CalculatorsLengthRoute: typeof CalculatorsLengthRoute
   CalculatorsPercentageRoute: typeof CalculatorsPercentageRoute
+  CalculatorsSimpleInterestRoute: typeof CalculatorsSimpleInterestRoute
   CalculatorsSpeedRoute: typeof CalculatorsSpeedRoute
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
   CalculatorsTimeRoute: typeof CalculatorsTimeRoute
@@ -1381,14 +1556,24 @@ export interface RootRouteChildren {
   ImageToolsResizeRoute: typeof ImageToolsResizeRoute
   ImageToolsRotateRoute: typeof ImageToolsRotateRoute
   ImageToolsWatermarkRoute: typeof ImageToolsWatermarkRoute
+  PdfToolsAddBlankPageRoute: typeof PdfToolsAddBlankPageRoute
   PdfToolsCompressRoute: typeof PdfToolsCompressRoute
+  PdfToolsDuplicatePagesRoute: typeof PdfToolsDuplicatePagesRoute
+  PdfToolsExtractPagesRoute: typeof PdfToolsExtractPagesRoute
   PdfToolsJpgToPdfRoute: typeof PdfToolsJpgToPdfRoute
   PdfToolsMergeRoute: typeof PdfToolsMergeRoute
   PdfToolsPageNumbersRoute: typeof PdfToolsPageNumbersRoute
+  PdfToolsPdfMetadataRoute: typeof PdfToolsPdfMetadataRoute
+  PdfToolsPdfNUpRoute: typeof PdfToolsPdfNUpRoute
   PdfToolsPdfToJpgRoute: typeof PdfToolsPdfToJpgRoute
+  PdfToolsPdfToTextRoute: typeof PdfToolsPdfToTextRoute
   PdfToolsPdfToWordRoute: typeof PdfToolsPdfToWordRoute
+  PdfToolsPdfWatermarkRoute: typeof PdfToolsPdfWatermarkRoute
+  PdfToolsRemovePagesRoute: typeof PdfToolsRemovePagesRoute
+  PdfToolsReversePagesRoute: typeof PdfToolsReversePagesRoute
   PdfToolsRotateRoute: typeof PdfToolsRotateRoute
   PdfToolsSplitRoute: typeof PdfToolsSplitRoute
+  PdfToolsTextToPdfRoute: typeof PdfToolsTextToPdfRoute
   PdfToolsUnlockRoute: typeof PdfToolsUnlockRoute
   PdfToolsWordToPdfRoute: typeof PdfToolsWordToPdfRoute
   TextToolsAiSummarizerRoute: typeof TextToolsAiSummarizerRoute
@@ -1609,6 +1794,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PdfToolsUnlockRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pdf-tools/text-to-pdf': {
+      id: '/pdf-tools/text-to-pdf'
+      path: '/pdf-tools/text-to-pdf'
+      fullPath: '/pdf-tools/text-to-pdf'
+      preLoaderRoute: typeof PdfToolsTextToPdfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pdf-tools/split': {
       id: '/pdf-tools/split'
       path: '/pdf-tools/split'
@@ -1623,6 +1815,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PdfToolsRotateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pdf-tools/reverse-pages': {
+      id: '/pdf-tools/reverse-pages'
+      path: '/pdf-tools/reverse-pages'
+      fullPath: '/pdf-tools/reverse-pages'
+      preLoaderRoute: typeof PdfToolsReversePagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/remove-pages': {
+      id: '/pdf-tools/remove-pages'
+      path: '/pdf-tools/remove-pages'
+      fullPath: '/pdf-tools/remove-pages'
+      preLoaderRoute: typeof PdfToolsRemovePagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/pdf-watermark': {
+      id: '/pdf-tools/pdf-watermark'
+      path: '/pdf-tools/pdf-watermark'
+      fullPath: '/pdf-tools/pdf-watermark'
+      preLoaderRoute: typeof PdfToolsPdfWatermarkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pdf-tools/pdf-to-word': {
       id: '/pdf-tools/pdf-to-word'
       path: '/pdf-tools/pdf-to-word'
@@ -1630,11 +1843,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PdfToolsPdfToWordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pdf-tools/pdf-to-text': {
+      id: '/pdf-tools/pdf-to-text'
+      path: '/pdf-tools/pdf-to-text'
+      fullPath: '/pdf-tools/pdf-to-text'
+      preLoaderRoute: typeof PdfToolsPdfToTextRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pdf-tools/pdf-to-jpg': {
       id: '/pdf-tools/pdf-to-jpg'
       path: '/pdf-tools/pdf-to-jpg'
       fullPath: '/pdf-tools/pdf-to-jpg'
       preLoaderRoute: typeof PdfToolsPdfToJpgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/pdf-n-up': {
+      id: '/pdf-tools/pdf-n-up'
+      path: '/pdf-tools/pdf-n-up'
+      fullPath: '/pdf-tools/pdf-n-up'
+      preLoaderRoute: typeof PdfToolsPdfNUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/pdf-metadata': {
+      id: '/pdf-tools/pdf-metadata'
+      path: '/pdf-tools/pdf-metadata'
+      fullPath: '/pdf-tools/pdf-metadata'
+      preLoaderRoute: typeof PdfToolsPdfMetadataRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pdf-tools/page-numbers': {
@@ -1658,11 +1892,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PdfToolsJpgToPdfRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pdf-tools/extract-pages': {
+      id: '/pdf-tools/extract-pages'
+      path: '/pdf-tools/extract-pages'
+      fullPath: '/pdf-tools/extract-pages'
+      preLoaderRoute: typeof PdfToolsExtractPagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/duplicate-pages': {
+      id: '/pdf-tools/duplicate-pages'
+      path: '/pdf-tools/duplicate-pages'
+      fullPath: '/pdf-tools/duplicate-pages'
+      preLoaderRoute: typeof PdfToolsDuplicatePagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pdf-tools/compress': {
       id: '/pdf-tools/compress'
       path: '/pdf-tools/compress'
       fullPath: '/pdf-tools/compress'
       preLoaderRoute: typeof PdfToolsCompressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/add-blank-page': {
+      id: '/pdf-tools/add-blank-page'
+      path: '/pdf-tools/add-blank-page'
+      fullPath: '/pdf-tools/add-blank-page'
+      preLoaderRoute: typeof PdfToolsAddBlankPageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-tools/watermark': {
@@ -2057,6 +2312,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsSpeedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/simple-interest': {
+      id: '/calculators/simple-interest'
+      path: '/calculators/simple-interest'
+      fullPath: '/calculators/simple-interest'
+      preLoaderRoute: typeof CalculatorsSimpleInterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/percentage': {
       id: '/calculators/percentage'
       path: '/calculators/percentage'
@@ -2092,11 +2354,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsDiscountRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/date-difference': {
+      id: '/calculators/date-difference'
+      path: '/calculators/date-difference'
+      fullPath: '/calculators/date-difference'
+      preLoaderRoute: typeof CalculatorsDateDifferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/data-storage': {
+      id: '/calculators/data-storage'
+      path: '/calculators/data-storage'
+      fullPath: '/calculators/data-storage'
+      preLoaderRoute: typeof CalculatorsDataStorageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/currency-converter': {
       id: '/calculators/currency-converter'
       path: '/calculators/currency-converter'
       fullPath: '/calculators/currency-converter'
       preLoaderRoute: typeof CalculatorsCurrencyConverterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/compound-interest': {
+      id: '/calculators/compound-interest'
+      path: '/calculators/compound-interest'
+      fullPath: '/calculators/compound-interest'
+      preLoaderRoute: typeof CalculatorsCompoundInterestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators/bmi': {
@@ -2151,12 +2434,16 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsAreaRoute: CalculatorsAreaRoute,
   CalculatorsBinaryToDecimalRoute: CalculatorsBinaryToDecimalRoute,
   CalculatorsBmiRoute: CalculatorsBmiRoute,
+  CalculatorsCompoundInterestRoute: CalculatorsCompoundInterestRoute,
   CalculatorsCurrencyConverterRoute: CalculatorsCurrencyConverterRoute,
+  CalculatorsDataStorageRoute: CalculatorsDataStorageRoute,
+  CalculatorsDateDifferenceRoute: CalculatorsDateDifferenceRoute,
   CalculatorsDiscountRoute: CalculatorsDiscountRoute,
   CalculatorsEmiRoute: CalculatorsEmiRoute,
   CalculatorsGstVatRoute: CalculatorsGstVatRoute,
   CalculatorsLengthRoute: CalculatorsLengthRoute,
   CalculatorsPercentageRoute: CalculatorsPercentageRoute,
+  CalculatorsSimpleInterestRoute: CalculatorsSimpleInterestRoute,
   CalculatorsSpeedRoute: CalculatorsSpeedRoute,
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
   CalculatorsTimeRoute: CalculatorsTimeRoute,
@@ -2231,14 +2518,24 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsResizeRoute: ImageToolsResizeRoute,
   ImageToolsRotateRoute: ImageToolsRotateRoute,
   ImageToolsWatermarkRoute: ImageToolsWatermarkRoute,
+  PdfToolsAddBlankPageRoute: PdfToolsAddBlankPageRoute,
   PdfToolsCompressRoute: PdfToolsCompressRoute,
+  PdfToolsDuplicatePagesRoute: PdfToolsDuplicatePagesRoute,
+  PdfToolsExtractPagesRoute: PdfToolsExtractPagesRoute,
   PdfToolsJpgToPdfRoute: PdfToolsJpgToPdfRoute,
   PdfToolsMergeRoute: PdfToolsMergeRoute,
   PdfToolsPageNumbersRoute: PdfToolsPageNumbersRoute,
+  PdfToolsPdfMetadataRoute: PdfToolsPdfMetadataRoute,
+  PdfToolsPdfNUpRoute: PdfToolsPdfNUpRoute,
   PdfToolsPdfToJpgRoute: PdfToolsPdfToJpgRoute,
+  PdfToolsPdfToTextRoute: PdfToolsPdfToTextRoute,
   PdfToolsPdfToWordRoute: PdfToolsPdfToWordRoute,
+  PdfToolsPdfWatermarkRoute: PdfToolsPdfWatermarkRoute,
+  PdfToolsRemovePagesRoute: PdfToolsRemovePagesRoute,
+  PdfToolsReversePagesRoute: PdfToolsReversePagesRoute,
   PdfToolsRotateRoute: PdfToolsRotateRoute,
   PdfToolsSplitRoute: PdfToolsSplitRoute,
+  PdfToolsTextToPdfRoute: PdfToolsTextToPdfRoute,
   PdfToolsUnlockRoute: PdfToolsUnlockRoute,
   PdfToolsWordToPdfRoute: PdfToolsWordToPdfRoute,
   TextToolsAiSummarizerRoute: TextToolsAiSummarizerRoute,
