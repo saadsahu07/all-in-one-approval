@@ -23,6 +23,9 @@ import {
   Youtube, Wand2, Image as ImageIcon2, Lightbulb,
   Link as LinkIcon, Fingerprint, ShieldCheck, Utensils, Tag,
 } from "lucide-react";
+import {
+  Instagram, MessageSquare, Music2, Newspaper, ListTree, Search as SearchIcon, Mail,
+} from "lucide-react";
 
 /** Single tool entry (a leaf page under a category). */
 export interface ToolDef {
@@ -157,6 +160,14 @@ export const categories: CategoryDef[] = [
       ["youtube-description-generator", "YouTube Description Generator", "Write SEO-friendly YouTube video descriptions with AI.", Youtube],
       ["youtube-thumbnail-downloader", "YouTube Thumbnail Downloader", "Download HD, SD, and HQ thumbnails from any YouTube video.", ImageIcon2],
       ["youtube-video-idea-generator", "YouTube Video Idea Generator", "Generate 10 fresh YouTube video ideas from a niche or keyword.", Lightbulb],
+      ["instagram-caption-generator", "Instagram Caption Generator", "Write 5 scroll-stopping Instagram captions from any topic with AI.", Instagram],
+      ["instagram-hashtag-generator", "Instagram Hashtag Generator", "Get 30 relevant Instagram hashtags mixing broad, medium, and niche reach.", Hash],
+      ["tweet-generator", "Tweet Generator", "Generate 5 shareable tweets under 280 characters from any topic.", MessageSquare],
+      ["tiktok-caption-generator", "TikTok Caption Generator", "Write 5 punchy TikTok captions with hooks and hashtags in seconds.", Music2],
+      ["blog-title-generator", "Blog Title Generator", "Generate 10 SEO-friendly, click-worthy blog post titles with AI.", Newspaper],
+      ["blog-outline-generator", "Blog Outline Generator", "Create a full H2/H3 blog outline with FAQs from any working title.", ListTree],
+      ["meta-description-generator", "Meta Description Generator", "Write 5 SEO meta descriptions (140-160 chars) for any page title.", SearchIcon],
+      ["email-subject-line-generator", "Email Subject Line Generator", "Generate 10 high open-rate email subject lines from your topic.", Mail],
     ]),
   },
 ];

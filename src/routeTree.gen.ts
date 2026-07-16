@@ -72,6 +72,14 @@ import { Route as ContentCreationYoutubeTitleGeneratorRouteImport } from './rout
 import { Route as ContentCreationYoutubeThumbnailDownloaderRouteImport } from './routes/content-creation.youtube-thumbnail-downloader'
 import { Route as ContentCreationYoutubeTagGeneratorRouteImport } from './routes/content-creation.youtube-tag-generator'
 import { Route as ContentCreationYoutubeDescriptionGeneratorRouteImport } from './routes/content-creation.youtube-description-generator'
+import { Route as ContentCreationTweetGeneratorRouteImport } from './routes/content-creation.tweet-generator'
+import { Route as ContentCreationTiktokCaptionGeneratorRouteImport } from './routes/content-creation.tiktok-caption-generator'
+import { Route as ContentCreationMetaDescriptionGeneratorRouteImport } from './routes/content-creation.meta-description-generator'
+import { Route as ContentCreationInstagramHashtagGeneratorRouteImport } from './routes/content-creation.instagram-hashtag-generator'
+import { Route as ContentCreationInstagramCaptionGeneratorRouteImport } from './routes/content-creation.instagram-caption-generator'
+import { Route as ContentCreationEmailSubjectLineGeneratorRouteImport } from './routes/content-creation.email-subject-line-generator'
+import { Route as ContentCreationBlogTitleGeneratorRouteImport } from './routes/content-creation.blog-title-generator'
+import { Route as ContentCreationBlogOutlineGeneratorRouteImport } from './routes/content-creation.blog-outline-generator'
 import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
 import { Route as CalculatorsTipRouteImport } from './routes/calculators.tip'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
@@ -419,6 +427,54 @@ const ContentCreationYoutubeDescriptionGeneratorRoute =
     path: '/content-creation/youtube-description-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ContentCreationTweetGeneratorRoute =
+  ContentCreationTweetGeneratorRouteImport.update({
+    id: '/content-creation/tweet-generator',
+    path: '/content-creation/tweet-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationTiktokCaptionGeneratorRoute =
+  ContentCreationTiktokCaptionGeneratorRouteImport.update({
+    id: '/content-creation/tiktok-caption-generator',
+    path: '/content-creation/tiktok-caption-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationMetaDescriptionGeneratorRoute =
+  ContentCreationMetaDescriptionGeneratorRouteImport.update({
+    id: '/content-creation/meta-description-generator',
+    path: '/content-creation/meta-description-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationInstagramHashtagGeneratorRoute =
+  ContentCreationInstagramHashtagGeneratorRouteImport.update({
+    id: '/content-creation/instagram-hashtag-generator',
+    path: '/content-creation/instagram-hashtag-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationInstagramCaptionGeneratorRoute =
+  ContentCreationInstagramCaptionGeneratorRouteImport.update({
+    id: '/content-creation/instagram-caption-generator',
+    path: '/content-creation/instagram-caption-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationEmailSubjectLineGeneratorRoute =
+  ContentCreationEmailSubjectLineGeneratorRouteImport.update({
+    id: '/content-creation/email-subject-line-generator',
+    path: '/content-creation/email-subject-line-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationBlogTitleGeneratorRoute =
+  ContentCreationBlogTitleGeneratorRouteImport.update({
+    id: '/content-creation/blog-title-generator',
+    path: '/content-creation/blog-title-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ContentCreationBlogOutlineGeneratorRoute =
+  ContentCreationBlogOutlineGeneratorRouteImport.update({
+    id: '/content-creation/blog-outline-generator',
+    path: '/content-creation/blog-outline-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CalculatorsWeightRoute = CalculatorsWeightRouteImport.update({
   id: '/calculators/weight',
   path: '/calculators/weight',
@@ -509,6 +565,14 @@ export interface FileRoutesByFullPath {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/blog-outline-generator': typeof ContentCreationBlogOutlineGeneratorRoute
+  '/content-creation/blog-title-generator': typeof ContentCreationBlogTitleGeneratorRoute
+  '/content-creation/email-subject-line-generator': typeof ContentCreationEmailSubjectLineGeneratorRoute
+  '/content-creation/instagram-caption-generator': typeof ContentCreationInstagramCaptionGeneratorRoute
+  '/content-creation/instagram-hashtag-generator': typeof ContentCreationInstagramHashtagGeneratorRoute
+  '/content-creation/meta-description-generator': typeof ContentCreationMetaDescriptionGeneratorRoute
+  '/content-creation/tiktok-caption-generator': typeof ContentCreationTiktokCaptionGeneratorRoute
+  '/content-creation/tweet-generator': typeof ContentCreationTweetGeneratorRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
@@ -587,6 +651,14 @@ export interface FileRoutesByTo {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/blog-outline-generator': typeof ContentCreationBlogOutlineGeneratorRoute
+  '/content-creation/blog-title-generator': typeof ContentCreationBlogTitleGeneratorRoute
+  '/content-creation/email-subject-line-generator': typeof ContentCreationEmailSubjectLineGeneratorRoute
+  '/content-creation/instagram-caption-generator': typeof ContentCreationInstagramCaptionGeneratorRoute
+  '/content-creation/instagram-hashtag-generator': typeof ContentCreationInstagramHashtagGeneratorRoute
+  '/content-creation/meta-description-generator': typeof ContentCreationMetaDescriptionGeneratorRoute
+  '/content-creation/tiktok-caption-generator': typeof ContentCreationTiktokCaptionGeneratorRoute
+  '/content-creation/tweet-generator': typeof ContentCreationTweetGeneratorRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
@@ -666,6 +738,14 @@ export interface FileRoutesById {
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
+  '/content-creation/blog-outline-generator': typeof ContentCreationBlogOutlineGeneratorRoute
+  '/content-creation/blog-title-generator': typeof ContentCreationBlogTitleGeneratorRoute
+  '/content-creation/email-subject-line-generator': typeof ContentCreationEmailSubjectLineGeneratorRoute
+  '/content-creation/instagram-caption-generator': typeof ContentCreationInstagramCaptionGeneratorRoute
+  '/content-creation/instagram-hashtag-generator': typeof ContentCreationInstagramHashtagGeneratorRoute
+  '/content-creation/meta-description-generator': typeof ContentCreationMetaDescriptionGeneratorRoute
+  '/content-creation/tiktok-caption-generator': typeof ContentCreationTiktokCaptionGeneratorRoute
+  '/content-creation/tweet-generator': typeof ContentCreationTweetGeneratorRoute
   '/content-creation/youtube-description-generator': typeof ContentCreationYoutubeDescriptionGeneratorRoute
   '/content-creation/youtube-tag-generator': typeof ContentCreationYoutubeTagGeneratorRoute
   '/content-creation/youtube-thumbnail-downloader': typeof ContentCreationYoutubeThumbnailDownloaderRoute
@@ -746,6 +826,14 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/tip'
     | '/calculators/weight'
+    | '/content-creation/blog-outline-generator'
+    | '/content-creation/blog-title-generator'
+    | '/content-creation/email-subject-line-generator'
+    | '/content-creation/instagram-caption-generator'
+    | '/content-creation/instagram-hashtag-generator'
+    | '/content-creation/meta-description-generator'
+    | '/content-creation/tiktok-caption-generator'
+    | '/content-creation/tweet-generator'
     | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
@@ -824,6 +912,14 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/tip'
     | '/calculators/weight'
+    | '/content-creation/blog-outline-generator'
+    | '/content-creation/blog-title-generator'
+    | '/content-creation/email-subject-line-generator'
+    | '/content-creation/instagram-caption-generator'
+    | '/content-creation/instagram-hashtag-generator'
+    | '/content-creation/meta-description-generator'
+    | '/content-creation/tiktok-caption-generator'
+    | '/content-creation/tweet-generator'
     | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
@@ -902,6 +998,14 @@ export interface FileRouteTypes {
     | '/calculators/temperature'
     | '/calculators/tip'
     | '/calculators/weight'
+    | '/content-creation/blog-outline-generator'
+    | '/content-creation/blog-title-generator'
+    | '/content-creation/email-subject-line-generator'
+    | '/content-creation/instagram-caption-generator'
+    | '/content-creation/instagram-hashtag-generator'
+    | '/content-creation/meta-description-generator'
+    | '/content-creation/tiktok-caption-generator'
+    | '/content-creation/tweet-generator'
     | '/content-creation/youtube-description-generator'
     | '/content-creation/youtube-tag-generator'
     | '/content-creation/youtube-thumbnail-downloader'
@@ -981,6 +1085,14 @@ export interface RootRouteChildren {
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
   CalculatorsTipRoute: typeof CalculatorsTipRoute
   CalculatorsWeightRoute: typeof CalculatorsWeightRoute
+  ContentCreationBlogOutlineGeneratorRoute: typeof ContentCreationBlogOutlineGeneratorRoute
+  ContentCreationBlogTitleGeneratorRoute: typeof ContentCreationBlogTitleGeneratorRoute
+  ContentCreationEmailSubjectLineGeneratorRoute: typeof ContentCreationEmailSubjectLineGeneratorRoute
+  ContentCreationInstagramCaptionGeneratorRoute: typeof ContentCreationInstagramCaptionGeneratorRoute
+  ContentCreationInstagramHashtagGeneratorRoute: typeof ContentCreationInstagramHashtagGeneratorRoute
+  ContentCreationMetaDescriptionGeneratorRoute: typeof ContentCreationMetaDescriptionGeneratorRoute
+  ContentCreationTiktokCaptionGeneratorRoute: typeof ContentCreationTiktokCaptionGeneratorRoute
+  ContentCreationTweetGeneratorRoute: typeof ContentCreationTweetGeneratorRoute
   ContentCreationYoutubeDescriptionGeneratorRoute: typeof ContentCreationYoutubeDescriptionGeneratorRoute
   ContentCreationYoutubeTagGeneratorRoute: typeof ContentCreationYoutubeTagGeneratorRoute
   ContentCreationYoutubeThumbnailDownloaderRoute: typeof ContentCreationYoutubeThumbnailDownloaderRoute
@@ -1481,6 +1593,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContentCreationYoutubeDescriptionGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/content-creation/tweet-generator': {
+      id: '/content-creation/tweet-generator'
+      path: '/content-creation/tweet-generator'
+      fullPath: '/content-creation/tweet-generator'
+      preLoaderRoute: typeof ContentCreationTweetGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/tiktok-caption-generator': {
+      id: '/content-creation/tiktok-caption-generator'
+      path: '/content-creation/tiktok-caption-generator'
+      fullPath: '/content-creation/tiktok-caption-generator'
+      preLoaderRoute: typeof ContentCreationTiktokCaptionGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/meta-description-generator': {
+      id: '/content-creation/meta-description-generator'
+      path: '/content-creation/meta-description-generator'
+      fullPath: '/content-creation/meta-description-generator'
+      preLoaderRoute: typeof ContentCreationMetaDescriptionGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/instagram-hashtag-generator': {
+      id: '/content-creation/instagram-hashtag-generator'
+      path: '/content-creation/instagram-hashtag-generator'
+      fullPath: '/content-creation/instagram-hashtag-generator'
+      preLoaderRoute: typeof ContentCreationInstagramHashtagGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/instagram-caption-generator': {
+      id: '/content-creation/instagram-caption-generator'
+      path: '/content-creation/instagram-caption-generator'
+      fullPath: '/content-creation/instagram-caption-generator'
+      preLoaderRoute: typeof ContentCreationInstagramCaptionGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/email-subject-line-generator': {
+      id: '/content-creation/email-subject-line-generator'
+      path: '/content-creation/email-subject-line-generator'
+      fullPath: '/content-creation/email-subject-line-generator'
+      preLoaderRoute: typeof ContentCreationEmailSubjectLineGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/blog-title-generator': {
+      id: '/content-creation/blog-title-generator'
+      path: '/content-creation/blog-title-generator'
+      fullPath: '/content-creation/blog-title-generator'
+      preLoaderRoute: typeof ContentCreationBlogTitleGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content-creation/blog-outline-generator': {
+      id: '/content-creation/blog-outline-generator'
+      path: '/content-creation/blog-outline-generator'
+      fullPath: '/content-creation/blog-outline-generator'
+      preLoaderRoute: typeof ContentCreationBlogOutlineGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/weight': {
       id: '/calculators/weight'
       path: '/calculators/weight'
@@ -1597,6 +1765,21 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
   CalculatorsTipRoute: CalculatorsTipRoute,
   CalculatorsWeightRoute: CalculatorsWeightRoute,
+  ContentCreationBlogOutlineGeneratorRoute:
+    ContentCreationBlogOutlineGeneratorRoute,
+  ContentCreationBlogTitleGeneratorRoute:
+    ContentCreationBlogTitleGeneratorRoute,
+  ContentCreationEmailSubjectLineGeneratorRoute:
+    ContentCreationEmailSubjectLineGeneratorRoute,
+  ContentCreationInstagramCaptionGeneratorRoute:
+    ContentCreationInstagramCaptionGeneratorRoute,
+  ContentCreationInstagramHashtagGeneratorRoute:
+    ContentCreationInstagramHashtagGeneratorRoute,
+  ContentCreationMetaDescriptionGeneratorRoute:
+    ContentCreationMetaDescriptionGeneratorRoute,
+  ContentCreationTiktokCaptionGeneratorRoute:
+    ContentCreationTiktokCaptionGeneratorRoute,
+  ContentCreationTweetGeneratorRoute: ContentCreationTweetGeneratorRoute,
   ContentCreationYoutubeDescriptionGeneratorRoute:
     ContentCreationYoutubeDescriptionGeneratorRoute,
   ContentCreationYoutubeTagGeneratorRoute:
@@ -1661,13 +1844,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
