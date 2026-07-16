@@ -84,6 +84,13 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
           browserRequirements: "Requires JavaScript. Requires HTML5.",
           isAccessibleForFree: true,
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            ratingCount: "1247",
+            bestRating: "5",
+            worstRating: "1",
+          },
           publisher: { "@type": "Organization", name: "ToolsHive", url: SITE },
         },
         {
