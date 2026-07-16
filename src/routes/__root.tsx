@@ -80,11 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ToolsHive — 60 Free Online Tools + Blog Guides" },
-      { name: "description", content: "60 free text, image, PDF, developer, and calculator tools plus a blog with money-making, productivity, tech, and career guides." },
+      { title: "ToolsHive — 120+ Free Online Tools (No Signup)" },
+      { name: "description", content: "120+ free online tools for text, images, PDFs, developers, calculators, and content creators. No signup, no watermark — works instantly in your browser." },
       { name: "author", content: "ToolsHive" },
-      { property: "og:title", content: "ToolsHive — 60 Free Online Tools + Blog Guides" },
-      { property: "og:description", content: "60 free text, image, PDF, developer, and calculator tools plus a blog with money-making, productivity, tech, and career guides." },
+      { property: "og:title", content: "ToolsHive — 120+ Free Online Tools (No Signup)" },
+      { property: "og:description", content: "120+ free online tools for text, images, PDFs, developers, calculators, and content creators. No signup, no watermark — works instantly in your browser." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "ToolsHive" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -114,7 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "ToolsHive",
           url: "https://all-in-one-approval.lovable.app",
           description:
-            "60 free online tools plus a blog with guides on making money online, productivity, tech tips, and career growth — no signup, works in your browser.",
+            "120+ free online tools plus a blog with guides on making money online, productivity, tech tips, and career growth — no signup, works in your browser.",
           potentialAction: {
             "@type": "SearchAction",
             target: "https://all-in-one-approval.lovable.app/search?q={search_term_string}",
