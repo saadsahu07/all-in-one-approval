@@ -26,6 +26,9 @@ import {
 import {
   Instagram, MessageSquare, Music2, Newspaper, ListTree, Search as SearchIcon, Mail,
 } from "lucide-react";
+import {
+  Facebook, Linkedin, Video, Megaphone, ShoppingBag, IdCard, Target,
+} from "lucide-react";
 
 /** Single tool entry (a leaf page under a category). */
 export interface ToolDef {
@@ -168,6 +171,13 @@ export const categories: CategoryDef[] = [
       ["blog-outline-generator", "Blog Outline Generator", "Create a full H2/H3 blog outline with FAQs from any working title.", ListTree],
       ["meta-description-generator", "Meta Description Generator", "Write 5 SEO meta descriptions (140-160 chars) for any page title.", SearchIcon],
       ["email-subject-line-generator", "Email Subject Line Generator", "Generate 10 high open-rate email subject lines from your topic.", Mail],
+      ["facebook-post-generator", "Facebook Post Generator", "Write 5 engaging Facebook posts under 400 characters with a clear CTA.", Facebook],
+      ["linkedin-post-generator", "LinkedIn Post Generator", "Write 3 LinkedIn posts with strong hooks that survive the 3-line preview cut.", Linkedin],
+      ["youtube-shorts-script-generator", "YouTube Shorts Script Generator", "Write a full 30-45 second Shorts script with hook, body, payoff, and CTA.", Video],
+      ["slogan-generator", "Slogan Generator", "Generate 10 short, memorable slogans for any brand or product.", Megaphone],
+      ["product-description-generator", "Product Description Generator", "Write conversion-focused product descriptions with benefits and bullets.", ShoppingBag],
+      ["bio-generator", "Bio Generator", "Write 5 short bios for Instagram, TikTok, Twitter, or LinkedIn profiles.", IdCard],
+      ["ad-copy-generator", "Ad Copy Generator", "Generate 5 ad variants with headline, primary text, and CTA button.", Target],
     ]),
   },
 ];
