@@ -58,7 +58,12 @@ import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-
 import { Route as DeveloperToolsUuidGeneratorRouteImport } from './routes/developer-tools.uuid-generator'
 import { Route as DeveloperToolsUrlEncodeRouteImport } from './routes/developer-tools.url-encode'
 import { Route as DeveloperToolsUrlDecodeRouteImport } from './routes/developer-tools.url-decode'
+import { Route as DeveloperToolsTimestampConverterRouteImport } from './routes/developer-tools.timestamp-converter'
+import { Route as DeveloperToolsTextDiffRouteImport } from './routes/developer-tools.text-diff'
+import { Route as DeveloperToolsSlugGeneratorRouteImport } from './routes/developer-tools.slug-generator'
+import { Route as DeveloperToolsRegexTesterRouteImport } from './routes/developer-tools.regex-tester'
 import { Route as DeveloperToolsPasswordGeneratorRouteImport } from './routes/developer-tools.password-generator'
+import { Route as DeveloperToolsNumberBaseConverterRouteImport } from './routes/developer-tools.number-base-converter'
 import { Route as DeveloperToolsLoremIpsumGeneratorRouteImport } from './routes/developer-tools.lorem-ipsum-generator'
 import { Route as DeveloperToolsJwtDecoderRouteImport } from './routes/developer-tools.jwt-decoder'
 import { Route as DeveloperToolsJsonValidatorRouteImport } from './routes/developer-tools.json-validator'
@@ -353,10 +358,39 @@ const DeveloperToolsUrlDecodeRoute = DeveloperToolsUrlDecodeRouteImport.update({
   path: '/developer-tools/url-decode',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DeveloperToolsTimestampConverterRoute =
+  DeveloperToolsTimestampConverterRouteImport.update({
+    id: '/developer-tools/timestamp-converter',
+    path: '/developer-tools/timestamp-converter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsTextDiffRoute = DeveloperToolsTextDiffRouteImport.update({
+  id: '/developer-tools/text-diff',
+  path: '/developer-tools/text-diff',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeveloperToolsSlugGeneratorRoute =
+  DeveloperToolsSlugGeneratorRouteImport.update({
+    id: '/developer-tools/slug-generator',
+    path: '/developer-tools/slug-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsRegexTesterRoute =
+  DeveloperToolsRegexTesterRouteImport.update({
+    id: '/developer-tools/regex-tester',
+    path: '/developer-tools/regex-tester',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsPasswordGeneratorRoute =
   DeveloperToolsPasswordGeneratorRouteImport.update({
     id: '/developer-tools/password-generator',
     path: '/developer-tools/password-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsNumberBaseConverterRoute =
+  DeveloperToolsNumberBaseConverterRouteImport.update({
+    id: '/developer-tools/number-base-converter',
+    path: '/developer-tools/number-base-converter',
     getParentRoute: () => rootRouteImport,
   } as any)
 const DeveloperToolsLoremIpsumGeneratorRoute =
@@ -666,7 +700,12 @@ export interface FileRoutesByFullPath {
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
+  '/developer-tools/number-base-converter': typeof DeveloperToolsNumberBaseConverterRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
+  '/developer-tools/regex-tester': typeof DeveloperToolsRegexTesterRoute
+  '/developer-tools/slug-generator': typeof DeveloperToolsSlugGeneratorRoute
+  '/developer-tools/text-diff': typeof DeveloperToolsTextDiffRoute
+  '/developer-tools/timestamp-converter': typeof DeveloperToolsTimestampConverterRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
@@ -762,7 +801,12 @@ export interface FileRoutesByTo {
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
+  '/developer-tools/number-base-converter': typeof DeveloperToolsNumberBaseConverterRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
+  '/developer-tools/regex-tester': typeof DeveloperToolsRegexTesterRoute
+  '/developer-tools/slug-generator': typeof DeveloperToolsSlugGeneratorRoute
+  '/developer-tools/text-diff': typeof DeveloperToolsTextDiffRoute
+  '/developer-tools/timestamp-converter': typeof DeveloperToolsTimestampConverterRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
@@ -859,7 +903,12 @@ export interface FileRoutesById {
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
+  '/developer-tools/number-base-converter': typeof DeveloperToolsNumberBaseConverterRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
+  '/developer-tools/regex-tester': typeof DeveloperToolsRegexTesterRoute
+  '/developer-tools/slug-generator': typeof DeveloperToolsSlugGeneratorRoute
+  '/developer-tools/text-diff': typeof DeveloperToolsTextDiffRoute
+  '/developer-tools/timestamp-converter': typeof DeveloperToolsTimestampConverterRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
@@ -957,7 +1006,12 @@ export interface FileRouteTypes {
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
     | '/developer-tools/lorem-ipsum-generator'
+    | '/developer-tools/number-base-converter'
     | '/developer-tools/password-generator'
+    | '/developer-tools/regex-tester'
+    | '/developer-tools/slug-generator'
+    | '/developer-tools/text-diff'
+    | '/developer-tools/timestamp-converter'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
     | '/developer-tools/uuid-generator'
@@ -1053,7 +1107,12 @@ export interface FileRouteTypes {
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
     | '/developer-tools/lorem-ipsum-generator'
+    | '/developer-tools/number-base-converter'
     | '/developer-tools/password-generator'
+    | '/developer-tools/regex-tester'
+    | '/developer-tools/slug-generator'
+    | '/developer-tools/text-diff'
+    | '/developer-tools/timestamp-converter'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
     | '/developer-tools/uuid-generator'
@@ -1149,7 +1208,12 @@ export interface FileRouteTypes {
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
     | '/developer-tools/lorem-ipsum-generator'
+    | '/developer-tools/number-base-converter'
     | '/developer-tools/password-generator'
+    | '/developer-tools/regex-tester'
+    | '/developer-tools/slug-generator'
+    | '/developer-tools/text-diff'
+    | '/developer-tools/timestamp-converter'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
     | '/developer-tools/uuid-generator'
@@ -1246,7 +1310,12 @@ export interface RootRouteChildren {
   DeveloperToolsJsonValidatorRoute: typeof DeveloperToolsJsonValidatorRoute
   DeveloperToolsJwtDecoderRoute: typeof DeveloperToolsJwtDecoderRoute
   DeveloperToolsLoremIpsumGeneratorRoute: typeof DeveloperToolsLoremIpsumGeneratorRoute
+  DeveloperToolsNumberBaseConverterRoute: typeof DeveloperToolsNumberBaseConverterRoute
   DeveloperToolsPasswordGeneratorRoute: typeof DeveloperToolsPasswordGeneratorRoute
+  DeveloperToolsRegexTesterRoute: typeof DeveloperToolsRegexTesterRoute
+  DeveloperToolsSlugGeneratorRoute: typeof DeveloperToolsSlugGeneratorRoute
+  DeveloperToolsTextDiffRoute: typeof DeveloperToolsTextDiffRoute
+  DeveloperToolsTimestampConverterRoute: typeof DeveloperToolsTimestampConverterRoute
   DeveloperToolsUrlDecodeRoute: typeof DeveloperToolsUrlDecodeRoute
   DeveloperToolsUrlEncodeRoute: typeof DeveloperToolsUrlEncodeRoute
   DeveloperToolsUuidGeneratorRoute: typeof DeveloperToolsUuidGeneratorRoute
@@ -1635,11 +1704,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsUrlDecodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/timestamp-converter': {
+      id: '/developer-tools/timestamp-converter'
+      path: '/developer-tools/timestamp-converter'
+      fullPath: '/developer-tools/timestamp-converter'
+      preLoaderRoute: typeof DeveloperToolsTimestampConverterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/text-diff': {
+      id: '/developer-tools/text-diff'
+      path: '/developer-tools/text-diff'
+      fullPath: '/developer-tools/text-diff'
+      preLoaderRoute: typeof DeveloperToolsTextDiffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/slug-generator': {
+      id: '/developer-tools/slug-generator'
+      path: '/developer-tools/slug-generator'
+      fullPath: '/developer-tools/slug-generator'
+      preLoaderRoute: typeof DeveloperToolsSlugGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/regex-tester': {
+      id: '/developer-tools/regex-tester'
+      path: '/developer-tools/regex-tester'
+      fullPath: '/developer-tools/regex-tester'
+      preLoaderRoute: typeof DeveloperToolsRegexTesterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/password-generator': {
       id: '/developer-tools/password-generator'
       path: '/developer-tools/password-generator'
       fullPath: '/developer-tools/password-generator'
       preLoaderRoute: typeof DeveloperToolsPasswordGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/number-base-converter': {
+      id: '/developer-tools/number-base-converter'
+      path: '/developer-tools/number-base-converter'
+      fullPath: '/developer-tools/number-base-converter'
+      preLoaderRoute: typeof DeveloperToolsNumberBaseConverterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/developer-tools/lorem-ipsum-generator': {
@@ -2023,7 +2127,13 @@ const rootRouteChildren: RootRouteChildren = {
   DeveloperToolsJwtDecoderRoute: DeveloperToolsJwtDecoderRoute,
   DeveloperToolsLoremIpsumGeneratorRoute:
     DeveloperToolsLoremIpsumGeneratorRoute,
+  DeveloperToolsNumberBaseConverterRoute:
+    DeveloperToolsNumberBaseConverterRoute,
   DeveloperToolsPasswordGeneratorRoute: DeveloperToolsPasswordGeneratorRoute,
+  DeveloperToolsRegexTesterRoute: DeveloperToolsRegexTesterRoute,
+  DeveloperToolsSlugGeneratorRoute: DeveloperToolsSlugGeneratorRoute,
+  DeveloperToolsTextDiffRoute: DeveloperToolsTextDiffRoute,
+  DeveloperToolsTimestampConverterRoute: DeveloperToolsTimestampConverterRoute,
   DeveloperToolsUrlDecodeRoute: DeveloperToolsUrlDecodeRoute,
   DeveloperToolsUrlEncodeRoute: DeveloperToolsUrlEncodeRoute,
   DeveloperToolsUuidGeneratorRoute: DeveloperToolsUuidGeneratorRoute,
