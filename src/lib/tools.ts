@@ -32,6 +32,10 @@ import {
 import {
   Palette, Regex, Clock, GitCompare, Slash,
 } from "lucide-react";
+import {
+  Square, Box, Gauge, Timer, HardDrive, TrendingUp, PiggyBank, CalendarClock,
+  FileMinus, Copy as CopyIcon, PlusSquare, Droplets, Info, FileType, LayoutGrid, FlipVertical2,
+} from "lucide-react";
 
 /** Single tool entry (a leaf page under a category). */
 export interface ToolDef {
@@ -116,6 +120,16 @@ export const categories: CategoryDef[] = [
       ["rotate", "Rotate PDF", "Rotate all pages of a PDF in 90° steps.", RefreshCw],
       ["unlock", "Unlock PDF", "Remove editing restrictions from PDFs.", Unlock],
       ["page-numbers", "Add Page Numbers", "Stamp page numbers onto every PDF page.", ListOrdered],
+      ["extract-pages", "Extract PDF Pages", "Pick a set of pages and export them as a new PDF.", FileOutput],
+      ["remove-pages", "Remove PDF Pages", "Delete unwanted pages from a PDF.", FileMinus],
+      ["reverse-pages", "Reverse PDF Pages", "Flip the page order of a PDF end-to-end.", FlipVertical2],
+      ["duplicate-pages", "Duplicate PDF Pages", "Duplicate a specific page as many times as you need.", CopyIcon],
+      ["add-blank-page", "Add Blank Page to PDF", "Insert a blank page at any position in a PDF.", PlusSquare],
+      ["pdf-watermark", "PDF Watermark", "Stamp a text watermark on every page of a PDF.", Droplets],
+      ["pdf-metadata", "PDF Metadata Editor", "View and update the title, author, and subject of a PDF.", Info],
+      ["pdf-to-text", "PDF to Text", "Extract plain text from a PDF into a .txt file.", FileText],
+      ["text-to-pdf", "Text to PDF", "Turn plain text into a clean, downloadable PDF.", FileType],
+      ["pdf-n-up", "PDF 2-Up Layout", "Fit two PDF pages side-by-side on each sheet.", LayoutGrid],
     ]),
   },
   {
@@ -162,6 +176,14 @@ export const categories: CategoryDef[] = [
       ["binary-to-decimal", "Binary to Decimal", "Convert binary numbers to decimal and back.", Binary],
       ["tip", "Tip Calculator", "Split a bill and calculate tip per person.", Utensils],
       ["discount", "Discount Calculator", "Work out sale prices and how much you save.", Tag],
+      ["area", "Area Calculator", "Calculate area of a rectangle, circle, or triangle.", Square],
+      ["volume", "Volume Calculator", "Calculate volume of a box, sphere, or cylinder.", Box],
+      ["speed", "Speed Converter", "Convert km/h, mph, m/s, and knots.", Gauge],
+      ["time", "Time Converter", "Convert seconds, minutes, hours, and days.", Timer],
+      ["data-storage", "Data Storage Converter", "Convert bytes, KB, MB, GB, and TB.", HardDrive],
+      ["compound-interest", "Compound Interest Calculator", "Project savings growth with compound interest.", TrendingUp],
+      ["simple-interest", "Simple Interest Calculator", "Compute simple interest, total, and rate.", PiggyBank],
+      ["date-difference", "Date Difference Calculator", "Find days, weeks, months between two dates.", CalendarClock],
     ]),
   },
   {
