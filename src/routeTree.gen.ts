@@ -96,6 +96,7 @@ import { Route as ContentCreationBlogOutlineGeneratorRouteImport } from './route
 import { Route as ContentCreationBioGeneratorRouteImport } from './routes/content-creation.bio-generator'
 import { Route as ContentCreationAdCopyGeneratorRouteImport } from './routes/content-creation.ad-copy-generator'
 import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
+import { Route as CalculatorsVolumeRouteImport } from './routes/calculators.volume'
 import { Route as CalculatorsTipRouteImport } from './routes/calculators.tip'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
 import { Route as CalculatorsPercentageRouteImport } from './routes/calculators.percentage'
@@ -585,6 +586,11 @@ const CalculatorsWeightRoute = CalculatorsWeightRouteImport.update({
   path: '/calculators/weight',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatorsVolumeRoute = CalculatorsVolumeRouteImport.update({
+  id: '/calculators/volume',
+  path: '/calculators/volume',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsTipRoute = CalculatorsTipRouteImport.update({
   id: '/calculators/tip',
   path: '/calculators/tip',
@@ -675,6 +681,7 @@ export interface FileRoutesByFullPath {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
+  '/calculators/volume': typeof CalculatorsVolumeRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/ad-copy-generator': typeof ContentCreationAdCopyGeneratorRoute
   '/content-creation/bio-generator': typeof ContentCreationBioGeneratorRoute
@@ -777,6 +784,7 @@ export interface FileRoutesByTo {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
+  '/calculators/volume': typeof CalculatorsVolumeRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/ad-copy-generator': typeof ContentCreationAdCopyGeneratorRoute
   '/content-creation/bio-generator': typeof ContentCreationBioGeneratorRoute
@@ -880,6 +888,7 @@ export interface FileRoutesById {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
   '/calculators/tip': typeof CalculatorsTipRoute
+  '/calculators/volume': typeof CalculatorsVolumeRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
   '/content-creation/ad-copy-generator': typeof ContentCreationAdCopyGeneratorRoute
   '/content-creation/bio-generator': typeof ContentCreationBioGeneratorRoute
@@ -984,6 +993,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/tip'
+    | '/calculators/volume'
     | '/calculators/weight'
     | '/content-creation/ad-copy-generator'
     | '/content-creation/bio-generator'
@@ -1086,6 +1096,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/tip'
+    | '/calculators/volume'
     | '/calculators/weight'
     | '/content-creation/ad-copy-generator'
     | '/content-creation/bio-generator'
@@ -1188,6 +1199,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/temperature'
     | '/calculators/tip'
+    | '/calculators/volume'
     | '/calculators/weight'
     | '/content-creation/ad-copy-generator'
     | '/content-creation/bio-generator'
@@ -1291,6 +1303,7 @@ export interface RootRouteChildren {
   CalculatorsPercentageRoute: typeof CalculatorsPercentageRoute
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
   CalculatorsTipRoute: typeof CalculatorsTipRoute
+  CalculatorsVolumeRoute: typeof CalculatorsVolumeRoute
   CalculatorsWeightRoute: typeof CalculatorsWeightRoute
   ContentCreationAdCopyGeneratorRoute: typeof ContentCreationAdCopyGeneratorRoute
   ContentCreationBioGeneratorRoute: typeof ContentCreationBioGeneratorRoute
@@ -1983,6 +1996,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsWeightRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/volume': {
+      id: '/calculators/volume'
+      path: '/calculators/volume'
+      fullPath: '/calculators/volume'
+      preLoaderRoute: typeof CalculatorsVolumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/tip': {
       id: '/calculators/tip'
       path: '/calculators/tip'
@@ -2099,6 +2119,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsPercentageRoute: CalculatorsPercentageRoute,
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
   CalculatorsTipRoute: CalculatorsTipRoute,
+  CalculatorsVolumeRoute: CalculatorsVolumeRoute,
   CalculatorsWeightRoute: CalculatorsWeightRoute,
   ContentCreationAdCopyGeneratorRoute: ContentCreationAdCopyGeneratorRoute,
   ContentCreationBioGeneratorRoute: ContentCreationBioGeneratorRoute,
