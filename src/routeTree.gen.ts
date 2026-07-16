@@ -64,6 +64,7 @@ import { Route as PdfToolsExtractPagesRouteImport } from './routes/pdf-tools.ext
 import { Route as PdfToolsDuplicatePagesRouteImport } from './routes/pdf-tools.duplicate-pages'
 import { Route as PdfToolsCompressRouteImport } from './routes/pdf-tools.compress'
 import { Route as PdfToolsAddBlankPageRouteImport } from './routes/pdf-tools.add-blank-page'
+import { Route as ImageToolsWebpToPngRouteImport } from './routes/image-tools.webp-to-png'
 import { Route as ImageToolsWatermarkRouteImport } from './routes/image-tools.watermark'
 import { Route as ImageToolsRotateRouteImport } from './routes/image-tools.rotate'
 import { Route as ImageToolsResizeRouteImport } from './routes/image-tools.resize'
@@ -71,6 +72,7 @@ import { Route as ImageToolsQrCodeRouteImport } from './routes/image-tools.qr-co
 import { Route as ImageToolsPngToJpgRouteImport } from './routes/image-tools.png-to-jpg'
 import { Route as ImageToolsJpgToPngRouteImport } from './routes/image-tools.jpg-to-png'
 import { Route as ImageToolsImageToPdfRouteImport } from './routes/image-tools.image-to-pdf'
+import { Route as ImageToolsFlipRouteImport } from './routes/image-tools.flip'
 import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
 import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
@@ -415,6 +417,11 @@ const PdfToolsAddBlankPageRoute = PdfToolsAddBlankPageRouteImport.update({
   path: '/pdf-tools/add-blank-page',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageToolsWebpToPngRoute = ImageToolsWebpToPngRouteImport.update({
+  id: '/image-tools/webp-to-png',
+  path: '/image-tools/webp-to-png',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageToolsWatermarkRoute = ImageToolsWatermarkRouteImport.update({
   id: '/image-tools/watermark',
   path: '/image-tools/watermark',
@@ -448,6 +455,11 @@ const ImageToolsJpgToPngRoute = ImageToolsJpgToPngRouteImport.update({
 const ImageToolsImageToPdfRoute = ImageToolsImageToPdfRouteImport.update({
   id: '/image-tools/image-to-pdf',
   path: '/image-tools/image-to-pdf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsFlipRoute = ImageToolsFlipRouteImport.update({
+  id: '/image-tools/flip',
+  path: '/image-tools/flip',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageToolsCropRoute = ImageToolsCropRouteImport.update({
@@ -887,6 +899,7 @@ export interface FileRoutesByFullPath {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/flip': typeof ImageToolsFlipRoute
   '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
@@ -894,6 +907,7 @@ export interface FileRoutesByFullPath {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
   '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
@@ -1015,6 +1029,7 @@ export interface FileRoutesByTo {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/flip': typeof ImageToolsFlipRoute
   '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
@@ -1022,6 +1037,7 @@ export interface FileRoutesByTo {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
   '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
@@ -1144,6 +1160,7 @@ export interface FileRoutesById {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
+  '/image-tools/flip': typeof ImageToolsFlipRoute
   '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
@@ -1151,6 +1168,7 @@ export interface FileRoutesById {
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
+  '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
   '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
@@ -1274,6 +1292,7 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
+    | '/image-tools/flip'
     | '/image-tools/image-to-pdf'
     | '/image-tools/jpg-to-png'
     | '/image-tools/png-to-jpg'
@@ -1281,6 +1300,7 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
     | '/pdf-tools/compress'
     | '/pdf-tools/duplicate-pages'
@@ -1402,6 +1422,7 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
+    | '/image-tools/flip'
     | '/image-tools/image-to-pdf'
     | '/image-tools/jpg-to-png'
     | '/image-tools/png-to-jpg'
@@ -1409,6 +1430,7 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
     | '/pdf-tools/compress'
     | '/pdf-tools/duplicate-pages'
@@ -1530,6 +1552,7 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/compress'
     | '/image-tools/crop'
+    | '/image-tools/flip'
     | '/image-tools/image-to-pdf'
     | '/image-tools/jpg-to-png'
     | '/image-tools/png-to-jpg'
@@ -1537,6 +1560,7 @@ export interface FileRouteTypes {
     | '/image-tools/resize'
     | '/image-tools/rotate'
     | '/image-tools/watermark'
+    | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
     | '/pdf-tools/compress'
     | '/pdf-tools/duplicate-pages'
@@ -1659,6 +1683,7 @@ export interface RootRouteChildren {
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
   ImageToolsCompressRoute: typeof ImageToolsCompressRoute
   ImageToolsCropRoute: typeof ImageToolsCropRoute
+  ImageToolsFlipRoute: typeof ImageToolsFlipRoute
   ImageToolsImageToPdfRoute: typeof ImageToolsImageToPdfRoute
   ImageToolsJpgToPngRoute: typeof ImageToolsJpgToPngRoute
   ImageToolsPngToJpgRoute: typeof ImageToolsPngToJpgRoute
@@ -1666,6 +1691,7 @@ export interface RootRouteChildren {
   ImageToolsResizeRoute: typeof ImageToolsResizeRoute
   ImageToolsRotateRoute: typeof ImageToolsRotateRoute
   ImageToolsWatermarkRoute: typeof ImageToolsWatermarkRoute
+  ImageToolsWebpToPngRoute: typeof ImageToolsWebpToPngRoute
   PdfToolsAddBlankPageRoute: typeof PdfToolsAddBlankPageRoute
   PdfToolsCompressRoute: typeof PdfToolsCompressRoute
   PdfToolsDuplicatePagesRoute: typeof PdfToolsDuplicatePagesRoute
@@ -2102,6 +2128,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PdfToolsAddBlankPageRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-tools/webp-to-png': {
+      id: '/image-tools/webp-to-png'
+      path: '/image-tools/webp-to-png'
+      fullPath: '/image-tools/webp-to-png'
+      preLoaderRoute: typeof ImageToolsWebpToPngRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-tools/watermark': {
       id: '/image-tools/watermark'
       path: '/image-tools/watermark'
@@ -2149,6 +2182,13 @@ declare module '@tanstack/react-router' {
       path: '/image-tools/image-to-pdf'
       fullPath: '/image-tools/image-to-pdf'
       preLoaderRoute: typeof ImageToolsImageToPdfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/flip': {
+      id: '/image-tools/flip'
+      path: '/image-tools/flip'
+      fullPath: '/image-tools/flip'
+      preLoaderRoute: typeof ImageToolsFlipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-tools/crop': {
@@ -2693,6 +2733,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
   ImageToolsCompressRoute: ImageToolsCompressRoute,
   ImageToolsCropRoute: ImageToolsCropRoute,
+  ImageToolsFlipRoute: ImageToolsFlipRoute,
   ImageToolsImageToPdfRoute: ImageToolsImageToPdfRoute,
   ImageToolsJpgToPngRoute: ImageToolsJpgToPngRoute,
   ImageToolsPngToJpgRoute: ImageToolsPngToJpgRoute,
@@ -2700,6 +2741,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsResizeRoute: ImageToolsResizeRoute,
   ImageToolsRotateRoute: ImageToolsRotateRoute,
   ImageToolsWatermarkRoute: ImageToolsWatermarkRoute,
+  ImageToolsWebpToPngRoute: ImageToolsWebpToPngRoute,
   PdfToolsAddBlankPageRoute: PdfToolsAddBlankPageRoute,
   PdfToolsCompressRoute: PdfToolsCompressRoute,
   PdfToolsDuplicatePagesRoute: PdfToolsDuplicatePagesRoute,
