@@ -24,17 +24,26 @@ import { Route as DeveloperToolsIndexRouteImport } from './routes/developer-tool
 import { Route as ContentCreationIndexRouteImport } from './routes/content-creation.index'
 import { Route as CalculatorsIndexRouteImport } from './routes/calculators.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as TextToolsWordFrequencyRouteImport } from './routes/text-tools.word-frequency'
 import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
+import { Route as TextToolsWhitespaceRemoverRouteImport } from './routes/text-tools.whitespace-remover'
+import { Route as TextToolsTextToBinaryRouteImport } from './routes/text-tools.text-to-binary'
 import { Route as TextToolsTextSorterRouteImport } from './routes/text-tools.text-sorter'
 import { Route as TextToolsTextReverserRouteImport } from './routes/text-tools.text-reverser'
+import { Route as TextToolsTextRepeaterRouteImport } from './routes/text-tools.text-repeater'
 import { Route as TextToolsSlugifyRouteImport } from './routes/text-tools.slugify'
+import { Route as TextToolsRot13RouteImport } from './routes/text-tools.rot13'
+import { Route as TextToolsRemoveLineBreaksRouteImport } from './routes/text-tools.remove-line-breaks'
 import { Route as TextToolsRemoveDuplicateLinesRouteImport } from './routes/text-tools.remove-duplicate-lines'
 import { Route as TextToolsParaphraserRouteImport } from './routes/text-tools.paraphraser'
 import { Route as TextToolsLoremIpsumRouteImport } from './routes/text-tools.lorem-ipsum'
 import { Route as TextToolsGrammarCheckerRouteImport } from './routes/text-tools.grammar-checker'
+import { Route as TextToolsFindReplaceRouteImport } from './routes/text-tools.find-replace'
 import { Route as TextToolsCharacterCounterRouteImport } from './routes/text-tools.character-counter'
 import { Route as TextToolsCaseConverterRouteImport } from './routes/text-tools.case-converter'
+import { Route as TextToolsBinaryToTextRouteImport } from './routes/text-tools.binary-to-text'
 import { Route as TextToolsAiSummarizerRouteImport } from './routes/text-tools.ai-summarizer'
+import { Route as TextToolsAddLineNumbersRouteImport } from './routes/text-tools.add-line-numbers'
 import { Route as PdfToolsWordToPdfRouteImport } from './routes/pdf-tools.word-to-pdf'
 import { Route as PdfToolsUnlockRouteImport } from './routes/pdf-tools.unlock'
 import { Route as PdfToolsTextToPdfRouteImport } from './routes/pdf-tools.text-to-pdf'
@@ -202,9 +211,25 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsWordFrequencyRoute = TextToolsWordFrequencyRouteImport.update({
+  id: '/text-tools/word-frequency',
+  path: '/text-tools/word-frequency',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TextToolsWordCounterRoute = TextToolsWordCounterRouteImport.update({
   id: '/text-tools/word-counter',
   path: '/text-tools/word-counter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsWhitespaceRemoverRoute =
+  TextToolsWhitespaceRemoverRouteImport.update({
+    id: '/text-tools/whitespace-remover',
+    path: '/text-tools/whitespace-remover',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TextToolsTextToBinaryRoute = TextToolsTextToBinaryRouteImport.update({
+  id: '/text-tools/text-to-binary',
+  path: '/text-tools/text-to-binary',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TextToolsTextSorterRoute = TextToolsTextSorterRouteImport.update({
@@ -217,11 +242,27 @@ const TextToolsTextReverserRoute = TextToolsTextReverserRouteImport.update({
   path: '/text-tools/text-reverser',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsTextRepeaterRoute = TextToolsTextRepeaterRouteImport.update({
+  id: '/text-tools/text-repeater',
+  path: '/text-tools/text-repeater',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TextToolsSlugifyRoute = TextToolsSlugifyRouteImport.update({
   id: '/text-tools/slugify',
   path: '/text-tools/slugify',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsRot13Route = TextToolsRot13RouteImport.update({
+  id: '/text-tools/rot13',
+  path: '/text-tools/rot13',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsRemoveLineBreaksRoute =
+  TextToolsRemoveLineBreaksRouteImport.update({
+    id: '/text-tools/remove-line-breaks',
+    path: '/text-tools/remove-line-breaks',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TextToolsRemoveDuplicateLinesRoute =
   TextToolsRemoveDuplicateLinesRouteImport.update({
     id: '/text-tools/remove-duplicate-lines',
@@ -243,6 +284,11 @@ const TextToolsGrammarCheckerRoute = TextToolsGrammarCheckerRouteImport.update({
   path: '/text-tools/grammar-checker',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsFindReplaceRoute = TextToolsFindReplaceRouteImport.update({
+  id: '/text-tools/find-replace',
+  path: '/text-tools/find-replace',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TextToolsCharacterCounterRoute =
   TextToolsCharacterCounterRouteImport.update({
     id: '/text-tools/character-counter',
@@ -254,9 +300,19 @@ const TextToolsCaseConverterRoute = TextToolsCaseConverterRouteImport.update({
   path: '/text-tools/case-converter',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsBinaryToTextRoute = TextToolsBinaryToTextRouteImport.update({
+  id: '/text-tools/binary-to-text',
+  path: '/text-tools/binary-to-text',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TextToolsAiSummarizerRoute = TextToolsAiSummarizerRouteImport.update({
   id: '/text-tools/ai-summarizer',
   path: '/text-tools/ai-summarizer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsAddLineNumbersRoute = TextToolsAddLineNumbersRouteImport.update({
+  id: '/text-tools/add-line-numbers',
+  path: '/text-tools/add-line-numbers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PdfToolsWordToPdfRoute = PdfToolsWordToPdfRouteImport.update({
@@ -858,17 +914,26 @@ export interface FileRoutesByFullPath {
   '/pdf-tools/text-to-pdf': typeof PdfToolsTextToPdfRoute
   '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
   '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
+  '/text-tools/add-line-numbers': typeof TextToolsAddLineNumbersRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
+  '/text-tools/binary-to-text': typeof TextToolsBinaryToTextRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
+  '/text-tools/rot13': typeof TextToolsRot13Route
   '/text-tools/slugify': typeof TextToolsSlugifyRoute
+  '/text-tools/text-repeater': typeof TextToolsTextRepeaterRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
+  '/text-tools/text-to-binary': typeof TextToolsTextToBinaryRoute
+  '/text-tools/whitespace-remover': typeof TextToolsWhitespaceRemoverRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/text-tools/word-frequency': typeof TextToolsWordFrequencyRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/content-creation/': typeof ContentCreationIndexRoute
@@ -977,17 +1042,26 @@ export interface FileRoutesByTo {
   '/pdf-tools/text-to-pdf': typeof PdfToolsTextToPdfRoute
   '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
   '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
+  '/text-tools/add-line-numbers': typeof TextToolsAddLineNumbersRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
+  '/text-tools/binary-to-text': typeof TextToolsBinaryToTextRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
+  '/text-tools/rot13': typeof TextToolsRot13Route
   '/text-tools/slugify': typeof TextToolsSlugifyRoute
+  '/text-tools/text-repeater': typeof TextToolsTextRepeaterRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
+  '/text-tools/text-to-binary': typeof TextToolsTextToBinaryRoute
+  '/text-tools/whitespace-remover': typeof TextToolsWhitespaceRemoverRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/text-tools/word-frequency': typeof TextToolsWordFrequencyRoute
   '/blog': typeof BlogIndexRoute
   '/calculators': typeof CalculatorsIndexRoute
   '/content-creation': typeof ContentCreationIndexRoute
@@ -1097,17 +1171,26 @@ export interface FileRoutesById {
   '/pdf-tools/text-to-pdf': typeof PdfToolsTextToPdfRoute
   '/pdf-tools/unlock': typeof PdfToolsUnlockRoute
   '/pdf-tools/word-to-pdf': typeof PdfToolsWordToPdfRoute
+  '/text-tools/add-line-numbers': typeof TextToolsAddLineNumbersRoute
   '/text-tools/ai-summarizer': typeof TextToolsAiSummarizerRoute
+  '/text-tools/binary-to-text': typeof TextToolsBinaryToTextRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
+  '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
+  '/text-tools/rot13': typeof TextToolsRot13Route
   '/text-tools/slugify': typeof TextToolsSlugifyRoute
+  '/text-tools/text-repeater': typeof TextToolsTextRepeaterRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
   '/text-tools/text-sorter': typeof TextToolsTextSorterRoute
+  '/text-tools/text-to-binary': typeof TextToolsTextToBinaryRoute
+  '/text-tools/whitespace-remover': typeof TextToolsWhitespaceRemoverRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
+  '/text-tools/word-frequency': typeof TextToolsWordFrequencyRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/content-creation/': typeof ContentCreationIndexRoute
@@ -1218,17 +1301,26 @@ export interface FileRouteTypes {
     | '/pdf-tools/text-to-pdf'
     | '/pdf-tools/unlock'
     | '/pdf-tools/word-to-pdf'
+    | '/text-tools/add-line-numbers'
     | '/text-tools/ai-summarizer'
+    | '/text-tools/binary-to-text'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
+    | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/remove-line-breaks'
+    | '/text-tools/rot13'
     | '/text-tools/slugify'
+    | '/text-tools/text-repeater'
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
+    | '/text-tools/text-to-binary'
+    | '/text-tools/whitespace-remover'
     | '/text-tools/word-counter'
+    | '/text-tools/word-frequency'
     | '/blog/'
     | '/calculators/'
     | '/content-creation/'
@@ -1337,17 +1429,26 @@ export interface FileRouteTypes {
     | '/pdf-tools/text-to-pdf'
     | '/pdf-tools/unlock'
     | '/pdf-tools/word-to-pdf'
+    | '/text-tools/add-line-numbers'
     | '/text-tools/ai-summarizer'
+    | '/text-tools/binary-to-text'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
+    | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/remove-line-breaks'
+    | '/text-tools/rot13'
     | '/text-tools/slugify'
+    | '/text-tools/text-repeater'
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
+    | '/text-tools/text-to-binary'
+    | '/text-tools/whitespace-remover'
     | '/text-tools/word-counter'
+    | '/text-tools/word-frequency'
     | '/blog'
     | '/calculators'
     | '/content-creation'
@@ -1456,17 +1557,26 @@ export interface FileRouteTypes {
     | '/pdf-tools/text-to-pdf'
     | '/pdf-tools/unlock'
     | '/pdf-tools/word-to-pdf'
+    | '/text-tools/add-line-numbers'
     | '/text-tools/ai-summarizer'
+    | '/text-tools/binary-to-text'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
+    | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
+    | '/text-tools/remove-line-breaks'
+    | '/text-tools/rot13'
     | '/text-tools/slugify'
+    | '/text-tools/text-repeater'
     | '/text-tools/text-reverser'
     | '/text-tools/text-sorter'
+    | '/text-tools/text-to-binary'
+    | '/text-tools/whitespace-remover'
     | '/text-tools/word-counter'
+    | '/text-tools/word-frequency'
     | '/blog/'
     | '/calculators/'
     | '/content-creation/'
@@ -1576,17 +1686,26 @@ export interface RootRouteChildren {
   PdfToolsTextToPdfRoute: typeof PdfToolsTextToPdfRoute
   PdfToolsUnlockRoute: typeof PdfToolsUnlockRoute
   PdfToolsWordToPdfRoute: typeof PdfToolsWordToPdfRoute
+  TextToolsAddLineNumbersRoute: typeof TextToolsAddLineNumbersRoute
   TextToolsAiSummarizerRoute: typeof TextToolsAiSummarizerRoute
+  TextToolsBinaryToTextRoute: typeof TextToolsBinaryToTextRoute
   TextToolsCaseConverterRoute: typeof TextToolsCaseConverterRoute
   TextToolsCharacterCounterRoute: typeof TextToolsCharacterCounterRoute
+  TextToolsFindReplaceRoute: typeof TextToolsFindReplaceRoute
   TextToolsGrammarCheckerRoute: typeof TextToolsGrammarCheckerRoute
   TextToolsLoremIpsumRoute: typeof TextToolsLoremIpsumRoute
   TextToolsParaphraserRoute: typeof TextToolsParaphraserRoute
   TextToolsRemoveDuplicateLinesRoute: typeof TextToolsRemoveDuplicateLinesRoute
+  TextToolsRemoveLineBreaksRoute: typeof TextToolsRemoveLineBreaksRoute
+  TextToolsRot13Route: typeof TextToolsRot13Route
   TextToolsSlugifyRoute: typeof TextToolsSlugifyRoute
+  TextToolsTextRepeaterRoute: typeof TextToolsTextRepeaterRoute
   TextToolsTextReverserRoute: typeof TextToolsTextReverserRoute
   TextToolsTextSorterRoute: typeof TextToolsTextSorterRoute
+  TextToolsTextToBinaryRoute: typeof TextToolsTextToBinaryRoute
+  TextToolsWhitespaceRemoverRoute: typeof TextToolsWhitespaceRemoverRoute
   TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
+  TextToolsWordFrequencyRoute: typeof TextToolsWordFrequencyRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CalculatorsIndexRoute: typeof CalculatorsIndexRoute
   ContentCreationIndexRoute: typeof ContentCreationIndexRoute
@@ -1703,11 +1822,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/text-tools/word-frequency': {
+      id: '/text-tools/word-frequency'
+      path: '/text-tools/word-frequency'
+      fullPath: '/text-tools/word-frequency'
+      preLoaderRoute: typeof TextToolsWordFrequencyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/text-tools/word-counter': {
       id: '/text-tools/word-counter'
       path: '/text-tools/word-counter'
       fullPath: '/text-tools/word-counter'
       preLoaderRoute: typeof TextToolsWordCounterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/whitespace-remover': {
+      id: '/text-tools/whitespace-remover'
+      path: '/text-tools/whitespace-remover'
+      fullPath: '/text-tools/whitespace-remover'
+      preLoaderRoute: typeof TextToolsWhitespaceRemoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/text-to-binary': {
+      id: '/text-tools/text-to-binary'
+      path: '/text-tools/text-to-binary'
+      fullPath: '/text-tools/text-to-binary'
+      preLoaderRoute: typeof TextToolsTextToBinaryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/text-sorter': {
@@ -1724,11 +1864,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TextToolsTextReverserRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/text-tools/text-repeater': {
+      id: '/text-tools/text-repeater'
+      path: '/text-tools/text-repeater'
+      fullPath: '/text-tools/text-repeater'
+      preLoaderRoute: typeof TextToolsTextRepeaterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/text-tools/slugify': {
       id: '/text-tools/slugify'
       path: '/text-tools/slugify'
       fullPath: '/text-tools/slugify'
       preLoaderRoute: typeof TextToolsSlugifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/rot13': {
+      id: '/text-tools/rot13'
+      path: '/text-tools/rot13'
+      fullPath: '/text-tools/rot13'
+      preLoaderRoute: typeof TextToolsRot13RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/remove-line-breaks': {
+      id: '/text-tools/remove-line-breaks'
+      path: '/text-tools/remove-line-breaks'
+      fullPath: '/text-tools/remove-line-breaks'
+      preLoaderRoute: typeof TextToolsRemoveLineBreaksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/remove-duplicate-lines': {
@@ -1759,6 +1920,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TextToolsGrammarCheckerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/text-tools/find-replace': {
+      id: '/text-tools/find-replace'
+      path: '/text-tools/find-replace'
+      fullPath: '/text-tools/find-replace'
+      preLoaderRoute: typeof TextToolsFindReplaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/text-tools/character-counter': {
       id: '/text-tools/character-counter'
       path: '/text-tools/character-counter'
@@ -1773,11 +1941,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TextToolsCaseConverterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/text-tools/binary-to-text': {
+      id: '/text-tools/binary-to-text'
+      path: '/text-tools/binary-to-text'
+      fullPath: '/text-tools/binary-to-text'
+      preLoaderRoute: typeof TextToolsBinaryToTextRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/text-tools/ai-summarizer': {
       id: '/text-tools/ai-summarizer'
       path: '/text-tools/ai-summarizer'
       fullPath: '/text-tools/ai-summarizer'
       preLoaderRoute: typeof TextToolsAiSummarizerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/add-line-numbers': {
+      id: '/text-tools/add-line-numbers'
+      path: '/text-tools/add-line-numbers'
+      fullPath: '/text-tools/add-line-numbers'
+      preLoaderRoute: typeof TextToolsAddLineNumbersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pdf-tools/word-to-pdf': {
@@ -2538,17 +2720,26 @@ const rootRouteChildren: RootRouteChildren = {
   PdfToolsTextToPdfRoute: PdfToolsTextToPdfRoute,
   PdfToolsUnlockRoute: PdfToolsUnlockRoute,
   PdfToolsWordToPdfRoute: PdfToolsWordToPdfRoute,
+  TextToolsAddLineNumbersRoute: TextToolsAddLineNumbersRoute,
   TextToolsAiSummarizerRoute: TextToolsAiSummarizerRoute,
+  TextToolsBinaryToTextRoute: TextToolsBinaryToTextRoute,
   TextToolsCaseConverterRoute: TextToolsCaseConverterRoute,
   TextToolsCharacterCounterRoute: TextToolsCharacterCounterRoute,
+  TextToolsFindReplaceRoute: TextToolsFindReplaceRoute,
   TextToolsGrammarCheckerRoute: TextToolsGrammarCheckerRoute,
   TextToolsLoremIpsumRoute: TextToolsLoremIpsumRoute,
   TextToolsParaphraserRoute: TextToolsParaphraserRoute,
   TextToolsRemoveDuplicateLinesRoute: TextToolsRemoveDuplicateLinesRoute,
+  TextToolsRemoveLineBreaksRoute: TextToolsRemoveLineBreaksRoute,
+  TextToolsRot13Route: TextToolsRot13Route,
   TextToolsSlugifyRoute: TextToolsSlugifyRoute,
+  TextToolsTextRepeaterRoute: TextToolsTextRepeaterRoute,
   TextToolsTextReverserRoute: TextToolsTextReverserRoute,
   TextToolsTextSorterRoute: TextToolsTextSorterRoute,
+  TextToolsTextToBinaryRoute: TextToolsTextToBinaryRoute,
+  TextToolsWhitespaceRemoverRoute: TextToolsWhitespaceRemoverRoute,
   TextToolsWordCounterRoute: TextToolsWordCounterRoute,
+  TextToolsWordFrequencyRoute: TextToolsWordFrequencyRoute,
   BlogIndexRoute: BlogIndexRoute,
   CalculatorsIndexRoute: CalculatorsIndexRoute,
   ContentCreationIndexRoute: ContentCreationIndexRoute,
