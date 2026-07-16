@@ -32,6 +32,10 @@ import {
 import {
   Palette, Regex, Clock, GitCompare, Slash,
 } from "lucide-react";
+import {
+  Square, Box, Gauge, Timer, HardDrive, TrendingUp, PiggyBank, CalendarClock,
+  FileMinus, Copy as CopyIcon, PlusSquare, Droplets, Info, FileType, LayoutGrid, FlipVertical2,
+} from "lucide-react";
 
 /** Single tool entry (a leaf page under a category). */
 export interface ToolDef {
@@ -162,6 +166,14 @@ export const categories: CategoryDef[] = [
       ["binary-to-decimal", "Binary to Decimal", "Convert binary numbers to decimal and back.", Binary],
       ["tip", "Tip Calculator", "Split a bill and calculate tip per person.", Utensils],
       ["discount", "Discount Calculator", "Work out sale prices and how much you save.", Tag],
+      ["area", "Area Calculator", "Calculate area of a rectangle, circle, or triangle.", Square],
+      ["volume", "Volume Calculator", "Calculate volume of a box, sphere, or cylinder.", Box],
+      ["speed", "Speed Converter", "Convert km/h, mph, m/s, and knots.", Gauge],
+      ["time", "Time Converter", "Convert seconds, minutes, hours, and days.", Timer],
+      ["data-storage", "Data Storage Converter", "Convert bytes, KB, MB, GB, and TB.", HardDrive],
+      ["compound-interest", "Compound Interest Calculator", "Project savings growth with compound interest.", TrendingUp],
+      ["simple-interest", "Simple Interest Calculator", "Compute simple interest, total, and rate.", PiggyBank],
+      ["date-difference", "Date Difference Calculator", "Find days, weeks, months between two dates.", CalendarClock],
     ]),
   },
   {
