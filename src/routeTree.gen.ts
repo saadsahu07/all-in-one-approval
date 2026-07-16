@@ -64,6 +64,7 @@ import { Route as DeveloperToolsJsonValidatorRouteImport } from './routes/develo
 import { Route as DeveloperToolsJsonFormatterRouteImport } from './routes/developer-tools.json-formatter'
 import { Route as DeveloperToolsJsMinifierRouteImport } from './routes/developer-tools.js-minifier'
 import { Route as DeveloperToolsHtmlMinifierRouteImport } from './routes/developer-tools.html-minifier'
+import { Route as DeveloperToolsHashGeneratorRouteImport } from './routes/developer-tools.hash-generator'
 import { Route as DeveloperToolsCssMinifierRouteImport } from './routes/developer-tools.css-minifier'
 import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
 import { Route as DeveloperToolsBase64DecodeRouteImport } from './routes/developer-tools.base64-decode'
@@ -386,6 +387,12 @@ const DeveloperToolsHtmlMinifierRoute =
     path: '/developer-tools/html-minifier',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsHashGeneratorRoute =
+  DeveloperToolsHashGeneratorRouteImport.update({
+    id: '/developer-tools/hash-generator',
+    path: '/developer-tools/hash-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsCssMinifierRoute =
   DeveloperToolsCssMinifierRouteImport.update({
     id: '/developer-tools/css-minifier',
@@ -637,6 +644,7 @@ export interface FileRoutesByFullPath {
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
@@ -730,6 +738,7 @@ export interface FileRoutesByTo {
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
@@ -824,6 +833,7 @@ export interface FileRoutesById {
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
@@ -919,6 +929,7 @@ export interface FileRouteTypes {
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
+    | '/developer-tools/hash-generator'
     | '/developer-tools/html-minifier'
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
@@ -1012,6 +1023,7 @@ export interface FileRouteTypes {
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
+    | '/developer-tools/hash-generator'
     | '/developer-tools/html-minifier'
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
@@ -1105,6 +1117,7 @@ export interface FileRouteTypes {
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/css-minifier'
+    | '/developer-tools/hash-generator'
     | '/developer-tools/html-minifier'
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
@@ -1199,6 +1212,7 @@ export interface RootRouteChildren {
   DeveloperToolsBase64DecodeRoute: typeof DeveloperToolsBase64DecodeRoute
   DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
   DeveloperToolsCssMinifierRoute: typeof DeveloperToolsCssMinifierRoute
+  DeveloperToolsHashGeneratorRoute: typeof DeveloperToolsHashGeneratorRoute
   DeveloperToolsHtmlMinifierRoute: typeof DeveloperToolsHtmlMinifierRoute
   DeveloperToolsJsMinifierRoute: typeof DeveloperToolsJsMinifierRoute
   DeveloperToolsJsonFormatterRoute: typeof DeveloperToolsJsonFormatterRoute
@@ -1635,6 +1649,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsHtmlMinifierRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/hash-generator': {
+      id: '/developer-tools/hash-generator'
+      path: '/developer-tools/hash-generator'
+      fullPath: '/developer-tools/hash-generator'
+      preLoaderRoute: typeof DeveloperToolsHashGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/css-minifier': {
       id: '/developer-tools/css-minifier'
       path: '/developer-tools/css-minifier'
@@ -1951,6 +1972,7 @@ const rootRouteChildren: RootRouteChildren = {
   DeveloperToolsBase64DecodeRoute: DeveloperToolsBase64DecodeRoute,
   DeveloperToolsBase64EncodeRoute: DeveloperToolsBase64EncodeRoute,
   DeveloperToolsCssMinifierRoute: DeveloperToolsCssMinifierRoute,
+  DeveloperToolsHashGeneratorRoute: DeveloperToolsHashGeneratorRoute,
   DeveloperToolsHtmlMinifierRoute: DeveloperToolsHtmlMinifierRoute,
   DeveloperToolsJsMinifierRoute: DeveloperToolsJsMinifierRoute,
   DeveloperToolsJsonFormatterRoute: DeveloperToolsJsonFormatterRoute,
