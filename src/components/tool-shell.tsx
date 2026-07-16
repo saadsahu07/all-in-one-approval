@@ -23,7 +23,7 @@ import { renderMarkdown } from "@/lib/render-md";
 
 // Canonical site origin, used to build absolute URLs for JSON-LD schema
 // (search engines require absolute `url` / `item` values).
-const SITE = "https://all-in-one-approval.lovable.app";
+const SITE = "https://toolshive.tools";
 
 /** Props passed by every tool route to render the shared shell. */
 interface ToolShellProps {

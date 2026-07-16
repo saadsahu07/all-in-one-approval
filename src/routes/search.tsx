@@ -15,10 +15,10 @@ export const Route = createFileRoute("/search")({
       { name: "description", content: "Search 50 free online tools for text, images, PDFs, developers, and calculators." },
       { property: "og:title", content: "Search tools — ToolsHive" },
       { property: "og:description", content: "Search 50 free online tools for text, images, PDFs, developers, and calculators." },
-      { property: "og:url", content: "https://all-in-one-approval.lovable.app/search" },
+      { property: "og:url", content: "https://toolshive.tools/search" },
       { name: "robots", content: "noindex" },
     ],
-    links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/search" }],
+    links: [{ rel: "canonical", href: "https://toolshive.tools/search" }],
   }),
   component: SearchPage,
 });

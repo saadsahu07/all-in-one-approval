@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getPostMeta, postsMeta } from "@/lib/blog-meta";
 import ogCover from "@/assets/og-cover.jpg";
 
-const SITE = "https://all-in-one-approval.lovable.app";
+const SITE = "https://toolshive.tools";
 const OG = `${SITE}${ogCover}`;
 
 export const Route = createFileRoute("/blog/$slug")({

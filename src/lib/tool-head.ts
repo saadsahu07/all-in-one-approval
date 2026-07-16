@@ -2,7 +2,7 @@ import { seoTitles } from "./seo/titles";
 import { getCategory } from "./tools";
 import ogCover from "@/assets/og-cover.jpg";
 
-const SITE = "https://all-in-one-approval.lovable.app";
+const SITE = "https://toolshive.tools";
 const OG_IMAGE = `${SITE}${ogCover}`;
 
 /**

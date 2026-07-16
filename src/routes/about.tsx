@@ -6,9 +6,9 @@ export const Route = createFileRoute("/about")({
     { name: "description", content: "ToolsHive is a free suite of 60 online tools for text, images, PDFs, developers, calculators, and content creation." },
     { property: "og:title", content: "About ToolsHive — Free Online Tools" },
     { property: "og:description", content: "ToolsHive is a free suite of 60 online tools for text, images, PDFs, developers, calculators, and content creation." },
-    { property: "og:url", content: "https://all-in-one-approval.lovable.app/about" },
+    { property: "og:url", content: "https://toolshive.tools/about" },
   ],
-  links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/about" }],
+  links: [{ rel: "canonical", href: "https://toolshive.tools/about" }],
   }),
   component: AboutPage,
 });

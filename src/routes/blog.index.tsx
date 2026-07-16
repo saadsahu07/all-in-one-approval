@@ -5,7 +5,7 @@ import { Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { postsMeta as posts } from "@/lib/blog-meta";
 
-const SITE = "https://all-in-one-approval.lovable.app";
+const SITE = "https://toolshive.tools";
 
 const searchSchema = z.object({
   q: fallback(z.string(), "").default(""),

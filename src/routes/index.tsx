@@ -7,7 +7,7 @@ import { AllToolsGrid } from "@/components/home/all-tools-grid";
 import { TrustSection } from "@/components/home/trust-section";
 import ogCover from "@/assets/og-cover.jpg";
 
-const SITE = "https://all-in-one-approval.lovable.app";
+const SITE = "https://toolshive.tools";
 const OG_IMAGE = `${SITE}${ogCover}`;
 
 export const Route = createFileRoute("/")({
