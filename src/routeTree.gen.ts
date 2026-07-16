@@ -98,6 +98,7 @@ import { Route as ContentCreationAdCopyGeneratorRouteImport } from './routes/con
 import { Route as CalculatorsWeightRouteImport } from './routes/calculators.weight'
 import { Route as CalculatorsVolumeRouteImport } from './routes/calculators.volume'
 import { Route as CalculatorsTipRouteImport } from './routes/calculators.tip'
+import { Route as CalculatorsTimeRouteImport } from './routes/calculators.time'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
 import { Route as CalculatorsSpeedRouteImport } from './routes/calculators.speed'
 import { Route as CalculatorsPercentageRouteImport } from './routes/calculators.percentage'
@@ -597,6 +598,11 @@ const CalculatorsTipRoute = CalculatorsTipRouteImport.update({
   path: '/calculators/tip',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatorsTimeRoute = CalculatorsTimeRouteImport.update({
+  id: '/calculators/time',
+  path: '/calculators/time',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsTemperatureRoute = CalculatorsTemperatureRouteImport.update({
   id: '/calculators/temperature',
   path: '/calculators/temperature',
@@ -687,6 +693,7 @@ export interface FileRoutesByFullPath {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/time': typeof CalculatorsTimeRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/volume': typeof CalculatorsVolumeRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
@@ -791,6 +798,7 @@ export interface FileRoutesByTo {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/time': typeof CalculatorsTimeRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/volume': typeof CalculatorsVolumeRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
@@ -896,6 +904,7 @@ export interface FileRoutesById {
   '/calculators/percentage': typeof CalculatorsPercentageRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
+  '/calculators/time': typeof CalculatorsTimeRoute
   '/calculators/tip': typeof CalculatorsTipRoute
   '/calculators/volume': typeof CalculatorsVolumeRoute
   '/calculators/weight': typeof CalculatorsWeightRoute
@@ -1002,6 +1011,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/speed'
     | '/calculators/temperature'
+    | '/calculators/time'
     | '/calculators/tip'
     | '/calculators/volume'
     | '/calculators/weight'
@@ -1106,6 +1116,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/speed'
     | '/calculators/temperature'
+    | '/calculators/time'
     | '/calculators/tip'
     | '/calculators/volume'
     | '/calculators/weight'
@@ -1210,6 +1221,7 @@ export interface FileRouteTypes {
     | '/calculators/percentage'
     | '/calculators/speed'
     | '/calculators/temperature'
+    | '/calculators/time'
     | '/calculators/tip'
     | '/calculators/volume'
     | '/calculators/weight'
@@ -1315,6 +1327,7 @@ export interface RootRouteChildren {
   CalculatorsPercentageRoute: typeof CalculatorsPercentageRoute
   CalculatorsSpeedRoute: typeof CalculatorsSpeedRoute
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
+  CalculatorsTimeRoute: typeof CalculatorsTimeRoute
   CalculatorsTipRoute: typeof CalculatorsTipRoute
   CalculatorsVolumeRoute: typeof CalculatorsVolumeRoute
   CalculatorsWeightRoute: typeof CalculatorsWeightRoute
@@ -2023,6 +2036,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsTipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/time': {
+      id: '/calculators/time'
+      path: '/calculators/time'
+      fullPath: '/calculators/time'
+      preLoaderRoute: typeof CalculatorsTimeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/temperature': {
       id: '/calculators/temperature'
       path: '/calculators/temperature'
@@ -2139,6 +2159,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsPercentageRoute: CalculatorsPercentageRoute,
   CalculatorsSpeedRoute: CalculatorsSpeedRoute,
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
+  CalculatorsTimeRoute: CalculatorsTimeRoute,
   CalculatorsTipRoute: CalculatorsTipRoute,
   CalculatorsVolumeRoute: CalculatorsVolumeRoute,
   CalculatorsWeightRoute: CalculatorsWeightRoute,
