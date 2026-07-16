@@ -66,15 +66,23 @@ import { Route as PdfToolsCompressRouteImport } from './routes/pdf-tools.compres
 import { Route as PdfToolsAddBlankPageRouteImport } from './routes/pdf-tools.add-blank-page'
 import { Route as ImageToolsWebpToPngRouteImport } from './routes/image-tools.webp-to-png'
 import { Route as ImageToolsWatermarkRouteImport } from './routes/image-tools.watermark'
+import { Route as ImageToolsSepiaRouteImport } from './routes/image-tools.sepia'
 import { Route as ImageToolsRotateRouteImport } from './routes/image-tools.rotate'
 import { Route as ImageToolsResizeRouteImport } from './routes/image-tools.resize'
 import { Route as ImageToolsQrCodeRouteImport } from './routes/image-tools.qr-code'
+import { Route as ImageToolsPngToWebpRouteImport } from './routes/image-tools.png-to-webp'
 import { Route as ImageToolsPngToJpgRouteImport } from './routes/image-tools.png-to-jpg'
+import { Route as ImageToolsJpgToWebpRouteImport } from './routes/image-tools.jpg-to-webp'
 import { Route as ImageToolsJpgToPngRouteImport } from './routes/image-tools.jpg-to-png'
+import { Route as ImageToolsInvertRouteImport } from './routes/image-tools.invert'
 import { Route as ImageToolsImageToPdfRouteImport } from './routes/image-tools.image-to-pdf'
+import { Route as ImageToolsImageToBase64RouteImport } from './routes/image-tools.image-to-base64'
+import { Route as ImageToolsGrayscaleRouteImport } from './routes/image-tools.grayscale'
 import { Route as ImageToolsFlipRouteImport } from './routes/image-tools.flip'
 import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
 import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
+import { Route as ImageToolsBorderRouteImport } from './routes/image-tools.border'
+import { Route as ImageToolsBlurRouteImport } from './routes/image-tools.blur'
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
 import { Route as DeveloperToolsUuidGeneratorRouteImport } from './routes/developer-tools.uuid-generator'
 import { Route as DeveloperToolsUrlEncodeRouteImport } from './routes/developer-tools.url-encode'
@@ -427,6 +435,11 @@ const ImageToolsWatermarkRoute = ImageToolsWatermarkRouteImport.update({
   path: '/image-tools/watermark',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageToolsSepiaRoute = ImageToolsSepiaRouteImport.update({
+  id: '/image-tools/sepia',
+  path: '/image-tools/sepia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageToolsRotateRoute = ImageToolsRotateRouteImport.update({
   id: '/image-tools/rotate',
   path: '/image-tools/rotate',
@@ -442,9 +455,19 @@ const ImageToolsQrCodeRoute = ImageToolsQrCodeRouteImport.update({
   path: '/image-tools/qr-code',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageToolsPngToWebpRoute = ImageToolsPngToWebpRouteImport.update({
+  id: '/image-tools/png-to-webp',
+  path: '/image-tools/png-to-webp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageToolsPngToJpgRoute = ImageToolsPngToJpgRouteImport.update({
   id: '/image-tools/png-to-jpg',
   path: '/image-tools/png-to-jpg',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsJpgToWebpRoute = ImageToolsJpgToWebpRouteImport.update({
+  id: '/image-tools/jpg-to-webp',
+  path: '/image-tools/jpg-to-webp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageToolsJpgToPngRoute = ImageToolsJpgToPngRouteImport.update({
@@ -452,9 +475,24 @@ const ImageToolsJpgToPngRoute = ImageToolsJpgToPngRouteImport.update({
   path: '/image-tools/jpg-to-png',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageToolsInvertRoute = ImageToolsInvertRouteImport.update({
+  id: '/image-tools/invert',
+  path: '/image-tools/invert',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageToolsImageToPdfRoute = ImageToolsImageToPdfRouteImport.update({
   id: '/image-tools/image-to-pdf',
   path: '/image-tools/image-to-pdf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsImageToBase64Route = ImageToolsImageToBase64RouteImport.update({
+  id: '/image-tools/image-to-base64',
+  path: '/image-tools/image-to-base64',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsGrayscaleRoute = ImageToolsGrayscaleRouteImport.update({
+  id: '/image-tools/grayscale',
+  path: '/image-tools/grayscale',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageToolsFlipRoute = ImageToolsFlipRouteImport.update({
@@ -470,6 +508,16 @@ const ImageToolsCropRoute = ImageToolsCropRouteImport.update({
 const ImageToolsCompressRoute = ImageToolsCompressRouteImport.update({
   id: '/image-tools/compress',
   path: '/image-tools/compress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsBorderRoute = ImageToolsBorderRouteImport.update({
+  id: '/image-tools/border',
+  path: '/image-tools/border',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsBlurRoute = ImageToolsBlurRouteImport.update({
+  id: '/image-tools/blur',
+  path: '/image-tools/blur',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageToolsBackgroundRemoverRoute =
@@ -897,15 +945,23 @@ export interface FileRoutesByFullPath {
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
+  '/image-tools/blur': typeof ImageToolsBlurRoute
+  '/image-tools/border': typeof ImageToolsBorderRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
   '/image-tools/flip': typeof ImageToolsFlipRoute
+  '/image-tools/grayscale': typeof ImageToolsGrayscaleRoute
+  '/image-tools/image-to-base64': typeof ImageToolsImageToBase64Route
   '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
+  '/image-tools/invert': typeof ImageToolsInvertRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
+  '/image-tools/jpg-to-webp': typeof ImageToolsJpgToWebpRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/png-to-webp': typeof ImageToolsPngToWebpRoute
   '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/image-tools/sepia': typeof ImageToolsSepiaRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
@@ -1027,15 +1083,23 @@ export interface FileRoutesByTo {
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
+  '/image-tools/blur': typeof ImageToolsBlurRoute
+  '/image-tools/border': typeof ImageToolsBorderRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
   '/image-tools/flip': typeof ImageToolsFlipRoute
+  '/image-tools/grayscale': typeof ImageToolsGrayscaleRoute
+  '/image-tools/image-to-base64': typeof ImageToolsImageToBase64Route
   '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
+  '/image-tools/invert': typeof ImageToolsInvertRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
+  '/image-tools/jpg-to-webp': typeof ImageToolsJpgToWebpRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/png-to-webp': typeof ImageToolsPngToWebpRoute
   '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/image-tools/sepia': typeof ImageToolsSepiaRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
@@ -1158,15 +1222,23 @@ export interface FileRoutesById {
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
   '/developer-tools/uuid-generator': typeof DeveloperToolsUuidGeneratorRoute
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
+  '/image-tools/blur': typeof ImageToolsBlurRoute
+  '/image-tools/border': typeof ImageToolsBorderRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
   '/image-tools/flip': typeof ImageToolsFlipRoute
+  '/image-tools/grayscale': typeof ImageToolsGrayscaleRoute
+  '/image-tools/image-to-base64': typeof ImageToolsImageToBase64Route
   '/image-tools/image-to-pdf': typeof ImageToolsImageToPdfRoute
+  '/image-tools/invert': typeof ImageToolsInvertRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
+  '/image-tools/jpg-to-webp': typeof ImageToolsJpgToWebpRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
+  '/image-tools/png-to-webp': typeof ImageToolsPngToWebpRoute
   '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
   '/image-tools/resize': typeof ImageToolsResizeRoute
   '/image-tools/rotate': typeof ImageToolsRotateRoute
+  '/image-tools/sepia': typeof ImageToolsSepiaRoute
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
@@ -1290,15 +1362,23 @@ export interface FileRouteTypes {
     | '/developer-tools/url-encode'
     | '/developer-tools/uuid-generator'
     | '/image-tools/background-remover'
+    | '/image-tools/blur'
+    | '/image-tools/border'
     | '/image-tools/compress'
     | '/image-tools/crop'
     | '/image-tools/flip'
+    | '/image-tools/grayscale'
+    | '/image-tools/image-to-base64'
     | '/image-tools/image-to-pdf'
+    | '/image-tools/invert'
     | '/image-tools/jpg-to-png'
+    | '/image-tools/jpg-to-webp'
     | '/image-tools/png-to-jpg'
+    | '/image-tools/png-to-webp'
     | '/image-tools/qr-code'
     | '/image-tools/resize'
     | '/image-tools/rotate'
+    | '/image-tools/sepia'
     | '/image-tools/watermark'
     | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
@@ -1420,15 +1500,23 @@ export interface FileRouteTypes {
     | '/developer-tools/url-encode'
     | '/developer-tools/uuid-generator'
     | '/image-tools/background-remover'
+    | '/image-tools/blur'
+    | '/image-tools/border'
     | '/image-tools/compress'
     | '/image-tools/crop'
     | '/image-tools/flip'
+    | '/image-tools/grayscale'
+    | '/image-tools/image-to-base64'
     | '/image-tools/image-to-pdf'
+    | '/image-tools/invert'
     | '/image-tools/jpg-to-png'
+    | '/image-tools/jpg-to-webp'
     | '/image-tools/png-to-jpg'
+    | '/image-tools/png-to-webp'
     | '/image-tools/qr-code'
     | '/image-tools/resize'
     | '/image-tools/rotate'
+    | '/image-tools/sepia'
     | '/image-tools/watermark'
     | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
@@ -1550,15 +1638,23 @@ export interface FileRouteTypes {
     | '/developer-tools/url-encode'
     | '/developer-tools/uuid-generator'
     | '/image-tools/background-remover'
+    | '/image-tools/blur'
+    | '/image-tools/border'
     | '/image-tools/compress'
     | '/image-tools/crop'
     | '/image-tools/flip'
+    | '/image-tools/grayscale'
+    | '/image-tools/image-to-base64'
     | '/image-tools/image-to-pdf'
+    | '/image-tools/invert'
     | '/image-tools/jpg-to-png'
+    | '/image-tools/jpg-to-webp'
     | '/image-tools/png-to-jpg'
+    | '/image-tools/png-to-webp'
     | '/image-tools/qr-code'
     | '/image-tools/resize'
     | '/image-tools/rotate'
+    | '/image-tools/sepia'
     | '/image-tools/watermark'
     | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
@@ -1681,15 +1777,23 @@ export interface RootRouteChildren {
   DeveloperToolsUrlEncodeRoute: typeof DeveloperToolsUrlEncodeRoute
   DeveloperToolsUuidGeneratorRoute: typeof DeveloperToolsUuidGeneratorRoute
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
+  ImageToolsBlurRoute: typeof ImageToolsBlurRoute
+  ImageToolsBorderRoute: typeof ImageToolsBorderRoute
   ImageToolsCompressRoute: typeof ImageToolsCompressRoute
   ImageToolsCropRoute: typeof ImageToolsCropRoute
   ImageToolsFlipRoute: typeof ImageToolsFlipRoute
+  ImageToolsGrayscaleRoute: typeof ImageToolsGrayscaleRoute
+  ImageToolsImageToBase64Route: typeof ImageToolsImageToBase64Route
   ImageToolsImageToPdfRoute: typeof ImageToolsImageToPdfRoute
+  ImageToolsInvertRoute: typeof ImageToolsInvertRoute
   ImageToolsJpgToPngRoute: typeof ImageToolsJpgToPngRoute
+  ImageToolsJpgToWebpRoute: typeof ImageToolsJpgToWebpRoute
   ImageToolsPngToJpgRoute: typeof ImageToolsPngToJpgRoute
+  ImageToolsPngToWebpRoute: typeof ImageToolsPngToWebpRoute
   ImageToolsQrCodeRoute: typeof ImageToolsQrCodeRoute
   ImageToolsResizeRoute: typeof ImageToolsResizeRoute
   ImageToolsRotateRoute: typeof ImageToolsRotateRoute
+  ImageToolsSepiaRoute: typeof ImageToolsSepiaRoute
   ImageToolsWatermarkRoute: typeof ImageToolsWatermarkRoute
   ImageToolsWebpToPngRoute: typeof ImageToolsWebpToPngRoute
   PdfToolsAddBlankPageRoute: typeof PdfToolsAddBlankPageRoute
@@ -2142,6 +2246,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsWatermarkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-tools/sepia': {
+      id: '/image-tools/sepia'
+      path: '/image-tools/sepia'
+      fullPath: '/image-tools/sepia'
+      preLoaderRoute: typeof ImageToolsSepiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-tools/rotate': {
       id: '/image-tools/rotate'
       path: '/image-tools/rotate'
@@ -2163,11 +2274,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsQrCodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-tools/png-to-webp': {
+      id: '/image-tools/png-to-webp'
+      path: '/image-tools/png-to-webp'
+      fullPath: '/image-tools/png-to-webp'
+      preLoaderRoute: typeof ImageToolsPngToWebpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-tools/png-to-jpg': {
       id: '/image-tools/png-to-jpg'
       path: '/image-tools/png-to-jpg'
       fullPath: '/image-tools/png-to-jpg'
       preLoaderRoute: typeof ImageToolsPngToJpgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/jpg-to-webp': {
+      id: '/image-tools/jpg-to-webp'
+      path: '/image-tools/jpg-to-webp'
+      fullPath: '/image-tools/jpg-to-webp'
+      preLoaderRoute: typeof ImageToolsJpgToWebpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-tools/jpg-to-png': {
@@ -2177,11 +2302,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsJpgToPngRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-tools/invert': {
+      id: '/image-tools/invert'
+      path: '/image-tools/invert'
+      fullPath: '/image-tools/invert'
+      preLoaderRoute: typeof ImageToolsInvertRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-tools/image-to-pdf': {
       id: '/image-tools/image-to-pdf'
       path: '/image-tools/image-to-pdf'
       fullPath: '/image-tools/image-to-pdf'
       preLoaderRoute: typeof ImageToolsImageToPdfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/image-to-base64': {
+      id: '/image-tools/image-to-base64'
+      path: '/image-tools/image-to-base64'
+      fullPath: '/image-tools/image-to-base64'
+      preLoaderRoute: typeof ImageToolsImageToBase64RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/grayscale': {
+      id: '/image-tools/grayscale'
+      path: '/image-tools/grayscale'
+      fullPath: '/image-tools/grayscale'
+      preLoaderRoute: typeof ImageToolsGrayscaleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-tools/flip': {
@@ -2203,6 +2349,20 @@ declare module '@tanstack/react-router' {
       path: '/image-tools/compress'
       fullPath: '/image-tools/compress'
       preLoaderRoute: typeof ImageToolsCompressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/border': {
+      id: '/image-tools/border'
+      path: '/image-tools/border'
+      fullPath: '/image-tools/border'
+      preLoaderRoute: typeof ImageToolsBorderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/blur': {
+      id: '/image-tools/blur'
+      path: '/image-tools/blur'
+      fullPath: '/image-tools/blur'
+      preLoaderRoute: typeof ImageToolsBlurRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-tools/background-remover': {
@@ -2731,15 +2891,23 @@ const rootRouteChildren: RootRouteChildren = {
   DeveloperToolsUrlEncodeRoute: DeveloperToolsUrlEncodeRoute,
   DeveloperToolsUuidGeneratorRoute: DeveloperToolsUuidGeneratorRoute,
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
+  ImageToolsBlurRoute: ImageToolsBlurRoute,
+  ImageToolsBorderRoute: ImageToolsBorderRoute,
   ImageToolsCompressRoute: ImageToolsCompressRoute,
   ImageToolsCropRoute: ImageToolsCropRoute,
   ImageToolsFlipRoute: ImageToolsFlipRoute,
+  ImageToolsGrayscaleRoute: ImageToolsGrayscaleRoute,
+  ImageToolsImageToBase64Route: ImageToolsImageToBase64Route,
   ImageToolsImageToPdfRoute: ImageToolsImageToPdfRoute,
+  ImageToolsInvertRoute: ImageToolsInvertRoute,
   ImageToolsJpgToPngRoute: ImageToolsJpgToPngRoute,
+  ImageToolsJpgToWebpRoute: ImageToolsJpgToWebpRoute,
   ImageToolsPngToJpgRoute: ImageToolsPngToJpgRoute,
+  ImageToolsPngToWebpRoute: ImageToolsPngToWebpRoute,
   ImageToolsQrCodeRoute: ImageToolsQrCodeRoute,
   ImageToolsResizeRoute: ImageToolsResizeRoute,
   ImageToolsRotateRoute: ImageToolsRotateRoute,
+  ImageToolsSepiaRoute: ImageToolsSepiaRoute,
   ImageToolsWatermarkRoute: ImageToolsWatermarkRoute,
   ImageToolsWebpToPngRoute: ImageToolsWebpToPngRoute,
   PdfToolsAddBlankPageRoute: PdfToolsAddBlankPageRoute,
