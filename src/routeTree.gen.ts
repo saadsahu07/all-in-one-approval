@@ -59,6 +59,7 @@ import { Route as DeveloperToolsUuidGeneratorRouteImport } from './routes/develo
 import { Route as DeveloperToolsUrlEncodeRouteImport } from './routes/developer-tools.url-encode'
 import { Route as DeveloperToolsUrlDecodeRouteImport } from './routes/developer-tools.url-decode'
 import { Route as DeveloperToolsPasswordGeneratorRouteImport } from './routes/developer-tools.password-generator'
+import { Route as DeveloperToolsLoremIpsumGeneratorRouteImport } from './routes/developer-tools.lorem-ipsum-generator'
 import { Route as DeveloperToolsJwtDecoderRouteImport } from './routes/developer-tools.jwt-decoder'
 import { Route as DeveloperToolsJsonValidatorRouteImport } from './routes/developer-tools.json-validator'
 import { Route as DeveloperToolsJsonFormatterRouteImport } from './routes/developer-tools.json-formatter'
@@ -356,6 +357,12 @@ const DeveloperToolsPasswordGeneratorRoute =
   DeveloperToolsPasswordGeneratorRouteImport.update({
     id: '/developer-tools/password-generator',
     path: '/developer-tools/password-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsLoremIpsumGeneratorRoute =
+  DeveloperToolsLoremIpsumGeneratorRouteImport.update({
+    id: '/developer-tools/lorem-ipsum-generator',
+    path: '/developer-tools/lorem-ipsum-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
 const DeveloperToolsJwtDecoderRoute =
@@ -658,6 +665,7 @@ export interface FileRoutesByFullPath {
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
+  '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
@@ -753,6 +761,7 @@ export interface FileRoutesByTo {
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
+  '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
@@ -849,6 +858,7 @@ export interface FileRoutesById {
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
+  '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/url-decode': typeof DeveloperToolsUrlDecodeRoute
   '/developer-tools/url-encode': typeof DeveloperToolsUrlEncodeRoute
@@ -946,6 +956,7 @@ export interface FileRouteTypes {
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
+    | '/developer-tools/lorem-ipsum-generator'
     | '/developer-tools/password-generator'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
@@ -1041,6 +1052,7 @@ export interface FileRouteTypes {
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
+    | '/developer-tools/lorem-ipsum-generator'
     | '/developer-tools/password-generator'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
@@ -1136,6 +1148,7 @@ export interface FileRouteTypes {
     | '/developer-tools/json-formatter'
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
+    | '/developer-tools/lorem-ipsum-generator'
     | '/developer-tools/password-generator'
     | '/developer-tools/url-decode'
     | '/developer-tools/url-encode'
@@ -1232,6 +1245,7 @@ export interface RootRouteChildren {
   DeveloperToolsJsonFormatterRoute: typeof DeveloperToolsJsonFormatterRoute
   DeveloperToolsJsonValidatorRoute: typeof DeveloperToolsJsonValidatorRoute
   DeveloperToolsJwtDecoderRoute: typeof DeveloperToolsJwtDecoderRoute
+  DeveloperToolsLoremIpsumGeneratorRoute: typeof DeveloperToolsLoremIpsumGeneratorRoute
   DeveloperToolsPasswordGeneratorRoute: typeof DeveloperToolsPasswordGeneratorRoute
   DeveloperToolsUrlDecodeRoute: typeof DeveloperToolsUrlDecodeRoute
   DeveloperToolsUrlEncodeRoute: typeof DeveloperToolsUrlEncodeRoute
@@ -1628,6 +1642,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsPasswordGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/lorem-ipsum-generator': {
+      id: '/developer-tools/lorem-ipsum-generator'
+      path: '/developer-tools/lorem-ipsum-generator'
+      fullPath: '/developer-tools/lorem-ipsum-generator'
+      preLoaderRoute: typeof DeveloperToolsLoremIpsumGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/jwt-decoder': {
       id: '/developer-tools/jwt-decoder'
       path: '/developer-tools/jwt-decoder'
@@ -2000,6 +2021,8 @@ const rootRouteChildren: RootRouteChildren = {
   DeveloperToolsJsonFormatterRoute: DeveloperToolsJsonFormatterRoute,
   DeveloperToolsJsonValidatorRoute: DeveloperToolsJsonValidatorRoute,
   DeveloperToolsJwtDecoderRoute: DeveloperToolsJwtDecoderRoute,
+  DeveloperToolsLoremIpsumGeneratorRoute:
+    DeveloperToolsLoremIpsumGeneratorRoute,
   DeveloperToolsPasswordGeneratorRoute: DeveloperToolsPasswordGeneratorRoute,
   DeveloperToolsUrlDecodeRoute: DeveloperToolsUrlDecodeRoute,
   DeveloperToolsUrlEncodeRoute: DeveloperToolsUrlEncodeRoute,
