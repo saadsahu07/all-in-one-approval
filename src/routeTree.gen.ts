@@ -66,6 +66,7 @@ import { Route as DeveloperToolsJsMinifierRouteImport } from './routes/developer
 import { Route as DeveloperToolsHtmlMinifierRouteImport } from './routes/developer-tools.html-minifier'
 import { Route as DeveloperToolsHashGeneratorRouteImport } from './routes/developer-tools.hash-generator'
 import { Route as DeveloperToolsCssMinifierRouteImport } from './routes/developer-tools.css-minifier'
+import { Route as DeveloperToolsColorConverterRouteImport } from './routes/developer-tools.color-converter'
 import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
 import { Route as DeveloperToolsBase64DecodeRouteImport } from './routes/developer-tools.base64-decode'
 import { Route as ContentCreationYoutubeVideoIdeaGeneratorRouteImport } from './routes/content-creation.youtube-video-idea-generator'
@@ -399,6 +400,12 @@ const DeveloperToolsCssMinifierRoute =
     path: '/developer-tools/css-minifier',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsColorConverterRoute =
+  DeveloperToolsColorConverterRouteImport.update({
+    id: '/developer-tools/color-converter',
+    path: '/developer-tools/color-converter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsBase64EncodeRoute =
   DeveloperToolsBase64EncodeRouteImport.update({
     id: '/developer-tools/base64-encode',
@@ -643,6 +650,7 @@ export interface FileRoutesByFullPath {
   '/content-creation/youtube-video-idea-generator': typeof ContentCreationYoutubeVideoIdeaGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
+  '/developer-tools/color-converter': typeof DeveloperToolsColorConverterRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
   '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
@@ -737,6 +745,7 @@ export interface FileRoutesByTo {
   '/content-creation/youtube-video-idea-generator': typeof ContentCreationYoutubeVideoIdeaGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
+  '/developer-tools/color-converter': typeof DeveloperToolsColorConverterRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
   '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
@@ -832,6 +841,7 @@ export interface FileRoutesById {
   '/content-creation/youtube-video-idea-generator': typeof ContentCreationYoutubeVideoIdeaGeneratorRoute
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
+  '/developer-tools/color-converter': typeof DeveloperToolsColorConverterRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
   '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
@@ -928,6 +938,7 @@ export interface FileRouteTypes {
     | '/content-creation/youtube-video-idea-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
+    | '/developer-tools/color-converter'
     | '/developer-tools/css-minifier'
     | '/developer-tools/hash-generator'
     | '/developer-tools/html-minifier'
@@ -1022,6 +1033,7 @@ export interface FileRouteTypes {
     | '/content-creation/youtube-video-idea-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
+    | '/developer-tools/color-converter'
     | '/developer-tools/css-minifier'
     | '/developer-tools/hash-generator'
     | '/developer-tools/html-minifier'
@@ -1116,6 +1128,7 @@ export interface FileRouteTypes {
     | '/content-creation/youtube-video-idea-generator'
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
+    | '/developer-tools/color-converter'
     | '/developer-tools/css-minifier'
     | '/developer-tools/hash-generator'
     | '/developer-tools/html-minifier'
@@ -1211,6 +1224,7 @@ export interface RootRouteChildren {
   ContentCreationYoutubeVideoIdeaGeneratorRoute: typeof ContentCreationYoutubeVideoIdeaGeneratorRoute
   DeveloperToolsBase64DecodeRoute: typeof DeveloperToolsBase64DecodeRoute
   DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
+  DeveloperToolsColorConverterRoute: typeof DeveloperToolsColorConverterRoute
   DeveloperToolsCssMinifierRoute: typeof DeveloperToolsCssMinifierRoute
   DeveloperToolsHashGeneratorRoute: typeof DeveloperToolsHashGeneratorRoute
   DeveloperToolsHtmlMinifierRoute: typeof DeveloperToolsHtmlMinifierRoute
@@ -1663,6 +1677,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsCssMinifierRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/color-converter': {
+      id: '/developer-tools/color-converter'
+      path: '/developer-tools/color-converter'
+      fullPath: '/developer-tools/color-converter'
+      preLoaderRoute: typeof DeveloperToolsColorConverterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/base64-encode': {
       id: '/developer-tools/base64-encode'
       path: '/developer-tools/base64-encode'
@@ -1971,6 +1992,7 @@ const rootRouteChildren: RootRouteChildren = {
     ContentCreationYoutubeVideoIdeaGeneratorRoute,
   DeveloperToolsBase64DecodeRoute: DeveloperToolsBase64DecodeRoute,
   DeveloperToolsBase64EncodeRoute: DeveloperToolsBase64EncodeRoute,
+  DeveloperToolsColorConverterRoute: DeveloperToolsColorConverterRoute,
   DeveloperToolsCssMinifierRoute: DeveloperToolsCssMinifierRoute,
   DeveloperToolsHashGeneratorRoute: DeveloperToolsHashGeneratorRoute,
   DeveloperToolsHtmlMinifierRoute: DeveloperToolsHtmlMinifierRoute,
