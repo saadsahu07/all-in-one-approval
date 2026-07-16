@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { categories } from "@/lib/tools";
 import { postsMeta } from "@/lib/blog-meta";
 
-const BASE_URL = "https://all-in-one-approval.lovable.app";
+const BASE_URL = "https://toolshive.tools";
 
 interface Entry {
   path: string;

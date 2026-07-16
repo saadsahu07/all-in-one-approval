@@ -6,9 +6,9 @@ export const Route = createFileRoute("/disclaimer")({
     { name: "description", content: "General disclaimer about the accuracy and use of ToolsHive tools and content." },
     { property: "og:title", content: "Disclaimer — ToolsHive" },
     { property: "og:description", content: "General disclaimer about the accuracy and use of ToolsHive tools and content." },
-    { property: "og:url", content: "https://all-in-one-approval.lovable.app/disclaimer" },
+    { property: "og:url", content: "https://toolshive.tools/disclaimer" },
   ],
-  links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/disclaimer" }],
+  links: [{ rel: "canonical", href: "https://toolshive.tools/disclaimer" }],
   }),
   component: DisclaimerPage,
 });

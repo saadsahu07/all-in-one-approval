@@ -6,9 +6,9 @@ export const Route = createFileRoute("/terms")({
     { name: "description", content: "Terms governing your use of the ToolsHive website and tools." },
     { property: "og:title", content: "Terms of Service — ToolsHive" },
     { property: "og:description", content: "Terms governing your use of the ToolsHive website and tools." },
-    { property: "og:url", content: "https://all-in-one-approval.lovable.app/terms" },
+    { property: "og:url", content: "https://toolshive.tools/terms" },
   ],
-  links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/terms" }],
+  links: [{ rel: "canonical", href: "https://toolshive.tools/terms" }],
   }),
   component: TermsPage,
 });

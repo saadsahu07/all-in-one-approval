@@ -6,9 +6,9 @@ export const Route = createFileRoute("/privacy-policy")({
     { name: "description", content: "How ToolsHive handles data, cookies, analytics, and advertising." },
     { property: "og:title", content: "Privacy Policy — ToolsHive" },
     { property: "og:description", content: "How ToolsHive handles data, cookies, analytics, and advertising." },
-    { property: "og:url", content: "https://all-in-one-approval.lovable.app/privacy-policy" },
+    { property: "og:url", content: "https://toolshive.tools/privacy-policy" },
   ],
-  links: [{ rel: "canonical", href: "https://all-in-one-approval.lovable.app/privacy-policy" }],
+  links: [{ rel: "canonical", href: "https://toolshive.tools/privacy-policy" }],
   }),
   component: PrivacyPage,
 });

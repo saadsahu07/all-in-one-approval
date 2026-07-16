@@ -4,7 +4,7 @@ import { getCategory } from "@/lib/tools";
 export function CategoryPage({ slug }: { slug: string }) {
   const category = getCategory(slug);
   if (!category) return null;
-  const SITE = "https://all-in-one-approval.lovable.app";
+  const SITE = "https://toolshive.tools";
   const catUrl = `${SITE}${category.path}`;
   const jsonLd = [
     {
