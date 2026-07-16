@@ -440,4 +440,3 @@ Object.assign(seo, {
     ],
   },
 });
-});
