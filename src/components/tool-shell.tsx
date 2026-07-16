@@ -20,6 +20,7 @@ import type { ToolSeo } from "@/lib/seo/types";
 import { useFavorites, trackRecent } from "@/lib/user-prefs";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { renderMarkdown } from "@/lib/render-md";
+import { postsMeta } from "@/lib/blog-meta";
 
 // Canonical site origin, used to build absolute URLs for JSON-LD schema
 // (search engines require absolute `url` / `item` values).
@@ -68,6 +69,11 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
   const related = useMemo(
     () => (category?.tools ?? allTools.slice(0, 4)).filter((t) => t.slug !== toolSlug).slice(0, 4),
     [category, toolSlug],
+  );
+  // Blog posts whose `toolPath` maps to this tool — surfaces relevant guides.
+  const relatedGuides = useMemo(
+    () => (tool?.path ? postsMeta.filter((p) => p.toolPath === tool.path).slice(0, 3) : []),
+    [tool?.path],
   );
   const toolUrl = tool ? `${SITE}${tool.path}` : undefined;
   const displayIntro = seo?.intro?.[0] ?? intro;
@@ -118,6 +124,10 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
                   name: f.q,
                   acceptedAnswer: { "@type": "Answer", text: f.a },
                 })),
+                speakable: {
+                  "@type": "SpeakableSpecification",
+                  cssSelector: ["h1", "[data-speakable]"],
+                },
               },
             ]
           : []),
@@ -215,11 +225,31 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
             {seo.faqs.map((f, i) => (
               <details key={i} className="group px-4 py-3">
                 <summary className="flex cursor-pointer items-center justify-between gap-4 text-sm font-medium text-foreground">
-                  <span>{f.q}</span>
+                  <span data-speakable>{f.q}</span>
                   <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-90" />
                 </summary>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                <p data-speakable className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
               </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {relatedGuides.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xl font-bold">Related guides</h2>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {relatedGuides.map((g) => (
+              <Link
+                key={g.slug}
+                to="/blog/$slug"
+                params={{ slug: g.slug }}
+                className="rounded-lg border border-border bg-card p-4 transition-colors hover:border-accent"
+              >
+                <p className="text-sm font-semibold text-foreground">{g.title}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{g.excerpt}</p>
+                <p className="mt-2 text-xs text-accent">{g.readingMinutes} min read →</p>
+              </Link>
             ))}
           </div>
         </section>
