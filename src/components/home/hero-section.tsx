@@ -7,13 +7,13 @@ export function HeroSection() {
     <section className="relative border-b border-border bg-background">
       <div className="mx-auto w-full max-w-4xl px-5 py-16 text-center sm:px-6 sm:py-24">
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground">
-          60 free tools · no signup
+          120+ free tools · no signup · no watermark
         </span>
         <h1 className="mx-auto mt-5 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          Simple tools for everyday work
+          120+ free tools that just work
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Text, image, PDF, developer and calculator tools — all in one place. Free, fast, and easy to use.
+          Compress images, edit PDFs, count words, convert files, and generate content — free, private, and instant in your browser.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
