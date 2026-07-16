@@ -6,9 +6,9 @@
 @custom-variant light (&:is(.light *));
 
 @theme {
-  --font-serif: "Sora", system-ui, sans-serif;
-  --font-sans: "Manrope", system-ui, sans-serif;
-  --font-display: "Sora", system-ui, sans-serif;
+  --font-serif: "Outfit", system-ui, sans-serif;
+  --font-sans: "Figtree", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --animate-page-in: page-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-rise-in: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -91,33 +91,33 @@
 
 :root {
   --radius: 0.625rem;
-  /* Neon Mint — deep-sea navy control room with mint status glow */
-  --background: oklch(0.19 0.035 235);        /* #0d1b2a deep navy */
-  --foreground: oklch(0.98 0.005 200);
-  --card: oklch(0.24 0.04 220);               /* raised navy surface */
-  --card-foreground: oklch(0.98 0.005 200);
-  --popover: oklch(0.22 0.035 225);
-  --popover-foreground: oklch(0.98 0.005 200);
-  --primary: oklch(0.78 0.16 165);            /* #2dd4a8 mint — interactive */
-  --primary-foreground: oklch(0.16 0.04 235); /* near-black on mint */
-  --secondary: oklch(0.30 0.05 200);          /* slate-teal surface */
-  --secondary-foreground: oklch(0.98 0.005 200);
-  --muted: oklch(0.26 0.03 220);
-  --muted-foreground: oklch(0.74 0.02 210);
-  --accent: oklch(0.90 0.16 155);             /* #73ffb8 brighter mint — highlight */
-  --accent-foreground: oklch(0.16 0.04 235);
-  --destructive: oklch(0.62 0.24 25);
-  --destructive-foreground: oklch(0.99 0.005 200);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.78 0.16 165);
-  --navy-deep: oklch(0.15 0.035 235);         /* darker slab */
-  --navy-mid: oklch(0.22 0.04 225);
-  --teal-bright: oklch(0.78 0.16 165);
-  --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.45 0.14 165 / 0.35), transparent 70%), linear-gradient(180deg, oklch(0.22 0.04 230), oklch(0.16 0.035 235));
+  /* Cloud White — clean, airy, simple. Blue accent (#3b82f6). */
+  --background: oklch(0.99 0.003 250);        /* #fafbfc */
+  --foreground: oklch(0.22 0.03 260);         /* near-slate-900 */
+  --card: oklch(1 0 0);                       /* pure white surface */
+  --card-foreground: oklch(0.22 0.03 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 260);
+  --primary: oklch(0.62 0.19 256);            /* #3b82f6 blue */
+  --primary-foreground: oklch(0.99 0.005 250);
+  --secondary: oklch(0.955 0.008 250);        /* #e8ecf1 soft cloud */
+  --secondary-foreground: oklch(0.28 0.03 260);
+  --muted: oklch(0.965 0.006 250);
+  --muted-foreground: oklch(0.55 0.03 255);   /* #94a3b8 slate */
+  --accent: oklch(0.62 0.19 256);
+  --accent-foreground: oklch(0.99 0.005 250);
+  --destructive: oklch(0.6 0.24 25);
+  --destructive-foreground: oklch(0.99 0.005 250);
+  --border: oklch(0.22 0.03 260 / 10%);
+  --input: oklch(0.22 0.03 260 / 14%);
+  --ring: oklch(0.62 0.19 256);
+  --navy-deep: oklch(0.965 0.006 250);        /* subtle cloud slab */
+  --navy-mid: oklch(0.975 0.005 250);
+  --teal-bright: oklch(0.62 0.19 256);
+  --hero-gradient: linear-gradient(180deg, oklch(0.985 0.006 250), oklch(0.955 0.012 250));
   --grid-fade: radial-gradient(ellipse 60% 50% at 50% 40%, black 30%, transparent 75%);
-  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.45), 0 10px 30px -10px oklch(0.5 0.14 165 / 0.28);
-  --shadow-glow: 0 0 0 1px oklch(0.78 0.16 165 / 0.35), 0 12px 40px -10px oklch(0.78 0.16 165 / 0.45);
+  --shadow-card: 0 1px 2px oklch(0.22 0.03 260 / 0.06), 0 8px 24px -12px oklch(0.22 0.03 260 / 0.12);
+  --shadow-glow: 0 1px 2px oklch(0.62 0.19 256 / 0.25), 0 10px 30px -12px oklch(0.62 0.19 256 / 0.35);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
