@@ -292,4 +292,151 @@ Object.assign(seo, {
       ...commonFaq,
     ],
   },
+  "/content-creation/facebook-post-generator": {
+    title: "Facebook Post Generator — Free AI Posts",
+    metaDescription: "Write 5 engaging Facebook posts under 400 characters with AI. Free, no signup — conversational hooks and clear CTAs for more reach.",
+    keyword: "facebook post generator",
+    intro: [
+      "Write 5 engaging Facebook posts from any topic in seconds. Our free AI Facebook post generator produces conversational, scroll-stopping posts under 400 characters — short enough to show without a 'See more' cut and structured for clicks, comments, or shares.",
+      "Perfect for small business owners, community managers, and creators who post daily and burn out on writing. Enter a topic, pick a tone, and copy the post that fits your page voice.",
+    ],
+    features: [
+      "5 distinct post angles per generation",
+      "Every post under 400 characters — no truncation on desktop",
+      "Choose tone: friendly, professional, witty, or bold",
+      "One clear CTA per post (comment, share, click, DM)",
+    ],
+    guide: `## What the Facebook Post Generator does\n\nThis tool writes five distinct Facebook posts from a topic and tone. Each post opens with a conversational hook, delivers the value in one or two short paragraphs, and closes with a single clear CTA. Posts stay under 400 characters so they show in full on desktop and mobile without the 'See more' truncation that kills engagement.\n\n## Why post length matters on Facebook\n\nFacebook's algorithm rewards posts that finish reading and get engagement. A 900-character post that gets cut off at 'See more' loses most readers at the fold. A tight 250-character post that a scroller can absorb in one glance keeps them on the post long enough to react. Short-and-clear consistently beats long-and-thoughtful for organic reach.\n\n## Step-by-step\n\n**1. Enter your post topic.** What is this post about in one line?\n\n**2. Pick a tone.** Friendly for lifestyle, professional for B2B, witty for personal brands, bold for opinionated takes.\n\n**3. Generate.** Five distinct posts appear.\n\n**4. Pick the one whose CTA matches your goal** — a comment prompt drives reach, a link drives clicks, a share prompt drives distribution.\n\n**5. Post it** during your audience's peak-active window (usually 8-10am and 7-9pm local time).\n\n## What great Facebook posts have in common\n\n- **Hook in the first line.** The first 65 characters preview in feed — earn the click.\n- **Line breaks.** Two-line posts read better than one-paragraph blocks.\n- **One CTA.** Two CTAs cancel each other out.\n- **No link stuffing.** Facebook down-ranks posts with multiple external links.\n\n## What to avoid\n\n- **Clickbait headlines.** Facebook flags them and cuts reach.\n- **All-caps titles.** Look spammy and hurt CTR.\n- **Sharing the same post text on multiple pages.** Facebook detects duplicates and suppresses reach.`,
+    faqs: [
+      { q: "How long should a Facebook post be?", a: "Under 400 characters is the sweet spot — it displays without a 'See more' cut and holds the reader's attention through the CTA." },
+      { q: "Should I include a link?", a: "Yes if the goal is clicks, but only one — Facebook suppresses posts with multiple external links." },
+      ...commonFaq,
+    ],
+  },
+  "/content-creation/linkedin-post-generator": {
+    title: "LinkedIn Post Generator — Free AI Posts",
+    metaDescription: "Write 3 LinkedIn posts with strong hooks that survive the 3-line preview cut. Free AI tool, no signup — grow your professional brand.",
+    keyword: "linkedin post generator",
+    intro: [
+      "Write 3 high-engagement LinkedIn posts from any topic in seconds. Our free AI LinkedIn post generator produces posts with strong 1-line hooks that survive the 3-line preview cut, short scannable paragraphs, a personal or professional insight, and a clear ask at the end — the structure that consistently earns comments and reshares on LinkedIn.",
+      "Perfect for founders, executives, consultants, and B2B marketers building thought leadership. Enter a topic, pick an angle, and post the version that sounds most like you.",
+    ],
+    features: [
+      "3 distinct post angles per generation",
+      "Every post 800-1500 characters — the LinkedIn sweet spot",
+      "Strong 1-line hook that survives the 3-line preview",
+      "Max 3 hashtags per post — no hashtag spam",
+    ],
+    guide: `## What the LinkedIn Post Generator does\n\nThis tool writes three distinct LinkedIn posts from a topic and angle. Each post opens with a 1-line hook designed to survive LinkedIn's 3-line 'see more' preview, breaks the middle into short paragraphs with white space, delivers a personal or professional insight, and closes with a 1-line ask that invites comments.\n\n## Why the LinkedIn hook is doing 80% of the work\n\nLinkedIn shows only the first three lines of your post in feed before the 'see more' cut. If those three lines don't hook the scroller, the entire post — no matter how good — dies. The best LinkedIn posts open with a specific number, a contrarian claim, a personal admission, or a question that only their audience would ask. Long generic opens ('I wanted to share some thoughts on...') are dead on arrival.\n\n## Step-by-step\n\n**1. Enter your topic.** A specific insight or observation — *"why most startups pick the wrong first hire"* — not a category — *"hiring."*\n\n**2. Pick an angle.** *Insight* for professional takes, *story* for personal narratives, *contrarian* for hot takes, *lesson* for advice format.\n\n**3. Generate.** Three post variants appear.\n\n**4. Read all three before deciding.** The strongest often isn't the first one.\n\n**5. Rewrite in your voice.** Change 2-3 words per paragraph so it sounds like you, not an AI.\n\n## What earns comments and reshares on LinkedIn\n\n- **A specific number in the hook.** *"I raised $2M in 6 weeks. Here's what I got wrong."*\n- **White space.** Two-sentence paragraphs beat four-sentence walls.\n- **A specific ask.** *"What's the worst first hire you've seen?"* beats *"thoughts?"*\n- **Personal specifics.** Names, numbers, dates. Generic beats no reach; specific earns it.\n\n## What to avoid\n\n- **Hashtag spam.** 3 is enough. 10 hashtags looks amateur.\n- **Broetry.** One-word-per-line posts still get engagement but tanked reach after LinkedIn's 2023 algorithm changes.\n- **External links in the post body.** LinkedIn suppresses reach on posts with outbound links — put the link in the first comment instead.`,
+    faqs: [
+      { q: "How long should a LinkedIn post be?", a: "800-1500 characters is the sweet spot. Shorter posts feel thin; longer posts get cut and lose readers at the 'see more' fold." },
+      { q: "Should I include a link?", a: "Not in the post body — LinkedIn suppresses reach on posts with outbound links. Put the link in the first comment instead." },
+      ...commonFaq,
+    ],
+  },
+  "/content-creation/youtube-shorts-script-generator": {
+    title: "YouTube Shorts Script Generator — Free AI Scripts",
+    metaDescription: "Write a full 30-45 second YouTube Shorts script with hook, body, payoff, and CTA. Free AI tool, no signup — boost Shorts views.",
+    keyword: "youtube shorts script generator",
+    intro: [
+      "Turn any topic into a complete 30-45 second YouTube Shorts script in seconds. Our free AI Shorts script generator writes the full structure — hook, body, payoff, and CTA — so you can start filming immediately instead of staring at a blank doc.",
+      "Perfect for creators who post daily Shorts and burn out on the writing side. Enter your topic and copy a script structured for the swipe-away pace of the Shorts feed.",
+    ],
+    features: [
+      "Full 30-45 second script with clear section labels",
+      "Hook designed to lock viewers in the first 3 seconds",
+      "Fast-paced body with 3-5 punchy points",
+      "Built-in CTA to subscribe or watch the long-form video",
+    ],
+    guide: `## What the YouTube Shorts Script Generator does\n\nGive it a topic. It returns a complete Shorts script with four sections: HOOK (first 3 seconds), BODY (3-5 fast points), PAYOFF (the takeaway), and CTA (subscribe or watch the full video). Each section is labeled and ready to teleprompter.\n\n## Why the first 3 seconds are everything\n\nOn Shorts, the average viewer decides in under 2 seconds whether to keep watching or swipe. If the first frame is you saying 'Hey guys, today we're talking about...', you already lost. The best Shorts open with a visual shock, a shocking claim, a question, or the *end result* first (retention-holding a curiosity gap). The generator prompts a hook that does this by default.\n\n## Step-by-step\n\n**1. Enter your video topic** in one line. Concrete beats vague.\n\n**2. Generate.** The full 30-45 second script appears with labeled sections.\n\n**3. Read the hook out loud.** Time it. If it takes more than 3 seconds, cut a word.\n\n**4. Film with the script visible.** Most Shorts creators film in 3-5 takes maximum, edited tight.\n\n**5. Match the CTA to the goal.** Sub-focused → 'subscribe for part 2'. Traffic-focused → 'full video linked'. Retention-focused → 'wait until the end'.\n\n## What great Shorts scripts have in common\n\n- **Under 100 words for a 30-45 second Short.** Cut ruthlessly.\n- **No throat-clearing.** No 'so basically' or 'today I want to talk about'.\n- **A pattern break every 3-5 seconds.** New shot, new angle, new zoom.\n- **A payoff line that resolves the hook.** If the hook promises a secret, the payoff delivers it.\n\n## What to avoid\n\n- **Long intros.** They kill Shorts.\n- **Music that fights the voiceover.** Use trending audio at 15-25% volume under your voice.\n- **CTAs at the start.** Ask at the end when the viewer has already stayed.`,
+    faqs: [
+      { q: "How long should a YouTube Short be?", a: "30-45 seconds is the sweet spot for retention and completion rate. Under 20 seconds is fine for jokes and quick tips; over 60 tends to lose viewers." },
+      { q: "Should I use trending audio?", a: "Yes when it fits. Trending audio boosts initial reach, but keep it low in the mix so your voiceover is clear." },
+      ...commonFaq,
+    ],
+  },
+  "/content-creation/slogan-generator": {
+    title: "Slogan Generator — Free AI Brand Slogans",
+    metaDescription: "Generate 10 short, memorable slogans for any brand or product. Free AI tool, no signup — punchy, on-brand, and ready to use.",
+    keyword: "slogan generator",
+    intro: [
+      "Generate 10 short, memorable slogans for any brand or product in seconds. Our free AI slogan generator produces punchy taglines under 8 words each — no generic 'quality you can trust' filler, just distinct on-brand lines you can actually use.",
+      "Perfect for founders naming a startup, freelancers building a brand, and marketers pitching campaign taglines. Enter your brand and get 10 options in five different styles.",
+    ],
+    features: [
+      "10 slogan options per generation",
+      "Every slogan under 8 words — the memorable range",
+      "Mix of styles: benefit, promise, playful, aspirational, action",
+      "Optional tone selector to match brand voice",
+    ],
+    guide: `## What the Slogan Generator does\n\nGive it a brand name, a one-line description of what it does, and a tone. It returns ten slogan options in mixed styles — some benefit-focused, some playful, some aspirational — each under 8 words and ready to test with real customers.\n\n## What makes a slogan memorable\n\nThe slogans people actually remember share three traits: they're short (under 6 words on average), they say something true about the brand, and they use a rhythm or rhyme that sticks. *Just Do It* (3 words, action). *Think Different* (2 words, positioning). *Because You're Worth It* (4 words, benefit). None of the great slogans in history are 10-word feature lists.\n\n## Step-by-step\n\n**1. Enter your brand name.** Exactly as it appears in your logo.\n\n**2. Add a one-line description** of what the brand does. This is where the slogan pulls its meaning from.\n\n**3. Pick a tone.** Modern for tech, playful for consumer, professional for B2B, bold for challengers.\n\n**4. Generate.** Ten slogans appear.\n\n**5. Test 3 with real people.** Ask them to repeat the slogan back a day later without looking. The one they remember wins.\n\n## What to avoid\n\n- **Generic filler.** *Quality you can trust* is dead the moment it's written.\n- **Feature lists.** Slogans are not descriptions.\n- **Words you have to explain.** If a customer needs a footnote, the slogan failed.\n- **Trend-chasing.** A slogan that's cool in 2026 will feel dated in 2028.`,
+    faqs: [
+      { q: "How long should a slogan be?", a: "Under 8 words is memorable; under 4 is legendary. Length correlates strongly with recall in trademark research." },
+      { q: "Can I trademark a generated slogan?", a: "Yes if it's genuinely original. Run a trademark search on your country's IP office before using a slogan commercially." },
+      ...commonFaq,
+    ],
+  },
+  "/content-creation/product-description-generator": {
+    title: "Product Description Generator — Free AI Copy",
+    metaDescription: "Write conversion-focused product descriptions with headline, benefits, and bullets. Free AI tool, no signup — for e-commerce and Etsy.",
+    keyword: "product description generator",
+    intro: [
+      "Write conversion-focused product descriptions in seconds. Our free AI product description generator produces a benefit-led headline, a 2-3 sentence lead paragraph, a 'What you get' bullet list, and a closing line — everything a shopper needs to click Add to Cart.",
+      "Perfect for Shopify stores, Etsy shops, Amazon listings, and DTC brands where a bad description silently kills conversion. Enter your product name and key features and copy a listing that actually sells.",
+    ],
+    features: [
+      "Full description under 200 words — the mobile sweet spot",
+      "Benefit-led headline plus scannable bullet list",
+      "Optional audience field for sharper positioning",
+      "One-click copy ready for Shopify, Etsy, or Amazon",
+    ],
+    guide: `## What the Product Description Generator does\n\nGive it a product name, a list of key features, and (optionally) the target audience. It writes a complete description with a 1-line headline naming the top benefit, a 2-3 sentence lead paragraph selling the outcome, a 4-6 bullet 'What you get' section, and a short closing line with urgency or reassurance.\n\n## Why most product descriptions leak sales\n\nMost descriptions list specs. Specs tell shoppers what the product *is*; benefits tell them how it will *change* their life. A description that says *'stainless steel, 12 oz'* is a fact. A description that says *'stays cold for 24 hours so your first sip and your last sip taste the same'* sells the product. Facts belong in the bullet list; benefits belong at the top.\n\n## Step-by-step\n\n**1. Enter your product name.**\n\n**2. List the key features** — 3-6 short bullet-worthy items (materials, size, use case).\n\n**3. (Optional) Add your target audience.** *Busy parents*, *remote workers*, *first-time buyers* — each produces a different description.\n\n**4. Generate.** The full description appears.\n\n**5. Edit for brand voice** and paste into your product page.\n\n## What a converting description contains\n\n- **A benefit-led headline** the shopper sees first.\n- **A lead paragraph that sells the outcome**, not the specs.\n- **A bulleted 'What you get' list** — specs and features go here.\n- **A short closing line** — reassurance ('30-day returns') or urgency ('only 12 left').\n\n## What to avoid\n\n- **Feature dumps at the top.** Bury specs in the bullet list.\n- **Generic superlatives.** *'The best'*, *'premium'*, *'revolutionary'* — filler that shoppers skim past.\n- **Wall-of-text paragraphs.** Mobile shoppers scan; use white space and bullets.`,
+    faqs: [
+      { q: "How long should a product description be?", a: "Under 200 words for mobile-first stores. Longer descriptions are fine on category pages but hurt conversion on the product page itself." },
+      { q: "Will this work for Amazon or Etsy?", a: "Yes — the output structure fits Shopify, Amazon, Etsy, and any storefront that supports HTML or plain text descriptions. Edit for platform character limits." },
+      ...commonFaq,
+    ],
+  },
+  "/content-creation/bio-generator": {
+    title: "Bio Generator — Free AI Instagram, X & LinkedIn Bios",
+    metaDescription: "Write 5 short bios for Instagram, TikTok, Twitter/X, or LinkedIn. Free AI tool, no signup — identity, value, and a soft CTA.",
+    keyword: "bio generator",
+    intro: [
+      "Write 5 short, magnetic profile bios in seconds. Our free AI bio generator produces bios tuned to each platform's character limit — Instagram and TikTok under 150 characters with emojis, Twitter/X under 160, LinkedIn under 220 and professional — each following the identity + value + soft CTA structure that converts profile visitors into followers.",
+      "Perfect for creators refreshing their profile, freelancers pitching their services, and job-seekers polishing their LinkedIn. Enter what you do and get 5 bios matched to your chosen platform.",
+    ],
+    features: [
+      "5 bio options per generation",
+      "Platform-tuned length: Instagram, TikTok, Twitter/X, LinkedIn",
+      "Identity + value + soft CTA structure",
+      "Optional tone: friendly, professional, witty, bold",
+    ],
+    guide: `## What the Bio Generator does\n\nGive it a short 'about you' line and a target platform. It returns five bio variants tuned to that platform's character limit and audience norms.\n\n## What a good bio does in 3 lines\n\nProfile bios are the highest-leverage piece of copy you own — a well-written bio can double your follow rate from profile visits. Every strong bio answers three questions in order: *who are you*, *what value do you deliver*, and *what do you want the visitor to do next* (follow, click a link, DM). Skip any of the three and the bio underperforms.\n\n## Step-by-step\n\n**1. Enter your 'about you' line.** Roles, niche, achievements — anything that would help describe you in a sentence.\n\n**2. Pick your platform.** Instagram/TikTok bios are short with emojis; Twitter/X is text-first; LinkedIn is professional and longer.\n\n**3. Pick a tone.** Match your brand.\n\n**4. Generate.** Five bio variants appear.\n\n**5. Test the winner by looking at your profile as a stranger** — would you follow you? If not, iterate.\n\n## What great bios have in common\n\n- **First line names who you are** or what you do — no cryptic quotes.\n- **A specific value line** — 'helping SaaS founders raise their first round' beats 'entrepreneur, dreamer'.\n- **A single soft CTA or link.** 'Free playbook ↓' beats a wall of links.\n- **No emoji clutter.** 1-2 emojis add personality; 8 emojis feel desperate.`,
+    faqs: [
+      { q: "How long should my bio be?", a: "Instagram/TikTok cap at 150 characters. Twitter/X at 160. LinkedIn 'About' allows 2,600 but the headline is limited to 220 — most impact comes from the first 220." },
+      { q: "Should I use emojis?", a: "1-2 relevant emojis lift friendliness on Instagram, TikTok, and Twitter. LinkedIn bios read better without emojis unless you're in a creative field." },
+      ...commonFaq,
+    ],
+  },
+  "/content-creation/ad-copy-generator": {
+    title: "Ad Copy Generator — Free AI Facebook & Google Ads",
+    metaDescription: "Generate 5 ad variants with headline, primary text, and CTA button. Free AI tool, no signup — Facebook, Instagram, Google Ads.",
+    keyword: "ad copy generator",
+    intro: [
+      "Generate 5 complete ad copy variants — headline, primary text, and CTA button — for any product in seconds. Our free AI ad copy generator produces copy tuned for Facebook, Instagram, and Google Ads: short punchy headlines (5-8 words), primary text under 125 characters, and specific 3-4 word CTA button labels.",
+      "Perfect for performance marketers, agencies, and DTC brands who need fresh ad variants weekly to fight ad fatigue. Enter your product and core benefit and copy the winners into Ads Manager.",
+    ],
+    features: [
+      "5 complete ad variants per generation",
+      "Each variant: headline + primary text + CTA button",
+      "Primary text under 125 characters — no truncation on mobile",
+      "Choose platform: Facebook, Instagram, or Google Ads",
+    ],
+    guide: `## What the Ad Copy Generator does\n\nGive it a product, a core benefit, and a platform. It returns five complete ad variants, each with a short punchy headline, primary text under 125 characters, and a specific CTA button label. Paste them into Ads Manager as separate variants and let the platform's algorithm pick the winner.\n\n## Why ad-copy variety beats 'one perfect ad'\n\nMeta and Google both reward advertisers who test 3-5 creative variants per ad set. Their algorithms need variety to find the winning creative for each audience slice. A single 'perfect' ad limits the algorithm's optimization; five variants let it iterate. And beyond week 2-3, ad fatigue tanks CTR — the account that ships fresh copy weekly outperforms the account with the 'best' single ad.\n\n## Step-by-step\n\n**1. Enter your product** in one line.\n\n**2. Add the core benefit.** The single most compelling thing the product does.\n\n**3. Pick the platform.** Facebook and Instagram allow longer primary text; Google Ads is stricter.\n\n**4. Generate.** Five ad variants appear.\n\n**5. Paste all five into Ads Manager** as separate variants in the same ad set. Let the algorithm find the winner.\n\n## What high-performing ad copy has in common\n\n- **Headline under 8 words.** Anything longer truncates on mobile placements.\n- **Primary text under 125 characters.** Meta cuts it at 'See more' beyond that.\n- **A specific CTA button.** *'Shop Now'* beats *'Learn More'* for e-commerce; *'Get Quote'* beats *'Sign Up'* for services.\n- **A visual promise the creative can deliver.** Copy that promises what the image shows.\n\n## What to avoid\n\n- **Vague benefits.** *'Amazing quality'* is invisible. *'Ships in 24 hours'* converts.\n- **Multi-benefit stacking.** One benefit per ad. Test other benefits in other variants.\n- **Deceptive framing.** Meta and Google both penalize accounts with misleading claims.`,
+    faqs: [
+      { q: "How many ad variants should I run?", a: "3-5 variants per ad set. Facebook's algorithm needs variety to optimize; Google Ads' Responsive Search Ads work best with 5+ headlines." },
+      { q: "How often should I refresh ad copy?", a: "Watch CTR — when it drops 20% from the ad set's peak (usually week 2-3), it's time for fresh creative and copy." },
+      ...commonFaq,
+    ],
+  },
 });
