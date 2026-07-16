@@ -106,6 +106,7 @@ import { Route as CalculatorsDiscountRouteImport } from './routes/calculators.di
 import { Route as CalculatorsCurrencyConverterRouteImport } from './routes/calculators.currency-converter'
 import { Route as CalculatorsBmiRouteImport } from './routes/calculators.bmi'
 import { Route as CalculatorsBinaryToDecimalRouteImport } from './routes/calculators.binary-to-decimal'
+import { Route as CalculatorsAreaRouteImport } from './routes/calculators.area'
 import { Route as CalculatorsAgeRouteImport } from './routes/calculators.age'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -636,6 +637,11 @@ const CalculatorsBinaryToDecimalRoute =
     path: '/calculators/binary-to-decimal',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CalculatorsAreaRoute = CalculatorsAreaRouteImport.update({
+  id: '/calculators/area',
+  path: '/calculators/area',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsAgeRoute = CalculatorsAgeRouteImport.update({
   id: '/calculators/age',
   path: '/calculators/age',
@@ -658,6 +664,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
+  '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
@@ -759,6 +766,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
+  '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
@@ -861,6 +869,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/calculators/age': typeof CalculatorsAgeRoute
+  '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
@@ -964,6 +973,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/calculators/age'
+    | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
     | '/calculators/currency-converter'
@@ -1065,6 +1075,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/calculators/age'
+    | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
     | '/calculators/currency-converter'
@@ -1166,6 +1177,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/calculators/age'
+    | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
     | '/calculators/currency-converter'
@@ -1268,6 +1280,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CalculatorsAgeRoute: typeof CalculatorsAgeRoute
+  CalculatorsAreaRoute: typeof CalculatorsAreaRoute
   CalculatorsBinaryToDecimalRoute: typeof CalculatorsBinaryToDecimalRoute
   CalculatorsBmiRoute: typeof CalculatorsBmiRoute
   CalculatorsCurrencyConverterRoute: typeof CalculatorsCurrencyConverterRoute
@@ -2040,6 +2053,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsBinaryToDecimalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/area': {
+      id: '/calculators/area'
+      path: '/calculators/area'
+      fullPath: '/calculators/area'
+      preLoaderRoute: typeof CalculatorsAreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/age': {
       id: '/calculators/age'
       path: '/calculators/age'
@@ -2068,6 +2088,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   CalculatorsAgeRoute: CalculatorsAgeRoute,
+  CalculatorsAreaRoute: CalculatorsAreaRoute,
   CalculatorsBinaryToDecimalRoute: CalculatorsBinaryToDecimalRoute,
   CalculatorsBmiRoute: CalculatorsBmiRoute,
   CalculatorsCurrencyConverterRoute: CalculatorsCurrencyConverterRoute,
