@@ -13,10 +13,10 @@ const OG_IMAGE = `${SITE}${ogCover}`;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ToolsHive — 60 Free Online Tools + Blog Guides" },
-      { name: "description", content: "Tools and blog in one place: 60 free tools for text, images, PDFs, developers, calculators plus guides on making money online, productivity, tech tips, and careers." },
-      { property: "og:title", content: "ToolsHive — 60 Free Online Tools + Blog Guides" },
-      { property: "og:description", content: "Tools and blog in one place: 60 free tools for text, images, PDFs, developers, calculators plus guides on making money online, productivity, tech tips, and careers." },
+      { title: "120+ Free Online Tools — Text, Image, PDF & More | ToolsHive" },
+      { name: "description", content: "Free online tools that just work — compress images, edit PDFs, count words, convert files, generate content and more. 120+ tools, no signup, no watermark, all in your browser." },
+      { property: "og:title", content: "120+ Free Online Tools — Text, Image, PDF & More | ToolsHive" },
+      { property: "og:description", content: "Free online tools that just work — compress images, edit PDFs, count words, convert files, generate content and more. 120+ tools, no signup, no watermark, all in your browser." },
       { property: "og:url", content: `${SITE}/` },
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
