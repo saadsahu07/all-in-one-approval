@@ -36,6 +36,10 @@ import {
   Square, Box, Gauge, Timer, HardDrive, TrendingUp, PiggyBank, CalendarClock,
   FileMinus, Copy as CopyIcon, PlusSquare, Droplets, Info, FileType, LayoutGrid, FlipVertical2,
 } from "lucide-react";
+import {
+  Puzzle, Shuffle, AtSign, Filter, Sigma, Divide, Sun, Contrast, Grid3x3,
+  FilePlus, Home, Flame, Heart, Network, FileJson,
+} from "lucide-react";
 
 /** Single tool entry (a leaf page under a category). */
 export interface ToolDef {
@@ -95,6 +99,12 @@ export const categories: CategoryDef[] = [
       ["find-replace", "Find and Replace Text", "Find every match in your text and replace it in one click.", SpellCheck],
       ["word-frequency", "Word Frequency Counter", "Count how often each word appears in your text.", Hash],
       ["whitespace-remover", "Whitespace Remover", "Collapse extra spaces, tabs, and blank lines.", Eraser],
+      ["palindrome-checker", "Palindrome Checker", "Check if a word, phrase, or number reads the same backward.", Puzzle],
+      ["word-scrambler", "Word Scrambler", "Randomly shuffle the letters of every word in your text.", Shuffle],
+      ["shuffle-lines", "Shuffle Lines", "Randomly reorder the lines of any list or text block.", Shuffle],
+      ["remove-numbers", "Remove Numbers", "Strip every digit and number from your text in one click.", Filter],
+      ["extract-emails", "Extract Emails", "Pull every email address out of any block of text.", AtSign],
+      ["extract-urls", "Extract URLs", "Pull every http(s) link out of any block of text.", LinkIcon],
     ]),
   },
   {
@@ -122,6 +132,9 @@ export const categories: CategoryDef[] = [
       ["sepia", "Sepia Filter", "Give any image a warm, vintage sepia-toned look.", Paintbrush],
       ["invert", "Invert Image Colors", "Invert the colors of any image for a negative effect.", FlipVertical2],
       ["border", "Image Border", "Add a solid color border or frame to any image.", Square],
+      ["brightness", "Image Brightness", "Brighten or darken any image with a live-preview slider.", Sun],
+      ["contrast", "Image Contrast", "Increase or reduce contrast on any image with live preview.", Contrast],
+      ["pixelate", "Image Pixelator", "Pixelate any image with an adjustable block-size slider.", Grid3x3],
     ]),
   },
   {
@@ -149,6 +162,9 @@ export const categories: CategoryDef[] = [
       ["pdf-to-text", "PDF to Text", "Extract plain text from a PDF into a .txt file.", FileText],
       ["text-to-pdf", "Text to PDF", "Turn plain text into a clean, downloadable PDF.", FileType],
       ["pdf-n-up", "PDF 2-Up Layout", "Fit two PDF pages side-by-side on each sheet.", LayoutGrid],
+      ["blank-pdf-generator", "Blank PDF Generator", "Create a new PDF with any number of blank pages.", FilePlus],
+      ["pdf-page-count", "PDF Page Counter", "Instantly count how many pages are in any PDF file.", ListOrdered],
+      ["pdf-first-page", "Extract PDF First Page", "Save just the first page of any PDF as a new PDF.", FileOutput],
     ]),
   },
   {
@@ -176,6 +192,14 @@ export const categories: CategoryDef[] = [
       ["slug-generator", "Slug Generator", "Turn any title into a clean URL-friendly slug.", Slash],
       ["text-diff", "Text Diff Checker", "Compare two blocks of text and highlight the differences.", GitCompare],
       ["number-base-converter", "Number Base Converter", "Convert numbers between binary, octal, decimal, and hex.", Binary],
+      ["csv-to-json", "CSV to JSON", "Convert CSV data into clean, valid JSON in one click.", FileJson],
+      ["json-to-csv", "JSON to CSV", "Turn a JSON array of objects into a downloadable CSV.", FileOutput],
+      ["html-entities-encode", "HTML Entities Encoder", "Encode HTML special characters into safe entities.", Code2],
+      ["html-entities-decode", "HTML Entities Decoder", "Decode HTML entities back into readable characters.", Code2],
+      ["mac-address-generator", "MAC Address Generator", "Generate random valid MAC addresses in bulk.", Network],
+      ["ip-to-binary", "IP to Binary Converter", "Convert an IPv4 address into its 32-bit binary form.", Binary],
+      ["markdown-to-html", "Markdown to HTML", "Convert Markdown into clean HTML markup instantly.", FileCode],
+      ["color-palette-generator", "Color Palette Generator", "Generate a harmonious 5-color palette from any base color.", Palette],
     ]),
   },
   {
@@ -203,6 +227,16 @@ export const categories: CategoryDef[] = [
       ["compound-interest", "Compound Interest Calculator", "Project savings growth with compound interest.", TrendingUp],
       ["simple-interest", "Simple Interest Calculator", "Compute simple interest, total, and rate.", PiggyBank],
       ["date-difference", "Date Difference Calculator", "Find days, weeks, months between two dates.", CalendarClock],
+      ["mortgage", "Mortgage Calculator", "Estimate monthly mortgage payments, interest, and totals.", Home],
+      ["fuel-cost", "Fuel Cost Calculator", "Estimate trip fuel cost from distance, mileage, and price.", Flame],
+      ["pace", "Running Pace Calculator", "Work out running pace per km/mile from distance and time.", Gauge],
+      ["calorie", "Calorie Calculator", "Estimate daily calorie needs from your body and activity.", Flame],
+      ["roman-numerals", "Roman Numeral Converter", "Convert numbers to Roman numerals and back instantly.", Sigma],
+      ["factorial", "Factorial Calculator", "Compute the factorial (n!) of any non-negative integer.", Sigma],
+      ["prime-checker", "Prime Number Checker", "Check whether any number is prime — with the smallest factor.", CheckCircle2],
+      ["gcd-lcm", "GCD & LCM Calculator", "Find the greatest common divisor and least common multiple.", Divide],
+      ["days-until", "Days Until Calculator", "Count how many days until any future date from today.", CalendarDays],
+      ["love-calculator", "Love Calculator", "A fun compatibility score between two names — just for laughs.", Heart],
     ]),
   },
   {
