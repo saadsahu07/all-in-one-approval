@@ -151,15 +151,25 @@ import { Route as CalculatorsTimeRouteImport } from './routes/calculators.time'
 import { Route as CalculatorsTemperatureRouteImport } from './routes/calculators.temperature'
 import { Route as CalculatorsSpeedRouteImport } from './routes/calculators.speed'
 import { Route as CalculatorsSimpleInterestRouteImport } from './routes/calculators.simple-interest'
+import { Route as CalculatorsRomanNumeralsRouteImport } from './routes/calculators.roman-numerals'
+import { Route as CalculatorsPrimeCheckerRouteImport } from './routes/calculators.prime-checker'
 import { Route as CalculatorsPercentageRouteImport } from './routes/calculators.percentage'
+import { Route as CalculatorsPaceRouteImport } from './routes/calculators.pace'
+import { Route as CalculatorsMortgageRouteImport } from './routes/calculators.mortgage'
+import { Route as CalculatorsLoveCalculatorRouteImport } from './routes/calculators.love-calculator'
 import { Route as CalculatorsLengthRouteImport } from './routes/calculators.length'
 import { Route as CalculatorsGstVatRouteImport } from './routes/calculators.gst-vat'
+import { Route as CalculatorsGcdLcmRouteImport } from './routes/calculators.gcd-lcm'
+import { Route as CalculatorsFuelCostRouteImport } from './routes/calculators.fuel-cost'
+import { Route as CalculatorsFactorialRouteImport } from './routes/calculators.factorial'
 import { Route as CalculatorsEmiRouteImport } from './routes/calculators.emi'
 import { Route as CalculatorsDiscountRouteImport } from './routes/calculators.discount'
+import { Route as CalculatorsDaysUntilRouteImport } from './routes/calculators.days-until'
 import { Route as CalculatorsDateDifferenceRouteImport } from './routes/calculators.date-difference'
 import { Route as CalculatorsDataStorageRouteImport } from './routes/calculators.data-storage'
 import { Route as CalculatorsCurrencyConverterRouteImport } from './routes/calculators.currency-converter'
 import { Route as CalculatorsCompoundInterestRouteImport } from './routes/calculators.compound-interest'
+import { Route as CalculatorsCalorieRouteImport } from './routes/calculators.calorie'
 import { Route as CalculatorsBmiRouteImport } from './routes/calculators.bmi'
 import { Route as CalculatorsBinaryToDecimalRouteImport } from './routes/calculators.binary-to-decimal'
 import { Route as CalculatorsAreaRouteImport } from './routes/calculators.area'
@@ -927,11 +937,38 @@ const CalculatorsSimpleInterestRoute =
     path: '/calculators/simple-interest',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CalculatorsRomanNumeralsRoute =
+  CalculatorsRomanNumeralsRouteImport.update({
+    id: '/calculators/roman-numerals',
+    path: '/calculators/roman-numerals',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CalculatorsPrimeCheckerRoute = CalculatorsPrimeCheckerRouteImport.update({
+  id: '/calculators/prime-checker',
+  path: '/calculators/prime-checker',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsPercentageRoute = CalculatorsPercentageRouteImport.update({
   id: '/calculators/percentage',
   path: '/calculators/percentage',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatorsPaceRoute = CalculatorsPaceRouteImport.update({
+  id: '/calculators/pace',
+  path: '/calculators/pace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsMortgageRoute = CalculatorsMortgageRouteImport.update({
+  id: '/calculators/mortgage',
+  path: '/calculators/mortgage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsLoveCalculatorRoute =
+  CalculatorsLoveCalculatorRouteImport.update({
+    id: '/calculators/love-calculator',
+    path: '/calculators/love-calculator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CalculatorsLengthRoute = CalculatorsLengthRouteImport.update({
   id: '/calculators/length',
   path: '/calculators/length',
@@ -942,6 +979,21 @@ const CalculatorsGstVatRoute = CalculatorsGstVatRouteImport.update({
   path: '/calculators/gst-vat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatorsGcdLcmRoute = CalculatorsGcdLcmRouteImport.update({
+  id: '/calculators/gcd-lcm',
+  path: '/calculators/gcd-lcm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsFuelCostRoute = CalculatorsFuelCostRouteImport.update({
+  id: '/calculators/fuel-cost',
+  path: '/calculators/fuel-cost',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsFactorialRoute = CalculatorsFactorialRouteImport.update({
+  id: '/calculators/factorial',
+  path: '/calculators/factorial',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsEmiRoute = CalculatorsEmiRouteImport.update({
   id: '/calculators/emi',
   path: '/calculators/emi',
@@ -950,6 +1002,11 @@ const CalculatorsEmiRoute = CalculatorsEmiRouteImport.update({
 const CalculatorsDiscountRoute = CalculatorsDiscountRouteImport.update({
   id: '/calculators/discount',
   path: '/calculators/discount',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsDaysUntilRoute = CalculatorsDaysUntilRouteImport.update({
+  id: '/calculators/days-until',
+  path: '/calculators/days-until',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalculatorsDateDifferenceRoute =
@@ -975,6 +1032,11 @@ const CalculatorsCompoundInterestRoute =
     path: '/calculators/compound-interest',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CalculatorsCalorieRoute = CalculatorsCalorieRouteImport.update({
+  id: '/calculators/calorie',
+  path: '/calculators/calorie',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CalculatorsBmiRoute = CalculatorsBmiRouteImport.update({
   id: '/calculators/bmi',
   path: '/calculators/bmi',
@@ -1016,15 +1078,25 @@ export interface FileRoutesByFullPath {
   '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/calorie': typeof CalculatorsCalorieRoute
   '/calculators/compound-interest': typeof CalculatorsCompoundInterestRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
   '/calculators/data-storage': typeof CalculatorsDataStorageRoute
   '/calculators/date-difference': typeof CalculatorsDateDifferenceRoute
+  '/calculators/days-until': typeof CalculatorsDaysUntilRoute
   '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
+  '/calculators/factorial': typeof CalculatorsFactorialRoute
+  '/calculators/fuel-cost': typeof CalculatorsFuelCostRoute
+  '/calculators/gcd-lcm': typeof CalculatorsGcdLcmRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
+  '/calculators/love-calculator': typeof CalculatorsLoveCalculatorRoute
+  '/calculators/mortgage': typeof CalculatorsMortgageRoute
+  '/calculators/pace': typeof CalculatorsPaceRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/prime-checker': typeof CalculatorsPrimeCheckerRoute
+  '/calculators/roman-numerals': typeof CalculatorsRomanNumeralsRoute
   '/calculators/simple-interest': typeof CalculatorsSimpleInterestRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
@@ -1174,15 +1246,25 @@ export interface FileRoutesByTo {
   '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/calorie': typeof CalculatorsCalorieRoute
   '/calculators/compound-interest': typeof CalculatorsCompoundInterestRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
   '/calculators/data-storage': typeof CalculatorsDataStorageRoute
   '/calculators/date-difference': typeof CalculatorsDateDifferenceRoute
+  '/calculators/days-until': typeof CalculatorsDaysUntilRoute
   '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
+  '/calculators/factorial': typeof CalculatorsFactorialRoute
+  '/calculators/fuel-cost': typeof CalculatorsFuelCostRoute
+  '/calculators/gcd-lcm': typeof CalculatorsGcdLcmRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
+  '/calculators/love-calculator': typeof CalculatorsLoveCalculatorRoute
+  '/calculators/mortgage': typeof CalculatorsMortgageRoute
+  '/calculators/pace': typeof CalculatorsPaceRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/prime-checker': typeof CalculatorsPrimeCheckerRoute
+  '/calculators/roman-numerals': typeof CalculatorsRomanNumeralsRoute
   '/calculators/simple-interest': typeof CalculatorsSimpleInterestRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
@@ -1333,15 +1415,25 @@ export interface FileRoutesById {
   '/calculators/area': typeof CalculatorsAreaRoute
   '/calculators/binary-to-decimal': typeof CalculatorsBinaryToDecimalRoute
   '/calculators/bmi': typeof CalculatorsBmiRoute
+  '/calculators/calorie': typeof CalculatorsCalorieRoute
   '/calculators/compound-interest': typeof CalculatorsCompoundInterestRoute
   '/calculators/currency-converter': typeof CalculatorsCurrencyConverterRoute
   '/calculators/data-storage': typeof CalculatorsDataStorageRoute
   '/calculators/date-difference': typeof CalculatorsDateDifferenceRoute
+  '/calculators/days-until': typeof CalculatorsDaysUntilRoute
   '/calculators/discount': typeof CalculatorsDiscountRoute
   '/calculators/emi': typeof CalculatorsEmiRoute
+  '/calculators/factorial': typeof CalculatorsFactorialRoute
+  '/calculators/fuel-cost': typeof CalculatorsFuelCostRoute
+  '/calculators/gcd-lcm': typeof CalculatorsGcdLcmRoute
   '/calculators/gst-vat': typeof CalculatorsGstVatRoute
   '/calculators/length': typeof CalculatorsLengthRoute
+  '/calculators/love-calculator': typeof CalculatorsLoveCalculatorRoute
+  '/calculators/mortgage': typeof CalculatorsMortgageRoute
+  '/calculators/pace': typeof CalculatorsPaceRoute
   '/calculators/percentage': typeof CalculatorsPercentageRoute
+  '/calculators/prime-checker': typeof CalculatorsPrimeCheckerRoute
+  '/calculators/roman-numerals': typeof CalculatorsRomanNumeralsRoute
   '/calculators/simple-interest': typeof CalculatorsSimpleInterestRoute
   '/calculators/speed': typeof CalculatorsSpeedRoute
   '/calculators/temperature': typeof CalculatorsTemperatureRoute
@@ -1493,15 +1585,25 @@ export interface FileRouteTypes {
     | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
+    | '/calculators/calorie'
     | '/calculators/compound-interest'
     | '/calculators/currency-converter'
     | '/calculators/data-storage'
     | '/calculators/date-difference'
+    | '/calculators/days-until'
     | '/calculators/discount'
     | '/calculators/emi'
+    | '/calculators/factorial'
+    | '/calculators/fuel-cost'
+    | '/calculators/gcd-lcm'
     | '/calculators/gst-vat'
     | '/calculators/length'
+    | '/calculators/love-calculator'
+    | '/calculators/mortgage'
+    | '/calculators/pace'
     | '/calculators/percentage'
+    | '/calculators/prime-checker'
+    | '/calculators/roman-numerals'
     | '/calculators/simple-interest'
     | '/calculators/speed'
     | '/calculators/temperature'
@@ -1651,15 +1753,25 @@ export interface FileRouteTypes {
     | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
+    | '/calculators/calorie'
     | '/calculators/compound-interest'
     | '/calculators/currency-converter'
     | '/calculators/data-storage'
     | '/calculators/date-difference'
+    | '/calculators/days-until'
     | '/calculators/discount'
     | '/calculators/emi'
+    | '/calculators/factorial'
+    | '/calculators/fuel-cost'
+    | '/calculators/gcd-lcm'
     | '/calculators/gst-vat'
     | '/calculators/length'
+    | '/calculators/love-calculator'
+    | '/calculators/mortgage'
+    | '/calculators/pace'
     | '/calculators/percentage'
+    | '/calculators/prime-checker'
+    | '/calculators/roman-numerals'
     | '/calculators/simple-interest'
     | '/calculators/speed'
     | '/calculators/temperature'
@@ -1809,15 +1921,25 @@ export interface FileRouteTypes {
     | '/calculators/area'
     | '/calculators/binary-to-decimal'
     | '/calculators/bmi'
+    | '/calculators/calorie'
     | '/calculators/compound-interest'
     | '/calculators/currency-converter'
     | '/calculators/data-storage'
     | '/calculators/date-difference'
+    | '/calculators/days-until'
     | '/calculators/discount'
     | '/calculators/emi'
+    | '/calculators/factorial'
+    | '/calculators/fuel-cost'
+    | '/calculators/gcd-lcm'
     | '/calculators/gst-vat'
     | '/calculators/length'
+    | '/calculators/love-calculator'
+    | '/calculators/mortgage'
+    | '/calculators/pace'
     | '/calculators/percentage'
+    | '/calculators/prime-checker'
+    | '/calculators/roman-numerals'
     | '/calculators/simple-interest'
     | '/calculators/speed'
     | '/calculators/temperature'
@@ -1968,15 +2090,25 @@ export interface RootRouteChildren {
   CalculatorsAreaRoute: typeof CalculatorsAreaRoute
   CalculatorsBinaryToDecimalRoute: typeof CalculatorsBinaryToDecimalRoute
   CalculatorsBmiRoute: typeof CalculatorsBmiRoute
+  CalculatorsCalorieRoute: typeof CalculatorsCalorieRoute
   CalculatorsCompoundInterestRoute: typeof CalculatorsCompoundInterestRoute
   CalculatorsCurrencyConverterRoute: typeof CalculatorsCurrencyConverterRoute
   CalculatorsDataStorageRoute: typeof CalculatorsDataStorageRoute
   CalculatorsDateDifferenceRoute: typeof CalculatorsDateDifferenceRoute
+  CalculatorsDaysUntilRoute: typeof CalculatorsDaysUntilRoute
   CalculatorsDiscountRoute: typeof CalculatorsDiscountRoute
   CalculatorsEmiRoute: typeof CalculatorsEmiRoute
+  CalculatorsFactorialRoute: typeof CalculatorsFactorialRoute
+  CalculatorsFuelCostRoute: typeof CalculatorsFuelCostRoute
+  CalculatorsGcdLcmRoute: typeof CalculatorsGcdLcmRoute
   CalculatorsGstVatRoute: typeof CalculatorsGstVatRoute
   CalculatorsLengthRoute: typeof CalculatorsLengthRoute
+  CalculatorsLoveCalculatorRoute: typeof CalculatorsLoveCalculatorRoute
+  CalculatorsMortgageRoute: typeof CalculatorsMortgageRoute
+  CalculatorsPaceRoute: typeof CalculatorsPaceRoute
   CalculatorsPercentageRoute: typeof CalculatorsPercentageRoute
+  CalculatorsPrimeCheckerRoute: typeof CalculatorsPrimeCheckerRoute
+  CalculatorsRomanNumeralsRoute: typeof CalculatorsRomanNumeralsRoute
   CalculatorsSimpleInterestRoute: typeof CalculatorsSimpleInterestRoute
   CalculatorsSpeedRoute: typeof CalculatorsSpeedRoute
   CalculatorsTemperatureRoute: typeof CalculatorsTemperatureRoute
@@ -3109,11 +3241,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsSimpleInterestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/roman-numerals': {
+      id: '/calculators/roman-numerals'
+      path: '/calculators/roman-numerals'
+      fullPath: '/calculators/roman-numerals'
+      preLoaderRoute: typeof CalculatorsRomanNumeralsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/prime-checker': {
+      id: '/calculators/prime-checker'
+      path: '/calculators/prime-checker'
+      fullPath: '/calculators/prime-checker'
+      preLoaderRoute: typeof CalculatorsPrimeCheckerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/percentage': {
       id: '/calculators/percentage'
       path: '/calculators/percentage'
       fullPath: '/calculators/percentage'
       preLoaderRoute: typeof CalculatorsPercentageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/pace': {
+      id: '/calculators/pace'
+      path: '/calculators/pace'
+      fullPath: '/calculators/pace'
+      preLoaderRoute: typeof CalculatorsPaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/mortgage': {
+      id: '/calculators/mortgage'
+      path: '/calculators/mortgage'
+      fullPath: '/calculators/mortgage'
+      preLoaderRoute: typeof CalculatorsMortgageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/love-calculator': {
+      id: '/calculators/love-calculator'
+      path: '/calculators/love-calculator'
+      fullPath: '/calculators/love-calculator'
+      preLoaderRoute: typeof CalculatorsLoveCalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators/length': {
@@ -3130,6 +3297,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalculatorsGstVatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculators/gcd-lcm': {
+      id: '/calculators/gcd-lcm'
+      path: '/calculators/gcd-lcm'
+      fullPath: '/calculators/gcd-lcm'
+      preLoaderRoute: typeof CalculatorsGcdLcmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/fuel-cost': {
+      id: '/calculators/fuel-cost'
+      path: '/calculators/fuel-cost'
+      fullPath: '/calculators/fuel-cost'
+      preLoaderRoute: typeof CalculatorsFuelCostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/factorial': {
+      id: '/calculators/factorial'
+      path: '/calculators/factorial'
+      fullPath: '/calculators/factorial'
+      preLoaderRoute: typeof CalculatorsFactorialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/calculators/emi': {
       id: '/calculators/emi'
       path: '/calculators/emi'
@@ -3142,6 +3330,13 @@ declare module '@tanstack/react-router' {
       path: '/calculators/discount'
       fullPath: '/calculators/discount'
       preLoaderRoute: typeof CalculatorsDiscountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/days-until': {
+      id: '/calculators/days-until'
+      path: '/calculators/days-until'
+      fullPath: '/calculators/days-until'
+      preLoaderRoute: typeof CalculatorsDaysUntilRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators/date-difference': {
@@ -3170,6 +3365,13 @@ declare module '@tanstack/react-router' {
       path: '/calculators/compound-interest'
       fullPath: '/calculators/compound-interest'
       preLoaderRoute: typeof CalculatorsCompoundInterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators/calorie': {
+      id: '/calculators/calorie'
+      path: '/calculators/calorie'
+      fullPath: '/calculators/calorie'
+      preLoaderRoute: typeof CalculatorsCalorieRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators/bmi': {
@@ -3224,15 +3426,25 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorsAreaRoute: CalculatorsAreaRoute,
   CalculatorsBinaryToDecimalRoute: CalculatorsBinaryToDecimalRoute,
   CalculatorsBmiRoute: CalculatorsBmiRoute,
+  CalculatorsCalorieRoute: CalculatorsCalorieRoute,
   CalculatorsCompoundInterestRoute: CalculatorsCompoundInterestRoute,
   CalculatorsCurrencyConverterRoute: CalculatorsCurrencyConverterRoute,
   CalculatorsDataStorageRoute: CalculatorsDataStorageRoute,
   CalculatorsDateDifferenceRoute: CalculatorsDateDifferenceRoute,
+  CalculatorsDaysUntilRoute: CalculatorsDaysUntilRoute,
   CalculatorsDiscountRoute: CalculatorsDiscountRoute,
   CalculatorsEmiRoute: CalculatorsEmiRoute,
+  CalculatorsFactorialRoute: CalculatorsFactorialRoute,
+  CalculatorsFuelCostRoute: CalculatorsFuelCostRoute,
+  CalculatorsGcdLcmRoute: CalculatorsGcdLcmRoute,
   CalculatorsGstVatRoute: CalculatorsGstVatRoute,
   CalculatorsLengthRoute: CalculatorsLengthRoute,
+  CalculatorsLoveCalculatorRoute: CalculatorsLoveCalculatorRoute,
+  CalculatorsMortgageRoute: CalculatorsMortgageRoute,
+  CalculatorsPaceRoute: CalculatorsPaceRoute,
   CalculatorsPercentageRoute: CalculatorsPercentageRoute,
+  CalculatorsPrimeCheckerRoute: CalculatorsPrimeCheckerRoute,
+  CalculatorsRomanNumeralsRoute: CalculatorsRomanNumeralsRoute,
   CalculatorsSimpleInterestRoute: CalculatorsSimpleInterestRoute,
   CalculatorsSpeedRoute: CalculatorsSpeedRoute,
   CalculatorsTemperatureRoute: CalculatorsTemperatureRoute,
