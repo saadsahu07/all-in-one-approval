@@ -24,6 +24,7 @@ import { Route as DeveloperToolsIndexRouteImport } from './routes/developer-tool
 import { Route as ContentCreationIndexRouteImport } from './routes/content-creation.index'
 import { Route as CalculatorsIndexRouteImport } from './routes/calculators.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as TextToolsWordScramblerRouteImport } from './routes/text-tools.word-scrambler'
 import { Route as TextToolsWordFrequencyRouteImport } from './routes/text-tools.word-frequency'
 import { Route as TextToolsWordCounterRouteImport } from './routes/text-tools.word-counter'
 import { Route as TextToolsWhitespaceRemoverRouteImport } from './routes/text-tools.whitespace-remover'
@@ -32,7 +33,9 @@ import { Route as TextToolsTextSorterRouteImport } from './routes/text-tools.tex
 import { Route as TextToolsTextReverserRouteImport } from './routes/text-tools.text-reverser'
 import { Route as TextToolsTextRepeaterRouteImport } from './routes/text-tools.text-repeater'
 import { Route as TextToolsSlugifyRouteImport } from './routes/text-tools.slugify'
+import { Route as TextToolsShuffleLinesRouteImport } from './routes/text-tools.shuffle-lines'
 import { Route as TextToolsRot13RouteImport } from './routes/text-tools.rot13'
+import { Route as TextToolsRemoveNumbersRouteImport } from './routes/text-tools.remove-numbers'
 import { Route as TextToolsRemoveLineBreaksRouteImport } from './routes/text-tools.remove-line-breaks'
 import { Route as TextToolsRemoveDuplicateLinesRouteImport } from './routes/text-tools.remove-duplicate-lines'
 import { Route as TextToolsParaphraserRouteImport } from './routes/text-tools.paraphraser'
@@ -40,6 +43,8 @@ import { Route as TextToolsPalindromeCheckerRouteImport } from './routes/text-to
 import { Route as TextToolsLoremIpsumRouteImport } from './routes/text-tools.lorem-ipsum'
 import { Route as TextToolsGrammarCheckerRouteImport } from './routes/text-tools.grammar-checker'
 import { Route as TextToolsFindReplaceRouteImport } from './routes/text-tools.find-replace'
+import { Route as TextToolsExtractUrlsRouteImport } from './routes/text-tools.extract-urls'
+import { Route as TextToolsExtractEmailsRouteImport } from './routes/text-tools.extract-emails'
 import { Route as TextToolsCharacterCounterRouteImport } from './routes/text-tools.character-counter'
 import { Route as TextToolsCaseConverterRouteImport } from './routes/text-tools.case-converter'
 import { Route as TextToolsBinaryToTextRouteImport } from './routes/text-tools.binary-to-text'
@@ -56,14 +61,17 @@ import { Route as PdfToolsPdfWatermarkRouteImport } from './routes/pdf-tools.pdf
 import { Route as PdfToolsPdfToWordRouteImport } from './routes/pdf-tools.pdf-to-word'
 import { Route as PdfToolsPdfToTextRouteImport } from './routes/pdf-tools.pdf-to-text'
 import { Route as PdfToolsPdfToJpgRouteImport } from './routes/pdf-tools.pdf-to-jpg'
+import { Route as PdfToolsPdfPageCountRouteImport } from './routes/pdf-tools.pdf-page-count'
 import { Route as PdfToolsPdfNUpRouteImport } from './routes/pdf-tools.pdf-n-up'
 import { Route as PdfToolsPdfMetadataRouteImport } from './routes/pdf-tools.pdf-metadata'
+import { Route as PdfToolsPdfFirstPageRouteImport } from './routes/pdf-tools.pdf-first-page'
 import { Route as PdfToolsPageNumbersRouteImport } from './routes/pdf-tools.page-numbers'
 import { Route as PdfToolsMergeRouteImport } from './routes/pdf-tools.merge'
 import { Route as PdfToolsJpgToPdfRouteImport } from './routes/pdf-tools.jpg-to-pdf'
 import { Route as PdfToolsExtractPagesRouteImport } from './routes/pdf-tools.extract-pages'
 import { Route as PdfToolsDuplicatePagesRouteImport } from './routes/pdf-tools.duplicate-pages'
 import { Route as PdfToolsCompressRouteImport } from './routes/pdf-tools.compress'
+import { Route as PdfToolsBlankPdfGeneratorRouteImport } from './routes/pdf-tools.blank-pdf-generator'
 import { Route as PdfToolsAddBlankPageRouteImport } from './routes/pdf-tools.add-blank-page'
 import { Route as ImageToolsWebpToPngRouteImport } from './routes/image-tools.webp-to-png'
 import { Route as ImageToolsWatermarkRouteImport } from './routes/image-tools.watermark'
@@ -73,6 +81,7 @@ import { Route as ImageToolsResizeRouteImport } from './routes/image-tools.resiz
 import { Route as ImageToolsQrCodeRouteImport } from './routes/image-tools.qr-code'
 import { Route as ImageToolsPngToWebpRouteImport } from './routes/image-tools.png-to-webp'
 import { Route as ImageToolsPngToJpgRouteImport } from './routes/image-tools.png-to-jpg'
+import { Route as ImageToolsPixelateRouteImport } from './routes/image-tools.pixelate'
 import { Route as ImageToolsJpgToWebpRouteImport } from './routes/image-tools.jpg-to-webp'
 import { Route as ImageToolsJpgToPngRouteImport } from './routes/image-tools.jpg-to-png'
 import { Route as ImageToolsInvertRouteImport } from './routes/image-tools.invert'
@@ -81,7 +90,9 @@ import { Route as ImageToolsImageToBase64RouteImport } from './routes/image-tool
 import { Route as ImageToolsGrayscaleRouteImport } from './routes/image-tools.grayscale'
 import { Route as ImageToolsFlipRouteImport } from './routes/image-tools.flip'
 import { Route as ImageToolsCropRouteImport } from './routes/image-tools.crop'
+import { Route as ImageToolsContrastRouteImport } from './routes/image-tools.contrast'
 import { Route as ImageToolsCompressRouteImport } from './routes/image-tools.compress'
+import { Route as ImageToolsBrightnessRouteImport } from './routes/image-tools.brightness'
 import { Route as ImageToolsBorderRouteImport } from './routes/image-tools.border'
 import { Route as ImageToolsBlurRouteImport } from './routes/image-tools.blur'
 import { Route as ImageToolsBackgroundRemoverRouteImport } from './routes/image-tools.background-remover'
@@ -94,14 +105,22 @@ import { Route as DeveloperToolsSlugGeneratorRouteImport } from './routes/develo
 import { Route as DeveloperToolsRegexTesterRouteImport } from './routes/developer-tools.regex-tester'
 import { Route as DeveloperToolsPasswordGeneratorRouteImport } from './routes/developer-tools.password-generator'
 import { Route as DeveloperToolsNumberBaseConverterRouteImport } from './routes/developer-tools.number-base-converter'
+import { Route as DeveloperToolsMarkdownToHtmlRouteImport } from './routes/developer-tools.markdown-to-html'
+import { Route as DeveloperToolsMacAddressGeneratorRouteImport } from './routes/developer-tools.mac-address-generator'
 import { Route as DeveloperToolsLoremIpsumGeneratorRouteImport } from './routes/developer-tools.lorem-ipsum-generator'
 import { Route as DeveloperToolsJwtDecoderRouteImport } from './routes/developer-tools.jwt-decoder'
 import { Route as DeveloperToolsJsonValidatorRouteImport } from './routes/developer-tools.json-validator'
+import { Route as DeveloperToolsJsonToCsvRouteImport } from './routes/developer-tools.json-to-csv'
 import { Route as DeveloperToolsJsonFormatterRouteImport } from './routes/developer-tools.json-formatter'
 import { Route as DeveloperToolsJsMinifierRouteImport } from './routes/developer-tools.js-minifier'
+import { Route as DeveloperToolsIpToBinaryRouteImport } from './routes/developer-tools.ip-to-binary'
 import { Route as DeveloperToolsHtmlMinifierRouteImport } from './routes/developer-tools.html-minifier'
+import { Route as DeveloperToolsHtmlEntitiesEncodeRouteImport } from './routes/developer-tools.html-entities-encode'
+import { Route as DeveloperToolsHtmlEntitiesDecodeRouteImport } from './routes/developer-tools.html-entities-decode'
 import { Route as DeveloperToolsHashGeneratorRouteImport } from './routes/developer-tools.hash-generator'
+import { Route as DeveloperToolsCsvToJsonRouteImport } from './routes/developer-tools.csv-to-json'
 import { Route as DeveloperToolsCssMinifierRouteImport } from './routes/developer-tools.css-minifier'
+import { Route as DeveloperToolsColorPaletteGeneratorRouteImport } from './routes/developer-tools.color-palette-generator'
 import { Route as DeveloperToolsColorConverterRouteImport } from './routes/developer-tools.color-converter'
 import { Route as DeveloperToolsBase64EncodeRouteImport } from './routes/developer-tools.base64-encode'
 import { Route as DeveloperToolsBase64DecodeRouteImport } from './routes/developer-tools.base64-decode'
@@ -222,6 +241,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsWordScramblerRoute = TextToolsWordScramblerRouteImport.update({
+  id: '/text-tools/word-scrambler',
+  path: '/text-tools/word-scrambler',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TextToolsWordFrequencyRoute = TextToolsWordFrequencyRouteImport.update({
   id: '/text-tools/word-frequency',
   path: '/text-tools/word-frequency',
@@ -263,9 +287,19 @@ const TextToolsSlugifyRoute = TextToolsSlugifyRouteImport.update({
   path: '/text-tools/slugify',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsShuffleLinesRoute = TextToolsShuffleLinesRouteImport.update({
+  id: '/text-tools/shuffle-lines',
+  path: '/text-tools/shuffle-lines',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TextToolsRot13Route = TextToolsRot13RouteImport.update({
   id: '/text-tools/rot13',
   path: '/text-tools/rot13',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsRemoveNumbersRoute = TextToolsRemoveNumbersRouteImport.update({
+  id: '/text-tools/remove-numbers',
+  path: '/text-tools/remove-numbers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TextToolsRemoveLineBreaksRoute =
@@ -304,6 +338,16 @@ const TextToolsGrammarCheckerRoute = TextToolsGrammarCheckerRouteImport.update({
 const TextToolsFindReplaceRoute = TextToolsFindReplaceRouteImport.update({
   id: '/text-tools/find-replace',
   path: '/text-tools/find-replace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsExtractUrlsRoute = TextToolsExtractUrlsRouteImport.update({
+  id: '/text-tools/extract-urls',
+  path: '/text-tools/extract-urls',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextToolsExtractEmailsRoute = TextToolsExtractEmailsRouteImport.update({
+  id: '/text-tools/extract-emails',
+  path: '/text-tools/extract-emails',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TextToolsCharacterCounterRoute =
@@ -387,6 +431,11 @@ const PdfToolsPdfToJpgRoute = PdfToolsPdfToJpgRouteImport.update({
   path: '/pdf-tools/pdf-to-jpg',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PdfToolsPdfPageCountRoute = PdfToolsPdfPageCountRouteImport.update({
+  id: '/pdf-tools/pdf-page-count',
+  path: '/pdf-tools/pdf-page-count',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PdfToolsPdfNUpRoute = PdfToolsPdfNUpRouteImport.update({
   id: '/pdf-tools/pdf-n-up',
   path: '/pdf-tools/pdf-n-up',
@@ -395,6 +444,11 @@ const PdfToolsPdfNUpRoute = PdfToolsPdfNUpRouteImport.update({
 const PdfToolsPdfMetadataRoute = PdfToolsPdfMetadataRouteImport.update({
   id: '/pdf-tools/pdf-metadata',
   path: '/pdf-tools/pdf-metadata',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfToolsPdfFirstPageRoute = PdfToolsPdfFirstPageRouteImport.update({
+  id: '/pdf-tools/pdf-first-page',
+  path: '/pdf-tools/pdf-first-page',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PdfToolsPageNumbersRoute = PdfToolsPageNumbersRouteImport.update({
@@ -427,6 +481,12 @@ const PdfToolsCompressRoute = PdfToolsCompressRouteImport.update({
   path: '/pdf-tools/compress',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PdfToolsBlankPdfGeneratorRoute =
+  PdfToolsBlankPdfGeneratorRouteImport.update({
+    id: '/pdf-tools/blank-pdf-generator',
+    path: '/pdf-tools/blank-pdf-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PdfToolsAddBlankPageRoute = PdfToolsAddBlankPageRouteImport.update({
   id: '/pdf-tools/add-blank-page',
   path: '/pdf-tools/add-blank-page',
@@ -472,6 +532,11 @@ const ImageToolsPngToJpgRoute = ImageToolsPngToJpgRouteImport.update({
   path: '/image-tools/png-to-jpg',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageToolsPixelateRoute = ImageToolsPixelateRouteImport.update({
+  id: '/image-tools/pixelate',
+  path: '/image-tools/pixelate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageToolsJpgToWebpRoute = ImageToolsJpgToWebpRouteImport.update({
   id: '/image-tools/jpg-to-webp',
   path: '/image-tools/jpg-to-webp',
@@ -512,9 +577,19 @@ const ImageToolsCropRoute = ImageToolsCropRouteImport.update({
   path: '/image-tools/crop',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageToolsContrastRoute = ImageToolsContrastRouteImport.update({
+  id: '/image-tools/contrast',
+  path: '/image-tools/contrast',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageToolsCompressRoute = ImageToolsCompressRouteImport.update({
   id: '/image-tools/compress',
   path: '/image-tools/compress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageToolsBrightnessRoute = ImageToolsBrightnessRouteImport.update({
+  id: '/image-tools/brightness',
+  path: '/image-tools/brightness',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageToolsBorderRoute = ImageToolsBorderRouteImport.update({
@@ -584,6 +659,18 @@ const DeveloperToolsNumberBaseConverterRoute =
     path: '/developer-tools/number-base-converter',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsMarkdownToHtmlRoute =
+  DeveloperToolsMarkdownToHtmlRouteImport.update({
+    id: '/developer-tools/markdown-to-html',
+    path: '/developer-tools/markdown-to-html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsMacAddressGeneratorRoute =
+  DeveloperToolsMacAddressGeneratorRouteImport.update({
+    id: '/developer-tools/mac-address-generator',
+    path: '/developer-tools/mac-address-generator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsLoremIpsumGeneratorRoute =
   DeveloperToolsLoremIpsumGeneratorRouteImport.update({
     id: '/developer-tools/lorem-ipsum-generator',
@@ -602,6 +689,11 @@ const DeveloperToolsJsonValidatorRoute =
     path: '/developer-tools/json-validator',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsJsonToCsvRoute = DeveloperToolsJsonToCsvRouteImport.update({
+  id: '/developer-tools/json-to-csv',
+  path: '/developer-tools/json-to-csv',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DeveloperToolsJsonFormatterRoute =
   DeveloperToolsJsonFormatterRouteImport.update({
     id: '/developer-tools/json-formatter',
@@ -614,10 +706,28 @@ const DeveloperToolsJsMinifierRoute =
     path: '/developer-tools/js-minifier',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsIpToBinaryRoute =
+  DeveloperToolsIpToBinaryRouteImport.update({
+    id: '/developer-tools/ip-to-binary',
+    path: '/developer-tools/ip-to-binary',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DeveloperToolsHtmlMinifierRoute =
   DeveloperToolsHtmlMinifierRouteImport.update({
     id: '/developer-tools/html-minifier',
     path: '/developer-tools/html-minifier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsHtmlEntitiesEncodeRoute =
+  DeveloperToolsHtmlEntitiesEncodeRouteImport.update({
+    id: '/developer-tools/html-entities-encode',
+    path: '/developer-tools/html-entities-encode',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsHtmlEntitiesDecodeRoute =
+  DeveloperToolsHtmlEntitiesDecodeRouteImport.update({
+    id: '/developer-tools/html-entities-decode',
+    path: '/developer-tools/html-entities-decode',
     getParentRoute: () => rootRouteImport,
   } as any)
 const DeveloperToolsHashGeneratorRoute =
@@ -626,10 +736,21 @@ const DeveloperToolsHashGeneratorRoute =
     path: '/developer-tools/hash-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DeveloperToolsCsvToJsonRoute = DeveloperToolsCsvToJsonRouteImport.update({
+  id: '/developer-tools/csv-to-json',
+  path: '/developer-tools/csv-to-json',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DeveloperToolsCssMinifierRoute =
   DeveloperToolsCssMinifierRouteImport.update({
     id: '/developer-tools/css-minifier',
     path: '/developer-tools/css-minifier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DeveloperToolsColorPaletteGeneratorRoute =
+  DeveloperToolsColorPaletteGeneratorRouteImport.update({
+    id: '/developer-tools/color-palette-generator',
+    path: '/developer-tools/color-palette-generator',
     getParentRoute: () => rootRouteImport,
   } as any)
 const DeveloperToolsColorConverterRoute =
@@ -934,14 +1055,22 @@ export interface FileRoutesByFullPath {
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/color-converter': typeof DeveloperToolsColorConverterRoute
+  '/developer-tools/color-palette-generator': typeof DeveloperToolsColorPaletteGeneratorRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/csv-to-json': typeof DeveloperToolsCsvToJsonRoute
   '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
+  '/developer-tools/html-entities-decode': typeof DeveloperToolsHtmlEntitiesDecodeRoute
+  '/developer-tools/html-entities-encode': typeof DeveloperToolsHtmlEntitiesEncodeRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
+  '/developer-tools/ip-to-binary': typeof DeveloperToolsIpToBinaryRoute
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
+  '/developer-tools/json-to-csv': typeof DeveloperToolsJsonToCsvRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
+  '/developer-tools/mac-address-generator': typeof DeveloperToolsMacAddressGeneratorRoute
+  '/developer-tools/markdown-to-html': typeof DeveloperToolsMarkdownToHtmlRoute
   '/developer-tools/number-base-converter': typeof DeveloperToolsNumberBaseConverterRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/regex-tester': typeof DeveloperToolsRegexTesterRoute
@@ -954,7 +1083,9 @@ export interface FileRoutesByFullPath {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/blur': typeof ImageToolsBlurRoute
   '/image-tools/border': typeof ImageToolsBorderRoute
+  '/image-tools/brightness': typeof ImageToolsBrightnessRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
+  '/image-tools/contrast': typeof ImageToolsContrastRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
   '/image-tools/flip': typeof ImageToolsFlipRoute
   '/image-tools/grayscale': typeof ImageToolsGrayscaleRoute
@@ -963,6 +1094,7 @@ export interface FileRoutesByFullPath {
   '/image-tools/invert': typeof ImageToolsInvertRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/jpg-to-webp': typeof ImageToolsJpgToWebpRoute
+  '/image-tools/pixelate': typeof ImageToolsPixelateRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
   '/image-tools/png-to-webp': typeof ImageToolsPngToWebpRoute
   '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
@@ -972,14 +1104,17 @@ export interface FileRoutesByFullPath {
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
+  '/pdf-tools/blank-pdf-generator': typeof PdfToolsBlankPdfGeneratorRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
   '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
   '/pdf-tools/extract-pages': typeof PdfToolsExtractPagesRoute
   '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-first-page': typeof PdfToolsPdfFirstPageRoute
   '/pdf-tools/pdf-metadata': typeof PdfToolsPdfMetadataRoute
   '/pdf-tools/pdf-n-up': typeof PdfToolsPdfNUpRoute
+  '/pdf-tools/pdf-page-count': typeof PdfToolsPdfPageCountRoute
   '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
   '/pdf-tools/pdf-to-text': typeof PdfToolsPdfToTextRoute
   '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
@@ -996,6 +1131,8 @@ export interface FileRoutesByFullPath {
   '/text-tools/binary-to-text': typeof TextToolsBinaryToTextRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/extract-emails': typeof TextToolsExtractEmailsRoute
+  '/text-tools/extract-urls': typeof TextToolsExtractUrlsRoute
   '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
@@ -1003,7 +1140,9 @@ export interface FileRoutesByFullPath {
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
   '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
+  '/text-tools/remove-numbers': typeof TextToolsRemoveNumbersRoute
   '/text-tools/rot13': typeof TextToolsRot13Route
+  '/text-tools/shuffle-lines': typeof TextToolsShuffleLinesRoute
   '/text-tools/slugify': typeof TextToolsSlugifyRoute
   '/text-tools/text-repeater': typeof TextToolsTextRepeaterRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
@@ -1012,6 +1151,7 @@ export interface FileRoutesByFullPath {
   '/text-tools/whitespace-remover': typeof TextToolsWhitespaceRemoverRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
   '/text-tools/word-frequency': typeof TextToolsWordFrequencyRoute
+  '/text-tools/word-scrambler': typeof TextToolsWordScramblerRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/content-creation/': typeof ContentCreationIndexRoute
@@ -1073,14 +1213,22 @@ export interface FileRoutesByTo {
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/color-converter': typeof DeveloperToolsColorConverterRoute
+  '/developer-tools/color-palette-generator': typeof DeveloperToolsColorPaletteGeneratorRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/csv-to-json': typeof DeveloperToolsCsvToJsonRoute
   '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
+  '/developer-tools/html-entities-decode': typeof DeveloperToolsHtmlEntitiesDecodeRoute
+  '/developer-tools/html-entities-encode': typeof DeveloperToolsHtmlEntitiesEncodeRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
+  '/developer-tools/ip-to-binary': typeof DeveloperToolsIpToBinaryRoute
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
+  '/developer-tools/json-to-csv': typeof DeveloperToolsJsonToCsvRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
+  '/developer-tools/mac-address-generator': typeof DeveloperToolsMacAddressGeneratorRoute
+  '/developer-tools/markdown-to-html': typeof DeveloperToolsMarkdownToHtmlRoute
   '/developer-tools/number-base-converter': typeof DeveloperToolsNumberBaseConverterRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/regex-tester': typeof DeveloperToolsRegexTesterRoute
@@ -1093,7 +1241,9 @@ export interface FileRoutesByTo {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/blur': typeof ImageToolsBlurRoute
   '/image-tools/border': typeof ImageToolsBorderRoute
+  '/image-tools/brightness': typeof ImageToolsBrightnessRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
+  '/image-tools/contrast': typeof ImageToolsContrastRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
   '/image-tools/flip': typeof ImageToolsFlipRoute
   '/image-tools/grayscale': typeof ImageToolsGrayscaleRoute
@@ -1102,6 +1252,7 @@ export interface FileRoutesByTo {
   '/image-tools/invert': typeof ImageToolsInvertRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/jpg-to-webp': typeof ImageToolsJpgToWebpRoute
+  '/image-tools/pixelate': typeof ImageToolsPixelateRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
   '/image-tools/png-to-webp': typeof ImageToolsPngToWebpRoute
   '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
@@ -1111,14 +1262,17 @@ export interface FileRoutesByTo {
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
+  '/pdf-tools/blank-pdf-generator': typeof PdfToolsBlankPdfGeneratorRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
   '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
   '/pdf-tools/extract-pages': typeof PdfToolsExtractPagesRoute
   '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-first-page': typeof PdfToolsPdfFirstPageRoute
   '/pdf-tools/pdf-metadata': typeof PdfToolsPdfMetadataRoute
   '/pdf-tools/pdf-n-up': typeof PdfToolsPdfNUpRoute
+  '/pdf-tools/pdf-page-count': typeof PdfToolsPdfPageCountRoute
   '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
   '/pdf-tools/pdf-to-text': typeof PdfToolsPdfToTextRoute
   '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
@@ -1135,6 +1289,8 @@ export interface FileRoutesByTo {
   '/text-tools/binary-to-text': typeof TextToolsBinaryToTextRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/extract-emails': typeof TextToolsExtractEmailsRoute
+  '/text-tools/extract-urls': typeof TextToolsExtractUrlsRoute
   '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
@@ -1142,7 +1298,9 @@ export interface FileRoutesByTo {
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
   '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
+  '/text-tools/remove-numbers': typeof TextToolsRemoveNumbersRoute
   '/text-tools/rot13': typeof TextToolsRot13Route
+  '/text-tools/shuffle-lines': typeof TextToolsShuffleLinesRoute
   '/text-tools/slugify': typeof TextToolsSlugifyRoute
   '/text-tools/text-repeater': typeof TextToolsTextRepeaterRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
@@ -1151,6 +1309,7 @@ export interface FileRoutesByTo {
   '/text-tools/whitespace-remover': typeof TextToolsWhitespaceRemoverRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
   '/text-tools/word-frequency': typeof TextToolsWordFrequencyRoute
+  '/text-tools/word-scrambler': typeof TextToolsWordScramblerRoute
   '/blog': typeof BlogIndexRoute
   '/calculators': typeof CalculatorsIndexRoute
   '/content-creation': typeof ContentCreationIndexRoute
@@ -1213,14 +1372,22 @@ export interface FileRoutesById {
   '/developer-tools/base64-decode': typeof DeveloperToolsBase64DecodeRoute
   '/developer-tools/base64-encode': typeof DeveloperToolsBase64EncodeRoute
   '/developer-tools/color-converter': typeof DeveloperToolsColorConverterRoute
+  '/developer-tools/color-palette-generator': typeof DeveloperToolsColorPaletteGeneratorRoute
   '/developer-tools/css-minifier': typeof DeveloperToolsCssMinifierRoute
+  '/developer-tools/csv-to-json': typeof DeveloperToolsCsvToJsonRoute
   '/developer-tools/hash-generator': typeof DeveloperToolsHashGeneratorRoute
+  '/developer-tools/html-entities-decode': typeof DeveloperToolsHtmlEntitiesDecodeRoute
+  '/developer-tools/html-entities-encode': typeof DeveloperToolsHtmlEntitiesEncodeRoute
   '/developer-tools/html-minifier': typeof DeveloperToolsHtmlMinifierRoute
+  '/developer-tools/ip-to-binary': typeof DeveloperToolsIpToBinaryRoute
   '/developer-tools/js-minifier': typeof DeveloperToolsJsMinifierRoute
   '/developer-tools/json-formatter': typeof DeveloperToolsJsonFormatterRoute
+  '/developer-tools/json-to-csv': typeof DeveloperToolsJsonToCsvRoute
   '/developer-tools/json-validator': typeof DeveloperToolsJsonValidatorRoute
   '/developer-tools/jwt-decoder': typeof DeveloperToolsJwtDecoderRoute
   '/developer-tools/lorem-ipsum-generator': typeof DeveloperToolsLoremIpsumGeneratorRoute
+  '/developer-tools/mac-address-generator': typeof DeveloperToolsMacAddressGeneratorRoute
+  '/developer-tools/markdown-to-html': typeof DeveloperToolsMarkdownToHtmlRoute
   '/developer-tools/number-base-converter': typeof DeveloperToolsNumberBaseConverterRoute
   '/developer-tools/password-generator': typeof DeveloperToolsPasswordGeneratorRoute
   '/developer-tools/regex-tester': typeof DeveloperToolsRegexTesterRoute
@@ -1233,7 +1400,9 @@ export interface FileRoutesById {
   '/image-tools/background-remover': typeof ImageToolsBackgroundRemoverRoute
   '/image-tools/blur': typeof ImageToolsBlurRoute
   '/image-tools/border': typeof ImageToolsBorderRoute
+  '/image-tools/brightness': typeof ImageToolsBrightnessRoute
   '/image-tools/compress': typeof ImageToolsCompressRoute
+  '/image-tools/contrast': typeof ImageToolsContrastRoute
   '/image-tools/crop': typeof ImageToolsCropRoute
   '/image-tools/flip': typeof ImageToolsFlipRoute
   '/image-tools/grayscale': typeof ImageToolsGrayscaleRoute
@@ -1242,6 +1411,7 @@ export interface FileRoutesById {
   '/image-tools/invert': typeof ImageToolsInvertRoute
   '/image-tools/jpg-to-png': typeof ImageToolsJpgToPngRoute
   '/image-tools/jpg-to-webp': typeof ImageToolsJpgToWebpRoute
+  '/image-tools/pixelate': typeof ImageToolsPixelateRoute
   '/image-tools/png-to-jpg': typeof ImageToolsPngToJpgRoute
   '/image-tools/png-to-webp': typeof ImageToolsPngToWebpRoute
   '/image-tools/qr-code': typeof ImageToolsQrCodeRoute
@@ -1251,14 +1421,17 @@ export interface FileRoutesById {
   '/image-tools/watermark': typeof ImageToolsWatermarkRoute
   '/image-tools/webp-to-png': typeof ImageToolsWebpToPngRoute
   '/pdf-tools/add-blank-page': typeof PdfToolsAddBlankPageRoute
+  '/pdf-tools/blank-pdf-generator': typeof PdfToolsBlankPdfGeneratorRoute
   '/pdf-tools/compress': typeof PdfToolsCompressRoute
   '/pdf-tools/duplicate-pages': typeof PdfToolsDuplicatePagesRoute
   '/pdf-tools/extract-pages': typeof PdfToolsExtractPagesRoute
   '/pdf-tools/jpg-to-pdf': typeof PdfToolsJpgToPdfRoute
   '/pdf-tools/merge': typeof PdfToolsMergeRoute
   '/pdf-tools/page-numbers': typeof PdfToolsPageNumbersRoute
+  '/pdf-tools/pdf-first-page': typeof PdfToolsPdfFirstPageRoute
   '/pdf-tools/pdf-metadata': typeof PdfToolsPdfMetadataRoute
   '/pdf-tools/pdf-n-up': typeof PdfToolsPdfNUpRoute
+  '/pdf-tools/pdf-page-count': typeof PdfToolsPdfPageCountRoute
   '/pdf-tools/pdf-to-jpg': typeof PdfToolsPdfToJpgRoute
   '/pdf-tools/pdf-to-text': typeof PdfToolsPdfToTextRoute
   '/pdf-tools/pdf-to-word': typeof PdfToolsPdfToWordRoute
@@ -1275,6 +1448,8 @@ export interface FileRoutesById {
   '/text-tools/binary-to-text': typeof TextToolsBinaryToTextRoute
   '/text-tools/case-converter': typeof TextToolsCaseConverterRoute
   '/text-tools/character-counter': typeof TextToolsCharacterCounterRoute
+  '/text-tools/extract-emails': typeof TextToolsExtractEmailsRoute
+  '/text-tools/extract-urls': typeof TextToolsExtractUrlsRoute
   '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
@@ -1282,7 +1457,9 @@ export interface FileRoutesById {
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
   '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
+  '/text-tools/remove-numbers': typeof TextToolsRemoveNumbersRoute
   '/text-tools/rot13': typeof TextToolsRot13Route
+  '/text-tools/shuffle-lines': typeof TextToolsShuffleLinesRoute
   '/text-tools/slugify': typeof TextToolsSlugifyRoute
   '/text-tools/text-repeater': typeof TextToolsTextRepeaterRoute
   '/text-tools/text-reverser': typeof TextToolsTextReverserRoute
@@ -1291,6 +1468,7 @@ export interface FileRoutesById {
   '/text-tools/whitespace-remover': typeof TextToolsWhitespaceRemoverRoute
   '/text-tools/word-counter': typeof TextToolsWordCounterRoute
   '/text-tools/word-frequency': typeof TextToolsWordFrequencyRoute
+  '/text-tools/word-scrambler': typeof TextToolsWordScramblerRoute
   '/blog/': typeof BlogIndexRoute
   '/calculators/': typeof CalculatorsIndexRoute
   '/content-creation/': typeof ContentCreationIndexRoute
@@ -1354,14 +1532,22 @@ export interface FileRouteTypes {
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/color-converter'
+    | '/developer-tools/color-palette-generator'
     | '/developer-tools/css-minifier'
+    | '/developer-tools/csv-to-json'
     | '/developer-tools/hash-generator'
+    | '/developer-tools/html-entities-decode'
+    | '/developer-tools/html-entities-encode'
     | '/developer-tools/html-minifier'
+    | '/developer-tools/ip-to-binary'
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
+    | '/developer-tools/json-to-csv'
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
     | '/developer-tools/lorem-ipsum-generator'
+    | '/developer-tools/mac-address-generator'
+    | '/developer-tools/markdown-to-html'
     | '/developer-tools/number-base-converter'
     | '/developer-tools/password-generator'
     | '/developer-tools/regex-tester'
@@ -1374,7 +1560,9 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/blur'
     | '/image-tools/border'
+    | '/image-tools/brightness'
     | '/image-tools/compress'
+    | '/image-tools/contrast'
     | '/image-tools/crop'
     | '/image-tools/flip'
     | '/image-tools/grayscale'
@@ -1383,6 +1571,7 @@ export interface FileRouteTypes {
     | '/image-tools/invert'
     | '/image-tools/jpg-to-png'
     | '/image-tools/jpg-to-webp'
+    | '/image-tools/pixelate'
     | '/image-tools/png-to-jpg'
     | '/image-tools/png-to-webp'
     | '/image-tools/qr-code'
@@ -1392,14 +1581,17 @@ export interface FileRouteTypes {
     | '/image-tools/watermark'
     | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
+    | '/pdf-tools/blank-pdf-generator'
     | '/pdf-tools/compress'
     | '/pdf-tools/duplicate-pages'
     | '/pdf-tools/extract-pages'
     | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
     | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-first-page'
     | '/pdf-tools/pdf-metadata'
     | '/pdf-tools/pdf-n-up'
+    | '/pdf-tools/pdf-page-count'
     | '/pdf-tools/pdf-to-jpg'
     | '/pdf-tools/pdf-to-text'
     | '/pdf-tools/pdf-to-word'
@@ -1416,6 +1608,8 @@ export interface FileRouteTypes {
     | '/text-tools/binary-to-text'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
+    | '/text-tools/extract-emails'
+    | '/text-tools/extract-urls'
     | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
@@ -1423,7 +1617,9 @@ export interface FileRouteTypes {
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
     | '/text-tools/remove-line-breaks'
+    | '/text-tools/remove-numbers'
     | '/text-tools/rot13'
+    | '/text-tools/shuffle-lines'
     | '/text-tools/slugify'
     | '/text-tools/text-repeater'
     | '/text-tools/text-reverser'
@@ -1432,6 +1628,7 @@ export interface FileRouteTypes {
     | '/text-tools/whitespace-remover'
     | '/text-tools/word-counter'
     | '/text-tools/word-frequency'
+    | '/text-tools/word-scrambler'
     | '/blog/'
     | '/calculators/'
     | '/content-creation/'
@@ -1493,14 +1690,22 @@ export interface FileRouteTypes {
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/color-converter'
+    | '/developer-tools/color-palette-generator'
     | '/developer-tools/css-minifier'
+    | '/developer-tools/csv-to-json'
     | '/developer-tools/hash-generator'
+    | '/developer-tools/html-entities-decode'
+    | '/developer-tools/html-entities-encode'
     | '/developer-tools/html-minifier'
+    | '/developer-tools/ip-to-binary'
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
+    | '/developer-tools/json-to-csv'
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
     | '/developer-tools/lorem-ipsum-generator'
+    | '/developer-tools/mac-address-generator'
+    | '/developer-tools/markdown-to-html'
     | '/developer-tools/number-base-converter'
     | '/developer-tools/password-generator'
     | '/developer-tools/regex-tester'
@@ -1513,7 +1718,9 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/blur'
     | '/image-tools/border'
+    | '/image-tools/brightness'
     | '/image-tools/compress'
+    | '/image-tools/contrast'
     | '/image-tools/crop'
     | '/image-tools/flip'
     | '/image-tools/grayscale'
@@ -1522,6 +1729,7 @@ export interface FileRouteTypes {
     | '/image-tools/invert'
     | '/image-tools/jpg-to-png'
     | '/image-tools/jpg-to-webp'
+    | '/image-tools/pixelate'
     | '/image-tools/png-to-jpg'
     | '/image-tools/png-to-webp'
     | '/image-tools/qr-code'
@@ -1531,14 +1739,17 @@ export interface FileRouteTypes {
     | '/image-tools/watermark'
     | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
+    | '/pdf-tools/blank-pdf-generator'
     | '/pdf-tools/compress'
     | '/pdf-tools/duplicate-pages'
     | '/pdf-tools/extract-pages'
     | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
     | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-first-page'
     | '/pdf-tools/pdf-metadata'
     | '/pdf-tools/pdf-n-up'
+    | '/pdf-tools/pdf-page-count'
     | '/pdf-tools/pdf-to-jpg'
     | '/pdf-tools/pdf-to-text'
     | '/pdf-tools/pdf-to-word'
@@ -1555,6 +1766,8 @@ export interface FileRouteTypes {
     | '/text-tools/binary-to-text'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
+    | '/text-tools/extract-emails'
+    | '/text-tools/extract-urls'
     | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
@@ -1562,7 +1775,9 @@ export interface FileRouteTypes {
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
     | '/text-tools/remove-line-breaks'
+    | '/text-tools/remove-numbers'
     | '/text-tools/rot13'
+    | '/text-tools/shuffle-lines'
     | '/text-tools/slugify'
     | '/text-tools/text-repeater'
     | '/text-tools/text-reverser'
@@ -1571,6 +1786,7 @@ export interface FileRouteTypes {
     | '/text-tools/whitespace-remover'
     | '/text-tools/word-counter'
     | '/text-tools/word-frequency'
+    | '/text-tools/word-scrambler'
     | '/blog'
     | '/calculators'
     | '/content-creation'
@@ -1632,14 +1848,22 @@ export interface FileRouteTypes {
     | '/developer-tools/base64-decode'
     | '/developer-tools/base64-encode'
     | '/developer-tools/color-converter'
+    | '/developer-tools/color-palette-generator'
     | '/developer-tools/css-minifier'
+    | '/developer-tools/csv-to-json'
     | '/developer-tools/hash-generator'
+    | '/developer-tools/html-entities-decode'
+    | '/developer-tools/html-entities-encode'
     | '/developer-tools/html-minifier'
+    | '/developer-tools/ip-to-binary'
     | '/developer-tools/js-minifier'
     | '/developer-tools/json-formatter'
+    | '/developer-tools/json-to-csv'
     | '/developer-tools/json-validator'
     | '/developer-tools/jwt-decoder'
     | '/developer-tools/lorem-ipsum-generator'
+    | '/developer-tools/mac-address-generator'
+    | '/developer-tools/markdown-to-html'
     | '/developer-tools/number-base-converter'
     | '/developer-tools/password-generator'
     | '/developer-tools/regex-tester'
@@ -1652,7 +1876,9 @@ export interface FileRouteTypes {
     | '/image-tools/background-remover'
     | '/image-tools/blur'
     | '/image-tools/border'
+    | '/image-tools/brightness'
     | '/image-tools/compress'
+    | '/image-tools/contrast'
     | '/image-tools/crop'
     | '/image-tools/flip'
     | '/image-tools/grayscale'
@@ -1661,6 +1887,7 @@ export interface FileRouteTypes {
     | '/image-tools/invert'
     | '/image-tools/jpg-to-png'
     | '/image-tools/jpg-to-webp'
+    | '/image-tools/pixelate'
     | '/image-tools/png-to-jpg'
     | '/image-tools/png-to-webp'
     | '/image-tools/qr-code'
@@ -1670,14 +1897,17 @@ export interface FileRouteTypes {
     | '/image-tools/watermark'
     | '/image-tools/webp-to-png'
     | '/pdf-tools/add-blank-page'
+    | '/pdf-tools/blank-pdf-generator'
     | '/pdf-tools/compress'
     | '/pdf-tools/duplicate-pages'
     | '/pdf-tools/extract-pages'
     | '/pdf-tools/jpg-to-pdf'
     | '/pdf-tools/merge'
     | '/pdf-tools/page-numbers'
+    | '/pdf-tools/pdf-first-page'
     | '/pdf-tools/pdf-metadata'
     | '/pdf-tools/pdf-n-up'
+    | '/pdf-tools/pdf-page-count'
     | '/pdf-tools/pdf-to-jpg'
     | '/pdf-tools/pdf-to-text'
     | '/pdf-tools/pdf-to-word'
@@ -1694,6 +1924,8 @@ export interface FileRouteTypes {
     | '/text-tools/binary-to-text'
     | '/text-tools/case-converter'
     | '/text-tools/character-counter'
+    | '/text-tools/extract-emails'
+    | '/text-tools/extract-urls'
     | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
@@ -1701,7 +1933,9 @@ export interface FileRouteTypes {
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
     | '/text-tools/remove-line-breaks'
+    | '/text-tools/remove-numbers'
     | '/text-tools/rot13'
+    | '/text-tools/shuffle-lines'
     | '/text-tools/slugify'
     | '/text-tools/text-repeater'
     | '/text-tools/text-reverser'
@@ -1710,6 +1944,7 @@ export interface FileRouteTypes {
     | '/text-tools/whitespace-remover'
     | '/text-tools/word-counter'
     | '/text-tools/word-frequency'
+    | '/text-tools/word-scrambler'
     | '/blog/'
     | '/calculators/'
     | '/content-creation/'
@@ -1772,14 +2007,22 @@ export interface RootRouteChildren {
   DeveloperToolsBase64DecodeRoute: typeof DeveloperToolsBase64DecodeRoute
   DeveloperToolsBase64EncodeRoute: typeof DeveloperToolsBase64EncodeRoute
   DeveloperToolsColorConverterRoute: typeof DeveloperToolsColorConverterRoute
+  DeveloperToolsColorPaletteGeneratorRoute: typeof DeveloperToolsColorPaletteGeneratorRoute
   DeveloperToolsCssMinifierRoute: typeof DeveloperToolsCssMinifierRoute
+  DeveloperToolsCsvToJsonRoute: typeof DeveloperToolsCsvToJsonRoute
   DeveloperToolsHashGeneratorRoute: typeof DeveloperToolsHashGeneratorRoute
+  DeveloperToolsHtmlEntitiesDecodeRoute: typeof DeveloperToolsHtmlEntitiesDecodeRoute
+  DeveloperToolsHtmlEntitiesEncodeRoute: typeof DeveloperToolsHtmlEntitiesEncodeRoute
   DeveloperToolsHtmlMinifierRoute: typeof DeveloperToolsHtmlMinifierRoute
+  DeveloperToolsIpToBinaryRoute: typeof DeveloperToolsIpToBinaryRoute
   DeveloperToolsJsMinifierRoute: typeof DeveloperToolsJsMinifierRoute
   DeveloperToolsJsonFormatterRoute: typeof DeveloperToolsJsonFormatterRoute
+  DeveloperToolsJsonToCsvRoute: typeof DeveloperToolsJsonToCsvRoute
   DeveloperToolsJsonValidatorRoute: typeof DeveloperToolsJsonValidatorRoute
   DeveloperToolsJwtDecoderRoute: typeof DeveloperToolsJwtDecoderRoute
   DeveloperToolsLoremIpsumGeneratorRoute: typeof DeveloperToolsLoremIpsumGeneratorRoute
+  DeveloperToolsMacAddressGeneratorRoute: typeof DeveloperToolsMacAddressGeneratorRoute
+  DeveloperToolsMarkdownToHtmlRoute: typeof DeveloperToolsMarkdownToHtmlRoute
   DeveloperToolsNumberBaseConverterRoute: typeof DeveloperToolsNumberBaseConverterRoute
   DeveloperToolsPasswordGeneratorRoute: typeof DeveloperToolsPasswordGeneratorRoute
   DeveloperToolsRegexTesterRoute: typeof DeveloperToolsRegexTesterRoute
@@ -1792,7 +2035,9 @@ export interface RootRouteChildren {
   ImageToolsBackgroundRemoverRoute: typeof ImageToolsBackgroundRemoverRoute
   ImageToolsBlurRoute: typeof ImageToolsBlurRoute
   ImageToolsBorderRoute: typeof ImageToolsBorderRoute
+  ImageToolsBrightnessRoute: typeof ImageToolsBrightnessRoute
   ImageToolsCompressRoute: typeof ImageToolsCompressRoute
+  ImageToolsContrastRoute: typeof ImageToolsContrastRoute
   ImageToolsCropRoute: typeof ImageToolsCropRoute
   ImageToolsFlipRoute: typeof ImageToolsFlipRoute
   ImageToolsGrayscaleRoute: typeof ImageToolsGrayscaleRoute
@@ -1801,6 +2046,7 @@ export interface RootRouteChildren {
   ImageToolsInvertRoute: typeof ImageToolsInvertRoute
   ImageToolsJpgToPngRoute: typeof ImageToolsJpgToPngRoute
   ImageToolsJpgToWebpRoute: typeof ImageToolsJpgToWebpRoute
+  ImageToolsPixelateRoute: typeof ImageToolsPixelateRoute
   ImageToolsPngToJpgRoute: typeof ImageToolsPngToJpgRoute
   ImageToolsPngToWebpRoute: typeof ImageToolsPngToWebpRoute
   ImageToolsQrCodeRoute: typeof ImageToolsQrCodeRoute
@@ -1810,14 +2056,17 @@ export interface RootRouteChildren {
   ImageToolsWatermarkRoute: typeof ImageToolsWatermarkRoute
   ImageToolsWebpToPngRoute: typeof ImageToolsWebpToPngRoute
   PdfToolsAddBlankPageRoute: typeof PdfToolsAddBlankPageRoute
+  PdfToolsBlankPdfGeneratorRoute: typeof PdfToolsBlankPdfGeneratorRoute
   PdfToolsCompressRoute: typeof PdfToolsCompressRoute
   PdfToolsDuplicatePagesRoute: typeof PdfToolsDuplicatePagesRoute
   PdfToolsExtractPagesRoute: typeof PdfToolsExtractPagesRoute
   PdfToolsJpgToPdfRoute: typeof PdfToolsJpgToPdfRoute
   PdfToolsMergeRoute: typeof PdfToolsMergeRoute
   PdfToolsPageNumbersRoute: typeof PdfToolsPageNumbersRoute
+  PdfToolsPdfFirstPageRoute: typeof PdfToolsPdfFirstPageRoute
   PdfToolsPdfMetadataRoute: typeof PdfToolsPdfMetadataRoute
   PdfToolsPdfNUpRoute: typeof PdfToolsPdfNUpRoute
+  PdfToolsPdfPageCountRoute: typeof PdfToolsPdfPageCountRoute
   PdfToolsPdfToJpgRoute: typeof PdfToolsPdfToJpgRoute
   PdfToolsPdfToTextRoute: typeof PdfToolsPdfToTextRoute
   PdfToolsPdfToWordRoute: typeof PdfToolsPdfToWordRoute
@@ -1834,6 +2083,8 @@ export interface RootRouteChildren {
   TextToolsBinaryToTextRoute: typeof TextToolsBinaryToTextRoute
   TextToolsCaseConverterRoute: typeof TextToolsCaseConverterRoute
   TextToolsCharacterCounterRoute: typeof TextToolsCharacterCounterRoute
+  TextToolsExtractEmailsRoute: typeof TextToolsExtractEmailsRoute
+  TextToolsExtractUrlsRoute: typeof TextToolsExtractUrlsRoute
   TextToolsFindReplaceRoute: typeof TextToolsFindReplaceRoute
   TextToolsGrammarCheckerRoute: typeof TextToolsGrammarCheckerRoute
   TextToolsLoremIpsumRoute: typeof TextToolsLoremIpsumRoute
@@ -1841,7 +2092,9 @@ export interface RootRouteChildren {
   TextToolsParaphraserRoute: typeof TextToolsParaphraserRoute
   TextToolsRemoveDuplicateLinesRoute: typeof TextToolsRemoveDuplicateLinesRoute
   TextToolsRemoveLineBreaksRoute: typeof TextToolsRemoveLineBreaksRoute
+  TextToolsRemoveNumbersRoute: typeof TextToolsRemoveNumbersRoute
   TextToolsRot13Route: typeof TextToolsRot13Route
+  TextToolsShuffleLinesRoute: typeof TextToolsShuffleLinesRoute
   TextToolsSlugifyRoute: typeof TextToolsSlugifyRoute
   TextToolsTextRepeaterRoute: typeof TextToolsTextRepeaterRoute
   TextToolsTextReverserRoute: typeof TextToolsTextReverserRoute
@@ -1850,6 +2103,7 @@ export interface RootRouteChildren {
   TextToolsWhitespaceRemoverRoute: typeof TextToolsWhitespaceRemoverRoute
   TextToolsWordCounterRoute: typeof TextToolsWordCounterRoute
   TextToolsWordFrequencyRoute: typeof TextToolsWordFrequencyRoute
+  TextToolsWordScramblerRoute: typeof TextToolsWordScramblerRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CalculatorsIndexRoute: typeof CalculatorsIndexRoute
   ContentCreationIndexRoute: typeof ContentCreationIndexRoute
@@ -1966,6 +2220,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/text-tools/word-scrambler': {
+      id: '/text-tools/word-scrambler'
+      path: '/text-tools/word-scrambler'
+      fullPath: '/text-tools/word-scrambler'
+      preLoaderRoute: typeof TextToolsWordScramblerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/text-tools/word-frequency': {
       id: '/text-tools/word-frequency'
       path: '/text-tools/word-frequency'
@@ -2022,11 +2283,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TextToolsSlugifyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/text-tools/shuffle-lines': {
+      id: '/text-tools/shuffle-lines'
+      path: '/text-tools/shuffle-lines'
+      fullPath: '/text-tools/shuffle-lines'
+      preLoaderRoute: typeof TextToolsShuffleLinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/text-tools/rot13': {
       id: '/text-tools/rot13'
       path: '/text-tools/rot13'
       fullPath: '/text-tools/rot13'
       preLoaderRoute: typeof TextToolsRot13RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/remove-numbers': {
+      id: '/text-tools/remove-numbers'
+      path: '/text-tools/remove-numbers'
+      fullPath: '/text-tools/remove-numbers'
+      preLoaderRoute: typeof TextToolsRemoveNumbersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/remove-line-breaks': {
@@ -2076,6 +2351,20 @@ declare module '@tanstack/react-router' {
       path: '/text-tools/find-replace'
       fullPath: '/text-tools/find-replace'
       preLoaderRoute: typeof TextToolsFindReplaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/extract-urls': {
+      id: '/text-tools/extract-urls'
+      path: '/text-tools/extract-urls'
+      fullPath: '/text-tools/extract-urls'
+      preLoaderRoute: typeof TextToolsExtractUrlsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/extract-emails': {
+      id: '/text-tools/extract-emails'
+      path: '/text-tools/extract-emails'
+      fullPath: '/text-tools/extract-emails'
+      preLoaderRoute: typeof TextToolsExtractEmailsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/character-counter': {
@@ -2190,6 +2479,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PdfToolsPdfToJpgRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pdf-tools/pdf-page-count': {
+      id: '/pdf-tools/pdf-page-count'
+      path: '/pdf-tools/pdf-page-count'
+      fullPath: '/pdf-tools/pdf-page-count'
+      preLoaderRoute: typeof PdfToolsPdfPageCountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pdf-tools/pdf-n-up': {
       id: '/pdf-tools/pdf-n-up'
       path: '/pdf-tools/pdf-n-up'
@@ -2202,6 +2498,13 @@ declare module '@tanstack/react-router' {
       path: '/pdf-tools/pdf-metadata'
       fullPath: '/pdf-tools/pdf-metadata'
       preLoaderRoute: typeof PdfToolsPdfMetadataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/pdf-first-page': {
+      id: '/pdf-tools/pdf-first-page'
+      path: '/pdf-tools/pdf-first-page'
+      fullPath: '/pdf-tools/pdf-first-page'
+      preLoaderRoute: typeof PdfToolsPdfFirstPageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pdf-tools/page-numbers': {
@@ -2244,6 +2547,13 @@ declare module '@tanstack/react-router' {
       path: '/pdf-tools/compress'
       fullPath: '/pdf-tools/compress'
       preLoaderRoute: typeof PdfToolsCompressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdf-tools/blank-pdf-generator': {
+      id: '/pdf-tools/blank-pdf-generator'
+      path: '/pdf-tools/blank-pdf-generator'
+      fullPath: '/pdf-tools/blank-pdf-generator'
+      preLoaderRoute: typeof PdfToolsBlankPdfGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pdf-tools/add-blank-page': {
@@ -2309,6 +2619,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsPngToJpgRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-tools/pixelate': {
+      id: '/image-tools/pixelate'
+      path: '/image-tools/pixelate'
+      fullPath: '/image-tools/pixelate'
+      preLoaderRoute: typeof ImageToolsPixelateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-tools/jpg-to-webp': {
       id: '/image-tools/jpg-to-webp'
       path: '/image-tools/jpg-to-webp'
@@ -2365,11 +2682,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToolsCropRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-tools/contrast': {
+      id: '/image-tools/contrast'
+      path: '/image-tools/contrast'
+      fullPath: '/image-tools/contrast'
+      preLoaderRoute: typeof ImageToolsContrastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-tools/compress': {
       id: '/image-tools/compress'
       path: '/image-tools/compress'
       fullPath: '/image-tools/compress'
       preLoaderRoute: typeof ImageToolsCompressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-tools/brightness': {
+      id: '/image-tools/brightness'
+      path: '/image-tools/brightness'
+      fullPath: '/image-tools/brightness'
+      preLoaderRoute: typeof ImageToolsBrightnessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-tools/border': {
@@ -2456,6 +2787,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsNumberBaseConverterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/markdown-to-html': {
+      id: '/developer-tools/markdown-to-html'
+      path: '/developer-tools/markdown-to-html'
+      fullPath: '/developer-tools/markdown-to-html'
+      preLoaderRoute: typeof DeveloperToolsMarkdownToHtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/mac-address-generator': {
+      id: '/developer-tools/mac-address-generator'
+      path: '/developer-tools/mac-address-generator'
+      fullPath: '/developer-tools/mac-address-generator'
+      preLoaderRoute: typeof DeveloperToolsMacAddressGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/lorem-ipsum-generator': {
       id: '/developer-tools/lorem-ipsum-generator'
       path: '/developer-tools/lorem-ipsum-generator'
@@ -2477,6 +2822,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsJsonValidatorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/json-to-csv': {
+      id: '/developer-tools/json-to-csv'
+      path: '/developer-tools/json-to-csv'
+      fullPath: '/developer-tools/json-to-csv'
+      preLoaderRoute: typeof DeveloperToolsJsonToCsvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/json-formatter': {
       id: '/developer-tools/json-formatter'
       path: '/developer-tools/json-formatter'
@@ -2491,11 +2843,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsJsMinifierRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/ip-to-binary': {
+      id: '/developer-tools/ip-to-binary'
+      path: '/developer-tools/ip-to-binary'
+      fullPath: '/developer-tools/ip-to-binary'
+      preLoaderRoute: typeof DeveloperToolsIpToBinaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/html-minifier': {
       id: '/developer-tools/html-minifier'
       path: '/developer-tools/html-minifier'
       fullPath: '/developer-tools/html-minifier'
       preLoaderRoute: typeof DeveloperToolsHtmlMinifierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/html-entities-encode': {
+      id: '/developer-tools/html-entities-encode'
+      path: '/developer-tools/html-entities-encode'
+      fullPath: '/developer-tools/html-entities-encode'
+      preLoaderRoute: typeof DeveloperToolsHtmlEntitiesEncodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/html-entities-decode': {
+      id: '/developer-tools/html-entities-decode'
+      path: '/developer-tools/html-entities-decode'
+      fullPath: '/developer-tools/html-entities-decode'
+      preLoaderRoute: typeof DeveloperToolsHtmlEntitiesDecodeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/developer-tools/hash-generator': {
@@ -2505,11 +2878,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperToolsHashGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer-tools/csv-to-json': {
+      id: '/developer-tools/csv-to-json'
+      path: '/developer-tools/csv-to-json'
+      fullPath: '/developer-tools/csv-to-json'
+      preLoaderRoute: typeof DeveloperToolsCsvToJsonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/developer-tools/css-minifier': {
       id: '/developer-tools/css-minifier'
       path: '/developer-tools/css-minifier'
       fullPath: '/developer-tools/css-minifier'
       preLoaderRoute: typeof DeveloperToolsCssMinifierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer-tools/color-palette-generator': {
+      id: '/developer-tools/color-palette-generator'
+      path: '/developer-tools/color-palette-generator'
+      fullPath: '/developer-tools/color-palette-generator'
+      preLoaderRoute: typeof DeveloperToolsColorPaletteGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/developer-tools/color-converter': {
@@ -2892,15 +3279,25 @@ const rootRouteChildren: RootRouteChildren = {
   DeveloperToolsBase64DecodeRoute: DeveloperToolsBase64DecodeRoute,
   DeveloperToolsBase64EncodeRoute: DeveloperToolsBase64EncodeRoute,
   DeveloperToolsColorConverterRoute: DeveloperToolsColorConverterRoute,
+  DeveloperToolsColorPaletteGeneratorRoute:
+    DeveloperToolsColorPaletteGeneratorRoute,
   DeveloperToolsCssMinifierRoute: DeveloperToolsCssMinifierRoute,
+  DeveloperToolsCsvToJsonRoute: DeveloperToolsCsvToJsonRoute,
   DeveloperToolsHashGeneratorRoute: DeveloperToolsHashGeneratorRoute,
+  DeveloperToolsHtmlEntitiesDecodeRoute: DeveloperToolsHtmlEntitiesDecodeRoute,
+  DeveloperToolsHtmlEntitiesEncodeRoute: DeveloperToolsHtmlEntitiesEncodeRoute,
   DeveloperToolsHtmlMinifierRoute: DeveloperToolsHtmlMinifierRoute,
+  DeveloperToolsIpToBinaryRoute: DeveloperToolsIpToBinaryRoute,
   DeveloperToolsJsMinifierRoute: DeveloperToolsJsMinifierRoute,
   DeveloperToolsJsonFormatterRoute: DeveloperToolsJsonFormatterRoute,
+  DeveloperToolsJsonToCsvRoute: DeveloperToolsJsonToCsvRoute,
   DeveloperToolsJsonValidatorRoute: DeveloperToolsJsonValidatorRoute,
   DeveloperToolsJwtDecoderRoute: DeveloperToolsJwtDecoderRoute,
   DeveloperToolsLoremIpsumGeneratorRoute:
     DeveloperToolsLoremIpsumGeneratorRoute,
+  DeveloperToolsMacAddressGeneratorRoute:
+    DeveloperToolsMacAddressGeneratorRoute,
+  DeveloperToolsMarkdownToHtmlRoute: DeveloperToolsMarkdownToHtmlRoute,
   DeveloperToolsNumberBaseConverterRoute:
     DeveloperToolsNumberBaseConverterRoute,
   DeveloperToolsPasswordGeneratorRoute: DeveloperToolsPasswordGeneratorRoute,
@@ -2914,7 +3311,9 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsBackgroundRemoverRoute: ImageToolsBackgroundRemoverRoute,
   ImageToolsBlurRoute: ImageToolsBlurRoute,
   ImageToolsBorderRoute: ImageToolsBorderRoute,
+  ImageToolsBrightnessRoute: ImageToolsBrightnessRoute,
   ImageToolsCompressRoute: ImageToolsCompressRoute,
+  ImageToolsContrastRoute: ImageToolsContrastRoute,
   ImageToolsCropRoute: ImageToolsCropRoute,
   ImageToolsFlipRoute: ImageToolsFlipRoute,
   ImageToolsGrayscaleRoute: ImageToolsGrayscaleRoute,
@@ -2923,6 +3322,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsInvertRoute: ImageToolsInvertRoute,
   ImageToolsJpgToPngRoute: ImageToolsJpgToPngRoute,
   ImageToolsJpgToWebpRoute: ImageToolsJpgToWebpRoute,
+  ImageToolsPixelateRoute: ImageToolsPixelateRoute,
   ImageToolsPngToJpgRoute: ImageToolsPngToJpgRoute,
   ImageToolsPngToWebpRoute: ImageToolsPngToWebpRoute,
   ImageToolsQrCodeRoute: ImageToolsQrCodeRoute,
@@ -2932,14 +3332,17 @@ const rootRouteChildren: RootRouteChildren = {
   ImageToolsWatermarkRoute: ImageToolsWatermarkRoute,
   ImageToolsWebpToPngRoute: ImageToolsWebpToPngRoute,
   PdfToolsAddBlankPageRoute: PdfToolsAddBlankPageRoute,
+  PdfToolsBlankPdfGeneratorRoute: PdfToolsBlankPdfGeneratorRoute,
   PdfToolsCompressRoute: PdfToolsCompressRoute,
   PdfToolsDuplicatePagesRoute: PdfToolsDuplicatePagesRoute,
   PdfToolsExtractPagesRoute: PdfToolsExtractPagesRoute,
   PdfToolsJpgToPdfRoute: PdfToolsJpgToPdfRoute,
   PdfToolsMergeRoute: PdfToolsMergeRoute,
   PdfToolsPageNumbersRoute: PdfToolsPageNumbersRoute,
+  PdfToolsPdfFirstPageRoute: PdfToolsPdfFirstPageRoute,
   PdfToolsPdfMetadataRoute: PdfToolsPdfMetadataRoute,
   PdfToolsPdfNUpRoute: PdfToolsPdfNUpRoute,
+  PdfToolsPdfPageCountRoute: PdfToolsPdfPageCountRoute,
   PdfToolsPdfToJpgRoute: PdfToolsPdfToJpgRoute,
   PdfToolsPdfToTextRoute: PdfToolsPdfToTextRoute,
   PdfToolsPdfToWordRoute: PdfToolsPdfToWordRoute,
@@ -2956,6 +3359,8 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsBinaryToTextRoute: TextToolsBinaryToTextRoute,
   TextToolsCaseConverterRoute: TextToolsCaseConverterRoute,
   TextToolsCharacterCounterRoute: TextToolsCharacterCounterRoute,
+  TextToolsExtractEmailsRoute: TextToolsExtractEmailsRoute,
+  TextToolsExtractUrlsRoute: TextToolsExtractUrlsRoute,
   TextToolsFindReplaceRoute: TextToolsFindReplaceRoute,
   TextToolsGrammarCheckerRoute: TextToolsGrammarCheckerRoute,
   TextToolsLoremIpsumRoute: TextToolsLoremIpsumRoute,
@@ -2963,7 +3368,9 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsParaphraserRoute: TextToolsParaphraserRoute,
   TextToolsRemoveDuplicateLinesRoute: TextToolsRemoveDuplicateLinesRoute,
   TextToolsRemoveLineBreaksRoute: TextToolsRemoveLineBreaksRoute,
+  TextToolsRemoveNumbersRoute: TextToolsRemoveNumbersRoute,
   TextToolsRot13Route: TextToolsRot13Route,
+  TextToolsShuffleLinesRoute: TextToolsShuffleLinesRoute,
   TextToolsSlugifyRoute: TextToolsSlugifyRoute,
   TextToolsTextRepeaterRoute: TextToolsTextRepeaterRoute,
   TextToolsTextReverserRoute: TextToolsTextReverserRoute,
@@ -2972,6 +3379,7 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsWhitespaceRemoverRoute: TextToolsWhitespaceRemoverRoute,
   TextToolsWordCounterRoute: TextToolsWordCounterRoute,
   TextToolsWordFrequencyRoute: TextToolsWordFrequencyRoute,
+  TextToolsWordScramblerRoute: TextToolsWordScramblerRoute,
   BlogIndexRoute: BlogIndexRoute,
   CalculatorsIndexRoute: CalculatorsIndexRoute,
   ContentCreationIndexRoute: ContentCreationIndexRoute,
