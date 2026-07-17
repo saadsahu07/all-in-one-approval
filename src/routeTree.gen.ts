@@ -36,6 +36,7 @@ import { Route as TextToolsRot13RouteImport } from './routes/text-tools.rot13'
 import { Route as TextToolsRemoveLineBreaksRouteImport } from './routes/text-tools.remove-line-breaks'
 import { Route as TextToolsRemoveDuplicateLinesRouteImport } from './routes/text-tools.remove-duplicate-lines'
 import { Route as TextToolsParaphraserRouteImport } from './routes/text-tools.paraphraser'
+import { Route as TextToolsPalindromeCheckerRouteImport } from './routes/text-tools.palindrome-checker'
 import { Route as TextToolsLoremIpsumRouteImport } from './routes/text-tools.lorem-ipsum'
 import { Route as TextToolsGrammarCheckerRouteImport } from './routes/text-tools.grammar-checker'
 import { Route as TextToolsFindReplaceRouteImport } from './routes/text-tools.find-replace'
@@ -284,6 +285,12 @@ const TextToolsParaphraserRoute = TextToolsParaphraserRouteImport.update({
   path: '/text-tools/paraphraser',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TextToolsPalindromeCheckerRoute =
+  TextToolsPalindromeCheckerRouteImport.update({
+    id: '/text-tools/palindrome-checker',
+    path: '/text-tools/palindrome-checker',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TextToolsLoremIpsumRoute = TextToolsLoremIpsumRouteImport.update({
   id: '/text-tools/lorem-ipsum',
   path: '/text-tools/lorem-ipsum',
@@ -992,6 +999,7 @@ export interface FileRoutesByFullPath {
   '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
+  '/text-tools/palindrome-checker': typeof TextToolsPalindromeCheckerRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
   '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
@@ -1130,6 +1138,7 @@ export interface FileRoutesByTo {
   '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
+  '/text-tools/palindrome-checker': typeof TextToolsPalindromeCheckerRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
   '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
@@ -1269,6 +1278,7 @@ export interface FileRoutesById {
   '/text-tools/find-replace': typeof TextToolsFindReplaceRoute
   '/text-tools/grammar-checker': typeof TextToolsGrammarCheckerRoute
   '/text-tools/lorem-ipsum': typeof TextToolsLoremIpsumRoute
+  '/text-tools/palindrome-checker': typeof TextToolsPalindromeCheckerRoute
   '/text-tools/paraphraser': typeof TextToolsParaphraserRoute
   '/text-tools/remove-duplicate-lines': typeof TextToolsRemoveDuplicateLinesRoute
   '/text-tools/remove-line-breaks': typeof TextToolsRemoveLineBreaksRoute
@@ -1409,6 +1419,7 @@ export interface FileRouteTypes {
     | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
+    | '/text-tools/palindrome-checker'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
     | '/text-tools/remove-line-breaks'
@@ -1547,6 +1558,7 @@ export interface FileRouteTypes {
     | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
+    | '/text-tools/palindrome-checker'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
     | '/text-tools/remove-line-breaks'
@@ -1685,6 +1697,7 @@ export interface FileRouteTypes {
     | '/text-tools/find-replace'
     | '/text-tools/grammar-checker'
     | '/text-tools/lorem-ipsum'
+    | '/text-tools/palindrome-checker'
     | '/text-tools/paraphraser'
     | '/text-tools/remove-duplicate-lines'
     | '/text-tools/remove-line-breaks'
@@ -1824,6 +1837,7 @@ export interface RootRouteChildren {
   TextToolsFindReplaceRoute: typeof TextToolsFindReplaceRoute
   TextToolsGrammarCheckerRoute: typeof TextToolsGrammarCheckerRoute
   TextToolsLoremIpsumRoute: typeof TextToolsLoremIpsumRoute
+  TextToolsPalindromeCheckerRoute: typeof TextToolsPalindromeCheckerRoute
   TextToolsParaphraserRoute: typeof TextToolsParaphraserRoute
   TextToolsRemoveDuplicateLinesRoute: typeof TextToolsRemoveDuplicateLinesRoute
   TextToolsRemoveLineBreaksRoute: typeof TextToolsRemoveLineBreaksRoute
@@ -2034,6 +2048,13 @@ declare module '@tanstack/react-router' {
       path: '/text-tools/paraphraser'
       fullPath: '/text-tools/paraphraser'
       preLoaderRoute: typeof TextToolsParaphraserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-tools/palindrome-checker': {
+      id: '/text-tools/palindrome-checker'
+      path: '/text-tools/palindrome-checker'
+      fullPath: '/text-tools/palindrome-checker'
+      preLoaderRoute: typeof TextToolsPalindromeCheckerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/text-tools/lorem-ipsum': {
@@ -2938,6 +2959,7 @@ const rootRouteChildren: RootRouteChildren = {
   TextToolsFindReplaceRoute: TextToolsFindReplaceRoute,
   TextToolsGrammarCheckerRoute: TextToolsGrammarCheckerRoute,
   TextToolsLoremIpsumRoute: TextToolsLoremIpsumRoute,
+  TextToolsPalindromeCheckerRoute: TextToolsPalindromeCheckerRoute,
   TextToolsParaphraserRoute: TextToolsParaphraserRoute,
   TextToolsRemoveDuplicateLinesRoute: TextToolsRemoveDuplicateLinesRoute,
   TextToolsRemoveLineBreaksRoute: TextToolsRemoveLineBreaksRoute,
