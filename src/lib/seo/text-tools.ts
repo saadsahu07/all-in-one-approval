@@ -233,4 +233,594 @@ export const seo: Record<string, ToolSeo> = {
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
     ],
   },
+  "/text-tools/add-line-numbers": {
+    title: "Add Line Numbers to Text — Free Online Tool",
+    metaDescription: "Add line numbers to any text or code online. Free, instant, private — no signup. Perfect for code reviews, logs, and reference.",
+    keyword: "add line numbers to text",
+    intro: [
+      "Prefix every line of your text with a line number. Perfect for code snippets in tutorials, log analysis, book quotations, and any moment you need to reference specific lines.",
+      "Runs entirely in your browser — the text is never uploaded.",
+    ],
+    features: [
+      "Any starting number (usually 1)",
+      "Padded or unpadded numbering",
+      "Custom separator (space, colon, pipe)",
+      "Instant and private",
+    ],
+    guide: `## What the Line Numbers tool does
+
+Take any block of text and prefix each line with a sequential number. Configure the starting number, the width of padding, and the separator between the number and the line. Copy the result and paste it wherever you need line-numbered text.
+
+## When to add line numbers
+
+- **Code snippets in tutorials.** Numbered lines make it easy to reference "line 12 does X" in the explanation.
+- **Log analysis.** Adding line numbers before pasting into a bug report gives everyone a common reference.
+- **Book or scripture quotations.** Numbered lines help discussion when different people have different editions.
+- **Legal documents.** Deposition transcripts and court documents are typically line-numbered by convention.
+- **Reviewing writing.** Line numbers make critique easier when reviewers want to point to specific lines.
+
+## Step-by-step
+
+**1. Paste your text.** Any length works.
+
+**2. Pick your options.** Starting number, padding width (2 for up to 99 lines, 3 for up to 999, 4 for larger files), and separator.
+
+**3. Copy the numbered result.** One click.
+
+## Padding and separator choices
+
+- **Padding** aligns numbers so all lines start at the same column. \`  1\` vs \` 42\` vs \`999\` — all three characters wide.
+- **Space separator** \`  1 my line\` reads cleanly for prose.
+- **Colon separator** \`  1: my line\` is common in code comments and terminal output.
+- **Pipe separator** \`  1| my line\` mimics editor sidebar styling.
+
+## Prose vs code
+
+- **For prose:** number every sentence or every paragraph, depending on granularity. This tool numbers every line as written, which for prose usually means every paragraph if lines aren't hard-wrapped.
+- **For code:** number every physical line, blanks included. This is what code editors and IDEs do by convention.
+
+## Removing line numbers
+
+To strip line numbers from text (e.g. when pasting a code snippet from a numbered source), use a find-replace on the leading pattern — typically \`^\\s*\\d+[\\s:|]\\s*\` — or paste into a tool that only accepts unnumbered code.
+
+## Tips
+
+- **Match the separator to your context.** Tutorials and blog posts often use colon; forums and pastes often use pipe.
+- **Set start number to 0** for arrays or 0-indexed content.
+
+## Privacy
+
+All numbering happens in your browser.`,
+    faqs: [
+      { q: "Does it number blank lines?", a: "Yes. Every physical line, including blanks, gets a number — matching how code editors work." },
+      { q: "Can I start from a number other than 1?", a: "Yes. Set the starting number to anything you like — useful for continuing from a previous snippet." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/text-tools/binary-to-text": {
+    title: "Binary to Text Converter — Free Online Decoder",
+    metaDescription: "Convert binary code (0s and 1s) to text online. Free binary decoder — instant, private, no signup. Supports ASCII and UTF-8.",
+    keyword: "binary to text",
+    intro: [
+      "Convert binary code (8-bit or space-separated bytes of 0s and 1s) into readable text. Supports ASCII and UTF-8.",
+      "Perfect for coursework, puzzles, and decoding messages embedded in binary. Runs entirely in your browser.",
+    ],
+    features: [
+      "Handles space-separated or continuous 8-bit chunks",
+      "UTF-8 and ASCII",
+      "Instant conversion",
+      "Private, browser-based",
+    ],
+    guide: `## What the Binary to Text tool does
+
+Take binary code — sequences of 0s and 1s — and convert them into readable text. Each 8-bit group represents one character. The tool accepts binary with spaces between bytes (\`01001000 01101001\`) or as a continuous string (\`0100100001101001\`), and decodes them into text.
+
+## When to use it
+
+- **Coursework.** Computer science exercises often ask students to decode binary strings by hand and verify with a tool.
+- **Puzzles and escape rooms.** Binary-encoded messages are a classic puzzle format.
+- **CTF challenges.** Capture-the-flag competitions frequently include binary-encoded flags or hints.
+- **Debugging.** When reading raw byte-level data, converting selected bytes back to text can confirm what a message contains.
+- **Understanding character encoding.** Watching text turn into 1s and 0s (and back) is the fastest way to grasp how computers represent characters.
+
+## Step-by-step
+
+**1. Paste your binary.** Either space-separated bytes or one long string of 0s and 1s (in 8-bit chunks).
+
+**2. Read the decoded text.** Instant.
+
+**3. Copy the result.** One click.
+
+## About character encoding
+
+- **ASCII** covers 128 basic characters — English letters, digits, punctuation. Each character is 7 bits (padded to 8 with a leading 0).
+- **Extended ASCII / Latin-1** covers 256 characters in 8 bits, including some European accents.
+- **UTF-8** is a modern variable-width encoding. English characters use 8 bits; accented Latin characters use 16 bits; other scripts (Cyrillic, Greek, Arabic, CJK) use 24–32 bits.
+
+This tool handles all of them — it decodes the byte stream and lets the browser interpret it as UTF-8, which is a superset of ASCII.
+
+## Common gotchas
+
+- **Missing or extra zeros.** Each byte must be exactly 8 bits. A rogue 7-bit or 9-bit chunk breaks alignment and produces garbage from that point on.
+- **Wrong grouping.** If bytes are separated by tabs, newlines, or non-standard delimiters, strip them first so the tool can group into 8-bit chunks correctly.
+- **Reverse endianness.** Rare in text encoding, but some low-level puzzles use least-significant-bit-first byte order.
+
+## Tips
+
+- **Combine with Text to Binary** to encode a message, then decode it back — a good way to verify a puzzle you're building.
+- **For hex, not binary**, use a hex-to-text tool instead.
+
+## Privacy
+
+All conversion runs in your browser.`,
+    faqs: [
+      { q: "Does it support UTF-8?", a: "Yes. The tool decodes byte streams as UTF-8, which handles all languages, emoji, and special characters correctly." },
+      { q: "Why is my output garbled?", a: "Usually because the bytes aren't 8 bits each. Every character needs exactly 8 binary digits — a stray extra or missing bit throws off the entire stream." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/text-tools/find-replace": {
+    title: "Find and Replace Text Online — Free Bulk Tool",
+    metaDescription: "Find and replace text online — case-sensitive or regex, whole-word or partial. Free text replacer with instant preview. No signup.",
+    keyword: "find and replace text",
+    intro: [
+      "Find and replace text in bulk. Case-sensitive matching, whole-word matching, and regular expressions supported. Preview the replacement live before copying.",
+      "Runs entirely in your browser — the text is never uploaded.",
+    ],
+    features: [
+      "Case-sensitive or case-insensitive",
+      "Regular expressions supported",
+      "Whole-word matching",
+      "Live preview before copying",
+    ],
+    guide: `## What the Find and Replace tool does
+
+Search for a pattern in your text and replace every occurrence with something else. Choose case-sensitivity, whole-word matching, or use full regular expressions for advanced patterns. See the replaced text in real time before copying.
+
+## When to use bulk find and replace
+
+- **Renaming variables** across a code snippet.
+- **Standardizing terminology.** Replace all "colour" with "color" (or the reverse) in a document.
+- **Cleaning up scraped text.** Remove stray HTML tags, unwanted timestamps, or duplicate whitespace.
+- **Anonymizing.** Replace real names or emails with placeholders before sharing.
+- **Reformatting** with regex: turn dates like \`2024-03-15\` into \`March 15, 2024\`, or reformat markdown lists into HTML.
+
+## Step-by-step
+
+**1. Paste your text.** Any length.
+
+**2. Enter the find pattern.** A literal string, or a regex if you enable Regex mode.
+
+**3. Enter the replacement.** Blank replaces with nothing (deletion). Regex mode supports capture groups like \`$1\`.
+
+**4. Toggle options** — case-sensitivity, whole-word matching, regex mode.
+
+**5. Copy the result.** One click.
+
+## Regex quick reference
+
+- **\`.\`** — any single character
+- **\`\\d\`** — a digit; **\`\\w\`** — a word character; **\`\\s\`** — whitespace
+- **\`*\`** — 0 or more; **\`+\`** — 1 or more; **\`?\`** — 0 or 1
+- **\`^\`** and **\`$\`** — start and end of a line
+- **\`( )\`** — capture group; reference as **\`$1\`** in replacement
+- **\`[abc]\`** — any character in the set; **\`[^abc]\`** — any character not in the set
+
+Example: replace \`(\\d{4})-(\\d{2})-(\\d{2})\` with \`$2/$3/$1\` to convert YYYY-MM-DD to MM/DD/YYYY.
+
+## Case-sensitive vs insensitive
+
+- **Case-sensitive:** \`Apple\` doesn't match \`apple\`. Use when you need exact matches (e.g. renaming a specific variable in code).
+- **Case-insensitive:** \`apple\` matches \`Apple\` and \`APPLE\`. Use when tidying prose where casing varies.
+
+## Whole word matching
+
+Whole-word mode matches only when the pattern is a full word — not part of a larger word. Replacing "cat" as a whole word ignores "cathedral" and "concatenate". Skip whole-word mode when you want partial matches.
+
+## Tips
+
+- **Preview before committing.** Always compare the output to the input before copying.
+- **For complex regex**, test on a small snippet first, then run on the full document.
+- **Chain operations.** Do multiple find-replaces sequentially — each one takes the previous result as input.
+
+## Privacy
+
+All processing runs in your browser.`,
+    faqs: [
+      { q: "Does it support regular expressions?", a: "Yes. Toggle Regex mode to use full regex, including capture groups (referenced as $1, $2 in the replacement)." },
+      { q: "How do I delete matching text?", a: "Leave the replacement field empty. Every match will be removed." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/text-tools/remove-line-breaks": {
+    title: "Remove Line Breaks from Text Online — Free",
+    metaDescription: "Remove or replace line breaks in text online. Free, instant, private. Choose to strip all breaks or keep paragraph breaks. No signup.",
+    keyword: "remove line breaks",
+    intro: [
+      "Strip all line breaks from your text, or keep only paragraph breaks (double line breaks). Perfect for cleaning up copy-pasted text from PDFs, articles, and emails.",
+      "Runs entirely in your browser.",
+    ],
+    features: [
+      "Remove every line break",
+      "Keep paragraph breaks (double newlines)",
+      "Replace breaks with a chosen character",
+      "Instant, private, browser-based",
+    ],
+    guide: `## What the Remove Line Breaks tool does
+
+Strip line breaks from your text — either every break or only the "wrap" breaks within paragraphs, keeping true paragraph breaks intact. Perfect for cleaning up text copied from PDFs, articles, and emails where the source hard-wrapped every line at a fixed column.
+
+## When to remove line breaks
+
+- **PDF copy-paste.** PDFs often wrap text at column boundaries. Pasting into a normal document leaves ugly breaks mid-sentence.
+- **Emails.** Older email tools hard-wrapped at 72 columns. Modern email doesn't need this, and the wrapping looks broken.
+- **Web articles copied to a doc.** Sites sometimes insert \`<br>\` for visual layout; the resulting paste has one break per visual line.
+- **AI input.** Feeding text to an AI works best when paragraphs are single continuous blocks.
+- **Reformatting for a new column width.** Remove old wrapping so the text can re-flow naturally.
+
+## Step-by-step
+
+**1. Paste your text.** Any length.
+
+**2. Pick your mode:**
+   - **Remove all breaks** — every newline becomes a space.
+   - **Keep paragraph breaks** — single line breaks become spaces; double breaks (paragraph separators) stay.
+   - **Replace with custom** — choose what to put in place of each break.
+
+**3. Copy the cleaned text.** One click.
+
+## The difference between line and paragraph breaks
+
+In most word processors:
+
+- **Line break** — a newline within a paragraph (Shift+Enter in Word).
+- **Paragraph break** — a full paragraph terminator (Enter in Word). In plain text, this is a blank line, or two consecutive newlines.
+
+When you copy from a PDF, the reader inserts a line break at every visual line — which is *not* what the author meant. Removing these while preserving paragraph breaks restores the intended structure.
+
+## Tips
+
+- **Read the result.** Some paragraphs may have quirky spacing where the source used unusual break patterns. Fix by hand.
+- **For code**, do NOT remove line breaks — code structure depends on them.
+- **For hyphenated line-end words** (like "recon-\\nfigure"), you may need a separate find-replace to rejoin the halves before removing breaks.
+
+## Privacy
+
+All processing runs in your browser.`,
+    faqs: [
+      { q: "Will it destroy my paragraph structure?", a: "Not if you choose 'Keep paragraph breaks'. Only within-paragraph line breaks are removed; paragraph separators (blank lines) stay." },
+      { q: "Can I replace line breaks with something other than a space?", a: "Yes. Use the custom replacement option to substitute any character — a comma, a pipe, an em-dash — for each removed break." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/text-tools/rot13": {
+    title: "ROT13 Encoder & Decoder Online — Free Cipher Tool",
+    metaDescription: "Encode and decode ROT13 text online. Free ROT13 tool — instant, private, no signup. Classic Caesar cipher for puzzles and mild obfuscation.",
+    keyword: "rot13 encoder decoder",
+    intro: [
+      "Encode or decode ROT13 text — the classic Caesar cipher that shifts every letter by 13 places. Because 26 ÷ 2 = 13, the same operation encodes and decodes.",
+      "Perfect for puzzles, forum spoilers, and mild obfuscation. Runs entirely in your browser.",
+    ],
+    features: [
+      "Same operation encodes and decodes",
+      "Handles upper and lower case",
+      "Non-letters pass through unchanged",
+      "Instant, private, browser-based",
+    ],
+    guide: `## What ROT13 does
+
+ROT13 is a simple substitution cipher that shifts every letter of the alphabet by 13 positions. A becomes N, B becomes O, C becomes P, and so on. Because there are 26 letters and 13 is exactly half, applying ROT13 twice returns the original text — the same operation encodes and decodes.
+
+Only letters are affected. Digits, punctuation, spaces, and non-Latin characters pass through unchanged.
+
+## When to use ROT13
+
+- **Forum spoilers.** Hiding a movie twist or puzzle answer so casual readers don't accidentally see it.
+- **Puzzles.** ROT13 is a favorite in escape rooms, riddles, and cryptography intros.
+- **Mild obfuscation.** Preventing a simple text search from finding a term — for example, hiding a word in a comment thread.
+- **Coursework.** Introducing students to substitution ciphers.
+- **Nostalgia.** Usenet, IRC, and early web forums used ROT13 constantly for spoiler tags.
+
+## Step-by-step
+
+**1. Paste your text** — either plaintext (to encode) or ROT13 ciphertext (to decode).
+
+**2. Read the result** immediately.
+
+**3. Copy the output** with one click.
+
+## ROT13 is NOT encryption
+
+ROT13 is not secure and never has been. Anyone can decode it in seconds — that's the entire point of using it as a spoiler tag. Never use ROT13 to hide passwords, personal data, or anything that shouldn't be trivially reversible.
+
+For real encryption, use AES or another modern algorithm through a proper security tool. ROT13 is for social conventions (spoilers, casual obfuscation), not confidentiality.
+
+## Variants
+
+- **ROT13** shifts letters only. Most common.
+- **ROT47** shifts printable ASCII characters (letters, digits, punctuation) by 47 positions — obscures more than ROT13 but is still trivially reversible.
+- **Caesar cipher** is the general form: shift by any number 1–25. ROT13 is Caesar shift 13.
+
+## Tips
+
+- **Test round-trip.** Encode a phrase and decode the result to confirm you get the original.
+- **Non-Latin scripts** (Cyrillic, Greek, Arabic, CJK) pass through unchanged — ROT13 is defined only over the 26-letter Latin alphabet.
+
+## Privacy
+
+All transformation runs in your browser.`,
+    faqs: [
+      { q: "Is ROT13 secure?", a: "No. ROT13 is trivially reversible — anyone can decode it in seconds. Use it for spoilers and puzzles, never for real privacy or security." },
+      { q: "Do I need to choose encode or decode?", a: "No. Because 26 ÷ 2 = 13, applying ROT13 twice returns the original text. The same button encodes and decodes." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/text-tools/text-repeater": {
+    title: "Text Repeater Online — Repeat Text N Times Free",
+    metaDescription: "Repeat any text or word N times online. Free text repeater with custom separator. Instant, private, no signup — works in your browser.",
+    keyword: "text repeater",
+    intro: [
+      "Repeat any word, phrase, or block of text as many times as you like, with your choice of separator between each repetition. Perfect for filler text, test data, and playful posts.",
+      "Runs entirely in your browser.",
+    ],
+    features: [
+      "Repeat any text 1 to 100,000 times",
+      "Custom separator (newline, comma, space, or anything)",
+      "Instant output for large counts",
+      "Private, browser-based",
+    ],
+    guide: `## What the Text Repeater does
+
+Type any text and pick how many times to repeat it. Choose a separator — newline, space, comma, or any custom string — to control what goes between each repetition. Copy the result to your clipboard.
+
+## When to use it
+
+- **Test data.** Generating N copies of a form field, a database row, or an API payload for load testing.
+- **CSS and layout mockups.** Creating placeholder content to see how a design handles repetition.
+- **Playful social posts.** "Happy birthday" repeated 30 times, one per line, for someone's 30th.
+- **Filler text.** Padding out a mockup with real-shaped content rather than lorem ipsum.
+- **Rate-limit testing.** Sending N identical requests to check server behavior.
+- **Educational demos.** Illustrating loops, arrays, or the concept of repetition to a beginner.
+
+## Step-by-step
+
+**1. Enter the text to repeat.** A word, a phrase, or a full paragraph.
+
+**2. Choose the count.** 1 to 100,000. Very large counts (over 10,000) may take a moment to render.
+
+**3. Pick a separator.**
+   - **Newline** produces N stacked lines.
+   - **Space** produces a horizontal stream.
+   - **Comma + space** produces a CSV-style list.
+   - **Custom** — any string, including \`|\` or \`---\` for visual dividers.
+
+**4. Copy the output.** One click.
+
+## Choosing the right separator
+
+- **Newlines** for lists, form entries, and test data (one per line).
+- **Commas** for CSV, database seeding, and comma-separated arguments.
+- **Spaces** for filler paragraphs or "keyword stuffing" test text.
+- **Custom** for creative uses — dividers, code separators, or emoji strings.
+
+## Watch out for extremes
+
+Extremely large counts (over 100,000) can freeze the browser tab briefly while rendering. If you need millions of repetitions, use a script (\`for\` loop in Python, JavaScript, or shell) — this tool is optimized for human-sized repetition tasks.
+
+## Tips
+
+- **Repeat and then find-replace.** Use the Repeater to generate a template, then use Find & Replace to swap in per-item values (a counter, a random name, etc.).
+- **Combine with Line Numbers** to produce numbered filler test data quickly.
+
+## Privacy
+
+All processing runs in your browser.`,
+    faqs: [
+      { q: "What's the maximum repeat count?", a: "The tool supports up to 100,000 repetitions. For larger volumes, a scripting language will be faster than any browser tool." },
+      { q: "Can I use special characters as the separator?", a: "Yes. Use the custom separator field to enter any string — spaces, tabs, pipes, emoji, or multi-character dividers like ' --- '." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/text-tools/text-to-binary": {
+    title: "Text to Binary Converter — Free Online Encoder",
+    metaDescription: "Convert text to binary code online. Free text-to-binary encoder supporting ASCII and UTF-8. Instant, private, no signup required.",
+    keyword: "text to binary",
+    intro: [
+      "Convert any text into binary code — 8 bits per byte, space-separated for readability. Supports full UTF-8, so emoji and non-Latin scripts work correctly.",
+      "Perfect for puzzles, coursework, and understanding character encoding. Runs entirely in your browser.",
+    ],
+    features: [
+      "Full UTF-8 support (emoji, all scripts)",
+      "Space-separated 8-bit groups by default",
+      "Optional continuous output (no spaces)",
+      "Instant, private, browser-based",
+    ],
+    guide: `## What the Text to Binary tool does
+
+Convert any text into its binary representation. Each character becomes one or more bytes (depending on the character), and each byte becomes 8 bits of 0s and 1s. By default, bytes are separated by spaces to keep the output readable; you can also produce continuous output for compact storage.
+
+## When to use it
+
+- **Coursework.** Understand how computers store text at the byte level.
+- **Puzzles.** Create binary-encoded messages for escape rooms, riddles, or CTF challenges.
+- **Debugging.** Convert a suspicious character to binary to see its exact byte pattern.
+- **Illustration.** Show non-technical audiences the "under the hood" reality of digital text.
+- **Data prep.** Generate byte sequences for low-level programming exercises.
+
+## Step-by-step
+
+**1. Paste your text.** Any length; any language, including emoji.
+
+**2. Choose spacing.** Space-separated for readability, continuous for compact output.
+
+**3. Copy the binary.** One click.
+
+## Character encoding, briefly
+
+- **ASCII characters** (A-Z, a-z, 0-9, common punctuation): 1 byte = 8 bits each.
+- **Latin-1 extended** (é, ñ, ü, etc. in UTF-8): 2 bytes each.
+- **Cyrillic, Greek, Hebrew, Arabic**: 2 bytes each.
+- **CJK (Chinese, Japanese, Korean)**: 3 bytes each.
+- **Emoji and rare symbols**: 4 bytes each.
+
+This tool always uses UTF-8, which is the modern standard for text encoding on the web and in most operating systems.
+
+## Reverse operation
+
+Use the Binary to Text tool to decode any binary string back into readable text. Round-tripping text through both tools should return the exact input — a good sanity check for a puzzle you're building.
+
+## Tips
+
+- **Emoji are big.** A single emoji like 🎉 is 4 bytes = 32 bits. A short message with emoji can produce much more binary than expected.
+- **For hex output instead**, use a text-to-hex tool — hex is more compact and easier for humans to read than binary.
+
+## Privacy
+
+All conversion runs in your browser.`,
+    faqs: [
+      { q: "Does it support emoji and Chinese characters?", a: "Yes. The tool uses UTF-8, which encodes every character in any language. Emoji are typically 4 bytes each; CJK characters are 3 bytes." },
+      { q: "Why is my output so long?", a: "Every character in UTF-8 is 8, 16, 24, or 32 bits. A single emoji is 32 bits. Non-ASCII text produces much more binary than plain English." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/text-tools/whitespace-remover": {
+    title: "Remove Extra Whitespace Online — Free Text Cleaner",
+    metaDescription: "Remove extra spaces, tabs, and blank lines from any text online. Free whitespace cleaner — instant, private, no signup required.",
+    keyword: "remove extra whitespace",
+    intro: [
+      "Clean up messy text by removing extra spaces, tabs, and blank lines. Choose how aggressive to be — from just trimming line ends to collapsing every whitespace run into a single space.",
+      "Runs entirely in your browser.",
+    ],
+    features: [
+      "Trim leading/trailing spaces on every line",
+      "Collapse multiple spaces into one",
+      "Remove blank lines",
+      "Instant, private, browser-based",
+    ],
+    guide: `## What the Whitespace Remover does
+
+Clean up messy text by controlling exactly how whitespace is normalized. Options range from a gentle trim of line ends to an aggressive collapse of every run of spaces, tabs, and blank lines into single spaces.
+
+## When to use it
+
+- **Cleaning copied text.** Text from PDFs, emails, or old documents often has stray tabs, doubled spaces, and inconsistent indentation.
+- **Preparing form input.** Trimming user-submitted text before saving prevents "  bob  " and "bob" from appearing as different names.
+- **Normalizing data for import.** CSV or TSV files with inconsistent spacing import cleaner when whitespace is normalized first.
+- **Word count accuracy.** Extra whitespace inflates word counts and confuses text-analysis tools.
+- **Compact formatting.** Removing all runs of whitespace makes text compact for storage or transmission.
+
+## Step-by-step
+
+**1. Paste your text.** Any length.
+
+**2. Pick your cleaning options:**
+   - **Trim lines** — strip leading and trailing spaces from every line.
+   - **Collapse spaces** — replace every run of 2+ spaces with a single space.
+   - **Remove blank lines** — collapse multiple blank lines into one, or remove them entirely.
+   - **Normalize all whitespace** — the aggressive option: every run of any whitespace becomes one space.
+
+**3. Copy the cleaned text.** One click.
+
+## Whitespace characters to know
+
+- **Regular space** — what the space bar produces.
+- **Tab** — a horizontal tab character. Often mixed with spaces in copied code.
+- **Non-breaking space** (\`\\u00A0\`) — looks like a space but doesn't break at line ends. Common in HTML paste.
+- **Line breaks** — newline (\`\\n\`), carriage return (\`\\r\`), or CRLF (\`\\r\\n\`) depending on the source OS.
+- **Zero-width space** (\`\\u200B\`) — invisible but present. Sometimes used for obfuscation.
+
+The most aggressive normalization option handles all of these.
+
+## Careful with code
+
+Code structure depends on whitespace. Never run "collapse all spaces" on Python or YAML — indentation is meaningful. For code, use only "trim trailing whitespace" and skip the more aggressive options.
+
+## Tips
+
+- **Preview before committing.** Compare the cleaned output to the original to catch cases where you've stripped meaningful whitespace.
+- **Chain tools.** Use Remove Line Breaks first to normalize paragraph structure, then Whitespace Remover to clean within-line spacing.
+
+## Privacy
+
+All processing runs in your browser.`,
+    faqs: [
+      { q: "Will it remove tabs?", a: "Yes if you choose 'collapse spaces' or 'normalize all whitespace'. The 'trim lines' option only touches leading and trailing whitespace." },
+      { q: "Is it safe for code?", a: "Only 'trim trailing whitespace' is safe for indented languages like Python or YAML. More aggressive options destroy meaningful indentation." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/text-tools/word-frequency": {
+    title: "Word Frequency Counter Online — Free Text Analyzer",
+    metaDescription: "Count word frequency in any text online. Free word frequency analyzer — instant, private, no signup. Ideal for writing analysis and SEO.",
+    keyword: "word frequency counter",
+    intro: [
+      "Analyze any text and see which words appear most often. Ranks every word by frequency, ignores case, and can skip common stop words for cleaner results.",
+      "Perfect for writing analysis, keyword research, and understanding what a document is really about.",
+    ],
+    features: [
+      "Ranks every word by count",
+      "Case-insensitive matching",
+      "Optional stop-word filter",
+      "Instant, private, browser-based",
+    ],
+    guide: `## What the Word Frequency Counter does
+
+Analyze any block of text and list every unique word along with how often it appears, sorted from most to least frequent. Case is ignored (\`The\` and \`the\` count together) and you can optionally skip stop words — the common filler like \`the\`, \`a\`, \`and\` that dominate any text — for a cleaner picture of what the content is actually about.
+
+## When to use it
+
+- **Writing analysis.** Discover which words you overuse in your own writing.
+- **SEO keyword extraction.** See which terms carry the most weight in a competitor's page.
+- **Content editing.** Identify repetitive vocabulary and vary your word choice.
+- **Language learning.** Find the most common words in a text you're translating.
+- **Text summarization sanity check.** Confirm that a document's top words match its actual topic.
+- **Academic analysis.** Word frequency is a core tool in stylometry and authorship attribution.
+
+## Step-by-step
+
+**1. Paste your text.** Any length; longer text gives more meaningful frequencies.
+
+**2. Toggle stop-word removal.** On for topic-focused analysis; off for full unfiltered counts.
+
+**3. Read the ranked list** — most-used words at the top.
+
+**4. Copy or download** the list for further analysis in a spreadsheet.
+
+## About stop words
+
+Stop words are the most common words in a language that carry little meaning on their own: \`the\`, \`and\`, \`is\`, \`in\`, \`of\`, \`to\`, \`a\`, \`for\`, etc. In any text, these dominate the top of a frequency list — which is technically true but not useful if you want to know the topic.
+
+Removing stop words is a classical NLP preprocessing step. This tool uses a standard English stop-word list; the result surfaces the words that actually characterize the document.
+
+## Interpreting the results
+
+- **Top 5 words** (with stop words filtered) usually reveal the main topic.
+- **A long tail** of words used exactly once is normal — most vocabulary is rare.
+- **Repetition is a style signal.** A word appearing 20 times in a 500-word essay is a candidate for variety.
+- **Compare two texts** by running each and comparing the top words.
+
+## Limitations
+
+- **Word-boundary rules** are simple — punctuation is stripped and words are split on whitespace. Compound terms like "New York" are treated as two words.
+- **English focus.** The stop-word list is English. Non-English text still counts words correctly but stop-word removal only helps for English.
+- **Case-folding, not stemming.** \`run\` and \`running\` count separately. For grouping word forms, use a stemming tool.
+
+## Privacy
+
+All processing runs in your browser.`,
+    faqs: [
+      { q: "What are stop words?", a: "Very common words like 'the', 'and', 'is', 'of' that carry little meaning on their own. Removing them from a frequency count reveals the terms that actually describe the topic." },
+      { q: "Does it group different forms of the same word?", a: "No. 'run' and 'running' count separately. For word-form grouping, use a stemming or lemmatization tool." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
 };

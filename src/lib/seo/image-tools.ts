@@ -524,4 +524,610 @@ Generates a high-resolution PNG of a QR code for whatever you type in. The codes
 
 Everything is generated locally. No scan tracking, no analytics — just the code.`,
   },
+  "/image-tools/blur": {
+    title: "Blur Image Online — Free Gaussian Blur Tool",
+    metaDescription: "Blur images online with adjustable Gaussian blur strength. Free image blur tool — hide faces, license plates, or create backgrounds. No signup.",
+    keyword: "blur image online",
+    intro: [
+      "Blur any image online with adjustable strength. Perfect for hiding faces, redacting license plates, censoring sensitive info, or creating soft background images for slides and blogs.",
+      "Runs entirely in your browser — the image never leaves your device.",
+    ],
+    features: [
+      "Adjustable Gaussian blur intensity",
+      "Works on JPG, PNG, and WebP",
+      "Runs 100% in your browser — private",
+      "Download as JPG or PNG",
+    ],
+    guide: `## What the Blur Image Tool does
+
+Upload any image and apply a Gaussian blur across the whole picture. A slider controls the blur strength from a barely perceptible softening to a heavy frost that completely obscures detail. Export the result as JPG or PNG.
+
+## When to use image blur
+
+- **Privacy.** Blur faces of bystanders, house numbers, or license plates before posting a photo online.
+- **Redaction.** Cover names, ID numbers, or private text in screenshots before sharing.
+- **Backgrounds.** Create soft, low-detail backgrounds for slide decks, thumbnails, or web hero sections where sharp detail would compete with foreground text.
+- **Design placeholders.** Blur images to use as tasteful loading states or teaser previews.
+- **Photography.** Simulate a shallow depth-of-field effect on parts of a composed image.
+
+## Step-by-step
+
+**1. Upload your image.** Drag a JPG, PNG, or WebP into the tool, or click to browse.
+
+**2. Drag the blur slider.** A live preview shows the result as you adjust. Small values (2–5 px) soften; large values (30 px+) obscure detail entirely.
+
+**3. Download the blurred image.** One click saves it back to your device in your chosen format.
+
+## Choosing the right blur strength
+
+- **Faces and license plates for privacy:** 20–40 px, enough that features and characters are unrecognizable. Verify by looking at the result — a weak blur can be undone with AI upscaling.
+- **Slide backgrounds:** 15–25 px keeps color and mood while removing distracting detail.
+- **Aesthetic soft look:** 3–8 px keeps the subject recognizable while softening skin, edges, and noise.
+
+## Privacy warning about blur
+
+Gaussian blur is not always secure. For a stationary photo where a small character (like part of a license plate) is repeatedly obscured, AI models can sometimes reconstruct the original. For serious privacy — genuinely hiding an ID, password, or license plate — use a solid black rectangle or pixelation with a large enough grid that no per-pixel data survives. Blur is fine for casual privacy and design.
+
+## Tips
+
+- **Crop first, blur second.** Only blur what you need to hide; leave the rest sharp.
+- **Use PNG for text-heavy images.** JPG compression on top of blur can produce visible artifacts.
+
+## Privacy
+
+Everything runs in your browser. Nothing is uploaded.`,
+    faqs: [
+      { q: "Is blur enough to hide a license plate?", a: "For casual use, yes. For serious privacy, use a solid rectangle or heavy pixelation — modern AI tools can sometimes reverse a moderate Gaussian blur." },
+      { q: "What file types does it support?", a: "JPG, PNG, and WebP for input. Download as JPG or PNG." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/border": {
+    title: "Add Border to Image Online — Free Frame Tool",
+    metaDescription: "Add a colored border or frame to any image online. Adjustable width and color. Free, instant, private — no signup, no watermark.",
+    keyword: "add border to image",
+    intro: [
+      "Add a solid border around any image in seconds. Pick a color, choose the thickness, and download the framed result. Perfect for Instagram posts, product photos, printable prints, and email banners.",
+      "Runs entirely in your browser — the image never leaves your device.",
+    ],
+    features: [
+      "Any solid color border",
+      "Adjustable width in pixels",
+      "JPG, PNG, and WebP input",
+      "One-click download",
+    ],
+    guide: `## What the Border Tool does
+
+Upload an image and add a solid-colored border around it. Choose any width in pixels and any color from the color picker. The border is added around the outside of the existing image, so the final image is larger than the original by twice the border width in each dimension.
+
+## When to add a border
+
+- **Social media.** A thin white or black border makes a photo pop out from a busy feed background, especially on Instagram.
+- **Product photography.** A subtle frame separates a product from the surrounding page.
+- **Printable art.** A border simulates the matting of a framed print.
+- **Contact sheets and mood boards.** Consistent borders around every image tie a collection together.
+- **Email headers and blog covers.** A branded border color signals your visual identity at a glance.
+
+## Step-by-step
+
+**1. Upload your image.** Drag any JPG, PNG, or WebP into the drop zone.
+
+**2. Pick a color.** Use the color picker for any hex color, or type your brand color directly.
+
+**3. Set the width.** 10–20 px is subtle. 40–80 px is a strong frame. 100 px+ is dramatic and best on large source images.
+
+**4. Download the framed image.** One click saves the result.
+
+## Choosing a color that works
+
+- **White borders** work on almost any photo and feel clean and gallery-like.
+- **Black borders** boost contrast and feel formal — great for portraits and monochrome work.
+- **Brand colors** tie an image to your identity but only work if the color complements the photo. Avoid clashing hues.
+- **Cream or off-white (#f5f0e6)** looks warmer and more premium than pure white for prints.
+
+## Choosing a width
+
+- **Instagram posts:** 20–40 px for subtle framing on a 1080 px image.
+- **Prints:** 60–120 px to simulate matting depth.
+- **Web thumbnails:** 4–8 px, just enough to define an edge.
+
+## Tips
+
+- **Match border color to background.** For a floating look on your website, use the exact page background color.
+- **Frame after cropping.** Crop to the composition you want first, then add the border — otherwise the border widths won't match if you crop later.
+
+## Privacy
+
+Everything runs in your browser.`,
+    faqs: [
+      { q: "Can I add a gradient border?", a: "This tool adds solid-color borders. For gradient or patterned borders, edit the image in a full editor after adding a solid frame." },
+      { q: "Does it change the original image dimensions?", a: "The output is larger than the input by twice the border width in each dimension. The original pixels are preserved unchanged inside the border." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/flip": {
+    title: "Flip Image Online — Horizontal & Vertical Free",
+    metaDescription: "Flip images horizontally or vertically online. Free image mirror tool — instant, private, no signup. Works on JPG, PNG, WebP.",
+    keyword: "flip image online",
+    intro: [
+      "Flip any image horizontally or vertically in one click. Perfect for correcting mirror-selfies, mirroring product photos, or preparing images for print transfers.",
+      "Runs entirely in your browser — no upload, no signup, no watermark.",
+    ],
+    features: [
+      "Horizontal (mirror) or vertical flip",
+      "Both flips can be combined",
+      "Works on JPG, PNG, WebP",
+      "Download in original format",
+    ],
+    guide: `## What the Flip Image Tool does
+
+Upload an image and mirror it horizontally, vertically, or both. Horizontal flip mirrors left-right. Vertical flip mirrors top-bottom. Combining both is equivalent to a 180° rotation.
+
+## When to flip an image
+
+- **Selfies.** Front-facing camera photos are often mirrored on preview but flipped back when saved — so what feels natural to you looks reversed to others. Flip to match either view.
+- **Iron-on transfers.** Text and logos need to be mirrored horizontally before printing on transfer paper.
+- **Product photography.** Flipping a hero shot can make the composition read better with a caption on a specific side.
+- **Design mockups.** Presenting a website mockup with the sidebar on either side.
+- **Photography editing.** Flipping to break a symmetry that reads too rigid.
+
+## Step-by-step
+
+**1. Upload your image.** Drag any JPG, PNG, or WebP.
+
+**2. Pick a direction.** Horizontal (mirror), vertical, or both.
+
+**3. Preview and download.** The result is visible instantly. One click saves it back to your device in the original format.
+
+## Horizontal vs vertical
+
+- **Horizontal flip** reverses left-right. Text becomes unreadable; faces look subtly wrong because human faces are almost-but-not-quite symmetrical.
+- **Vertical flip** turns the image upside down through the horizontal axis. Useful for reflections, ceiling shots, or upside-down mockups.
+- **Both** is a 180° rotation — the image reads backward and upside down.
+
+## When NOT to flip
+
+- **Photos of text or signage.** Flipping makes the writing unreadable and looks obviously wrong.
+- **Photos with clear left/right context.** People wearing wedding rings, watches, or clothing with logos will look wrong after a flip.
+- **Photos of chirality-sensitive scenes.** Anything with a steering wheel, a handedness cue, or a logo will read backward.
+
+## Tips
+
+- **Selfie natural view.** If your camera app doesn't mirror by default, flip horizontally to see yourself the way a mirror does.
+- **Combine with rotation** for full orientation control.
+
+## Privacy
+
+All processing runs in your browser.`,
+    faqs: [
+      { q: "Does flip lose image quality?", a: "No. Flip is a lossless pixel rearrangement — the output has identical quality to the input." },
+      { q: "Can I flip only part of an image?", a: "This tool flips the whole image. For partial flips, crop first, flip the crop, and then composite in a full editor." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/grayscale": {
+    title: "Convert Image to Grayscale Online — Free B&W Tool",
+    metaDescription: "Convert any image to grayscale (black and white) online. Free, instant, private — no signup. Works on JPG, PNG, and WebP.",
+    keyword: "grayscale image online",
+    intro: [
+      "Convert any color image to grayscale (black and white) in a single click. Great for portraits, print-friendly documents, minimal design, and photographic mood.",
+      "Runs entirely in your browser — no upload, no signup.",
+    ],
+    features: [
+      "Full color to true grayscale",
+      "Perceptually weighted (Rec. 709)",
+      "Works on JPG, PNG, WebP",
+      "Instant download",
+    ],
+    guide: `## What the Grayscale Tool does
+
+Convert a color image to grayscale using a perceptually weighted formula (Rec. 709 luminance: 0.2126 R + 0.7152 G + 0.0722 B). This matches how the human eye perceives brightness — greens contribute more than blues — so the result looks natural rather than washed out.
+
+## When to convert to grayscale
+
+- **Portrait photography.** Removes color distraction and forces the eye to composition, expression, and light.
+- **Print documents.** Reduces ink cost and ensures consistent appearance on B&W printers.
+- **Minimal design.** Grayscale product shots feel premium and don't clash with a brand palette.
+- **Old-photo aesthetic.** Combined with a slight sepia tone or grain, grayscale can evoke period photography.
+- **Accessibility testing.** Viewing a UI in grayscale reveals whether it relies too much on color to convey meaning.
+
+## Step-by-step
+
+**1. Upload your image.** Drag any JPG, PNG, or WebP.
+
+**2. See the grayscale preview.** Conversion is instant.
+
+**3. Download the result.** One click saves the grayscale version in your chosen format.
+
+## Grayscale vs desaturate vs true black-and-white
+
+- **Grayscale** removes color while preserving perceived brightness.
+- **Desaturate** in some editors averages RGB channels — technically different, often looks flatter.
+- **True black-and-white (1-bit)** allows only pure black or pure white pixels, with no gray tones — good for line art and stamps but wrong for photos.
+
+This tool produces true 8-bit grayscale with 256 levels of gray — the standard for photographic use.
+
+## Tips
+
+- **Increase contrast** after converting for a punchier look. Many photos read as flat in grayscale because color contrast (blue vs orange) disappears — luminance contrast has to carry the whole image.
+- **Convert before compression.** Grayscale JPEGs are smaller than color JPEGs at the same quality, since chroma channels are absent.
+
+## Privacy
+
+All conversion runs in your browser.`,
+    faqs: [
+      { q: "What formula is used?", a: "Rec. 709 luminance: 0.2126 × Red + 0.7152 × Green + 0.0722 × Blue. This matches human perception — greens contribute most to perceived brightness." },
+      { q: "Is grayscale the same as black and white?", a: "In everyday language yes, but strictly grayscale is 256 shades of gray while true black-and-white is 1-bit (only pure black or white). This tool produces 8-bit grayscale." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/image-to-base64": {
+    title: "Image to Base64 Encoder — Free Online Data URL",
+    metaDescription: "Convert any image to Base64 data URL online. Free encoder for JPG, PNG, SVG, WebP — inline images in CSS, HTML, or JSON. No signup.",
+    keyword: "image to base64",
+    intro: [
+      "Convert any image into a Base64 data URL you can paste directly into CSS, HTML, JSON, or emails. Instant, private, no signup — the image never leaves your browser.",
+      "Perfect for embedding icons in stylesheets, sending images through APIs that only accept text, or including small graphics in a single-file HTML.",
+    ],
+    features: [
+      "JPG, PNG, SVG, WebP, GIF supported",
+      "Copies the full data URL including the MIME type",
+      "One-click copy for CSS or HTML",
+      "Everything runs locally",
+    ],
+    guide: `## What the Image to Base64 Tool does
+
+Base64 encoding turns binary data (like an image) into a plain-text string using 64 ASCII characters. This lets you embed an image directly inside a CSS file, an HTML attribute, a JSON payload, or an email — anywhere binary data can't go but text can.
+
+The tool reads your image, encodes it in Base64, and returns a full \`data:\` URL like \`data:image/png;base64,iVBORw0KG...\`. Copy the URL and paste it wherever you need it.
+
+## When to use Base64 images
+
+- **CSS backgrounds** for small icons that don't warrant a separate HTTP request.
+- **Inline HTML** in email templates where external images may be blocked.
+- **Single-file HTML** exports where everything travels together.
+- **JSON APIs** that accept image uploads as strings.
+- **Chrome extensions and userscripts** where bundling an image without a network fetch is easier.
+
+## When NOT to use Base64
+
+- **Large images.** Base64 inflates size by about 33%. A 100 KB PNG becomes ~133 KB of text. For anything over ~10 KB, a normal image file with a URL is faster.
+- **Cachable assets.** A regular image URL can be cached across pages; an inlined Base64 image is re-downloaded with every page.
+- **Content changes.** If the same image is used on multiple pages, an inline copy has to change everywhere; a URL only changes once.
+
+## Step-by-step
+
+**1. Upload your image.** Drag any JPG, PNG, SVG, WebP, or GIF.
+
+**2. Copy the data URL.** The full \`data:image/...;base64,...\` string is shown ready to paste.
+
+**3. Paste into your CSS or HTML.** Use it in \`background-image: url("data:...");\` or an \`<img src="data:...">\` tag.
+
+## Best practice: keep it small
+
+Base64 is worth it for images under 5–10 KB. For anything larger, use a normal file and let the browser cache it. Icon fonts and SVG (which is already text) are usually better than Base64 for tiny UI graphics.
+
+## Tips
+
+- **Minify SVG first** for the smallest possible data URL.
+- **Consider CSS \`content-visibility\`** and lazy loading for large image galleries rather than inlining them.
+
+## Privacy
+
+Encoding happens in your browser — nothing is uploaded.`,
+    faqs: [
+      { q: "How much does Base64 increase file size?", a: "Base64 encoding adds about 33% to the file size. A 100 KB PNG becomes roughly 133 KB when encoded." },
+      { q: "Should I inline all my images in CSS?", a: "Only tiny icons (under ~5 KB). Larger images should use normal URLs so the browser can cache them across pages." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/invert": {
+    title: "Invert Image Colors Online — Free Negative Tool",
+    metaDescription: "Invert image colors online — create a photographic negative. Free, instant, private. Works on JPG, PNG, and WebP. No signup.",
+    keyword: "invert image colors",
+    intro: [
+      "Invert the colors of any image to create a photographic-negative effect. Whites become black, blacks become white, and every color flips to its complement.",
+      "Useful for old-film aesthetics, dark-mode design mockups, and revealing details in scanned x-rays or documents.",
+    ],
+    features: [
+      "True color inversion (255 − channel)",
+      "Works on JPG, PNG, WebP",
+      "Instant preview and download",
+      "Runs 100% in your browser",
+    ],
+    guide: `## What the Invert Colors Tool does
+
+Invert every pixel's color by subtracting each channel value from 255. A pure white pixel (255, 255, 255) becomes pure black (0, 0, 0). Red becomes cyan, green becomes magenta, blue becomes yellow — every color is replaced with its complement.
+
+## When to invert an image
+
+- **Photographic negative aesthetic.** Recreates the look of a film negative — good for editorial and experimental design.
+- **Dark-mode UI mockups.** Quickly convert a light-mode screenshot to see how it might look inverted, before designing a proper dark theme.
+- **Reveal detail.** Sometimes an image with heavy shadow shows more detail when inverted. Medical scans, faded documents, and low-light photos can benefit.
+- **Print-preview for chalkboards / dark backgrounds.** Design something on white, invert to see how it will look on dark.
+- **Creative overlays.** Inverted textures make interesting layer effects in editing software.
+
+## Step-by-step
+
+**1. Upload your image.** Any JPG, PNG, or WebP.
+
+**2. See the inverted result** immediately in the preview.
+
+**3. Download** the inverted image in the format you want.
+
+## Invert vs true dark-mode
+
+Inverting a UI screenshot is not the same as designing a real dark theme. Inversion flips brand colors to their complements — a red button becomes cyan — which is rarely what you want in production. It's a useful sketch tool but a poor deliverable. For real dark mode, redesign with intentional colors.
+
+## Invert vs negative photography
+
+A true film negative also inverts brightness and applies an orange base tint. This tool produces a straight color inversion without the base tint, which reads cleaner for most modern uses. To simulate a true negative, invert first, then apply an orange color balance in a full editor.
+
+## Tips
+
+- **Invert twice = original.** Handy to remember: inverting an already-inverted image restores the original exactly, with no loss.
+- **Combine with grayscale** for a stark negative look — invert, then desaturate, or vice versa.
+
+## Privacy
+
+Inversion runs in your browser. The image is never uploaded.`,
+    faqs: [
+      { q: "Is invert the same as dark mode?", a: "No. Invert flips every color to its complement — brand colors will look wrong. Real dark mode is designed with intentional color choices, not an automatic invert." },
+      { q: "Does inverting lose quality?", a: "No. Invert is a lossless per-pixel operation — every pixel is mathematically reversed and the reverse is exact." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/jpg-to-webp": {
+    title: "JPG to WebP Converter — Free Online, Smaller Files",
+    metaDescription: "Convert JPG to WebP online for smaller, faster-loading images. Free JPG to WebP tool with quality control. Private, no signup, browser-based.",
+    keyword: "jpg to webp",
+    intro: [
+      "Convert JPG images to WebP for 25–35% smaller file sizes at the same visual quality. Perfect for websites, apps, and any place where page speed matters.",
+      "Runs entirely in your browser — the image never leaves your device.",
+    ],
+    features: [
+      "Quality slider (10–100)",
+      "Batch multiple files at once",
+      "Preserves original dimensions",
+      "Private, browser-based conversion",
+    ],
+    guide: `## What JPG to WebP does
+
+Convert JPG (JPEG) images to WebP, a modern image format developed by Google that produces smaller files than JPG at the same visual quality. Typical savings are 25–35% for photographs, and up to 50% for images with flat color.
+
+## When to use WebP
+
+- **Websites and web apps.** Every KB shaved from image weight helps page speed, Core Web Vitals, and SEO.
+- **Blogs.** Faster image loads keep readers engaged, especially on mobile.
+- **E-commerce.** Product photos load faster, which measurably improves conversion.
+- **Email newsletters** where email clients support WebP (Apple Mail, Outlook 365, most modern webmail).
+- **CMS uploads.** Many modern CMSs (WordPress, Ghost, Shopify) prefer WebP for storage.
+
+## When NOT to use WebP
+
+- **Sending photos to friends or older tools.** WhatsApp, older photo viewers, and some email programs may not open WebP well. Stick with JPG for personal sharing.
+- **Print workflows.** Professional printers expect TIFF or high-quality JPG, not WebP.
+- **Legacy compatibility.** Very old browsers (IE 11, pre-2020 Safari on iOS) don't support WebP. Modern browsers all do.
+
+## Step-by-step
+
+**1. Upload your JPG.** Drag one or many files into the drop zone.
+
+**2. Choose a quality level.** 80 is a great default. 90+ for high-quality photography; 60–70 for thumbnails.
+
+**3. Download each WebP.** One click per file, or download all at once.
+
+## Quality settings, in plain English
+
+- **90–100:** Visually indistinguishable from the original JPG, files 20–25% smaller.
+- **75–85:** The sweet spot for most web use. Barely any visible difference, files 30–40% smaller.
+- **60–70:** Thumbnails and previews. Some soft artifacts but acceptable for small display sizes.
+- **Below 60:** Only for tiny thumbnails or heavy compression scenarios.
+
+## Tips
+
+- **Serve WebP with a JPG fallback** using the HTML \`<picture>\` element for maximum browser support.
+- **Recompress carefully.** Converting a JPG to WebP compresses an already-lossy image. Set WebP quality one notch higher than the source JPG to avoid visible degradation.
+
+## Privacy
+
+All conversion happens in your browser.`,
+    faqs: [
+      { q: "How much smaller is WebP than JPG?", a: "Typically 25–35% smaller at the same visual quality for photographs. Up to 50% smaller for images with flat colors or transparency." },
+      { q: "Do all browsers support WebP?", a: "All modern browsers (Chrome, Firefox, Safari 14+, Edge) support WebP. Only very old browsers do not." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/png-to-webp": {
+    title: "PNG to WebP Converter — Free Online, Smaller PNGs",
+    metaDescription: "Convert PNG to WebP online for smaller files while keeping transparency. Free PNG to WebP converter — no signup, private, browser-based.",
+    keyword: "png to webp",
+    intro: [
+      "Convert PNG images to WebP for dramatically smaller file sizes while keeping full transparency support. Perfect for logos, icons, and graphics on modern websites.",
+      "Everything runs in your browser — the image is never uploaded.",
+    ],
+    features: [
+      "Preserves alpha transparency",
+      "Lossless and lossy modes",
+      "Batch convert multiple files",
+      "Private, browser-based",
+    ],
+    guide: `## What PNG to WebP does
+
+Convert PNG images to WebP, keeping any transparency intact. WebP supports both lossless compression (like PNG but smaller) and lossy compression (much smaller, small quality tradeoff). For images with alpha transparency — logos, icons, cutout product shots — WebP files are typically 25–50% smaller than PNG with no visible quality loss.
+
+## When to convert PNG to WebP
+
+- **Website logos and icons.** Faster load times, same crisp appearance.
+- **Cutout product photography** for e-commerce (transparent background, subject only).
+- **UI graphics and app assets** where transparency matters.
+- **Screenshots** with text — WebP handles sharp edges and text better than JPG.
+- **Any PNG larger than 100 KB** on a webpage — the WebP version almost always saves meaningful bandwidth.
+
+## When to keep PNG instead
+
+- **Screenshots that will be edited and re-saved multiple times.** Repeated lossy compression degrades — stay in PNG until final export.
+- **Print workflows** where the printer specifies PNG.
+- **Places where WebP isn't supported** (some older tools and legacy browsers).
+
+## Step-by-step
+
+**1. Upload your PNG(s).** Drag one or many files into the tool.
+
+**2. Choose lossless or lossy.** Lossless keeps every pixel identical (still typically 20–30% smaller than the source PNG). Lossy compresses further with a quality slider.
+
+**3. Download the WebP files.** One click per image, or download all together.
+
+## Lossless vs lossy
+
+- **Lossless WebP** produces a file that reconstructs to exactly the same pixels as the source PNG. Use for logos, screenshots with text, and any image where sharpness is critical. Typical savings: 20–30%.
+- **Lossy WebP** trades tiny visual differences for much smaller files. Use for photographic content where perfect pixel accuracy isn't needed. Typical savings: 50–70% versus PNG.
+
+## Transparency
+
+Both WebP modes preserve alpha transparency. Lossy WebP+alpha is a game-changer — PNG has no lossy mode, so cutout product photos were previously stuck at large file sizes. WebP cuts those sizes dramatically while keeping the transparent background.
+
+## Tips
+
+- **For UI icons under 5 KB**, stick with PNG or SVG — the WebP overhead can outweigh the savings on tiny files.
+- **Test on your target browsers.** WebP is universally supported in modern browsers but confirm before committing a legacy site.
+
+## Privacy
+
+All conversion runs in your browser.`,
+    faqs: [
+      { q: "Does WebP support transparency like PNG?", a: "Yes. Both lossless and lossy WebP support alpha transparency. Lossy WebP with alpha is dramatically smaller than transparent PNG." },
+      { q: "Which should I choose — lossless or lossy?", a: "Lossless for logos, screenshots, and text-heavy images. Lossy for photos and complex graphics where small visual differences don't matter." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/sepia": {
+    title: "Sepia Filter Online — Free Vintage Photo Tool",
+    metaDescription: "Apply a sepia filter to any photo online. Free vintage tone tool — instant, private, no signup. Works on JPG, PNG, and WebP.",
+    keyword: "sepia filter online",
+    intro: [
+      "Apply a classic sepia tone to any photo for a warm, vintage look. One click, instant preview, download in your original format.",
+      "Runs entirely in your browser — no upload, no signup, no watermark.",
+    ],
+    features: [
+      "True sepia tone (warm brown)",
+      "Works on JPG, PNG, WebP",
+      "Instant preview",
+      "Free, private, browser-based",
+    ],
+    guide: `## What the Sepia Filter does
+
+Sepia tone recolors an image into shades of warm brown, mimicking the look of 19th-century photographs that were toned with real sepia ink (from cuttlefish) to preserve them. Applied to any modern photo, the effect immediately evokes an antique, timeless quality.
+
+The tool uses the classic sepia transformation matrix, which converts each pixel's RGB values into weighted browns, giving results that look genuinely aged rather than orange-tinted.
+
+## When to use sepia
+
+- **Portraits.** Sepia is flattering to skin tones and gives even a casual selfie a formal, timeless feel.
+- **Weddings, anniversaries, and reunions.** For photo books and prints where you want a "then and now" feeling.
+- **Historical projects.** Family trees, genealogy pages, and history essays where modern color photos would look jarring beside genuine old ones.
+- **Product photography for artisanal brands.** Whiskey, leather goods, and heritage products often lean into a sepia aesthetic.
+- **Blog and social posts** for storytelling — memoir posts, throwback Thursdays, and nostalgic content.
+
+## Step-by-step
+
+**1. Upload your photo.** Any JPG, PNG, or WebP.
+
+**2. See the sepia preview** instantly.
+
+**3. Download the result** in the format of your choice.
+
+## Sepia vs black-and-white
+
+- **Black-and-white** is stark, journalistic, timeless in a modern way.
+- **Sepia** is warm, romantic, and reads as historical. It's softer on skin tones and often more flattering for portraits.
+
+Many photographers apply sepia to already-converted grayscale photos — the effect is more controllable when the source is already tonal.
+
+## Tips
+
+- **Lower contrast first** for a more authentic aged look. Old photos rarely had crisp deep blacks or brilliant whites.
+- **Add subtle grain** in a full editor after applying sepia for even more authenticity.
+- **Try a slight vignette** to focus the eye on the subject — most vintage photos had them naturally.
+
+## Privacy
+
+All processing runs in your browser. No upload.`,
+    faqs: [
+      { q: "Can I control how strong the sepia is?", a: "This tool applies a classic full-strength sepia. For a subtler effect, apply sepia then blend the result with the original in a full editor." },
+      { q: "Does it work on already black-and-white photos?", a: "Yes. Applying sepia to a grayscale image is actually the classical approach and often gives the most controlled result." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/image-tools/webp-to-png": {
+    title: "WebP to PNG Converter — Free Online, No Signup",
+    metaDescription: "Convert WebP to PNG online. Free WebP to PNG converter with full transparency support. Private, browser-based, no signup required.",
+    keyword: "webp to png",
+    intro: [
+      "Convert WebP images to PNG for compatibility with tools, apps, and older browsers that don't support WebP. Keeps transparency intact.",
+      "Everything runs in your browser — the image is never uploaded.",
+    ],
+    features: [
+      "Preserves transparency",
+      "Batch convert multiple files",
+      "Lossless PNG output",
+      "Private, browser-based",
+    ],
+    guide: `## What WebP to PNG does
+
+WebP is a modern format that saves space but isn't accepted by every tool. This converter turns a WebP file back into a standard PNG that opens anywhere — Photoshop, older browsers, most email clients, print software, and every image viewer ever made.
+
+## When to convert WebP to PNG
+
+- **Design tools** that don't support WebP (older versions of Photoshop, Illustrator, Sketch, some CMS uploaders).
+- **Email attachments** where recipients might use older mail clients.
+- **Editing workflows** where you'll re-save the image several times — PNG is lossless, so quality doesn't degrade.
+- **Print submission.** Most print vendors accept PNG, not WebP.
+- **Compatibility with legacy tools** that specifically expect PNG input.
+- **Any time you download a WebP from the web** and want to edit it in a program that refuses to open it.
+
+## Step-by-step
+
+**1. Upload your WebP.** Drag one or many files into the drop zone.
+
+**2. See the file list.** Every WebP is ready to convert.
+
+**3. Download each PNG.** One click per file, or download all at once.
+
+## About transparency
+
+If your WebP has a transparent background, the PNG output preserves it exactly. PNG is a lossless format, so every pixel of alpha data is kept perfectly intact.
+
+## Why PNG output is larger
+
+WebP is a more efficient format than PNG. A 500 KB WebP might become a 1.5 MB PNG. This is expected and unavoidable — PNG's compression is less aggressive. If file size matters and you don't need the compatibility, keep the WebP.
+
+## The right-click "Save as PNG" trick
+
+Modern browsers let you right-click a WebP on any website and choose "Save image as…" — but the file often keeps the .webp extension. This converter is the fix: drop the downloaded WebP in and get a genuine PNG that works everywhere.
+
+## Tips
+
+- **Batch mode** saves time. Drop 20 WebPs and convert them all at once.
+- **If you're re-saving multiple times, stay in PNG.** Lossless format means quality never degrades no matter how many edits you make.
+
+## Privacy
+
+Conversion happens entirely in your browser.`,
+    faqs: [
+      { q: "Does the PNG keep the WebP's transparency?", a: "Yes. If the source WebP has an alpha channel, the exported PNG preserves it exactly." },
+      { q: "Why is my PNG bigger than the WebP?", a: "PNG uses less aggressive compression than WebP. A 3–4× size increase is normal — that's the tradeoff for universal compatibility." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
 };
