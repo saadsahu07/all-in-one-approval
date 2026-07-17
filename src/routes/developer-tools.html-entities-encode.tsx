@@ -16,7 +16,7 @@ function Page() {
   const out = t.replace(/[&<>"']/g, (c) => MAP[c]);
   return (
     <ToolShell categorySlug="developer-tools" toolSlug="html-entities-encode"
-      intro="Encode HTML special characters (& < > \" ') into safe entities for direct use in HTML."
+      intro={`Encode HTML special characters (& < > " ') into safe entities for direct use in HTML.`}
       howTo={["Paste HTML or text.", "Copy the encoded output."]}>
       <Textarea rows={5} value={t} onChange={(e) => setT(e.target.value)} placeholder='<div class="x">Hi & bye</div>' />
       <Textarea rows={5} value={out} readOnly className="mt-3 font-mono text-sm" />
