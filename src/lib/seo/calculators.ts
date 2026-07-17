@@ -680,4 +680,501 @@ Conversion runs in your browser.`,
       { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
     ],
   },
+  "/calculators/area": {
+    title: "Area Calculator — Square, Rectangle, Circle & More",
+    metaDescription: "Calculate the area of squares, rectangles, triangles, circles, and trapezoids online. Free, instant, no signup — works on any device.",
+    keyword: "area calculator",
+    intro: [
+      "Work out the area of any common shape in seconds. Pick the shape, enter the dimensions, and read the result in square meters, square feet, or any unit you like.",
+      "Ideal for flooring, painting, gardening, DIY projects, homework, and any moment you need square footage without pulling out a formula sheet.",
+    ],
+    features: [
+      "Squares, rectangles, triangles, circles, trapezoids, and parallelograms",
+      "Mixed units — enter feet or meters, get square feet or square meters",
+      "Live result as you type",
+      "Works offline once the page loads",
+    ],
+    guide: `## What the Area Calculator does
+
+Enter dimensions for the shape you're measuring and the calculator returns its area. It supports the six shapes you'll actually encounter in everyday work: squares, rectangles, triangles, circles, trapezoids, and parallelograms. Enter numbers in feet, meters, inches, or centimeters — the answer comes back in the matching square unit.
+
+## When you'll reach for it
+
+- **Flooring and tile.** Multiply length by width to know how many square feet of vinyl, hardwood, or tile you need to order — plus a 10% waste allowance.
+- **Painting.** Wall area (minus doors and windows) tells you how much paint to buy. A gallon covers roughly 350 square feet, two coats.
+- **Gardening and landscaping.** Lawn area drives seed, fertilizer, and mulch quantities.
+- **Real estate.** Room and floor areas for listings or renovation quotes.
+- **Homework.** Geometry problems where the formula is the whole point.
+
+## Step-by-step
+
+**1. Pick the shape.** Match your object to the closest supported shape. An L-shaped room is two rectangles — measure each and add.
+
+**2. Enter the dimensions.** Length and width for a rectangle. Base and height for a triangle. Radius for a circle. Both parallel sides plus height for a trapezoid. Any unit works.
+
+**3. Read the area.** The result updates live as you type. Round to a sensible precision for real-world use — you rarely need more than one decimal place for flooring or paint.
+
+## The formulas, briefly
+
+- **Rectangle / square:** length × width.
+- **Triangle:** ½ × base × height.
+- **Circle:** π × radius².
+- **Parallelogram:** base × perpendicular height.
+- **Trapezoid:** ½ × (a + b) × height, where a and b are the parallel sides.
+
+## Tips
+
+- **Measure twice.** A 2% measurement error becomes a 4% area error — enough to leave you short on tile.
+- **Add a waste allowance** of 10% for flooring and tile, 15% for patterned materials, and 20% for diagonal or complex layouts.
+- **Split odd shapes** into rectangles and triangles you can measure, then add.
+
+## Privacy
+
+Calculation runs in your browser. Nothing is uploaded.`,
+    faqs: [
+      { q: "Which shapes does it support?", a: "Squares, rectangles, triangles, circles, parallelograms, and trapezoids — the six shapes you actually encounter in DIY, flooring, painting, and homework." },
+      { q: "Can I use feet and meters together?", a: "Enter every dimension in the same unit. The area comes back in that unit squared — square feet if you entered feet, square meters if you entered meters." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/calculators/compound-interest": {
+    title: "Compound Interest Calculator — Free Online Growth Tool",
+    metaDescription: "Calculate compound interest on savings and investments with monthly contributions. Free online tool with yearly breakdown — no signup.",
+    keyword: "compound interest calculator",
+    intro: [
+      "See how your savings grow with compound interest. Enter your starting balance, monthly contribution, interest rate, and time frame, and the calculator returns the final value plus a year-by-year growth chart.",
+      "Perfect for planning retirement savings, education funds, or any long-term investment where compounding is doing most of the heavy lifting.",
+    ],
+    features: [
+      "Initial deposit plus optional monthly contribution",
+      "Any compounding frequency: daily, monthly, quarterly, annually",
+      "Year-by-year breakdown of principal, interest, and total",
+      "Works in any currency",
+    ],
+    guide: `## What the Compound Interest Calculator does
+
+Enter a starting balance, an annual interest rate, the number of years you'll leave the money invested, and an optional monthly contribution. The calculator returns the final balance and shows how much of that balance is your own contributions versus interest earned on interest.
+
+## Why compound interest matters
+
+Simple interest pays a fixed amount every year based on the original balance. Compound interest pays interest on the interest already earned — so the balance grows faster each year. Over 30 or 40 years, this snowball is the single biggest driver of long-term wealth for most people who invest steadily rather than picking hot stocks.
+
+An example: $10,000 at 7% annual return, no contributions.
+
+- After 10 years: $19,672
+- After 20 years: $38,697
+- After 30 years: $76,123
+- After 40 years: $149,745
+
+Most of the balance after year 20 is interest earned on previously earned interest, not the original $10,000.
+
+## Step-by-step
+
+**1. Enter your starting balance.** The lump sum you're investing today. Zero is fine if you're starting from scratch.
+
+**2. Enter monthly contribution.** How much you'll add every month. Even $100/month compounds into a meaningful number over decades.
+
+**3. Enter the annual interest rate.** Use the expected long-term return of the investment: around 4–5% for a bond portfolio, 7–10% for a diversified stock portfolio in nominal terms.
+
+**4. Enter the number of years.** For retirement planning, use the number of years until you retire.
+
+**5. Read the results.** The final balance shows total value. The chart shows how principal and interest grow year by year — the gap between them widens dramatically after year 15 or so.
+
+## The formula
+
+For an initial balance P with rate r compounded n times per year for t years, the balance is P × (1 + r/n)^(n×t). Adding a monthly contribution modifies this into a future-value-of-annuity calculation. The calculator handles both automatically.
+
+## Tips
+
+- **Start early.** A 25-year-old who saves $200/month until 65 at 7% ends up with roughly the same balance as a 35-year-old saving $450/month until 65.
+- **Use real returns for planning.** Subtract expected inflation (~3%) from your nominal rate to plan in today's dollars.
+- **Reinvest dividends.** The whole point of compounding requires you to leave every dollar in the account.
+
+## Privacy
+
+All calculations run locally in your browser.`,
+    faqs: [
+      { q: "What compounding frequency should I use?", a: "For most stock and index-fund investments, monthly compounding is a close approximation. Savings accounts often compound daily. The difference between monthly and daily compounding over decades is small." },
+      { q: "Should I use nominal or real interest rate?", a: "Use nominal (pre-inflation) rates for a headline number. Use real (inflation-adjusted, typically 3% lower) rates to plan in today's purchasing power." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/calculators/data-storage": {
+    title: "Data Storage Converter — Bytes, KB, MB, GB, TB",
+    metaDescription: "Convert between bytes, kilobytes, megabytes, gigabytes, and terabytes online. Free data storage calculator — decimal and binary units.",
+    keyword: "data storage converter",
+    intro: [
+      "Convert between bytes, KB, MB, GB, TB, and PB in either decimal (1000-based) or binary (1024-based) units. Enter a value and every unit updates live.",
+      "Useful for sizing backups, estimating cloud storage costs, planning file transfers, and translating between the two competing storage conventions.",
+    ],
+    features: [
+      "All common units from bytes to petabytes",
+      "Decimal (KB) and binary (KiB) modes",
+      "Live conversion in every unit",
+      "Copy any result with one click",
+    ],
+    guide: `## What the Data Storage Converter does
+
+Enter a size in any unit — bytes, kilobytes, megabytes, gigabytes, terabytes, or petabytes — and every other unit updates instantly. Switch between decimal (1 KB = 1000 bytes) and binary (1 KiB = 1024 bytes) modes to match whichever convention the software you're working with uses.
+
+## Why two systems exist
+
+Historically, storage was measured in binary units because computer memory is addressed in powers of 2 (2¹⁰ = 1024 ≈ 1000). Everyone called this "1 KB" for decades. Then hard drive manufacturers standardized on decimal units (1 KB = 1000 bytes) because it made drives sound bigger. Since 1998, IEC has recommended using KiB, MiB, GiB for binary and reserving KB, MB, GB for decimal.
+
+In practice:
+
+- **Storage vendors, network speeds, cloud pricing:** decimal. A "1 TB" hard drive is 1,000,000,000,000 bytes.
+- **Operating systems (Windows, sometimes Linux):** binary but labeled with decimal names. Windows says a 1 TB drive is "931 GB" — that's actually 931 GiB.
+- **macOS and modern Linux tools:** decimal.
+- **RAM:** always binary. "16 GB of RAM" is 16 × 2³⁰ bytes.
+
+This is why your "1 TB" drive shows up as 931 GB in Windows — same bytes, different labels.
+
+## Step-by-step
+
+**1. Pick decimal or binary mode.** Decimal matches storage vendors and cloud bills. Binary matches operating system reporting and RAM.
+
+**2. Enter a value in any unit.** The other units update live.
+
+**3. Copy the result.** One click copies any unit's value to the clipboard.
+
+## Common conversions worth memorizing
+
+- 1 MB ≈ 1 minute of MP3 audio at 128 kbps.
+- 1 GB ≈ 4 hours of standard-definition video, 1 hour of HD, or 20 minutes of 4K.
+- 1 TB fits roughly 250,000 photos from a modern phone camera.
+- Cloud storage typically bills per GB/month in decimal units.
+
+## Tips
+
+- **Match the convention** of whoever you're talking to. Backup software and storage vendors are decimal; OS free-space dialogs are usually binary.
+- **When in doubt, quote bytes.** The raw byte count is unambiguous.
+
+## Privacy
+
+All conversion runs in your browser.`,
+    faqs: [
+      { q: "What's the difference between KB and KiB?", a: "1 KB = 1000 bytes (decimal). 1 KiB = 1024 bytes (binary). The distinction matters for large sizes: 1 TB is about 91 GB smaller than 1 TiB." },
+      { q: "Why does my 1 TB drive show as 931 GB?", a: "The manufacturer uses decimal (1 TB = 10¹² bytes) but Windows displays binary (931 GiB), keeping the 'GB' label. Same bytes, different convention." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/calculators/date-difference": {
+    title: "Date Difference Calculator — Days, Weeks, Months Between",
+    metaDescription: "Calculate the exact number of days, weeks, months, and years between any two dates. Free online date calculator — instant, no signup.",
+    keyword: "date difference calculator",
+    intro: [
+      "Enter two dates and get the exact time between them: total days, weeks, months, and years. Handles leap years and month-length differences automatically.",
+      "Useful for project timelines, age gaps, contract terms, deadlines, and any moment you need to know how far apart two dates really are.",
+    ],
+    features: [
+      "Total days, weeks, months, and years",
+      "Handles leap years automatically",
+      "Optional include or exclude the end date",
+      "Works with any past or future dates",
+    ],
+    guide: `## What the Date Difference Calculator does
+
+Enter a start date and an end date. The calculator returns the total number of days between them, plus equivalent representations in weeks, months, and years. It correctly handles leap years and the fact that months have different lengths — a common source of manual counting errors.
+
+## When to use it
+
+- **Project management.** How many working days do we have until launch?
+- **Contracts and notice periods.** Is the 90-day notice window still open?
+- **Age gaps.** Exact years, months, and days between two birthdays.
+- **Loan and rental terms.** Number of days between two dates for pro-rating.
+- **Travel planning.** Total days between departure and return.
+- **Historical trivia.** Days between two events, decades apart.
+
+## Step-by-step
+
+**1. Enter the start date.** Any date in any year — past or future.
+
+**2. Enter the end date.** Same rules. The tool automatically swaps them if the end is before the start.
+
+**3. Read the four numbers.** *Days* is the exact count. *Weeks*, *months*, and *years* are convenient equivalents.
+
+**4. Choose end-date behavior.** Toggle whether to include the end date. Contracts often exclude it ("30 days from today, not including today"); age calculations include it.
+
+## Why manual counting goes wrong
+
+Counting days between April 12 and July 25 in your head is easy to get wrong by one or two — you have to remember that April has 30, May has 31, June has 30, plus the partial days at either end. Add a leap year to the mix and errors multiply. This tool removes that risk entirely.
+
+## Days between vs age
+
+"Days between" and "age in days" can differ by one depending on whether the end date counts. If you were born on Jan 1 and today is Jan 2, you are 1 day old (age) but there is 1 day between your birthday and today either way. The include-end-date toggle handles this.
+
+## Tips
+
+- **Working days.** This calculator counts calendar days. For business days (excluding weekends), subtract about 2/7 of the total; for weekends + public holidays, subtract more depending on country.
+- **Time zones.** Dates only — no time-of-day precision. For hour-level differences use a duration calculator.
+
+## Privacy
+
+All calculation happens in your browser.`,
+    faqs: [
+      { q: "Does it handle leap years?", a: "Yes. Every leap-year rule (divisible by 4, except century years unless divisible by 400) is applied automatically." },
+      { q: "Are weekends and holidays excluded?", a: "No — this calculator counts calendar days. For working days only, subtract weekends and public holidays for your country." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/calculators/simple-interest": {
+    title: "Simple Interest Calculator — Free Online Loan Tool",
+    metaDescription: "Calculate simple interest on loans and savings. Enter principal, rate, and time — get interest and total amount instantly. Free, no signup.",
+    keyword: "simple interest calculator",
+    intro: [
+      "Calculate simple interest on any principal amount. Enter the amount, the annual rate, and the time in years, and get the interest earned plus the total.",
+      "Useful for short-term personal loans, deposits, and understanding the difference between simple and compound interest.",
+    ],
+    features: [
+      "Principal, rate, time — three inputs, two outputs",
+      "Interest earned and total amount",
+      "Any currency, any rate, any duration",
+      "Instant, browser-side calculation",
+    ],
+    guide: `## What the Simple Interest Calculator does
+
+Enter a principal amount (the money you're lending or depositing), an annual interest rate, and a time period in years. The calculator returns two numbers: the interest earned over that period, and the total amount (principal plus interest) at the end.
+
+Simple interest is calculated only on the original principal. It never compounds, so the interest earned each year is the same. This makes it easy to reason about — and the reason it's usually a worse deal for savers than compound interest over long periods.
+
+## When to use simple interest
+
+- **Short-term personal loans** between friends or family.
+- **Some auto loans and installment plans** that quote a flat interest rate.
+- **Certificates of deposit** that don't reinvest interest.
+- **Homework problems** where the assignment specifies simple interest.
+- **Sanity checks** for how much a loan will cost before running the full amortization.
+
+For most savings accounts, mortgages, credit cards, and long-term investments, use the compound interest calculator instead — the numbers are very different over more than a year or two.
+
+## Step-by-step
+
+**1. Enter the principal.** The starting amount, in any currency.
+
+**2. Enter the annual rate.** As a percentage (5, not 0.05).
+
+**3. Enter the time in years.** Use decimals for partial years — 0.5 for six months.
+
+**4. Read the interest and total.** The interest is what you'd earn (or pay) over the period. The total is principal plus interest.
+
+## The formula
+
+Simple interest = principal × (rate ÷ 100) × time. So $1000 at 5% for 3 years earns $150 in interest, for a total of $1150.
+
+## Simple vs compound: a quick example
+
+$10,000 at 8% for 20 years:
+
+- **Simple interest:** $10,000 × 0.08 × 20 = $16,000 in interest → $26,000 total.
+- **Compound interest (annual):** $10,000 × 1.08²⁰ ≈ $46,610 total.
+
+The gap is $20,610 — all from interest earned on previously earned interest. Over long horizons, compound interest wins by a landslide.
+
+## Tips
+
+- **Always ask how a lender calculates interest.** Two loans with the same headline rate can cost very different amounts depending on whether interest compounds and how often.
+- **Convert months to years** for the time input: 6 months = 0.5 years, 18 months = 1.5 years.
+
+## Privacy
+
+All calculation runs in your browser.`,
+    faqs: [
+      { q: "What's the difference between simple and compound interest?", a: "Simple interest is calculated only on the original principal. Compound interest is calculated on principal plus previously earned interest, so it grows faster over time." },
+      { q: "How do I calculate interest for months?", a: "Convert months to a fraction of a year. Six months = 0.5 years, 3 months = 0.25 years, 18 months = 1.5 years." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/calculators/speed": {
+    title: "Speed Converter — mph, km/h, m/s, knots Online Free",
+    metaDescription: "Convert between mph, km/h, m/s, knots, and ft/s online. Free speed converter — instant results, no signup, works on any device.",
+    keyword: "speed converter",
+    intro: [
+      "Convert between mph, km/h, m/s, knots, and ft/s in a single view. Enter a value in any unit and every other unit updates live.",
+      "Useful for travel, aviation, running pace, cycling, physics homework, and any moment you need to switch between metric and imperial speed units.",
+    ],
+    features: [
+      "mph, km/h, m/s, ft/s, and knots",
+      "Live conversion — enter any unit, read every unit",
+      "Copy any result with one click",
+      "Works on mobile in the car or at the gym",
+    ],
+    guide: `## What the Speed Converter does
+
+Enter a speed in any common unit and read the equivalent in every other unit. It supports miles per hour (mph), kilometers per hour (km/h), meters per second (m/s), feet per second (ft/s), and knots. The result updates the moment you type.
+
+## When you'll use it
+
+- **Driving abroad.** UK speed limits are in mph; most of Europe is in km/h. Reading a foreign speedometer accurately is easier when you know the conversion by feel.
+- **Sailing and aviation.** Knots are standard in maritime and aeronautical contexts.
+- **Running and cycling.** Race times often need pace conversion from minutes-per-mile to km/h.
+- **Physics and engineering.** SI problems use m/s; imperial problems use ft/s.
+- **Weather reports.** Wind speeds are quoted in different units by country.
+
+## Step-by-step
+
+**1. Enter a value in any unit.** Type into the mph field, the km/h field, or any other — the rest update automatically.
+
+**2. Read the other units.** Every unit's live value is visible at once.
+
+**3. Copy the number you need.** One click copies any field.
+
+## Handy conversions to remember
+
+- **60 mph ≈ 97 km/h.** Most US highway limits.
+- **100 km/h ≈ 62 mph.** Most European motorway limits.
+- **1 knot ≈ 1.15 mph ≈ 1.85 km/h.** Nautical mile per hour.
+- **1 m/s ≈ 3.6 km/h.** The SI-to-metric shortcut worth memorizing.
+- **Mach 1 ≈ 767 mph at sea level.** For fun.
+
+## Metric ↔ Imperial by feel
+
+- **km/h to mph:** multiply by 0.62, or subtract about 40% and add a bit.
+- **mph to km/h:** multiply by 1.6, or add 60%.
+- **m/s to km/h:** multiply by 3.6.
+
+## Tips
+
+- **Race pace conversion:** 6-minute miles is 10 mph is 16 km/h. A 5-minute km is 12 km/h is 7.5 mph.
+- **Wind speed:** the Beaufort scale is knots; TV weather reports vary by country.
+
+## Privacy
+
+All conversion runs in your browser.`,
+    faqs: [
+      { q: "What's the difference between mph and knots?", a: "1 knot equals 1 nautical mile per hour, which is about 1.15 mph. Knots are standard in maritime and aviation contexts because a nautical mile is one minute of latitude." },
+      { q: "How do I convert running pace?", a: "Enter your speed in mph or km/h to see the equivalent m/s. For minutes-per-mile pace, divide 60 by the pace value to get mph." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/calculators/time": {
+    title: "Time Converter — Seconds, Minutes, Hours, Days, Weeks",
+    metaDescription: "Convert between seconds, minutes, hours, days, weeks, months, and years. Free online time converter — instant, no signup required.",
+    keyword: "time converter",
+    intro: [
+      "Convert between seconds, minutes, hours, days, weeks, months, and years. Enter any value and every other unit updates live.",
+      "Useful for project estimates, scheduling, unit homework, and any moment you need to translate one time unit into another.",
+    ],
+    features: [
+      "Seconds through years, all in one view",
+      "Live conversion — type once, read everything",
+      "Copy any value with one click",
+      "Handles decimals for partial units",
+    ],
+    guide: `## What the Time Converter does
+
+Enter a duration in any unit — seconds, minutes, hours, days, weeks, months, or years — and every other unit's equivalent appears live. The calculator uses standard averages for months (30.44 days) and years (365.25 days) so leap years and month-length differences don't skew everyday conversions.
+
+## When you'll reach for it
+
+- **Project estimates.** "This will take about 4000 hours" — is that months, or years? A quick check keeps proposals honest.
+- **Contract terms.** 90 days is roughly 12.9 weeks or 3 months.
+- **Homework and physics problems.** Especially when a formula wants seconds but the question gives hours.
+- **Age calculations.** Approximate age in days, hours, or minutes for a birthday card.
+- **API rate limits and cache TTLs.** 604800 seconds is 1 week.
+
+## Step-by-step
+
+**1. Type a value into any field.** All other fields update immediately.
+
+**2. Read the equivalents.** Everything from seconds to years is visible at once.
+
+**3. Copy the number you need.** One click grabs any field.
+
+## Useful equivalences worth memorizing
+
+- **1 hour** = 3,600 seconds.
+- **1 day** = 86,400 seconds.
+- **1 week** = 604,800 seconds = 168 hours.
+- **1 year** ≈ 31.5 million seconds ≈ 8,760 hours ≈ 52 weeks.
+- **1 month** ≈ 30.44 days ≈ 730.5 hours (average).
+- **1 year of full-time work** ≈ 2,080 hours (40 hours × 52 weeks, no leave).
+
+## Approximate vs exact
+
+Months and years vary. February has 28 or 29 days; a common year has 365 days, a leap year 366. This tool uses averages (30.44 days per month, 365.25 days per year) for smooth conversion — perfect for planning, not exact for calendar arithmetic. For calendar-exact spans between two specific dates, use the Date Difference Calculator instead.
+
+## Tips
+
+- **API caching.** Common TTL values: 60 (1 min), 3600 (1 hour), 86400 (1 day), 604800 (1 week).
+- **Work weeks.** A US work year is roughly 2000 hours (2080 - 2 weeks off). Freelancers often bill based on this.
+
+## Privacy
+
+All conversion happens in your browser.`,
+    faqs: [
+      { q: "How many days is a month?", a: "The calculator uses 30.44 days as an average, which is 365.25 ÷ 12. For calendar-exact differences between two specific dates, use the Date Difference Calculator." },
+      { q: "Why is a year 365.25 days?", a: "That's the average length accounting for leap years (one extra day every 4 years). For calendar-exact spans, use the Date Difference Calculator." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
+  "/calculators/volume": {
+    title: "Volume Converter — Liters, Gallons, Cups, mL Online",
+    metaDescription: "Convert between liters, US and UK gallons, cups, milliliters, and fluid ounces. Free online volume converter — instant, no signup.",
+    keyword: "volume converter",
+    intro: [
+      "Convert between liters, milliliters, US and UK gallons, cups, and fluid ounces. Enter any value and every unit updates live.",
+      "Perfect for cooking (especially US↔metric recipes), science, and any moment you need to translate a volume between units.",
+    ],
+    features: [
+      "Metric (L, mL) and imperial (gal, qt, pt, cup, fl oz)",
+      "Separate US and UK gallons — they differ",
+      "Live conversion in every unit",
+      "One-click copy",
+    ],
+    guide: `## What the Volume Converter does
+
+Enter a volume in any unit — liters, milliliters, US gallons, UK (imperial) gallons, quarts, pints, cups, or fluid ounces — and every other unit updates live. US and UK gallons are shown separately because they are different sizes.
+
+## When you'll use it
+
+- **Cooking.** US recipes use cups and fluid ounces; UK recipes use imperial fluid ounces and metric; scientific recipes use grams and mL.
+- **Fuel economy.** Converting between MPG (US), MPG (UK), and L/100km.
+- **Chemistry.** Scaling reagent volumes from a paper written in mL to a lab that pipettes in µL.
+- **Home improvement.** Paint, water tanks, aquariums, and pond volumes are quoted in different units depending on the source.
+
+## The US vs UK gallon trap
+
+- **1 US gallon** = 3.785 liters = 128 US fluid ounces.
+- **1 UK gallon** = 4.546 liters = 160 imperial fluid ounces.
+
+The UK gallon is about 20% larger. A UK recipe calling for "1 pint of milk" (568 mL) gives more milk than a US "1 pint" (473 mL). Getting the wrong pint can ruin a bread dough. Even fluid ounces differ: 1 US fl oz = 29.57 mL, 1 UK fl oz = 28.41 mL.
+
+## Step-by-step
+
+**1. Type a value in any field.** Every other unit updates immediately.
+
+**2. Read across.** All metric and imperial equivalents are visible at once.
+
+**3. Copy the number you need.** One click copies any field to your clipboard.
+
+## Handy conversions to memorize
+
+- **1 liter** ≈ 33.8 US fl oz ≈ 4.23 US cups.
+- **1 US cup** = 240 mL (US legal cup). Older US recipes may use 236 mL.
+- **1 UK cup** = 250 mL (metric cup used in Australia, NZ, UK, Canada).
+- **1 US gallon of water** weighs about 8.34 pounds; 1 liter weighs 1 kg.
+
+## Tips
+
+- **Check which "cup" your recipe means.** Australian recipes usually use a 250 mL metric cup. US recipes use 240 mL. Bakers care about the 4% difference.
+- **Weigh, don't measure.** For accurate baking, weight beats volume every time.
+
+## Privacy
+
+All conversion runs in your browser.`,
+    faqs: [
+      { q: "Are US and UK gallons the same?", a: "No. 1 US gallon = 3.785 liters. 1 UK gallon = 4.546 liters. The UK gallon is about 20% larger. Fluid ounces differ too (29.57 mL vs 28.41 mL)." },
+      { q: "How big is a metric cup?", a: "The metric cup used in Australia, New Zealand, and Canada is 250 mL. The US legal cup is 240 mL. Older US recipes may use 236 mL." },
+      { q: "Is this tool really free?", a: "Yes. Every ToolsHive tool is completely free with no signup, no watermark, and no daily limit for typical use." },
+      { q: "Do I need an account?", a: "No. Nothing on ToolsHive requires signup — open the tool and start using it immediately." },
+    ],
+  },
 };
