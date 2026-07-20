@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getPostMeta, postsMeta } from "@/lib/blog-meta";
 import ogCover from "@/assets/og-cover.jpg";
+import { EarningBanner } from "@/components/ads/EarningBanner";
 
 const SITE = "https://toolshive.tools";
 const OG = `${SITE}${ogCover}`;
@@ -141,6 +142,11 @@ function BlogPost() {
       <p className="mt-6 text-sm font-medium uppercase tracking-wide text-primary">{post.category}</p>
       {renderContent(post.content)}
       <p className="mt-4 text-sm text-muted-foreground">{post.readingMinutes} min read</p>
+      <EarningBanner
+        title="Recommended offer related to this guide"
+        description="Sponsored partner deal — free to check, takes 30 seconds."
+        cta="View offer"
+      />
       {post.toolPath && (
         <div className="my-10 rounded-lg border border-border bg-secondary/40 p-6">
           <h3 className="font-serif text-xl font-bold">Try the tool now</h3>
