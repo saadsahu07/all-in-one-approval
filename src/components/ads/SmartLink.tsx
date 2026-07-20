@@ -4,7 +4,7 @@
  * the link as sponsored + nofollow per Google's guidelines.
  */
 export const SMART_LINK_URL =
-  "https://appsave.online/cl/i/w66gr7";
+  "https://saveapp.store/fl/ll3gm";
 
 export function SmartLink({
   children = "Sponsored offer — check it out",
