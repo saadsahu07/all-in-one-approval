@@ -5,6 +5,7 @@ import { PersonalizedSection } from "@/components/home/personalized-section";
 import { CategoryBento } from "@/components/home/category-bento";
 import { AllToolsGrid } from "@/components/home/all-tools-grid";
 import { NativeBanner } from "@/components/ads/NativeBanner";
+import { BannerAd } from "@/components/ads/BannerAd";
 import { TrustSection } from "@/components/home/trust-section";
 import ogCover from "@/assets/og-cover.jpg";
 
@@ -59,6 +60,7 @@ function Index() {
       <PersonalizedSection />
       <CategoryBento />
       <div className="mx-auto max-w-6xl px-4">
+        <BannerAd />
         <NativeBanner />
       </div>
       <AllToolsGrid />
