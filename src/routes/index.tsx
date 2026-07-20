@@ -6,7 +6,6 @@ import { CategoryBento } from "@/components/home/category-bento";
 import { AllToolsGrid } from "@/components/home/all-tools-grid";
 import { NativeBanner } from "@/components/ads/NativeBanner";
 import { BannerAd } from "@/components/ads/BannerAd";
-import { EarningBanner } from "@/components/ads/EarningBanner";
 import { CaptchaLocker } from "@/components/ads/CaptchaLocker";
 import { TrustSection } from "@/components/home/trust-section";
 import ogCover from "@/assets/og-cover.jpg";
@@ -60,10 +59,9 @@ function Index() {
     <div>
       <HeroSection />
       <div className="mx-auto max-w-6xl px-4">
-        <EarningBanner
-          title="🎁 Free bonus offer for ToolsHive users"
-          description="Handpicked sponsored deal — takes 30 seconds, no signup on our side."
-          cta="Claim now"
+        <CaptchaLocker
+          title="🎁 Unlock a free bonus offer"
+          description="Quick human verification unlocks a handpicked deal for ToolsHive users — takes 30 seconds."
         />
       </div>
       <PersonalizedSection />
@@ -73,9 +71,6 @@ function Index() {
         <NativeBanner />
       </div>
       <AllToolsGrid />
-      <div className="mx-auto mt-12 max-w-4xl px-4">
-        <CaptchaLocker />
-      </div>
       <TrustSection />
     </div>
   );
