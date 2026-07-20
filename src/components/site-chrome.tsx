@@ -8,6 +8,7 @@ import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { Menu, X, Search, CornerDownLeft } from "lucide-react";
 import { navCategories as categories } from "@/lib/nav";
 import { allTools } from "@/lib/tools";
+import { SmartLink } from "@/components/ads/SmartLink";
 
 // --- Search perf: computed once at module load so keystrokes don't re-run
 // per-tool string work.
@@ -325,6 +326,9 @@ export const Footer = memo(function Footer() {
         </div>
       </div>
       <div className="border-t border-foreground/10 py-4 text-center text-xs opacity-60">
+        <div className="mb-3 flex justify-center">
+          <SmartLink>Sponsored: recommended offer for our readers</SmartLink>
+        </div>
         © {new Date().getFullYear()} ToolsHive. All rights reserved.
       </div>
     </footer>
