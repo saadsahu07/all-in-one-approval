@@ -13,8 +13,8 @@ export function AdsterraLoader() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const host = window.location.hostname;
-    // Only run on real production hosts (not localhost / lovable preview)
-    if (host === "localhost" || host.endsWith(".lovable.app") || host.endsWith(".lovableproject.com")) {
+    // Skip local dev only; run on lovable.app + custom domain (toolshive.tools)
+    if (host === "localhost" || host === "127.0.0.1" || host.endsWith(".lovableproject.com")) {
       return;
     }
     for (const src of SCRIPTS) {
