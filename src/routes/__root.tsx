@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer } from "../components/site-chrome";
 import { Toaster } from "../components/ui/sonner";
 import { registerPWA } from "../lib/pwa/register-sw";
+import { AdsterraLoader } from "../components/ads/AdsterraLoader";
 
 function NotFoundComponent() {
   return (
@@ -183,6 +184,7 @@ function RootComponent() {
         </main>
         <Footer />
         <Toaster />
+        <AdsterraLoader />
       </div>
     </QueryClientProvider>
   );
