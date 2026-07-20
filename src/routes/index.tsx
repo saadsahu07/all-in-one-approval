@@ -6,6 +6,7 @@ import { CategoryBento } from "@/components/home/category-bento";
 import { AllToolsGrid } from "@/components/home/all-tools-grid";
 import { NativeBanner } from "@/components/ads/NativeBanner";
 import { BannerAd } from "@/components/ads/BannerAd";
+import { EarningBanner } from "@/components/ads/EarningBanner";
 import { TrustSection } from "@/components/home/trust-section";
 import ogCover from "@/assets/og-cover.jpg";
 
@@ -57,6 +58,13 @@ function Index() {
   return (
     <div>
       <HeroSection />
+      <div className="mx-auto max-w-6xl px-4">
+        <EarningBanner
+          title="🎁 Free bonus offer for ToolsHive users"
+          description="Handpicked sponsored deal — takes 30 seconds, no signup on our side."
+          cta="Claim now"
+        />
+      </div>
       <PersonalizedSection />
       <CategoryBento />
       <div className="mx-auto max-w-6xl px-4">
