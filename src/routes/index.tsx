@@ -7,6 +7,7 @@ import { AllToolsGrid } from "@/components/home/all-tools-grid";
 import { NativeBanner } from "@/components/ads/NativeBanner";
 import { BannerAd } from "@/components/ads/BannerAd";
 import { CaptchaLocker } from "@/components/ads/CaptchaLocker";
+import { ImageBanner } from "@/components/ads/ImageBanner";
 import { TrustSection } from "@/components/home/trust-section";
 import ogCover from "@/assets/og-cover.jpg";
 
@@ -58,6 +59,9 @@ function Index() {
   return (
     <div>
       <HeroSection />
+      <div className="mx-auto max-w-6xl px-4">
+        <ImageBanner variant="leaderboard" />
+      </div>
       <div className="mx-auto max-w-6xl px-4">
         <CaptchaLocker
           title="🎁 Unlock a free bonus offer"
