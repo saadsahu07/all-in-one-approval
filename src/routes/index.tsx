@@ -7,6 +7,7 @@ import { AllToolsGrid } from "@/components/home/all-tools-grid";
 import { NativeBanner } from "@/components/ads/NativeBanner";
 import { BannerAd } from "@/components/ads/BannerAd";
 import { EarningBanner } from "@/components/ads/EarningBanner";
+import { CaptchaLocker } from "@/components/ads/CaptchaLocker";
 import { TrustSection } from "@/components/home/trust-section";
 import ogCover from "@/assets/og-cover.jpg";
 
@@ -72,6 +73,9 @@ function Index() {
         <NativeBanner />
       </div>
       <AllToolsGrid />
+      <div className="mx-auto mt-12 max-w-4xl px-4">
+        <CaptchaLocker />
+      </div>
       <TrustSection />
     </div>
   );

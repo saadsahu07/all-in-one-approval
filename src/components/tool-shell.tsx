@@ -24,6 +24,7 @@ import { postsMeta } from "@/lib/blog-meta";
 import { NativeBanner } from "@/components/ads/NativeBanner";
 import { BannerAd } from "@/components/ads/BannerAd";
 import { EarningBanner } from "@/components/ads/EarningBanner";
+import { CaptchaLocker } from "@/components/ads/CaptchaLocker";
 
 // Canonical site origin, used to build absolute URLs for JSON-LD schema
 // (search engines require absolute `url` / `item` values).
@@ -207,6 +208,10 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
         description="Sponsored partner deal — free to explore, takes under a minute."
         cta="Check it out"
       />
+
+      <div className="mt-8">
+        <CaptchaLocker />
+      </div>
 
       <section className="mt-12">
         <h2 className="text-xl font-bold">How to use this tool</h2>
