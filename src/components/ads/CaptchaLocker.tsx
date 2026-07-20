@@ -1,11 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SCRIPT_SRC = "https://saveapp.store/cp/js/rr68k";
 const SCRIPT_ID = "ogads-captcha-locker";
 
 function isProduction() {
   if (typeof window === "undefined") return false;
-  return window.location.hostname === "toolshive.tools";
+  const hostname = window.location.hostname.toLowerCase().replace(/^www\./, "");
+  return hostname === "toolshive.tools";
 }
 
 function ensureScript() {
@@ -30,18 +31,20 @@ export function CaptchaLocker({
   className = "",
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     if (!isProduction()) return;
+    setIsActive(true);
     ensureScript();
   }, []);
 
-  if (!isProduction()) {
+  if (!isActive) {
     return (
       <div
         className={`rounded-2xl border border-dashed border-border/70 bg-muted/30 p-6 text-center text-sm text-muted-foreground ${className}`}
       >
-        [CaptchaLocker preview — active on production only]
+        <span className="sr-only">Premium verification is loading</span>
       </div>
     );
   }
