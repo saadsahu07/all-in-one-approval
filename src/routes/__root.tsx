@@ -16,6 +16,7 @@ import { Header, Footer } from "../components/site-chrome";
 import { Toaster } from "../components/ui/sonner";
 import { registerPWA } from "../lib/pwa/register-sw";
 import { AdsterraLoader } from "../components/ads/AdsterraLoader";
+import { AdBlockDetector } from "../components/ads/AdBlockDetector";
 
 function NotFoundComponent() {
   return (
@@ -185,6 +186,7 @@ function RootComponent() {
         <Footer />
         <Toaster />
         <AdsterraLoader />
+        <AdBlockDetector />
       </div>
     </QueryClientProvider>
   );
