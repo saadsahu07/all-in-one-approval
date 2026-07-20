@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getPostMeta, postsMeta } from "@/lib/blog-meta";
 import ogCover from "@/assets/og-cover.jpg";
 import { CaptchaLocker } from "@/components/ads/CaptchaLocker";
+import { ImageBanner } from "@/components/ads/ImageBanner";
 
 const SITE = "https://toolshive.tools";
 const OG = `${SITE}${ogCover}`;
@@ -142,6 +143,7 @@ function BlogPost() {
       <p className="mt-6 text-sm font-medium uppercase tracking-wide text-primary">{post.category}</p>
       {renderContent(post.content)}
       <p className="mt-4 text-sm text-muted-foreground">{post.readingMinutes} min read</p>
+      <ImageBanner variant="rectangle" className="my-6 mx-auto block max-w-md overflow-hidden rounded-xl border border-border shadow-sm transition-transform hover:scale-[1.01]" />
       <CaptchaLocker
         title="Unlock the full resource pack"
         description="Complete a quick human verification to unlock a bonus offer related to this guide."
