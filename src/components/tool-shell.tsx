@@ -23,8 +23,6 @@ import { renderMarkdown } from "@/lib/render-md";
 import { postsMeta } from "@/lib/blog-meta";
 import { NativeBanner } from "@/components/ads/NativeBanner";
 import { BannerAd } from "@/components/ads/BannerAd";
-import { CaptchaLocker } from "@/components/ads/CaptchaLocker";
-import { ImageBanner } from "@/components/ads/ImageBanner";
 
 // Canonical site origin, used to build absolute URLs for JSON-LD schema
 // (search engines require absolute `url` / `item` values).
@@ -203,13 +201,6 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
 
       <NativeBanner />
       <BannerAd />
-      <ImageBanner variant="mobile" />
-      <div className="mt-8">
-        <CaptchaLocker
-          title="Unlock premium tools & faster downloads"
-          description="Complete a quick human verification to unlock a bonus offer for ToolsHive users."
-        />
-      </div>
 
       <section className="mt-12">
         <h2 className="text-xl font-bold">How to use this tool</h2>
