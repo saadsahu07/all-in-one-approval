@@ -21,8 +21,6 @@ import { useFavorites, trackRecent } from "@/lib/user-prefs";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { renderMarkdown } from "@/lib/render-md";
 import { postsMeta } from "@/lib/blog-meta";
-import { NativeBanner } from "@/components/ads/NativeBanner";
-import { BannerAd } from "@/components/ads/BannerAd";
 
 // Canonical site origin, used to build absolute URLs for JSON-LD schema
 // (search engines require absolute `url` / `item` values).
@@ -198,9 +196,6 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
           {note}
         </p>
       )}
-
-      <NativeBanner />
-      <BannerAd />
 
       <section className="mt-12">
         <h2 className="text-xl font-bold">How to use this tool</h2>
