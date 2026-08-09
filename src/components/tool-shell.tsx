@@ -280,6 +280,9 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
           </div>
         </section>
       )}
+
+      <NativeBanner />
+      <SmartLink />
     </div>
   );
 }
