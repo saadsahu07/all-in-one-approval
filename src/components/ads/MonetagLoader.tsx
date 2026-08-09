@@ -18,6 +18,8 @@ const TAGS: { src: string; zone?: string }[] = [
   { src: "https://5gvci.com/act/files/tag.min.js?z=11534379" },
   // In-Page Push
   { src: "https://nap5k.com/tag.min.js", zone: "11534383" },
+  // Vignette Banner
+  { src: "https://n6wxm.com/vignette.min.js", zone: "11535700" },
 ];
 
 /** Loads Monetag tags once, client-side, on live domains only. */
