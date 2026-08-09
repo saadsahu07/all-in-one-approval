@@ -5,8 +5,6 @@ import { PersonalizedSection } from "@/components/home/personalized-section";
 import { CategoryBento } from "@/components/home/category-bento";
 import { AllToolsGrid } from "@/components/home/all-tools-grid";
 import { TrustSection } from "@/components/home/trust-section";
-import { BannerAd } from "@/components/ads/BannerAd";
-import { NativeBanner } from "@/components/ads/NativeBanner";
 import ogCover from "@/assets/og-cover.jpg";
 
 const SITE = "https://toolshive.tools";
@@ -57,11 +55,9 @@ function Index() {
   return (
     <div>
       <HeroSection />
-      <BannerAd />
       <PersonalizedSection />
       <CategoryBento />
       <AllToolsGrid />
-      <NativeBanner />
       <TrustSection />
     </div>
   );
