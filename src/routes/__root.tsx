@@ -15,7 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer } from "../components/site-chrome";
 import { Toaster } from "../components/ui/sonner";
 import { registerPWA } from "../lib/pwa/register-sw";
-import { MonetagLoader } from "../components/ads/MonetagLoader";
+import { AdsterraLoader } from "../components/ads/AdsterraLoader";
 
 function NotFoundComponent() {
   return (
@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#3b82f6" },
       { name: "color-scheme", content: "light" },
       { name: "google-site-verification", content: "wqa0vF6k3GU-lSw6KEKlCS_QE7ufqIjQp7SeIQ48DkI" },
-      { name: "monetag", content: "8eaef56e1ea52c8333caec89efcc374b" },
+
     ],
     links: [
       {
@@ -185,7 +185,7 @@ function RootComponent() {
         </main>
         <Footer />
         <Toaster />
-        <MonetagLoader />
+        <AdsterraLoader />
       </div>
     </QueryClientProvider>
   );

@@ -21,6 +21,9 @@ import { useFavorites, trackRecent } from "@/lib/user-prefs";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { renderMarkdown } from "@/lib/render-md";
 import { postsMeta } from "@/lib/blog-meta";
+import { BannerAd } from "@/components/ads/BannerAd";
+import { NativeBanner } from "@/components/ads/NativeBanner";
+import { SmartLink } from "@/components/ads/SmartLink";
 
 // Canonical site origin, used to build absolute URLs for JSON-LD schema
 // (search engines require absolute `url` / `item` values).
@@ -191,6 +194,8 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
         </ErrorBoundary>
       </div>
 
+      <BannerAd />
+
       {note && (
         <p className="mt-6 rounded-md border border-border bg-secondary px-4 py-3 text-sm text-secondary-foreground">
           {note}
@@ -275,6 +280,9 @@ export function ToolShell({ categorySlug, toolSlug, intro, howTo, children, note
           </div>
         </section>
       )}
+
+      <NativeBanner />
+      <SmartLink />
     </div>
   );
 }
